@@ -1,0 +1,10 @@
+.contentsCenter h2{padding-left:20px;}
+.contentsCenter .mapSearch_Words{position:absolute; top:45px; left:20px;}
+/*.contentsCenter .imgMap{padding-top:15px; text-align:center;}*/
+.contentsCenter .imgMap{padding-top:0px; text-align:left;}
+.contentsCenter select {width:95px; border:1px solid #7f9db9; padding-left:4px; color:#6c6c6c;}
+.contentsCenter input.number {width:35px; border:1px solid #cdcdcd; padding:1px; color:#6c6c6c;}
+/*.contentsCenter .array{padding-top:25px; padding-left:20px;}*/
+.contentsCenter .array{padding-top:9px; padding-left:20px;}
+.contentsCenter .array select, .contentsCenter .array span, .contentsCenter .array input, .contentsCenter .array button{vertical-align:middle;}
+.contentsCenter .mapSearch_btn01{ width:45px; height:20px; border:none; margin-left:3px;}
