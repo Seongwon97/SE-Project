@@ -195,7 +195,7 @@
                                                               </div>
                                                           </div>
                                                           <div style = "margin-left : 500px;margin-top: -450px; height :200px;">
-                                                            <h4 style = "color:white;"> <i class="fas fa-search"></i>&nbsp;&nbsp;&nbsp; Input Search Options  </h4>
+                                                            <h4 style = "color:white;"> <i class="fas fa-search"></i>&nbsp;&nbsp; Input Search Options  </h4>
                                                             <div style = " height :50px; margin-top:100px">
                                                             <div class="form-group"  style = " float:left; margin-right : 20px;">
                                                                 <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="ti" id="time" placeholder="Time" style = "width : 70px; text-align :center;">
@@ -203,18 +203,23 @@
                                                             <div class="form-group"  style = "float:left;margin-right : 20px;">
                                                                 <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="pa" id="parking" placeholder="Parking (O/X)" style = "width : 130px; text-align :center;">
                                                             </div>
+
                                                             <div class="form-group"  style = "float:left;margin-right : 20px;">
-                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="be" id="beauty" placeholder="Beauty (O/X)" style = "width : 130px; text-align :center;">
+                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="ho" id="hotel" placeholder="Hotel (O/X)" style = "width : 130px; text-align :center;">
                                                             </div>
                                                             <div class="form-group"  style = "float:left;">
-                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="ho" id="hotel" placeholder="Hotel (O/X)" style = "width : 130px; text-align :center;">
+                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="be" id="beauty" placeholder="Beauty (O/X)" style = "width : 130px; text-align :center;">
                                                             </div>
                                                             </div>
                                                           </div>
                                                         </div>  <!--red div-->
-                                                          <div class="medilife-contact-info"  ><!--style = "background-color : skyblue;"-->
-                                                          <H3 style = "color : white;">&nbsp;&nbsp;<i class="fas fa-info-circle"></i>  &nbsp; Hospital Information </H3><br>
-                                                              <!-- Single Contact Info -->
+                                                          <div class="medilife-contact-info" ><!--style = "background-color : skyblue;"-->
+                                                              <div style = "height : 50px; width : 700px; float:left"  >
+                                                                <H3 style = "color : white;">&nbsp;&nbsp;<i class="fas fa-info-circle"></i> &nbsp; Hospital Information  </H3>
+                                                                <div style = "height : 50px; width : 200px; float:left; margin-left:750px;margin-top: -44px;">
+                                                                  <h3 id = "count" style = "color : white;">◆ Count : &nbsp;&nbsp;</h3>
+                                                                </div>
+                                                              </div>  <!-- Single Contact Info -->
                                                             <div class="single-contact-info" style = "width:100%;height : 270px; overflow:auto; overflow-x:hidden; border:1px solid black;">
                                                                 <table id = "hosTable" border = '3' bgcolor = white style = "color :gray;">
                                                                   <tr align = center style = "color :black;">
@@ -272,14 +277,20 @@
       }
     }
     function searchHospitalInfo1(area){
-    var ref = firebase.database().ref("Hospital_Info/");
+      document.getElementById("count").innerHTML = "◆ Count :&nbsp&nbsp;";
+
+      document.getElementById("arealist").innerHTML = area;
+      var count=0;
+      var ref = firebase.database().ref("Hospital_Info/");
       delete_row();
       ref.on("value", function(snapshot){
           for(i = 0; i< Object.keys(snapshot.val()).length; i++){
             var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
+
             a.on("value", function(snapshot){
               var t = Object.values(snapshot.val());
               if((t[1] == area)){
+                count+=1;
                 if(t[9].length <2){
                   t[9] = "Non-Value";
                 }
@@ -287,10 +298,15 @@
               }
           });
         }
+        document.getElementById("count").innerHTML += count.toString();
+
       });
-      document.getElementById("arealist").innerHTML = area;
     }
     function searchHospitalInfo(area, name, ti, pa, be, ho){
+
+    document.getElementById("count").innerHTML = "◆ Count :&nbsp;&nbsp;";
+
+    var count = 0;
     var ref = firebase.database().ref("Hospital_Info/");
       delete_row();
       var arr = [area, name, ti, pa, be, ho];
@@ -326,6 +342,7 @@
                   t[9] = "Non-Value";
                 }
                 add_row(t[5], t[4], t[9], t[1], t[0], t[7], t[3], t[8], t[6], t[2]);
+                count++;
 
               }
           });
@@ -335,7 +352,10 @@
           add_row("No", "No Data", "No Data", "No Data", "No Data", "No", "No","No Data", "No Data", "No Data");
         }
 
+        document.getElementById('count').innerHTML += count.toString();
+
       });
+
       document.getElementById('hosName').value = "";
       document.getElementById('time').value = "";
       document.getElementById('parking').value = "";
