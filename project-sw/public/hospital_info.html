@@ -75,7 +75,7 @@
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg); ">
                     <br><br><br><br><br><br><br><br>
                         <!-- ***** Hero Area Start ***** -->
-                        <div class="medilife-book-an-appoinment-area" style = " height: 1070px; ">
+                        <div class="medilife-book-an-appoinment-area" style = " height: 1370px; "><!--1070-->
                             <div class="container" style = "height: 100%;">
                                 <div class="row" style = "height: 100%;">
                                     <div class="col-12" style = "height: 100%;">
@@ -84,11 +84,11 @@
                                                 <div style = " height:460px;">
                                                     <div class="medilife-appointment-form"  style = " left:5px; height: 450px;width: 500px">
                                                         <form action="#" method="post" style = "">
-                                                            <h3 style = "color:white; margin-top:10px;margin-left:20px;">Select your Area</h3>
+                                                            <h3 style = "color:white; margin-top:-35px;margin-left:20px;">Select your Area</h3>
                                                             <div class="row align-items-end" style = " margin-top:20px; ">
                                                               <div class="contentsCenter" >
                                                                 <div style = "margin-left:20px; ">
-                                                                    <select class="form-control" id = "choiceArea"  >
+                                                                  <select class="form-control" id = "choiceArea">
                                                                       <option id = "arealist" value="" >구선택</option>
                                                                             <option value="강남구">강남구</option>
                                                                             <option value="강동구">강동구</option>
@@ -115,12 +115,13 @@
                                                                             <option value="종로구">종로구</option>
                                                                             <option value="중구">중구</option>
                                                                             <option value="중랑구">중랑구</option>
+
                                                                   </select>
                                                                 </div>
                                                                   <br><br>
                                                                     <!-- 지도넣을자리 -->
                                                                     <p class="imgMap" style = "margin-left:20px; ">
-                                                                      <img id="mainMap" name="mainMap" src="img/map/map_0.png" width="362px" height="300px" alt="서울시 구별 지도"
+                                                                      <img id="mainMap" name="mainMap" src="img/map1/map0.png" width="362px" height="300px" alt="서울시 구별 지도"
                                                               usemap="#seoulMap" />
                                                                       <map id="seoulMap" name="seoulMap">
                                                                         <area shape="rect" onmouseover="chgMainMap(12)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(12)"
@@ -180,7 +181,7 @@
                                                                 </form>
                                                           </div>
                                                           <div  style = " margin-left:660; margin-top: -250px;margin-bottom: 50px;height : 200px; ">
-                                                              <div class="form-group"  style = "margin-left:60;margin-top:25px; ">
+                                                              <div class="form-group"  style = "margin-left:75;margin-top:25px; ">
                                                                   <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="hosName" placeholder="Hospital Name"  style = "width : 200px; text-align :center; margin-left:55px;">
                                                               </div>
                                                               <div style = " width:350px; margin-left:130px; margin-top:60px;">
@@ -211,15 +212,15 @@
                                                             </div>
                                                           </div>
                                                         </div>  <!--red div-->
-                                                          <div class="medilife-contact-info"  >
-                                                          <H3>< Hospital Information ></H3><br>
+                                                          <div class="medilife-contact-info"  ><!--style = "background-color : skyblue;"-->
+                                                          <H3 style = "color : white;">< Hospital Information ></H3><br>
                                                               <!-- Single Contact Info -->
                                                             <div class="single-contact-info" style = "width:100%;height : 270px; overflow:auto; overflow-x:hidden; border:1px solid black;">
-                                                                <table id = "hosTable" border = '3' >
-                                                                  <tr align = center>
+                                                                <table id = "hosTable" border = '3' bgcolor = white style = "color :gray;">
+                                                                  <tr align = center style = "color :black;">
                                                                     <th width = 20>Num</th><th width = 250>Name</th><th width = 100>Phone</th>
                                                                     <th width = 70>Area</th><th width = 300>Address</th><th width = 50>Open</th>
-                                                                    <th width = 50>Close</th><th width = 60>Parking</th><th width = 60>Hotel</th>
+                                                                    <th width = 50>Close</th><th width = 70>Parking</th><th width = 60>Hotel</th>
                                                                     <th width = 60>Beauty</th>
                                                                   </tr>
                                                                 </table>
@@ -238,7 +239,7 @@
 <!-- map image change -->
     <script type = "text/javascript">
     function chgMainMap(guNum){
-	    document.getElementById("mainMap").src = "img/map/map_"+guNum+".png";
+	    document.getElementById("mainMap").src = "img/map1/map"+guNum+".png";
     }
     function inputArea(val){
       var a  = document.getElementById('choiceArea');
@@ -254,6 +255,7 @@
       addTr = document.createElement("TR");
       var arr = [a,b,c,d,e,f,g,h,i,j];
       addTr.setAttribute("align","center");
+
       for(i=0; i<10; i++){
         addTd = document.createElement("TD");
         addTd.innerHTML = arr[i];
@@ -286,16 +288,17 @@
           });
         }
       });
+      document.getElementById("arealist").innerHTML = area;
     }
     function searchHospitalInfo(area, name, ti, pa, be, ho){
     var ref = firebase.database().ref("Hospital_Info/");
       delete_row();
       var arr = [area, name, ti, pa, be, ho];
       for(i=0; i<3; i++){
-        if(arr[i+3] == "O"){
+        if(arr[i+3] == "O" || arr[i+3] == "o"){
           arr[i+3] = "True";
         }
-        else if(arr[i+3] == "X") {
+        else if(arr[i+3] == "X" || arr[i+3] == "x") {
           arr[i+3] = "False";
         }
         else {
@@ -327,8 +330,17 @@
               }
           });
         }
+        var table = document.getElementById("hosTable");
+        if (table.rows.length -1==0){
+          add_row("No", "No Data", "No Data", "No Data", "No Data", "No", "No","No Data", "No Data", "No Data");
+        }
 
       });
+      document.getElementById('hosName').value = "";
+      document.getElementById('time').value = "";
+      document.getElementById('parking').value = "";
+      document.getElementById('beauty').value = "";
+      document.getElementById('hotel').value = "";
     }
     </script>
 
