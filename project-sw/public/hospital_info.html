@@ -72,10 +72,10 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Hero Area Start ***** -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style=" background-image: url(img/bg-img/bg1.jpg); background-repeat: repeat-y;">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg); ">
                     <br><br><br><br><br><br><br><br>
                         <!-- ***** Hero Area Start ***** -->
-                        <div class="medilife-book-an-appoinment-area" style = " height: 1070px;">
+                        <div class="medilife-book-an-appoinment-area" style = " height: 1070px; ">
                             <div class="container" style = "height: 100%;">
                                 <div class="row" style = "height: 100%;">
                                     <div class="col-12" style = "height: 100%;">
@@ -269,7 +269,24 @@
         table.deleteRow(i);
       }
     }
-
+    function searchHospitalInfo1(area){
+    var ref = firebase.database().ref("Hospital_Info/");
+      delete_row();
+      ref.on("value", function(snapshot){
+          for(i = 0; i< Object.keys(snapshot.val()).length; i++){
+            var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
+            a.on("value", function(snapshot){
+              var t = Object.values(snapshot.val());
+              if((t[1] == area)){
+                if(t[9].length <2){
+                  t[9] = "Non-Value";
+                }
+                add_row(t[5], t[4], t[9], t[1], t[0], t[7], t[3], t[8], t[6], t[2]);
+              }
+          });
+        }
+      });
+    }
     function searchHospitalInfo(area, name, ti, pa, be, ho){
     var ref = firebase.database().ref("Hospital_Info/");
       delete_row();
@@ -289,7 +306,6 @@
       if(time < 9){
         time = time + 12;
       }
-      alert(time);
       ref.on("value", function(snapshot){
 
           for(i = 0; i< Object.keys(snapshot.val()).length; i++){
