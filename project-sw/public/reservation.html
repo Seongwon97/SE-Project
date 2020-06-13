@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+    <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +16,8 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css_file/style.css">
-    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./css_file/main.css" />
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
 
@@ -22,8 +26,10 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
-  </head>
-  <body>
+
+</head>
+
+<body>
     <!-- Preloader -->
     <div id="preloader">
         <div class="medilife-load"></div>
@@ -31,7 +37,6 @@
 
     <!-- ***** Header Area Start ***** -->
     <header class="header-area">
-
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
             <div class="container h-100">
@@ -40,6 +45,7 @@
                         <div class="main-menu h-100">
                             <nav class="navbar h-100 navbar-expand-lg">
                                 <!-- Logo Area  -->
+
                                 <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
 
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -47,14 +53,14 @@
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                                         </li>
 
                                         <li class="nav-item">
                                             <a class="nav-link" href="hospital_info.html">Hospital Information</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item active">
                                             <a class="nav-link" href="reservation.html">Reservation</a>
                                         </li>
                                         <li class="nav-item">
@@ -73,115 +79,33 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Hero Area Start ***** -->
-
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
-              <br><br><br><br><br><br><br><br><br><br><br>
-              <div class="medilife-book-an-appoinment-area">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-12">
-                              <div class="appointment-form-content">
-                                  <div class="row no-gutters align-items-center">
-                                      <div class="col-12 col-lg-9">
-                                          <div class="medilife-appointment-form">
-                                              <form action="#" method="post">
-                                                  <div class="row align-items-end">
-                                                      <div class="col-12 col-md-4">
-                                                          <div class="form-group">
-                                                              <select class="form-control" id="speciality">
-                                                              <option>Speciality 1</option>
-                                                              <option>Speciality 2</option>
-                                                              <option>Speciality 3</option>
-                                                              <option>Speciality 4</option>
-                                                              <option>Speciality 5</option>
-                                                          </select>
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-4">
-                                                          <div class="form-group">
-                                                              <select class="form-control" id="doctors">
-                                                              <option>Doctors 1</option>
-                                                              <option>Doctors 2</option>
-                                                              <option>Doctors 3</option>
-                                                              <option>Doctors 4</option>
-                                                              <option>Doctors 5</option>
-                                                          </select>
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-2">
-                                                          <div class="form-group">
-                                                              <input type="text" class="form-control" name="date" id="date" placeholder="Date">
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-2">
-                                                          <div class="form-group">
-                                                              <input type="text" class="form-control" name="time" id="time" placeholder="Time">
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-4">
-                                                          <div class="form-group">
-                                                              <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="name" placeholder="Name">
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-4">
-                                                          <div class="form-group">
-                                                              <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number" placeholder="Phone">
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-4">
-                                                          <div class="form-group">
-                                                              <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="email" id="email" placeholder="E-mail">
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-7">
-                                                          <div class="form-group mb-0">
-                                                              <textarea name="message" class="form-control mb-0 border-top-0 border-right-0 border-left-0" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-12 col-md-5 mb-0">
-                                                          <div class="form-group mb-0">
-                                                              <button type="submit" class="btn medilife-btn">Make an Appointment <span>+</span></button>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </form>
-                                          </div>
-                                      </div>
-                                      <div class="col-12 col-lg-3">
-                                          <div class="medilife-contact-info">
-                                              <!-- Single Contact Info -->
-                                              <div class="single-contact-info mb-30">
-                                                  <img src="img/icons/alarm-clock.png" alt="">
-                                                  <p>Mon - Sat 08:00 - 21:00 <br>Sunday CLOSED</p>
-                                              </div>
-                                              <!-- Single Contact Info -->
-                                              <div class="single-contact-info mb-30">
-                                                  <img src="img/icons/envelope.png" alt="">
-                                                  <p>0080 673 729 766 <br>contact@business.com</p>
-                                              </div>
-                                              <!-- Single Contact Info -->
-                                              <div class="single-contact-info">
-                                                  <img src="img/icons/map-pin.png" alt="">
-                                                  <p>Lamas Str, no 14-18 <br>41770 Miami</p>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- ***** Book An Appoinment Area End ***** -->
+    <!-- ***** Breadcumb Area Start ***** -->
+    <section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcumb-content">
+                        <h3 class="breadcumb-title">Reservation</h3>
+                        <p>Please make a reservation using the method below.</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+    <!-- ***** Breadcumb Area End ***** -->
 
-    <!-- ***** Hero Area End ***** -->
+    <br><br>
+
 
     <!-- ***** Book An Appoinment Area Start ***** -->
     <div class="medilife-book-an-appoinment-area">
+
         <div class="container">
             <div class="row">
+              <div class="reservation-heading">
+                  <h2>Reservation Application Form</h2>
+                  <br>
+              </div>
                 <div class="col-12">
                     <div class="appointment-form-content">
                         <div class="row no-gutters align-items-center">
@@ -202,12 +126,12 @@
                                             </div>
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="doctors">
-                                                    <option>Doctors 1</option>
-                                                    <option>Doctors 2</option>
-                                                    <option>Doctors 3</option>
-                                                    <option>Doctors 4</option>
-                                                    <option>Doctors 5</option>
+                                                    <select class="form-control" id="hodpital">
+                                                    <option>hodpital 1</option>
+                                                    <option>hodpital 2</option>
+                                                    <option>hodpital 3</option>
+                                                    <option>hodpital 4</option>
+                                                    <option>hodpital 5</option>
                                                 </select>
                                                 </div>
                                             </div>
@@ -231,11 +155,35 @@
                                                     <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number" placeholder="Phone">
                                                 </div>
                                             </div>
+
+                                            <div class="col-12 col-md-4">
+                                              <div class="form-group">
+                                                  <select class="form-control" id="purpose">
+                                                  <option>purose</option>
+                                                  <option>미용</option>
+                                                  <option>예방접종</option>
+                                                  <option>정기검진</option>
+                                                  <option>치료</option>
+                                              </select>
+                                              </div>
+                                            </div>
+
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
-                                                    <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="email" id="email" placeholder="E-mail">
+                                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="PetName" id="petName" placeholder="Pet Name">
                                                 </div>
                                             </div>
+                                            <div class="col-12 col-md-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="PetAge" id="petAge" placeholder="Pet Age">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                              <div class="form-group">
+                                                  <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="PetSpecies" id="petSpecies" placeholder="Pet Species">
+                                              </div>
+                                            </div>
+
                                             <div class="col-12 col-md-7">
                                                 <div class="form-group mb-0">
                                                     <textarea name="message" class="form-control mb-0 border-top-0 border-right-0 border-left-0" id="message" cols="30" rows="10" placeholder="Message"></textarea>
@@ -243,19 +191,20 @@
                                             </div>
                                             <div class="col-12 col-md-5 mb-0">
                                                 <div class="form-group mb-0">
-                                                    <button type="submit" class="btn medilife-btn">Make an Appointment <span>+</span></button>
+                                                    <button class="btn medilife-btn"
+                                                    onclick ='reserve1()'>Make an Appointment <span>+</span></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
+                            <!--예약하기에서 파란색 부분, 병원 정보 받아서 표현할것-->
                             <div class="col-12 col-lg-3">
                                 <div class="medilife-contact-info">
                                     <!-- Single Contact Info -->
                                     <div class="single-contact-info mb-30">
-                                        <img src="img/icons/alarm-clock.png" alt="">
-                                        <p>Mon - Sat 08:00 - 21:00 <br>Sunday CLOSED</p>
+                                        <p>Hospital Name<br>hospital1</p>
                                     </div>
                                     <!-- Single Contact Info -->
                                     <div class="single-contact-info mb-30">
@@ -280,6 +229,204 @@
 
 
 
+    <section class="medilife-benefits-area section-padding-100-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>Reservation<br>methods and precautions</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4">
+                    <div class="single-benefits-area mb-50 text-right">
+                        <div class="single-benefits-title d-flex align-items-end row-reverse">
+                            <i class="icon-teeth"></i>
+                            <h5>Precautions for Reservation</h5>
+                        </div>
+                        <p>Please enter the information accurately.<br><br>
+                          You can cancel your reservation until the day before.<br><br>
+                          Personal information is used for medical purposes. If you don't want to collect personal information, it may be difficult to make a reservation.<br><br>
+                          Please don't cancel the reservation without any reason if possible.<br><br>
+                          Cancellation and alteration on the same day can only be made through the hospital.<br><br>
+                          For other questions, please contact the contact information for each hospital.
+
+                        </p>
+                    </div>
+
+
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="single-benefits-thumb">
+                        <img src="img/bg-img/benefits.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="single-benefits-area mb-50">
+                        <div class="single-benefits-title d-flex align-items-end">
+                            <i class="icon-flask-1"></i>
+                            <h5>Reservation Method</h5>
+                        </div>
+                        <p>1. Log in as a member/non-member.<br>
+                          2. Select a hospital<br>
+                          3. Select the available date and time.<br>
+                          4. Select the purpose of the visit.<br>
+                          5. Enter brief information about the dog.<br>
+                          6. Write down what you want to leave in addition.<br>
+                          7. Press the reservation button.</p>
+                    </div>
+                    <div class="single-benefits-area mb-50">
+                        <div class="single-benefits-title d-flex align-items-end">
+                            <i class="icon-smartphone-1"></i>
+                            <h5>How to confirm and cancel reservations</h5>
+                        </div>
+                        <p>1. Entering and retrieving information from the Schedule Information view<br>
+                          2. Then cancel the reservation or change it to another available booking date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ***** Services Area Start ***** -->
+    <div class="medilife-services-area section-padding-100-20">
+        <div class="container">
+            <div class="row">
+              <div class="col-12">
+                  <div class="section-heading">
+                      <h2>Reservation Regulations</h2>
+                  </div>
+              </div>
+                <!-- Single Service Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-service-area d-flex">
+                        <div class="service-icon">
+                            <i class="icon-doctor"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Regulations for Cancellation and Change</h5>
+                            <p>You cannot cancel or change it on the same day through the website. Please call the hospital directly for cancellation on the same day.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Service Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-service-area d-flex">
+                        <div class="service-icon">
+                            <i class="icon-blood-donation-1"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Personal Information Collection</h5>
+                            <p>Your valuable personal information is collected, used, and provided for the purpose of medical treatment.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Service Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-service-area d-flex">
+                        <div class="service-icon">
+                            <i class="icon-helicopter"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Questions</h5>
+                            <p>For other questions, please contact the contact information for each hospital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Services Area End ***** -->
+    <!--Bottom Area-->
+    <div class="bottom-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                  <div class="footer-widget-area">
+                    <div class="footer-logo">
+                      <img src="img/core-img/logo.png" alt="">
+                    </div>
+                    <p>We offer a convenient reservation service for animal hospitals in Seoul. Using our system, you can easily see the reservation status of Seoul Animal Hospital and make reservations.</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-1">
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="h-100 d-md-flex justify-content-between align-items-center">
+                        <p><span>조원빈</span><br>Gachon Univ. <br>Department of software
+                          <br>201533266<br>010-0000-0000<br>e-mail</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="h-100 d-md-flex justify-content-between align-items-center">
+                        <p><span>여준구</span><br>Gachon Univ.<br>Department of software
+                          <br>201635824<br>010-0000-0000<br>e-mail</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="h-100 d-md-flex justify-content-between align-items-center">
+                        <p><span>Oh Seongwon</span><br>Gachon Univ.<br>Department of software
+                          <br>201635825<br>010-9446-1528<br>osw970325@naver.com</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="h-100 d-md-flex justify-content-between align-items-center">
+                        <p><span>장하영</span><br>Gachon Univ.<br>Department of software
+                          <br>201735872<br>010-0000-0000<br>e-mail</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script type = "text/javascript">
+
+    //https://firebase.google.com/docs/database/web/save-data?authuser=0#fan-out
+    function reserve1(){
+      var hospital =document.getElementById('hodpital')
+      var hospital_t=hospital.options[hospital.selectedIndex].text
+      var purpose =document.getElementById('purpose')
+      var purpose_t=purpose.options[purpose.selectedIndex].text
+      var date_v=document.getElementById('date').value;
+      var time_v=document.getElementById('time').value;
+      var petName_v=document.getElementById('petName').value;
+      var petAge=document.getElementById('petAge').value;
+      var petSpecies=document.getElementById('petSpecies').value;
+      var message=document.getElementById('message').value;
+
+      //Go to the reservation success page
+      location.href="reservation_success.html";
+      // A post entry.
+      var postData={
+        clientId: "test1",
+        completion: "false",
+        date: date_v,
+        petName: petName_v,
+        reservationType: purpose_t,
+        time: time_v
+      };
+      // Get a key for a new Post.
+      var newPostKey = firebase.database().ref().child('ReservationDetail').push().key;
+      window.alert(newPostKey);
+      // Write the new post's data simultaneously in the posts list.
+      var updates = {};
+      updates['/ReservationDetail/' + newPostKey] = postData;
+
+
+      return firebase.database().ref().update(updates);
+
+
+
+    }
+
+    </script>
+
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -292,7 +439,9 @@
     <script src="js/active.js"></script>
 
 
-    <script src="config.js"></script>    <!-- hosting info -->
-  </body>
+    <!-- hosting info -->
+    <script src="config.js"></script>
+
+</body>
 
 </html>

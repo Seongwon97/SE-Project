@@ -284,6 +284,15 @@ img {
     font-size: 44px;
     margin-bottom: 0; }
 
+.reservation-heading {
+  text-align: left;
+  position: relative;
+  margin-left: 20px;
+  z-index: 1; }
+  .reservation-heading h2 {
+    font-size: 30px;
+    margin-bottom: 0; }
+
 .btn {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
   .btn:hover, .btn:focus {
@@ -446,24 +455,32 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
 
-.top-header-area {
+.bottom-area {
   position: relative;
   z-index: 1;
-  height: 45px;
+  height: 300px;
+  padding-top: 40px;
+  padding-left: 70px;
+  padding-right: 30px;
   background-color: #081f3e; }
-  .top-header-area p {
+  .bottom-area p {
     margin-bottom: 0;
-    color: #b5b5b5; }
-    .top-header-area p span {
+    color: #FFFFFF; }
+    .bottom-area h4 {
+      margin-bottom: 0;
+      font-size: 30px;
+      color: #FFF4FF; }
+    .bottom-area p span {
+      font-size: 25px;
       color: #006cff; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .top-header-area p {
+      .bottom-area p {
         font-size: 13px; } }
     @media only screen and (max-width: 767px) {
-      .top-header-area p {
+      .bottom-area p {
         font-size: 12px; } }
   @media only screen and (max-width: 767px) {
-    .top-header-area {
+    .bottom-area {
       height: auto;
       padding: 15px 0; } }
 
@@ -688,7 +705,6 @@ img {
   margin-bottom: 30px;
   font-weight: 500;
   padding: 0 15px;
-
   border: 2px solid #536174; }
   .form-control:hover, .form-control:focus {
     background-color: transparent;
@@ -709,7 +725,7 @@ textarea {
 .medilife-book-an-appoinment-area {
   position: relative;
   z-index: 1;
-  margin-top: -65px; }
+  margin-top: 0px; }
   .medilife-book-an-appoinment-area .appointment-form-content {
     background-color: #081f3e; }
   .medilife-book-an-appoinment-area .medilife-appointment-form {
@@ -1480,7 +1496,7 @@ textarea {
 .leave-comment-area .contact-form .form-group,
 .medilife-contact-area .comment-form .form-group,
 .medilife-contact-area .contact-form .form-group {
-  margin-bottom: 10px;  }
+  margin-bottom: 10px; }
 .leave-comment-area .comment-form .form-control,
 .leave-comment-area .contact-form .form-control,form-control
 .medilife-contact-area .comment-form .form-control,
