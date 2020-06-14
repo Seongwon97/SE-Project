@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="description" content="">
@@ -86,38 +87,9 @@
                 <div class="col-12" style="padding-top: 110px">
                     <div class="card m-3">
                         <div class="card-body">
-                            <h4 class="card-title">No.79427439</h4>
-                            <p class="card-text">예약 내용</p>
-                            <div class="text-right">
-                                <a href="#" class="card-link">예약 변경</a>
-                                <a href="#" class="card-link">예약 취소</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card m-3">
-                        <div class="card-body">
-                            <h4 class="card-title">No.79427439</h4>
-                            <p class="card-text">예약 내용</p>
-                            <div class="text-right">
-                                <a href="#" class="card-link">예약 변경</a>
-                                <a href="#" class="card-link">예약 취소</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card m-3">
-                        <div class="card-body">
-                            <h4 class="card-title">No.79427439</h4>
-                            <p class="card-text">예약 내용</p>
-                            <div class="text-right">
-                                <a href="#" class="card-link">예약 변경</a>
-                                <a href="#" class="card-link">예약 취소</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card m-3">
-                        <div class="card-body">
-                            <h4 class="card-title">No.79427439</h4>
-                            <p class="card-text">예약 내용</p>
+                            <h4 class="card-title" id="num">No.</h4>
+                            <p class="card-text mb-0" id="type">예약 내용</p>
+                            <p class="card-text" id="date">예약 날짜</p>
                             <div class="text-right">
                                 <a href="#" class="card-link">예약 변경</a>
                                 <a href="#" class="card-link">예약 취소</a>
@@ -142,8 +114,19 @@
 <!-- Active js -->
 <script src="js/active.js"></script>
 
-
 <script src="config.js"></script>    <!-- hosting info -->
+
+<script>
+    var database = firebase.database();
+    database.ref('ReservationDetail/').once('value', function (snapshot) {
+        snapshot.forEach(function (data) {
+            document.getElementById('num').textContent += data.val().reservationNumber;
+            document.getElementById('date').textContent = data.val().date + ' ' + data.val().time;
+            document.getElementById('type').textContent = data.val().reservationType;
+        });
+    });
+</script>
+
 </body>
 
 </html>
