@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta name="description" content="">
@@ -77,11 +78,19 @@
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <h2 data-animation="fadeInUp" data-delay="100ms">Reservation System that <br>You can do it easily</h2>
-                            </div>
+                      <div class="login-box">
+                        <h1>Login</h1>
+                        <div class="textbox">
+                          <i class="fas fa-user"></i>
+                          <input type="text" placeholder="E-mail" name="" value="">
                         </div>
+                        <div class="textbox">
+                          <i class="fas fa-lock"></i>
+                          <input type="password" placeholder="Password" name="" value="">
+                        </div>
+                        <input class="sign-btn" type="button" name="" value="Sign in" onclick="signIn()">
+                        <a href="signup.html"><input class="sign-btn" type="button" name="" value="Sign up"></a>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -100,6 +109,14 @@
 
 
     <script src="config.js"></script>    <!-- hosting info -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+    <script src="account.js"></script>
   </body>
 
 </html>
