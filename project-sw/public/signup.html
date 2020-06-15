@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>이쿠야 병원가자!</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css_file/style.css">
+    <meta charset="utf-8"/>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="medilife-load"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+
+        <!-- Main Header Area -->
+        <div class="main-header-area" id="stickyHeader">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 h-100">
+                        <div class="main-menu h-100">
+                            <nav class="navbar h-100 navbar-expand-lg">
+                                <!-- Logo Area  -->
+                                <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
+
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                                <div class="collapse navbar-collapse" id="medilifeMenu">
+                                    <!-- Menu Area -->
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="hospital_info.html">Hospital Information</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="reservation.html">Reservation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="reservation_info.html">Reservation Informatio</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Appointment Button -->
+                                    <a href="log_in.html" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                          <div class="sign-up-box">
+                            <h1>Sign Up</h1>
+                            <div class="textbox">
+                              <i class="fas fa-user"></i>
+                              <input type="text" placeholder="Username" id="username" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-at"></i>
+                              <input type="text" placeholder="E-mail" id="email" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Password" id="password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Retype Password" id="retype_password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-map-marker-alt"></i>
+                              <input type="text" placeholder="Address" id="address" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-phone"></i>
+                              <input type="text" placeholder="Phone Num(ex.01011111111)" id="phone_num" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fas fa-birthday-cake"></i>
+                              <input type="text" placeholder="Birthday" id="birthday" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-question"></i>
+                              <input type="text" placeholder="Number of Pet" id="number_pet" name="" value="">
+                            </div>
+                            <input class="sign-btn" type="button" name="" value="Sign up" onclick="signUp()">
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+
+    <script src="config.js"></script>    <!-- hosting info -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAmzdEq2dpvgAS9r1_X55fjo5jA1WEHKw8",
+        authDomain: "animal-web-login.firebaseapp.com",
+        databaseURL: "https://animal-web-login.firebaseio.com",
+        projectId: "animal-web-login",
+        storageBucket: "animal-web-login.appspot.com",
+        messagingSenderId: "994553562184",
+        appId: "1:994553562184:web:d1c0562b10b9dc749fc47d",
+        measurementId: "G-EB77L8PQSB"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="account.js"></script>
+  </body>
+
+</html>
