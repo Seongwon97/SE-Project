@@ -63,7 +63,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="reservation.html">Reservation</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item active">
                                         <a class="nav-link" href="reservation_info.html">Reservation Information</a>
                                     </li>
                                 </ul>
@@ -81,37 +81,36 @@
 
 
 <article>
-    <div class="container">
-        <div id="modify-area" class="align-items-center" style="padding-top: 200px">
+    <div class="container col-7">
+        <div id="modify-area" class="align-items-center" style="padding-top: 180px; padding-bottom: 200px">
             <div class="container">
-                <h1>Bootstrap Form demo</h1>
+                <h1 style="padding-bottom: 30px">Reservation Details</h1>
                 <form>
-                    <div class="form-group has-success">
-                        <label for="Name">Name (With has-success class)</label>
-                        <input type="name" class="form-control" id="Name" placeholder="Name">
-                    </div>
-                    <div class="form-group has-warning">
-                        <label for="Email1">Email (With has-warning class)</label>
-                        <input type="email" class="form-control" id="Email1" placeholder="Email">
-                    </div>
-                    <div class="form-group has-error">
-                        <label for="Password1">Password (With has-error class)</label>
-                        <input type="password" class="form-control" id="Password1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="Inputselect">Select Number</label>
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label for="Number">Reservation Number</label>
+                            <input type="text" id="Number" class="form-control" style="color: #2e3133">
+                        </div>
+                        <div class="form-group">
+                            <label for="Name">Hospital name</label>
+                            <input type="text" class="form-control" id="Name" style="color: #2e3133">
+                        </div>
+                        <div class="form-group">
+                            <label for="Time">Time</label>
+                            <input type="text" class="form-control" id="Time" style="color: #2e3133">
+                        </div>
+                    </fieldset>
+                    <div class="form-group" style="padding-bottom: 100px">
+                        <label for="Inputselect">Purpose</label>
                         <select class="form-control">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                         </select>
                     </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" id="yesno"> Yes / No
-                        </label>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-info">Modify</button>
                     </div>
-                    <button type="submit" class="btn btn-info">Submit Information</button>
                 </form>
             </div>
         </div>
@@ -133,9 +132,29 @@
 <script src="config.js"></script>    <!-- hosting info -->
 
 <script type="text/javascript">
+    var database = firebase.database();
+    var ref = database.ref('ReservationDetail/');
 
+    $(document).ready(function () {
+        var val = location.href.substr(
+            location.href.lastIndexOf('=') + 1
+        );
 
+        ref.on("value", function (snapshot) {
+            var number = 'No.' + snapshot.child(val).val().reservationNumber;
+            var hospital = snapshot.child(val).val().hospital;
+            var type = snapshot.child(val).val().reservationType;
+            var time = snapshot.child(val).val().date + ' ' + snapshot.child(val).val().time;
+
+            document.getElementById('Number').value = number;
+            document.getElementById('Name').value = hospital;
+            document.getElementById('Time').value = time;
+
+        });
+
+    });
 </script>
+
 
 </body>
 
