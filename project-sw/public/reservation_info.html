@@ -98,12 +98,8 @@
     <div class="reservation-area">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12" style="padding-top: 50px">
-                    <div class="card m-3">
-                        <div class=\"card-body\">
+                <div id="card-area" class="col-12" style="padding-top: 10px">
 
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -130,27 +126,34 @@
     ref.on("value", function (snapshot) {
         var index = 0;
         snapshot.forEach(function (data) {
+            var key = data.key
             var number = data.val().reservationNumber;
+            var hospital = data.val().hospital;
             var type = data.val().reservationType;
             var time = data.val().date + ' ' + data.val().time;
-            console.log("index:" + index);
+            console.log("key:" + key);
 
-            $(".card").append("<div class=\"card-body\">\n" +
+            $("#card-area").append("<div class=\"card m-3\">" +
+                "                       <div class=\"card-body\">\n" +
                 "                            <h4 class=\"card-title\">No." + number + "</h4>\n" +
+                "                            <h6 class=\"card-text mb-0\">" + hospital + "</h6>\n" +
                 "                            <p class=\"card-text mb-0\">" + type + "</p>\n" +
-                "                            <p class=\"card-text\">" + time + "</p>\n" +
+                "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
                 "                            <div class=\"text-right\">\n" +
-                "                                <a href=\"#\" class=\"card-link\">예약 변경</a>\n" +
-                "                                <a href=\"#\" onclick='deleteCard();' class=\"card-delete\" id=\"" + "card-delete" + "\">예약 취소</a>\n" +
+                "                                <a href=\"#\" class=\"card-link mr-5\">예약 변경</a>\n" +
+                "                                <a href=\"#\" onclick=\"deleteCard('" + key + "');\" class=\"card-delete mr-3\">예약 취소</a>\n" +
                 "                            </div>\n" +
-                "                        </div>");
+                "                        </div>" +
+                "</div>");
 
             index++;
         });
     });
 
-    function deleteCard() {
-        if (confirm('정말로 취소하시겠습니까?')) {
+    function deleteCard(param) {
+        if (confirm('예약을 취소하시겠습니까?')) {
+            ref.child(param).remove();
+            window.location.reload();
             return true;
         } else {
             return false;
