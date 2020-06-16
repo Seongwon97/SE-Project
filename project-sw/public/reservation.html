@@ -149,12 +149,6 @@
                                                 <div class="form-group">
                                                     <select class="form-control" onchange="categoryChange2(this)" id="hospital">
                                                     <option>병원을 선택해주세요</option>
-                                                    <option>압구정웰동물병원</option>
-                                                    <option>센트럴동물병원</option>
-                                                    <option>수서동물병원</option>
-                                                    <option>
-                                                      햇살동물병원
-                                                    </option>
                                                 </select>
                                                 </div>
                                             </div>
@@ -451,6 +445,11 @@
     var ref = firebase.database().ref("Hospital_Info/");
     var target = document.getElementById("hospital");
     target.options.length = 0;
+
+    var opt = document.createElement("option");
+    opt.value = "병원을 선택해주세요";
+    opt.innerHTML = "병원을 선택해주세요";
+    target.appendChild(opt);
     ref.on("value", function(snapshot){
         for(i = 0; i< Object.keys(snapshot.val()).length; i++){
           var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
@@ -487,7 +486,6 @@
               if(t[9].length <2){
                 t[9] = "Non-Value";
               }
-              alert(t[9]);
               document.getElementById('hName')=e;
               document.getElementById('hPhone')=t[9];
               document.getElementById('hAddress')=t[0];
@@ -501,9 +499,9 @@
 
     function reserve(){
       var hospital =document.getElementById('hodpital');
-      var hospital_v=hospital.options[hospital.selectedIndex].text;
+      var hospital_v=hospital.options[hospital.selectedIndex].value;
       var purpose =document.getElementById('purpose');
-      var purpose_v=purpose.options[purpose.selectedIndex].text;
+      var purpose_v=purpose.options[purpose.selectedIndex].value;
       var name = document.getElementById('name').value;
       var phone = document.getElementById('phone').value;
       var date_v=document.getElementById('date').value;
@@ -512,8 +510,6 @@
       var petAge_v=document.getElementById('petAge').value;
       var petSpecies_v=document.getElementById('petSpecies').value;
       var message_v=document.getElementById('message').value;
-
-
 
 
       rootRef = firebase.database().ref('ReservationDetail/');
