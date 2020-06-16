@@ -24,6 +24,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 </head>
 
+<body>
 <!-- Preloader -->
 <div id="preloader">
     <div class="medilife-load"></div>
@@ -84,15 +85,7 @@
             <div class="row align-items-center">
                 <div class="col-12" style="padding-top: 110px">
                     <div class="card m-3">
-                        <div class="card-body">
-                            <h4 class="card-title" id="num">No.</h4>
-                            <p class="card-text mb-0" id="type">예약 내용</p>
-                            <p class="card-text" id="date">예약 날짜</p>
-                            <div class="text-right">
-                                <a href="#" class="card-link">예약 변경</a>
-                                <a href="#" class="card-link">예약 취소</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -114,13 +107,24 @@
 
 <script src="config.js"></script>    <!-- hosting info -->
 
-<script>
+<script type="text/javascript">
     var database = firebase.database();
-    database.ref('ReservationDetail/').once('value', function (snapshot) {
+    var ref = database.ref('ReservationDetail/')
+    ref.on("value", function (snapshot) {
         snapshot.forEach(function (data) {
-            document.getElementById('num').textContent += data.val().reservationNumber;
-            document.getElementById('date').textContent = data.val().date + ' ' + data.val().time;
-            document.getElementById('type').textContent = data.val().reservationType;
+            var number = data.val().reservationNumber;
+            var type = data.val().reservationType;
+            var time = data.val().date + ' ' + data.val().time;
+
+            $(".card").append("<div class=\"card-body\">\n" +
+                "                            <h4 class=\"card-title\">No." + number + "</h4>\n" +
+                "                            <p class=\"card-text mb-0\">" + type + "</p>\n" +
+                "                            <p class=\"card-text\">" +time+ "</p>\n" +
+                "                            <div class=\"text-right\">\n" +
+                "                                <a href=\"#\" class=\"card-link\">예약 변경</a>\n" +
+                "                                <a href=\"#\" class=\"card-link\">예약 취소</a>\n" +
+                "                            </div>\n" +
+                "                        </div>");
         });
     });
 </script>
