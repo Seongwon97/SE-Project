@@ -803,7 +803,7 @@ textarea {
     font-size: 28px;
     color: #ffffff;}
     .medilife-book-an-appoinment-area h3 {
-      font-size: 23px;
+      font-size: 30px;
       color: #ffffff;}
     .medilife-book-an-appoinment-area p {
       font-size: 19px;
@@ -838,9 +838,10 @@ textarea {
         justify-content: space-between;
         padding-bottom: 0; } }
         .medilife-book-an-appoinment-area .medilife-contact-info1 {
-          padding-top: 20px;
+          padding-top: 35px;
           padding-bottom: 20px;
           padding-left: 30px;
+          padding-right: 30px;
           background-color: #006cff; }
           @media only screen and (min-width: 768px) and (max-width: 991px) {
             .medilife-book-an-appoinment-area .medilife-contact-info1 {
