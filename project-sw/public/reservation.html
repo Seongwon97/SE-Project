@@ -116,10 +116,32 @@
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
                                                     <select class="form-control" onchange="categoryChange1(this)" id="area">
-                                                      <option>걸그룹을 선택해주세요</option>
-                                                      <option value="a">블랙핑크</option>
-                                                      <option value="b">에프엑스</option>
-                                                      <option value="c">EXID</option>
+                                                      <option>지역을 선택해주세요</option>
+                                                      <option value="강남구">강남구</option>
+                                                      <option value="강동구">강동구</option>
+                                                      <option value="강북구">강북구</option>
+                                                      <option value="강서구">강서구</option>
+                                                      <option value="관악구">관악구</option>
+                                                      <option value="광진구">광진구</option>
+                                                      <option value="구로구">구로구</option>
+                                                      <option value="금천구">금천구</option>
+                                                      <option value="노원구">노원구</option>
+                                                      <option value="도봉구">도봉구</option>
+                                                      <option value="동대문구">동대문구</option>
+                                                      <option value="동작구">동작구</option>
+                                                      <option value="마포구">마포구</option>
+                                                      <option value="서대문구">서대문구</option>
+                                                      <option value="서초구">서초구</option>
+                                                      <option value="성동구">성동구</option>
+                                                      <option value="성북구">성북구</option>
+                                                      <option value="송파구">송파구</option>
+                                                      <option value="양천구">양천구</option>
+                                                      <option value="영등포구">영등포구</option>
+                                                      <option value="용산구">용산구</option>
+                                                      <option value="은평구">은평구</option>
+                                                      <option value="종로구">종로구</option>
+                                                      <option value="중구">중구</option>
+                                                      <option value="중랑구">중랑구</option>
                                                 </select>
                                                 </div>
                                             </div>
@@ -425,26 +447,33 @@
 
 
     //document.getElementById('userId').innerHTML= "ID : "+userId;
+  function categoryChange1(e) {
+    var ref = firebase.database().ref("Hospital_Info/");
+    var target = document.getElementById("hospital");
+    target.options.length = 0;
+    ref.on("value", function(snapshot){
+        for(i = 0; i< Object.keys(snapshot.val()).length; i++){
+          var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
 
-    function categoryChange1(e) {
-      var good_a = ["지수", "제니", "로제", "리사"];
-    	var good_b = ["빅토리아", "엠버", "루나", "크리스탈"];
-	    var good_c = ["LE", "하니", "정화", "혜린", "솔지"];
-	    var target = document.getElementById("hospital");
+          a.on("value", function(snapshot){
+            var t = Object.values(snapshot.val());
+            if((t[1] == e.value)){
+              if(t[9].length <2){
+                t[9] = "Non-Value";
+              }
+              var opt = document.createElement("option");
+      	    	opt.value = t[4];
+      	    	opt.innerHTML = t[4];
+              target.appendChild(opt);
+              }
+            });
+        }
+      });
+    }
 
-    	if(e.value == "a") var d = good_a;
-    	else if(e.value == "b") var d = good_b;
-    	else if(e.value == "c") var d = good_c;
-      alert(d)
-	    target.options.length = 0;
 
-	    for (x in d) {
-	    	var opt = document.createElement("option");
-	    	opt.value = d[x];
-	    	opt.innerHTML = d[x];
-	    	target.appendChild(opt);
-    	}
-  }
+
+
   function categoryChange2(e) {
     var ref = firebase.database().ref("Hospital_Info/");
     alert(e.value);
