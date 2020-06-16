@@ -64,7 +64,7 @@
                                             <a class="nav-link" href="reservation.html">Reservation</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="reservation_info.html">Reservation Informatio</a>
+                                            <a class="nav-link" href="reservation_info.html">Reservation Information</a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
@@ -111,7 +111,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col-12 col-lg-9">
                                 <div class="medilife-appointment-form">
-                                    <form action="#" method="post">
+                                    <!--<form action="#" method="post" style = "">-->
                                         <div class="row align-items-end">
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
@@ -401,7 +401,6 @@
       var message=document.getElementById('message').value;
 
       //Go to the reservation success page
-      location.href="reservation_success.html";
       // A post entry.
       var postData={
         clientId: "test1",
@@ -413,15 +412,13 @@
       };
       // Get a key for a new Post.
       var newPostKey = firebase.database().ref().child('ReservationDetail').push().key;
-      window.alert(newPostKey);
       // Write the new post's data simultaneously in the posts list.
       var updates = {};
       updates['/ReservationDetail/' + newPostKey] = postData;
 
+      location.href="reservation_success.html";
 
       return firebase.database().ref().update(updates);
-
-
 
     }
 
