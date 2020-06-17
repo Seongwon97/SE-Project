@@ -60,7 +60,12 @@
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
-                                    <a href="log_in.html" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    <div id="on_btn">
+                                      <a href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    </div>
+                                    <div id="off_btn">
+                                      <a href="#" type="button" class="btn medilife-appoint-btn ml-30 " onclick="logout()">Logout</a>
+                                    </div>
                                 </div>
                             </nav>
                         </div>
@@ -377,6 +382,7 @@
 
     <script src="https://kit.fontawesome.com/ee9a561ebb.js" crossorigin="anonymous"></script>
     <script src="config.js"></script>    <!-- hosting info -->
+    <script src="account.js"></script>
   </body>
 
 </html>

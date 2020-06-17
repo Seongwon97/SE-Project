@@ -68,7 +68,12 @@
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
-                                    <a href="log_in.html" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    <div id="on_btn">
+                                      <a href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    </div>
+                                    <div id="off_btn">
+                                      <a href="#" type="button" class="btn medilife-appoint-btn ml-30 " onclick="logout()">Logout</a>
+                                    </div>
                                 </div>
                             </nav>
                         </div>
@@ -441,7 +446,7 @@
 
     <!-- hosting info -->
     <script src="config.js"></script>
-
+    <script src="account.js"></script>
 </body>
 
 </html>
