@@ -171,7 +171,7 @@
                                             <div class="col-12 col-md-4">
                                               <div class="form-group">
                                                   <select class="form-control" id="purpose">
-                                                  <option>purose</option>
+                                                  <option>purpose</option>
                                                   <option>미용</option>
                                                   <option>예방접종</option>
                                                   <option>정기검진</option>
@@ -546,6 +546,8 @@
       });
     }
 
+
+
     //날짜 선택시 해당 병원, 해당 날짜에 비어있는 시간 time option에 추가.
     function dateSelected(e){
       var target = document.getElementById("time");
@@ -586,7 +588,6 @@
         if(closeM > 0){
           closeH=closeH+1;
         }
-
         //예약정보들을 확인하며 예약이 있는 시간 찾고 select option에 넣는 부분
         target.options.length = 0;
         var opt = document.createElement("option");
@@ -595,6 +596,9 @@
         target.appendChild(opt);
         var arr=[];
         var ref = firebase.database().ref("ReservationDetail/");
+
+        ref.on("value", function(snapshot){
+            reservationNum=Object.keys(snapshot.val()).length; });
         ref.on("value", function(snapshot){
             for(i = 0; i< Object.keys(snapshot.val()).length; i++){
               var a = firebase.database().ref("ReservationDetail/" + Object.keys(snapshot.val())[i]);
@@ -624,6 +628,7 @@
 
 
 
+
   //병원 선택시 병원 정보를 띄워주는 코드
   function categoryChange2(e) {
     var ref = firebase.database().ref("Hospital_Info/");
@@ -646,6 +651,8 @@
             });
         }
       });
+      var date_v=document.getElementById('date').value;
+      dateSelected(date_v);
     }
 
 
@@ -666,23 +673,35 @@
       var petSpecies_v=document.getElementById('petSpecies').value;
       var message_v=document.getElementById('message').value;
 
-      rootRef = firebase.database().ref('ReservationDetail/');
-      rootRef.push({
-        reservationNumber: "1",
-        clientId: userId,
-        clientName: name,
-        phoneNum: phone,
-        hospital: hospital_v,
-        completion: "false",
-        purose: purpose_v,
-        date: date_v,
-        time: time_v,
-        reservationType: purpose_v,
-        petName: petName_v,
-        petAge: petAge_v,
-        petSpecies: petSpecies_v,
-        message: message_v
-      });
+      if (hospital_v=="병원을 선택해주세요"||hospital_v==""){alert("Selet the Hospital")}
+      else if(time_v==""||time_v=="Time"){alert("Select the Time")}
+      else if(purpose_v=="purpose"||purpose_v==""){alert("Select the Purpose")}
+      else if(name==""){alert("Enter the name")}
+      else if(phone==""){alert("Enter the Phone number")}
+      else if(petName_v==""||petName_v=="Pet Name"){alert("Select the Pet Name")}
+      else if(petAge_v==""){alert("Enter the pet age")}
+      else if(petSpecies_v==""){alert("Enter the pet species")}
+      else{
+        rootRef = firebase.database().ref('ReservationDetail/');
+        rootRef.push({
+          reservationNumber: reservationNum+1,
+          clientId: userId,
+          clientName: name,
+          phoneNum: phone,
+          hospital: hospital_v,
+          completion: "false",
+          purose: purpose_v,
+          date: date_v,
+          time: time_v,
+          reservationType: purpose_v,
+          petName: petName_v,
+          petAge: petAge_v,
+          petSpecies: petSpecies_v,
+          message: message_v
+        });
+
+      }
+
 
 
     }
