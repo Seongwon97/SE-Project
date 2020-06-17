@@ -105,16 +105,29 @@
                             <input type="text" class="form-control" id="Time" style="color: #2e3133">
                         </div>
                     </fieldset>
-                    <div class="form-group" style="padding-bottom: 100px">
-                        <label for="Inputselect">Purpose</label>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                    <div class="form-group">
+                        <label for="Purpose">Purpose</label>
+                        <select class="form-control text-dark" id="Purpose">
+                            <option>미용</option>
+                            <option>예방접종</option>
+                            <option>정기검진</option>
+                            <option>치료</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="Petname">Pet Name</label>
+                        <input type="text" class="form-control" id="Petname" style="color: #2e3133">
+                    </div>
+                    <div class="form-group">
+                        <label for="Petspecies">Pet Species</label>
+                        <input type="text" class="form-control" id="Petspecies" style="color: #2e3133">
+                    </div>
+                    <div class="form-group" style="padding-bottom: 50px">
+                        <label for="Message">Message</label>
+                        <input type="text" class="form-control" id="Message" style="color: #2e3133">
+                    </div>
                     <div class="row justify-content-center">
-                        <button type="submit" class="btn btn-info">Modify</button>
+                        <button class="btn btn-info" onclick="submitBtn()">Modify</button>
                     </div>
                 </form>
             </div>
@@ -130,7 +143,7 @@
 <!-- Bootstrap js -->
 <script src="js/bootstrap.min.js"></script>
 <!-- Plugins js -->
-<script src="js/plugins.js"></script>
+<!--<script src="js/plugins.js"></script>-->
 <!-- Active js -->
 <script src="js/active.js"></script>
 
@@ -139,25 +152,59 @@
 <script type="text/javascript">
     var database = firebase.database();
     var ref = database.ref('ReservationDetail/');
+    var key = location.href.substr(
+        location.href.lastIndexOf('=') + 1
+    );
 
     $(document).ready(function () {
-        var val = location.href.substr(
-            location.href.lastIndexOf('=') + 1
-        );
-
         ref.on("value", function (snapshot) {
-            var number = 'No.' + snapshot.child(val).val().reservationNumber;
-            var hospital = snapshot.child(val).val().hospital;
-            var type = snapshot.child(val).val().reservationType;
-            var time = snapshot.child(val).val().date + ' ' + snapshot.child(val).val().time;
+            var number = 'No.' + snapshot.child(key).val().reservationNumber;
+            var hospital = snapshot.child(key).val().hospital;
+            var time = snapshot.child(key).val().date + ' ' + snapshot.child(key).val().time;
+            var petName = snapshot.child(key).val().petName;
+            var petSpecies = snapshot.child(key).val().petSpecies;
+            var type = snapshot.child(key).val().reservationType;
+            var message = snapshot.child(key).val().message;
 
             document.getElementById('Number').value = number;
             document.getElementById('Name').value = hospital;
             document.getElementById('Time').value = time;
+            document.getElementById('Petname').value = petName;
+            document.getElementById('Petspecies').value = petSpecies;
+            document.getElementById('Message').value = message;
 
+            if (type == '미용') {
+                $("#Purpose option:eq(0)").prop("selected", true);
+            } else if (type == '예방접종') {
+                $("#Purpose option:eq(1)").prop("selected", true);
+            } else if (type == '정기검진') {
+                $("#Purpose option:eq(2)").prop("selected", true);
+            } else if (type == '치료') {
+                $("#Purpose option:eq(3)").prop("selected", true);
+            }
         });
-
     });
+
+    //Modify 클릭시
+    function submitBtn() {
+        var purpose = document.getElementById('Purpose');
+        var purpose_v = purpose.options[purpose.selectedIndex].innerHTML;
+
+        ref.child(key).update({
+            reservationType: purpose_v,
+            petName: document.getElementById('Petname').value,
+            petSpecies: document.getElementById('Petspecies').value,
+            message: document.getElementById('Message').value
+        })
+
+        if (window.confirm('예약 내용을 수정하시겠습니까?')) {
+            // They clicked Yes
+            window.location.href = 'http://www.abc.com/';
+        } else {
+            // They clicked no
+        }
+    }
+
 </script>
 <script src="account.js"></script>
 
