@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>이쿠야 병원가자!</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css_file/style.css">
+    <meta charset="utf-8"/>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="medilife-load"></div>
+</div>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area">
+
+    <!-- Main Header Area -->
+    <div class="main-header-area" id="stickyHeader">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 h-100">
+                    <div class="main-menu h-100">
+                        <nav class="navbar h-100 navbar-expand-lg">
+                            <!-- Logo Area  -->
+                            <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png"
+                                                                           alt="Logo"></a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false"
+                                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="medilifeMenu">
+                                <!-- Menu Area -->
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home <span
+                                                class="sr-only">(current)</span></a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="hospital_info.html">Hospital Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="reservation.html">Reservation</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="reservation_info.html">Reservation Information</a>
+                                    </li>
+                                </ul>
+                                <!-- Appointment Button -->
+                                <div id="on_btn">
+                                  <a href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                </div>
+                                <div id="off_btn">
+                                  <a href="#" type="button" class="btn medilife-appoint-btn ml-30 " onclick="logout()">Logout</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+
+<article>
+    <div class="container col-7">
+        <div id="modify-area" class="align-items-center" style="padding-top: 180px; padding-bottom: 200px">
+            <div class="container">
+                <h1 style="padding-bottom: 30px">Reservation Details</h1>
+                <form>
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label for="Number">Reservation Number</label>
+                            <input type="text" id="Number" class="form-control" style="color: #2e3133">
+                        </div>
+                        <div class="form-group">
+                            <label for="Name">Hospital name</label>
+                            <input type="text" class="form-control" id="Name" style="color: #2e3133">
+                        </div>
+                        <div class="form-group">
+                            <label for="Time">Time</label>
+                            <input type="text" class="form-control" id="Time" style="color: #2e3133">
+                        </div>
+                    </fieldset>
+                    <div class="form-group" style="padding-bottom: 100px">
+                        <label for="Inputselect">Purpose</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-info">Modify</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
+
+<script src="config.js"></script>    <!-- hosting info -->
+
+<script type="text/javascript">
+    var database = firebase.database();
+    var ref = database.ref('ReservationDetail/');
+
+    $(document).ready(function () {
+        var val = location.href.substr(
+            location.href.lastIndexOf('=') + 1
+        );
+
+        ref.on("value", function (snapshot) {
+            var number = 'No.' + snapshot.child(val).val().reservationNumber;
+            var hospital = snapshot.child(val).val().hospital;
+            var type = snapshot.child(val).val().reservationType;
+            var time = snapshot.child(val).val().date + ' ' + snapshot.child(val).val().time;
+
+            document.getElementById('Number').value = number;
+            document.getElementById('Name').value = hospital;
+            document.getElementById('Time').value = time;
+
+        });
+
+    });
+</script>
+<script src="account.js"></script>
+
+
+</body>
+
+</html>
