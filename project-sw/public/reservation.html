@@ -440,6 +440,8 @@
     var petName=[];
     var petAge=[];
     var species=[];
+    //예약이 완료되었나 확인하기위한 변수
+    var success=0;
 
 
 
@@ -673,37 +675,41 @@
       var petSpecies_v=document.getElementById('petSpecies').value;
       var message_v=document.getElementById('message').value;
 
-      if (hospital_v=="병원을 선택해주세요"||hospital_v==""){alert("Selet the Hospital")}
-      else if(time_v==""||time_v=="Time"){alert("Select the Time")}
-      else if(purpose_v=="purpose"||purpose_v==""){alert("Select the Purpose")}
-      else if(name==""){alert("Enter the name")}
-      else if(phone==""){alert("Enter the Phone number")}
-      else if(petName_v==""||petName_v=="Pet Name"){alert("Select the Pet Name")}
-      else if(petAge_v==""){alert("Enter the pet age")}
-      else if(petSpecies_v==""){alert("Enter the pet species")}
-      else{
-        rootRef = firebase.database().ref('ReservationDetail/');
-        rootRef.push({
-          reservationNumber: reservationNum+1,
-          clientId: userId,
-          clientName: name,
-          phoneNum: phone,
-          hospital: hospital_v,
-          completion: "false",
-          purose: purpose_v,
-          date: date_v,
-          time: time_v,
-          reservationType: purpose_v,
-          petName: petName_v,
-          petAge: petAge_v,
-          petSpecies: petSpecies_v,
-          message: message_v
-        });
-
+      if(success==0){
+        if (hospital_v=="병원을 선택해주세요"||hospital_v==""){alert("Selet the Hospital")}
+        else if(time_v==""||time_v=="Time"){alert("Select the Time")}
+        else if(purpose_v=="purpose"||purpose_v==""){alert("Select the Purpose")}
+        else if(name==""){alert("Enter the name")}
+        else if(phone==""){alert("Enter the Phone number")}
+        else if(petName_v==""||petName_v=="Pet Name"){alert("Select the Pet Name")}
+        else if(petAge_v==""){alert("Enter the pet age")}
+        else if(petSpecies_v==""){alert("Enter the pet species")}
+        else{
+          rootRef = firebase.database().ref('ReservationDetail/');
+          rootRef.push({
+            reservationNumber: reservationNum+1,
+            clientId: userId,
+            clientName: name,
+            phoneNum: phone,
+            hospital: hospital_v,
+            completion: "false",
+            purose: purpose_v,
+            date: date_v,
+            time: time_v,
+            reservationType: purpose_v,
+            petName: petName_v,
+            petAge: petAge_v,
+            petSpecies: petSpecies_v,
+            message: message_v
+          });
+          success+=1;
+          alert("예약되었습니다.");
+        }
       }
-
-
-
+      else{
+        alert("예약이 완료된 상태입니다. 홈화면으로 이동해주세요");
+        window.location.href="index.html";
+      }
     }
 
     </script>
