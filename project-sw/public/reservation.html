@@ -653,7 +653,9 @@
               document.getElementById('hPhone').innerHTML=t[9];
               document.getElementById('hAddress').innerHTML=t[0];
               document.getElementById('hTime').innerHTML=t[7]+' ~ '+t[3];
-              document.getElementById('hPark').innerHTML=t[8];
+              if(t[8]=='True'){document.getElementById('hPark').innerHTML="Available";}
+              else if(t[8]=='False'){document.getElementById('hPark').innerHTML="Unavailable";}
+
               }
             });
         }
