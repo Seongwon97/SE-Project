@@ -127,7 +127,7 @@
                         <input type="text" class="form-control" id="Message" style="color: #2e3133">
                     </div>
                     <div class="row justify-content-center">
-                        <button class="btn btn-info" onclick="submitBtn()">Modify</button>
+                        <button type="button" class="btn btn-primary" onclick="submitBtn()">Modify</button>
                     </div>
                 </form>
             </div>
@@ -197,11 +197,9 @@
             message: document.getElementById('Message').value
         })
 
-        if (window.confirm('예약 내용을 수정하시겠습니까?')) {
+        if (!alert('예약이 수정되었습니다.')) {
             // They clicked Yes
-            window.location.href = 'http://www.abc.com/';
-        } else {
-            // They clicked no
+            window.location.href = 'reservation_info.html';
         }
     }
 
