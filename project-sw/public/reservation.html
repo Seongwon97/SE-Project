@@ -435,8 +435,9 @@
     <script type = "text/javascript">
     //userID 에는 현재 접속중인 User의 ID를 받아서 저장하게 바꿀것.
     var userId="osw970325@naver.com";
-    document.getElementById('date').value = new Date().toISOString().substring(0, 10);
+    //document.getElementById('date').value = new Date().toISOString().substring(0, 10);
     var reservationNum=0;
+    var adminId="";
     var petName=[];
     var petAge=[];
     var species=[];
@@ -555,6 +556,8 @@
       var target = document.getElementById("time");
       var hospital =document.getElementById('hospital');
       var hospital_v=hospital.options[hospital.selectedIndex].value;
+      var area=document.getElementById('area');
+      var area_v=area.options[area.selectedIndex].value;
       var close=0;
       var open=0;
 
@@ -606,9 +609,11 @@
               var a = firebase.database().ref("ReservationDetail/" + Object.keys(snapshot.val())[i]);
               a.on("value", function(snapshot){
                 var t = Object.values(snapshot.val());
-                if((t[4] == hospital_v)){
-                  if(t[3]==e.target.value){
-                    arr.push(t[13]);
+                if((t[5] == hospital_v)){
+                  if(t[0]==area_v){
+                    if(t[4]==e.target.value){
+                      arr.push(t[15]);
+                    }
                   }
                   }
                 });
@@ -653,14 +658,34 @@
             });
         }
       });
-      var date_v=document.getElementById('date').value;
-      dateSelected(date_v);
+
+
+      var area=document.getElementById('area');
+      var area_v=area.options[area.selectedIndex].value;
+      var hospital =document.getElementById('hospital');
+      var hospital_v=hospital.options[hospital.selectedIndex].value;
+      var ref = firebase.database().ref("User/Admin/");
+      ref.on("value", function(snapshot){
+          for(i = 0; i< Object.keys(snapshot.val()).length; i++){
+            var a = firebase.database().ref("User/Admin/" + Object.keys(snapshot.val())[i]);
+            a.on("value", function(snapshot){
+              var t = Object.values(snapshot.val());
+              if((t[4] == hospital_v)){
+                if(t[1]==area_v){
+                  adminId=t[3];
+                }
+                }
+              });
+          }
+        });
     }
 
 
 
     //예약 정보 저장하는 함수
     function reserve(){
+      var area=document.getElementById('area');
+      var area_v=area.options[area.selectedIndex].value;
       var hospital =document.getElementById('hospital');
       var hospital_v=hospital.options[hospital.selectedIndex].value;
       var purpose =document.getElementById('purpose');
@@ -676,22 +701,25 @@
       var message_v=document.getElementById('message').value;
 
       if(success==0){
-        if (hospital_v=="병원을 선택해주세요"||hospital_v==""){alert("Selet the Hospital")}
-        else if(time_v==""||time_v=="Time"){alert("Select the Time")}
-        else if(purpose_v=="purpose"||purpose_v==""){alert("Select the Purpose")}
-        else if(name==""){alert("Enter the name")}
-        else if(phone==""){alert("Enter the Phone number")}
-        else if(petName_v==""||petName_v=="Pet Name"){alert("Select the Pet Name")}
-        else if(petAge_v==""){alert("Enter the pet age")}
-        else if(petSpecies_v==""){alert("Enter the pet species")}
+        if (hospital_v=="병원을 선택해주세요"||hospital_v==""){alert("Selet the Hospital");}
+        else if(date_v==""||date_v=="연도-월-일"){alert("Select the date");}
+        else if(time_v==""||time_v=="Time"){alert("Select the Time");}
+        else if(purpose_v=="purpose"||purpose_v==""){alert("Select the Purpose");}
+        else if(name==""){alert("Enter the name");}
+        else if(phone==""){alert("Enter the Phone number");}
+        else if(petName_v==""||petName_v=="Pet Name"){alert("Select the Pet Name");}
+        else if(petAge_v==""){alert("Enter the pet age");}
+        else if(petSpecies_v==""){alert("Enter the pet species");}
         else{
-          rootRef = firebase.database().ref('ReservationDetail/');
+          rootRef = firebase.database().ref('ReservationDetail/');;
           rootRef.push({
             reservationNumber: reservationNum+1,
             clientId: userId,
             clientName: name,
             phoneNum: phone,
+            area: area_v,
             hospital: hospital_v,
+            hospitalAdminEmail: adminId,
             completion: "false",
             purose: purpose_v,
             date: date_v,
