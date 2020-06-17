@@ -179,9 +179,16 @@
                                               </select>
                                               </div>
                                             </div>
-                                            <div class="col-12 col-md-12">
+                                            <div class="col-12 col-md-6">
                                               <h2>Individual Information</h2>
                                             </div>
+                                            <div class="col-12 col-md-6 mb-0">
+                                                <div class="form-group mb-0">
+                                                    <button class="btn medilife-btn"
+                                                    onclick ='updateInformation()'>Retrieve personal information<span>+</span></button>
+                                                </div>
+                                            </div>
+
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="name" placeholder="Name">
@@ -198,8 +205,11 @@
 
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="PetName" id="petName" placeholder="Pet Name">
+                                                  <select class="form-control" onchange="updatePetInfo(this)" id="petName">
+                                                  <option>Pet Name</option>
+                                                </select>
                                                 </div>
+
                                             </div>
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
@@ -423,22 +433,87 @@
 
 
     <script type = "text/javascript">
-    //아래 6개 정보는 로그인중인 회원의 아이디를 통해 저장
-    var userId="Id test";
-    var name="name test";
-    var phone="010-1234-5678";
-    var petName="petName test";
-    var petAge="5";
-    var species="포메";
+    //userID 에는 현재 접속중인 User의 ID를 받아서 저장하게 바꿀것.
+    var userId="osw970325@naver.com";
     document.getElementById('date').value = new Date().toISOString().substring(0, 10);
-    document.getElementById('name').value=name;
-    document.getElementById('phone').value=phone;
-    document.getElementById('petName').value=petName;
-    document.getElementById('petAge').value=petAge;
-    document.getElementById('petSpecies').value=species;
+    var reservationNum=0;
+    var petName=[];
+    var petAge=[];
+    var species=[];
 
 
-    //document.getElementById('userId').innerHTML= "ID : "+userId;
+
+    //사용자 이메일을 이용하여 다른 정보를 가져오는 페이지.
+    function updateInformation(){
+      var name="";
+      var phone="";
+      petName=[];
+      petAge=[];
+      species=[];
+      var ref = firebase.database().ref("User/Member/");
+      ref.on("value", function(snapshot){
+          for(i = 0; i< Object.keys(snapshot.val()).length; i++){
+            var a = firebase.database().ref("User/Member/" + Object.keys(snapshot.val())[i]);
+
+            a.on("value", function(snapshot){
+              var t = Object.values(snapshot.val());
+              if((t[2] == userId)){
+                name=t[6];
+                phone=t[5];
+                }
+              });
+          }
+        });
+
+      document.getElementById('name').value=name;
+      document.getElementById('phone').value=phone;
+
+
+
+      var target = document.getElementById("petName");
+      var opt = document.createElement("option");
+      target.options.length = 0;
+      opt.value = "Pet Name";
+      opt.innerHTML = "Pet Name";
+      target.appendChild(opt);
+
+      var ref = firebase.database().ref("Pet/");
+      ref.on("value", function(snapshot){
+          for(i = 0; i< Object.keys(snapshot.val()).length; i++){
+            var a = firebase.database().ref("Pet/" + Object.keys(snapshot.val())[i]);
+
+            a.on("value", function(snapshot){
+              var t = Object.values(snapshot.val());
+              if((t[2] == userId)){
+                petName.push(t[3]);
+                petAge.push(t[0]);
+                species.push(t[4]);
+
+                var opt = document.createElement("option");
+                opt.value = t[3];
+                opt.innerHTML = t[3];
+                target.appendChild(opt);
+
+                }
+              });
+          }
+        });
+    }
+
+
+
+
+
+    //강아지 이름 선택 시 강아지 정보 자동입력
+    function updatePetInfo(e){
+      for(i=0;i<petName.length;i++){
+        if(e.value==petName[i]){
+          document.getElementById('petAge').value=petAge[i];
+          document.getElementById('petSpecies').value=species[i];
+        }
+      }
+    }
+
 
 
     //지역 선택시 두번쨰 selcet의 option을 변경
@@ -573,6 +648,8 @@
       });
     }
 
+
+
     //예약 정보 저장하는 함수
     function reserve(){
       var hospital =document.getElementById('hospital');
@@ -606,6 +683,8 @@
         petSpecies: petSpecies_v,
         message: message_v
       });
+
+
     }
 
     </script>
