@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +15,9 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Style CSS -->
-
     <link rel="stylesheet" href="./css_file/style.css">
     <link rel="stylesheet" type="text/css" href="./css_file/main.css" />
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
 
@@ -25,8 +26,10 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
-  </head>
-  <body>
+
+</head>
+
+<body>
     <!-- Preloader -->
     <div id="preloader">
         <div class="medilife-load"></div>
@@ -34,7 +37,6 @@
 
     <!-- ***** Header Area Start ***** -->
     <header class="header-area">
-
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
             <div class="container h-100">
@@ -43,6 +45,7 @@
                         <div class="main-menu h-100">
                             <nav class="navbar h-100 navbar-expand-lg">
                                 <!-- Logo Area  -->
+
                                 <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
 
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -50,18 +53,18 @@
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a id = "hospital" class="nav-link" onclick="log('hospital');" href="hospital_info.html">Hospital Information</a>
+                                            <a class="nav-link" href="hospital_info.html">Hospital Information</a>
+                                        </li>
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="reservation.html">Reservation</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a id = "reservation" class="nav-link" onclick="log('reservation');" href="reservation.html">Reservation</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a id = "information" class="nav-link" onclick="log('information');" href="reservation_info.html">Reservation Information</a>
+                                            <a class="nav-link" href="reservation_info.html">Reservation Informatio</a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
@@ -81,52 +84,23 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Hero Area Start ***** -->
-    <section class="hero-area">
-        <div class="hero-slides owl-carousel">
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <h2 data-animation="fadeInUp" data-delay="100ms">Reservation System that <br>You can do it easily</h2>
-                            </div>
-                        </div>
-                    </div>
+
+    <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
+      <div class="container h-100">
+          <div class="row h-100">
+              <div class="col-12">
+                <div class="hero-slides-content">
+                  <br><br><br><br><br><br><br><br><br>
+                    <h2>Reservation Success</h2>
                 </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg2.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                          <div class="hero-slides-content">
-                              <h2 data-animation="fadeInUp" data-delay="100ms">Reservation System that <br>You can do it easily</h2>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg3.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                          <div class="hero-slides-content">
-                              <h2 data-animation="fadeInUp" data-delay="100ms">Reservation System that <br>You can do it easily</h2>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Hero Area End ***** -->
+              </div>
+          </div>
+      </div>
+    </div>
 
 
 
-    <!--Bottom Area-->
+
     <div class="bottom-area">
         <div class="container-fluid">
             <div class="row">
@@ -142,14 +116,14 @@
                 </div>
                 <div class="col-12 col-md-2">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
-                        <p><span>Jo Wonbeen</span><br>Gachon Univ. <br>Department of software
-                          <br>201533266<br>010-4043-2907<br>jwb2906@naver.com</p>
+                        <p><span>조원빈</span><br>Gachon Univ. <br>Department of software
+                          <br>201533266<br>010-0000-0000<br>e-mail</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-2">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
-                        <p><span>Yeo Jungu</span><br>Gachon Univ.<br>Department of software
-                          <br>201635824<br>010-6220-5593<br>yjk5591@naver.com</p>
+                        <p><span>여준구</span><br>Gachon Univ.<br>Department of software
+                          <br>201635824<br>010-0000-0000<br>e-mail</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-2">
@@ -160,8 +134,8 @@
                 </div>
                 <div class="col-12 col-md-2">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
-                        <p><span>Jang Hayeong</span><br>Gachon Univ.<br>Department of software
-                          <br>201735872<br>010-7942-7439<br>hyj9829@naver.com</p>
+                        <p><span>장하영</span><br>Gachon Univ.<br>Department of software
+                          <br>201735872<br>010-0000-0000<br>e-mail</p>
                     </div>
                 </div>
             </div>
@@ -170,48 +144,49 @@
 
 
 
-    <script>
-      function log(id){
-        html = document.getElementById(id);
-        if(html.innerHTML == "Hospital Information"){
-          firebase.auth().onAuthStateChanged(function(user) {
-               if (user) {
-                 html.setAttribute("href","hospital_info.html");
-                 alert("안녕하세요 회원님!");
-               } else {
-                 html.setAttribute("href","log_in.html");
-                 alert("로그인이 필요합니다. 병원정보 접근");
-               }
-          });
-        }
-        else if(html.innerHTML == "Reservation"){
-          firebase.auth().onAuthStateChanged(function(user) {
-               if (user) {
-                 html.setAttribute("href","reservation.html");
-                 alert("안녕하세요 회원님!");
-               } else {
-                 html.setAttribute("href","log_in.html");
-                 alert("로그인이 필요합니다. 예약하기 접근");
-               }
-          });
-        }
-        else if(html.innerHTML == "Reservation Information"){
-          firebase.auth().onAuthStateChanged(function(user) {
-               if (user) {
-                 html.setAttribute("href","reservation_info.html");
-                 alert("안녕하세요 회원님!");
-               } else {
-                 html.setAttribute("href","log_in.html");
-                 alert("로그인이 필요합니다. 예약정보 접근");
-               }
-          });
-        }
-      }
+
+
+    <script type = "text/javascript">
+
+    //https://firebase.google.com/docs/database/web/save-data?authuser=0#fan-out
+    function reserve1(){
+      var hospital =document.getElementById('hodpital')
+      var hospital_t=hospital.options[hospital.selectedIndex].text
+      var purpose =document.getElementById('purpose')
+      var purpose_t=purpose.options[purpose.selectedIndex].text
+      var date_v=document.getElementById('date').value;
+      var time_v=document.getElementById('time').value;
+      var petName_v=document.getElementById('petName').value;
+      var petAge=document.getElementById('petAge').value;
+      var petSpecies=document.getElementById('petSpecies').value;
+      var message=document.getElementById('message').value;
+
+      //Go to the reservation success page
+      location.href="reservation_success.html";
+      // A post entry.
+      var postData={
+        clientId: "test1",
+        completion: "false",
+        date: date_v,
+        petName: petName_v,
+        reservationType: purpose_t,
+        time: time_v
+      };
+      // Get a key for a new Post.
+      var newPostKey = firebase.database().ref().child('ReservationDetail').push().key;
+      window.alert(newPostKey);
+      // Write the new post's data simultaneously in the posts list.
+      var updates = {};
+      updates['/ReservationDetail/' + newPostKey] = postData;
+
+
+      return firebase.database().ref().update(updates);
+
+
+
+    }
+
     </script>
-
-
-
-
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -229,7 +204,6 @@
     <script src="config.js"></script>
 
     <script src="account.js"></script>
-
 </body>
 
 </html>

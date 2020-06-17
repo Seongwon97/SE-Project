@@ -380,7 +380,7 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
   text-transform: uppercase;
-  box-shadow: none; }
+  box-shadow: white; }
   .medilife-appoint-btn span {
     font-weight: 700; }
   .medilife-appoint-btn:hover, .medilife-appoint-btn:focus {
@@ -388,7 +388,7 @@ img {
     background-color: #ffffff;
     box-shadow: none;
     font-weight: 500; }
-  .medilife-appoint-btn:hover span, .medilife-appoint-btn:focus span {
+  .medilife-appoint-btn:hover span, .medilife-appoint-btn:focus span{
     font-weight: 700; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .medilife-appoint-btn {
@@ -622,7 +622,7 @@ img {
 }
 
 .sign-up-box {
-  width: 300px;
+  width: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
