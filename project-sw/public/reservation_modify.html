@@ -100,13 +100,26 @@
                             <input type="text" class="form-control" id="Time" style="color: #2e3133">
                         </div>
                     </fieldset>
-                    <div class="form-group" style="padding-bottom: 100px">
-                        <label for="Inputselect">Purpose</label>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                    <div class="form-group">
+                        <label for="Purpose">Purpose</label>
+                        <select class="form-control text-dark" id="Purpose">
+                            <option value="1">미용</option>
+                            <option value="2">예방접종</option>
+                            <option value="3">정기검진</option>
+                            <option value="4">치료</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Petname">Pet Name</label>
+                        <input type="text" class="form-control" id="Petname" style="color: #2e3133">
+                    </div>
+                    <div class="form-group">
+                        <label for="Petspecies">Pet Species</label>
+                        <input type="text" class="form-control" id="Petspecies" style="color: #2e3133">
+                    </div>
+                    <div class="form-group" style="padding-bottom: 100px">
+                        <label for="Message">Message</label>
+                        <input type="text" class="form-control" id="Message" style="color: #2e3133">
                     </div>
                     <div class="row justify-content-center">
                         <button type="submit" class="btn btn-info">Modify</button>
@@ -143,13 +156,31 @@
         ref.on("value", function (snapshot) {
             var number = 'No.' + snapshot.child(val).val().reservationNumber;
             var hospital = snapshot.child(val).val().hospital;
-            var type = snapshot.child(val).val().reservationType;
             var time = snapshot.child(val).val().date + ' ' + snapshot.child(val).val().time;
+            var petName = snapshot.child(val).val().petName;
+            var petSpecies = snapshot.child(val).val().petSpecies;
+            var type = snapshot.child(val).val().reservationType;
+            var message = snapshot.child(val).val().message;
 
             document.getElementById('Number').value = number;
             document.getElementById('Name').value = hospital;
             document.getElementById('Time').value = time;
+            document.getElementById('Petname').value = petName;
+            document.getElementById('Petspecies').value = petSpecies;
+            document.getElementById('Message').value = message;
 
+            if(type=='미용'){
+                $("select option[value='1']").attr("selected", true);
+            }
+            if(type=='예방접종'){
+                $("select option[value='2']").attr("selected", true);
+            }
+            if(type=='정기검진'){
+                $("select option[value='3']").attr("selected", true);
+            }
+            if(type=='치료'){
+                $("select option[value='4']").attr("selected", true);
+            }
         });
 
     });

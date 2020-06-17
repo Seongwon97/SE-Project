@@ -127,8 +127,8 @@
 <script type="text/javascript">
     var database = firebase.database();
     var ref = database.ref('ReservationDetail/');
+
     ref.on("value", function (snapshot) {
-        // var index = 0;
         snapshot.forEach(function (data) {
             var key = data.key
             var number = 'No.' + data.val().reservationNumber;
@@ -161,14 +161,10 @@
                     "                            <p class=\"card-text mb-0\">" + type + "</p>\n" +
                     "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
                     "                            <div class=\"text-right\">\n" +
-                    "                                <a href=\"#\" onclick=\"modify('" + key + "')\" class=\"card-link mr-3\">예약 수정</a>\n" +
-                    "                                <a href=\"#\" onclick=\"cancel('" + key + "');\" class=\"card-link mr-3\">예약 취소</a>\n" +
                     "                            </div>\n" +
                     "                        </div>" +
                     "</div>");
             }
-
-            // index++;
         });
     });
 
@@ -178,6 +174,8 @@
                 completion: "true"
             })
             window.location.reload();
+            // history.go();
+            // window.location.href = window.location.href;
             return true;
         } else {
             return false;
