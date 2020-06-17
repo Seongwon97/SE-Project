@@ -63,7 +63,12 @@
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
-                                    <a href="log_in.html" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    <div id="on_btn" class="btn medilife-appoint-btn ml-30">
+                                      <a href="log_in.html">Log-In/Sign-UP</a>
+                                    </div>
+                                    <div id="off_btn" class="btn logged-in ml-30">
+                                      <a href="#">Logout</a>
+                                    </div>
                                 </div>
                             </nav>
                         </div>
@@ -78,44 +83,12 @@
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                          <div class="sign-up-box">
-                            <h1>Sign Up</h1>
-                            <div class="textbox">
-                              <i class="fas fa-user"></i>
-                              <input type="text" placeholder="Username" id="username" name="" value="">
-                            </div>
-                            <div class="textbox">
-                              <i class="fas fa-at"></i>
-                              <input type="text" placeholder="E-mail" id="email" name="" value="">
-                            </div>
-                            <div class="textbox">
-                              <i class="fas fa-lock"></i>
-                              <input type="password" placeholder="Password" id="password" name="" value="">
-                            </div>
-                            <div class="textbox">
-                              <i class="fas fa-lock"></i>
-                              <input type="password" placeholder="Retype Password" id="retype_password" name="" value="">
-                            </div>
-                            <div class="textbox">
-                              <i class="fas fa-map-marker-alt"></i>
-                              <input type="text" placeholder="Address" id="address" name="" value="">
-                            </div>
-                            <div class="textbox">
-                              <i class="fas fa-phone"></i>
-                              <input type="text" placeholder="Phone Num(ex.01011111111)" id="phone_num" name="" value="">
-                            </div>
-                            <div class="textbox">
-                              <i class="fas fas fa-birthday-cake"></i>
-                              <input type="text" placeholder="Birthday" id="birthday" name="" value="">
-                            </div>
-                            <div class="textbox">
-                              <i class="fas fa-question"></i>
-                              <input type="text" placeholder="Number of Pet" id="number_pet" name="" value="">
-                            </div>
-                            <input class="sign-btn" type="button" name="" value="Sign up" onclick="signUp()">
-                          </div>
-                        </div>
+                      <div class="login-box">
+                        <i class="fas fa-user"></i>
+                        <a href="aut_signup.html"><input class="sign-btn" type="button" name="" value="Author Sign up"></a>
+                        <i class="fas fa-user"></i>
+                        <a href="mem_signup.html"><input class="sign-btn" type="button" name="" value="Member Sign up"></a>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -134,7 +107,6 @@
 
 
     <script src="config.js"></script>    <!-- hosting info -->
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 

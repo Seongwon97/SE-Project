@@ -366,7 +366,7 @@ img {
       top: -2px;
       right: -2px; }
 
-.medilife-appoint-btn {
+.medilife-appoint-btn, .logged-in{
   display: inline-block;
   color: #ffffff;
   background-color: #ff0000;
@@ -380,21 +380,23 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
   text-transform: uppercase;
-  box-shadow: none; }
-  .medilife-appoint-btn span {
+  box-shadow: white; }
+  .medilife-appoint-btn span, .logged-in span {
     font-weight: 700; }
-  .medilife-appoint-btn:hover, .medilife-appoint-btn:focus {
+  .medilife-appoint-btn:hover, .medilife-appoint-btn:focus,
+  .logged-in:hover, .logged-in:focus {
     color: #006cff;
     background-color: #ffffff;
     box-shadow: none;
     font-weight: 500; }
-  .medilife-appoint-btn:hover span, .medilife-appoint-btn:focus span {
+  .medilife-appoint-btn:hover span, .medilife-appoint-btn:focus span
+  .logged-in:hover span, .logged-in:focus span{
     font-weight: 700; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .medilife-appoint-btn {
+    .medilife-appoint-btn, .logged-in {
       margin-top: 30px; } }
   @media only screen and (max-width: 767px) {
-    .medilife-appoint-btn {
+    .medilife-appoint-btn, .logged-in {
       margin-top: 10px; } }
 
 .bg-overlay {
@@ -622,7 +624,7 @@ img {
 }
 
 .sign-up-box {
-  width: 300px;
+  width: 400px;
   position: absolute;
   top: 50%;
   left: 50%;

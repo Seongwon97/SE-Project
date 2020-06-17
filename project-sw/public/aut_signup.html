@@ -83,19 +83,48 @@
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                      <div class="login-box">
-                        <h1>Login</h1>
-                        <div class="textbox">
-                          <i class="fas fa-user"></i>
-                          <input type="text" placeholder="E-mail" name="" value="" id="userEmail">
+                        <div class="col-12">
+                          <div class="sign-up-box">
+                            <h1>Administrator Sign Up</h1>
+                            <div class="textbox">
+                              <i class="fas fa-user"></i>
+                              <input type="text" placeholder="Username" id="username" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-at"></i>
+                              <input type="text" placeholder="E-mail" id="email" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Password" id="password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Retype Password" id="retype_password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-map-marker-alt"></i>
+                              <input type="text" placeholder="Address" id="address" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-phone"></i>
+                              <input type="text" placeholder="Phone Num(ex.01011111111)" id="phone_num" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fas fa-birthday-cake"></i>
+                              <input type="text" placeholder="Birthday" id="birthday" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-clinic-medical"></i>
+                              <input type="text" placeholder="Hospital Name" id="hospital_name" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-question"></i>
+                              <input type="text" placeholder="Area" id="area" name="" value="">
+                            </div>
+                            <button class="sign-btn" onclick='aut_signUp();'>Sign up</button>
+                          </div>
                         </div>
-                        <div class="textbox">
-                          <i class="fas fa-lock"></i>
-                          <input type="password" placeholder="Password" name="" value="" id="userPass">
-                        </div>
-                        <input class="sign-btn" type="button" name="" value="Login" onclick="login()">
-                        <a href="signup.html"><input class="sign-btn" type="button" name="" value="Sign up"></a>
-                      </div>
                     </div>
                 </div>
             </div>
@@ -114,6 +143,7 @@
 
 
     <script src="config.js"></script>    <!-- hosting info -->
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 
@@ -122,20 +152,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
 
     <script src="account.js"></script>
-
-    <script type="text/text/javascript">
-      function login(){
-        var userEmail=document.getElementById("email").value;
-        var userPass=document.getElementById("password").value;
-
-        firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error){
-          var errorCode=error.code;
-          var errorMessage=error.message;
-
-          window.alert("Error: "+errorMessage);
-        });
-      }
-    </script>
   </body>
 
 </html>
