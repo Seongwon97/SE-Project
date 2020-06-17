@@ -59,7 +59,7 @@
                                             <a class="nav-link" href="reservation.html">Reservation</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="reservation_info.html">Reservation Information</a>
+                                            <a class="nav-link" href="reservation_info.html">Reservation Informatio</a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
@@ -83,19 +83,44 @@
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                      <div class="login-box">
-                        <h1>Login</h1>
-                        <div class="textbox">
-                          <i class="fas fa-user"></i>
-                          <input type="text" placeholder="E-mail" name="" value="" id="userEmail">
+                        <div class="col-12">
+                          <div class="sign-up-box">
+                            <h1>Member Sign Up</h1>
+                            <div class="textbox">
+                              <i class="fas fa-user"></i>
+                              <input type="text" placeholder="Username" id="username" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-at"></i>
+                              <input type="text" placeholder="E-mail" id="email" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Password" id="password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Retype Password" id="retype_password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-map-marker-alt"></i>
+                              <input type="text" placeholder="Address" id="address" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-phone"></i>
+                              <input type="text" placeholder="Phone Num(ex.01011111111)" id="phone_num" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fas fa-birthday-cake"></i>
+                              <input type="text" placeholder="Birthday" id="birthday" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-question"></i>
+                              <input type="text" placeholder="Number of Pet" id="number_pet" name="" value="">
+                            </div>
+                            <input class="sign-btn" type="button" name="" value="Sign up" onclick="mem_signUp()">
+                          </div>
                         </div>
-                        <div class="textbox">
-                          <i class="fas fa-lock"></i>
-                          <input type="password" placeholder="Password" name="" value="" id="userPass">
-                        </div>
-                        <button class="sign-btn" onclick="login()">Login</button>
-                        <a href="signup.html"><input class="sign-btn" type="button" name="" value="Sign up"></a>
-                      </div>
                     </div>
                 </div>
             </div>
@@ -116,7 +141,6 @@
     <script src="config.js"></script>    <!-- hosting info -->
 
     <script src="account.js"></script>
-
   </body>
 
 </html>
