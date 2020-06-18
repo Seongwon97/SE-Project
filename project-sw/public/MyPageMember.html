@@ -63,8 +63,8 @@
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
-                                    <div id="on_btn">
-                                      <a id = "log-memu" href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    <div id="off_btn">
+                                      <a href="#" type="button" class="btn medilife-appoint-btn ml-30 " onclick="logout()">Sign-out</a>
                                     </div>
                                 </div>
                             </nav>
@@ -80,12 +80,42 @@
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                      <div class="login-box">
-                        <i class="fas fa-user"></i>
-                        <a href="aut_signup.html"><input class="sign-btn" type="button" name="" value="Author Sign up"></a>
-                        <i class="fas fa-user"></i>
-                        <a href="mem_signup.html"><input class="sign-btn" type="button" name="" value="Member Sign up"></a>
-                      </div>
+                        <div class="col-12">
+                          <div class="sign-up-box">
+                            <h1>My Information</h1>
+                            <div class="textbox">
+                              <i class="fas fa-user"></i>
+                              <input type="text" placeholder="Username" id="username" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-at"></i>
+                              <input type="text" placeholder="E-mail" id="email" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Password" id="password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-lock"></i>
+                              <input type="password" placeholder="Retype Password" id="retype_password" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-map-marker-alt"></i>
+                              <input type="text" placeholder="Address" id="address" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fa-phone"></i>
+                              <input type="text" placeholder="Phone Num(ex.01011111111)" id="phone_num" name="" value="">
+                            </div>
+                            <div class="textbox">
+                              <i class="fas fas fa-birthday-cake"></i>
+                              <input type="text" placeholder="Birthday" id="birthday" name="" value="">
+                            </div>
+                            <input id = "btn_modify" class="sign-btn" type="button" name="" value="Modify" onclick="modify();" style = "width:180px;">
+                            <input id = "btn_cancel" class="sign-btn" type="button" name="" value="Cancel" onclick="home();" style = "width:180px;">
+
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,6 +176,42 @@
     <script src="config.js"></script>    <!-- hosting info -->
 
     <script src="account.js"></script>
+
+    <script>
+    var name = "";
+    var name = "";
+    var email = "";
+    var password = "";
+    var address = "";
+    var number = "";
+    var birthday = "";
+    var area ="";
+    var hosName = "";
+
+    var ref = firebase.database().ref('User/Member/');
+    ref.on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+          if(data.val().email == firebase.auth().currentUser.email){
+            name = data.val().username;
+            email = data.val().email;
+            password = data.val().password;
+            address = data.val().address;
+            number = data.val().phone_num;
+            birthday = data.val().birthday;
+          }
+      });
+
+      document.getElementById("username").value = name;
+      document.getElementById("email").value = email;
+      document.getElementById("password").value = password;
+      document.getElementById("retype_password").value = password;
+      document.getElementById("address").value = address;
+      document.getElementById("phone_num").value = number;
+      document.getElementById("birthday").value = birthday;
+    });
+
+
+    </script>
   </body>
 
 </html>

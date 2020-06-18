@@ -69,10 +69,7 @@
                                     </ul>
                                     <!-- Appointment Button -->
                                     <div id="on_btn">
-                                      <a href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
-                                    </div>
-                                    <div id="off_btn">
-                                      <a href="#" type="button" class="btn medilife-appoint-btn ml-30 " onclick="logout()">Logout</a>
+                                      <a id = "log-memu" href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
                                     </div>
                                 </div>
                             </nav>
@@ -100,7 +97,6 @@
     <!-- ***** Breadcumb Area End ***** -->
 
     <br><br>
-
 
     <!-- ***** Book An Appoinment Area Start ***** -->
     <div class="medilife-book-an-appoinment-area">
@@ -184,14 +180,8 @@
                                               </select>
                                               </div>
                                             </div>
-                                            <div class="col-12 col-md-6">
+                                            <div class="col-12 col-md-12">
                                               <h2>Individual Information</h2>
-                                            </div>
-                                            <div class="col-12 col-md-6 mb-0">
-                                                <div class="form-group mb-0">
-                                                    <button class="btn medilife-btn"
-                                                    onclick ='updateInformation()'>Retrieve personal information<span>+</span></button>
-                                                </div>
                                             </div>
 
                                             <div class="col-12 col-md-4">
@@ -208,22 +198,30 @@
                                             <div class="col-12 col-md-4">
                                             </div>
 
-                                            <div class="col-12 col-md-4">
+                                            <div class="col-12 col-md-3">
                                                 <div class="form-group">
-                                                  <select class="form-control" onchange="updatePetInfo(this)" id="petName">
-                                                  <option>Pet Name</option>
-                                                </select>
+                                                  <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="Pet Name" id="petName" placeholder="Pet Name">
                                                 </div>
 
                                             </div>
-                                            <div class="col-12 col-md-4">
+                                            <div class="col-12 col-md-3">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="PetAge" id="petAge" placeholder="Pet Age">
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-md-4">
+                                            <div class="col-12 col-md-3">
                                               <div class="form-group">
                                                   <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="PetSpecies" id="petSpecies" placeholder="Pet Species">
+                                              </div>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                              <div class="form-group">
+                                                  <select class="form-control" id="petGender">
+                                                  <option>Pet Gender</option>
+                                                  <option>남자</option>
+                                                  <option>여자</option>
+                                                  <option>중성</option>
+                                                </select>
                                               </div>
                                             </div>
 
@@ -413,7 +411,7 @@
                 </div>
                 <div class="col-12 col-md-2">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
-                        <p><span>Yeo Jungu</span><br>Gachon Univ.<br>Department of software
+                        <p><span>Yeo Junku</span><br>Gachon Univ.<br>Department of software
                           <br>201635824<br>010-6220-5593<br>yjk5591@naver.com</p>
                     </div>
                 </div>
@@ -438,26 +436,18 @@
 
 
     <script type = "text/javascript">
-    //userID 에는 현재 접속중인 User의 ID를 받아서 저장하게 바꿀것.
-    var userId="osw970325@naver.com";
-    //document.getElementById('date').value = new Date().toISOString().substring(0, 10);
+    //userID는 현재 접속중인 유저의 아이디 저장
+    var userId="";
     var reservationNum=0;
     var adminId="";
-    var petName=[];
-    var petAge=[];
-    var species=[];
-    //예약이 완료되었나 확인하기위한 변수
-    var success=0;
+    $(document).ready(function(){
+      var ref = firebase.database().ref("Hospital_Info/");
+      var id=firebase.auth().currentUser.email;
+      alert(id);
 
-
-
-    //사용자 이메일을 이용하여 다른 정보를 가져오는 페이지.
-    function updateInformation(){
+      //사용자의 이메일과 전화번호 가져와서 저장
       var name="";
       var phone="";
-      petName=[];
-      petAge=[];
-      species=[];
       var ref = firebase.database().ref("User/Member/");
       ref.on("value", function(snapshot){
           for(i = 0; i< Object.keys(snapshot.val()).length; i++){
@@ -475,54 +465,9 @@
 
       document.getElementById('name').value=name;
       document.getElementById('phone').value=phone;
+    });
 
-
-
-      var target = document.getElementById("petName");
-      var opt = document.createElement("option");
-      target.options.length = 0;
-      opt.value = "Pet Name";
-      opt.innerHTML = "Pet Name";
-      target.appendChild(opt);
-
-      var ref = firebase.database().ref("Pet/");
-      ref.on("value", function(snapshot){
-          for(i = 0; i< Object.keys(snapshot.val()).length; i++){
-            var a = firebase.database().ref("Pet/" + Object.keys(snapshot.val())[i]);
-
-            a.on("value", function(snapshot){
-              var t = Object.values(snapshot.val());
-              if((t[2] == userId)){
-                petName.push(t[3]);
-                petAge.push(t[0]);
-                species.push(t[4]);
-
-                var opt = document.createElement("option");
-                opt.value = t[3];
-                opt.innerHTML = t[3];
-                target.appendChild(opt);
-
-                }
-              });
-          }
-        });
-    }
-
-
-
-
-
-    //강아지 이름 선택 시 강아지 정보 자동입력
-    function updatePetInfo(e){
-      for(i=0;i<petName.length;i++){
-        if(e.value==petName[i]){
-          document.getElementById('petAge').value=petAge[i];
-          document.getElementById('petSpecies').value=species[i];
-        }
-      }
-    }
-
-
+    //document.getElementById('date').value = new Date().toISOString().substring(0, 10);
 
     //지역 선택시 두번쨰 selcet의 option을 변경
   function categoryChange1(e) {
@@ -697,6 +642,8 @@
       var hospital_v=hospital.options[hospital.selectedIndex].value;
       var purpose =document.getElementById('purpose');
       var purpose_v=purpose.options[purpose.selectedIndex].value;
+      var petGender=document.getElementById('petGender');
+      var petGender_v=petGender.options[petGender.selectedIndex].value;
       var name = document.getElementById('name').value;
       var phone = document.getElementById('phone').value;
       var date_v=document.getElementById('date').value;
@@ -707,16 +654,16 @@
       var petSpecies_v=document.getElementById('petSpecies').value;
       var message_v=document.getElementById('message').value;
 
-      if(success==0){
         if (hospital_v=="병원을 선택해주세요"||hospital_v==""){alert("Selet the Hospital");}
         else if(date_v==""||date_v=="연도-월-일"){alert("Select the date");}
         else if(time_v==""||time_v=="Time"){alert("Select the Time");}
         else if(purpose_v=="purpose"||purpose_v==""){alert("Select the Purpose");}
         else if(name==""){alert("Enter the name");}
         else if(phone==""){alert("Enter the Phone number");}
-        else if(petName_v==""||petName_v=="Pet Name"){alert("Select the Pet Name");}
+        else if(petName_v==""){alert("Enter the Pet Name");}
         else if(petAge_v==""){alert("Enter the pet age");}
         else if(petSpecies_v==""){alert("Enter the pet species");}
+        else if(petGender_v==""||petGender_v=="Pet Gender"){alert("Select the pet gender");}
         else{
           rootRef = firebase.database().ref('ReservationDetail/');;
           rootRef.push({
@@ -731,13 +678,12 @@
             purose: purpose_v,
             date: date_v,
             time: time_v,
-            reservationType: purpose_v,
             petName: petName_v,
             petAge: petAge_v,
             petSpecies: petSpecies_v,
+            petGender:petGender_v,
             message: message_v
           });
-          success+=1;
           alert("예약되었습니다.");
           document.getElementById('area').value = "지역을 선택해주세요";
           document.getElementById('hospital').value = "병원을 선택해주세요";
@@ -749,14 +695,10 @@
           document.getElementById('petName').value = "Pet Name";
           document.getElementById('petAge').value = "";
           document.getElementById('petSpecies').value = "";
+          document.getElementById('petGender').value = "Pet Gender";
           document.getElementById('message').value = "";
           window.location.href = 'index.html';
         }
-      }
-      else{
-        alert("예약이 완료된 상태입니다. 홈화면으로 이동해주세요");
-        window.location.href="index.html";
-      }
     }
 
     </script>
