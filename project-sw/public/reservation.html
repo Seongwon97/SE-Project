@@ -64,7 +64,7 @@
                                             <a class="nav-link" href="reservation.html">Reservation</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="reservation_info.html">Reservation Informatio</a>
+                                            <a class="nav-link" href="reservation_info.html">Reservation Information</a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
@@ -739,6 +739,18 @@
           });
           success+=1;
           alert("예약되었습니다.");
+          document.getElementById('area').value = "지역을 선택해주세요";
+          document.getElementById('hospital').value = "병원을 선택해주세요";
+          document.getElementById('purpose').value = "purpose";
+          document.getElementById('name').value = "";
+          document.getElementById('phone').value = "";
+          document.getElementById('date').value = "";
+          document.getElementById('time').value = "Time";
+          document.getElementById('petName').value = "Pet Name";
+          document.getElementById('petAge').value = "";
+          document.getElementById('petSpecies').value = "";
+          document.getElementById('message').value = "";
+          window.location.href = 'index.html';
         }
       }
       else{

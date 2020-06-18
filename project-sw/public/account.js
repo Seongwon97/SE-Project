@@ -113,3 +113,38 @@ function mem_signUp(){
     window.alert("Password inconsistency detected");
   }
 }
+
+function log(id){
+  html = document.getElementById(id);
+  if(html.innerHTML == "Hospital Information"){
+    firebase.auth().onAuthStateChanged(function(user) {
+         if (user) {
+           alert(html.innerHTML);
+           html.setAttribute("href","hospital_info.html");
+         } else {
+           html.setAttribute("href","log_in.html");
+           alert("Please Log-in to use the service.");
+         }
+    });
+  }
+  else if(html.innerHTML == "Reservation"){
+    firebase.auth().onAuthStateChanged(function(user) {
+         if (user) {
+           html.setAttribute("href","reservation.html");
+         } else {
+           html.setAttribute("href","log_in.html");
+           alert("Please Log-in to use the service.");
+         }
+    });
+  }
+  else if(html.innerHTML == "Reservation Information"){
+    firebase.auth().onAuthStateChanged(function(user) {
+         if (user) {
+           html.setAttribute("href","reservation_info.html");
+         } else {
+           html.setAttribute("href","log_in.html");
+           alert("Please Log-in to use the service.");
+         }
+    });
+  }
+}

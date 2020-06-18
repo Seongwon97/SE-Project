@@ -177,10 +177,9 @@
           firebase.auth().onAuthStateChanged(function(user) {
                if (user) {
                  html.setAttribute("href","hospital_info.html");
-                 alert("안녕하세요 회원님!");
                } else {
                  html.setAttribute("href","log_in.html");
-                 alert("로그인이 필요합니다. 병원정보 접근");
+                 alert("Please Log-in to use the service.");
                }
           });
         }
@@ -188,10 +187,9 @@
           firebase.auth().onAuthStateChanged(function(user) {
                if (user) {
                  html.setAttribute("href","reservation.html");
-                 alert("안녕하세요 회원님!");
                } else {
                  html.setAttribute("href","log_in.html");
-                 alert("로그인이 필요합니다. 예약하기 접근");
+                 alert("Please Log-in to use the service.");
                }
           });
         }
@@ -199,10 +197,9 @@
           firebase.auth().onAuthStateChanged(function(user) {
                if (user) {
                  html.setAttribute("href","reservation_info.html");
-                 alert("안녕하세요 회원님!");
                } else {
                  html.setAttribute("href","log_in.html");
-                 alert("로그인이 필요합니다. 예약정보 접근");
+                 alert("Please Log-in to use the service.");
                }
           });
         }
