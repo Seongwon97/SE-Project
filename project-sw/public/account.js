@@ -95,7 +95,6 @@ function mem_signUp(){
   var address=document.getElementById("address").value;
   var phone_num=document.getElementById("phone_num").value;
   var birthday=document.getElementById("birthday").value;
-  var number_pet=document.getElementById("number_pet").value;
   if(password==retype_password){
     var rootRef = firebase.database().ref('User/Member/');
       rootRef.push({
@@ -104,8 +103,7 @@ function mem_signUp(){
         password:password,
         address:address,
         phone_num:phone_num,
-        birthday:birthday,
-        number_pet:number_pet
+        birthday:birthday
       });
       window.alert("Welcome! Please login again");
   }
