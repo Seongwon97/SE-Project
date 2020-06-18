@@ -1,16 +1,28 @@
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
     var log = document.getElementById("log-memu");
-
     log.innerHTML = "My Page";
-    log.setAttribute("href","MyPage.html");
+    log.setAttribute("href","index.html");
+    var ref = firebase.database().ref("User/Admin/");
+    ref.on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+          if(data.val().email == firebase.auth().currentUser.email){
+              log.setAttribute("href","MyPageAdmin.html");
+          }
+      });
 
-    //document.getElementById("off_btn").style.display="block"
-    //document.getElementById("on_btn").style.display="none"
-  }
-  else{
-  //document.getElementById("off_btn").style.display="none"
-    //document.getElementById("on_btn").style.display="block"
+    });
+
+    ref = firebase.database().ref('User/Member/');
+    ref.on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+          if(data.val().email == firebase.auth().currentUser.email){
+              log.setAttribute("href","MyPageMember.html");
+          }
+      });
+
+    });
+
   }
 });
 
