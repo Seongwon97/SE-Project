@@ -1,11 +1,28 @@
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
-    document.getElementById("off_btn").style.display="block"
-    document.getElementById("on_btn").style.display="none"
-  }
-  else{
-    document.getElementById("off_btn").style.display="none"
-    document.getElementById("on_btn").style.display="block"
+    var log = document.getElementById("log-memu");
+    log.innerHTML = "My Page";
+    log.setAttribute("href","index.html");
+    var ref = firebase.database().ref("User/Admin/");
+    ref.on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+          if(data.val().email == firebase.auth().currentUser.email){
+              log.setAttribute("href","MyPageAdmin.html");
+          }
+      });
+
+    });
+
+    ref = firebase.database().ref('User/Member/');
+    ref.on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+          if(data.val().email == firebase.auth().currentUser.email){
+              log.setAttribute("href","MyPageMember.html");
+          }
+      });
+
+    });
+
   }
 });
 
@@ -117,7 +134,6 @@ function log(id){
   if(html.innerHTML == "Hospital Information"){
     firebase.auth().onAuthStateChanged(function(user) {
          if (user) {
-           alert(html.innerHTML);
            html.setAttribute("href","hospital_info.html");
          } else {
            html.setAttribute("href","log_in.html");
@@ -145,4 +161,8 @@ function log(id){
          }
     });
   }
+}
+
+function home(){
+  window.location.href = 'index.html';
 }
