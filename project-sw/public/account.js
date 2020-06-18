@@ -10,9 +10,7 @@ firebase.auth().onAuthStateChanged(function(user){
               log.setAttribute("href","MyPageAdmin.html");
           }
       });
-
     });
-
     ref = firebase.database().ref('User/Member/');
     ref.on("value", function (snapshot) {
         snapshot.forEach(function (data) {
@@ -20,25 +18,11 @@ firebase.auth().onAuthStateChanged(function(user){
               log.setAttribute("href","MyPageMember.html");
           }
       });
-
     });
-
   }
 });
 
-/*
-function login(){
-  var userEmail=document.getElementById("userEmail").value;
-  var userPass=document.getElementById("userPass").value;
 
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error){
-    var errorCode=error.code;
-    var errorMessage=error.message;
-
-    window.alert("Error: "+errorMessage);
-  });
-  window.alert("Sign in complete!");
-}*/
 function login(){
   var userEmail=document.getElementById("userEmail").value;
   var userPass=document.getElementById("userPass").value;
@@ -62,19 +46,6 @@ function logout(){
 
 
 
-$('#btn_signup').click(function(){
-  var signup_mail = $('#email').val();
-  var signup_password = $('#password').val();
-
-  firebase.auth().createUserWithEmailAndPassword(signup_mail, signup_password).then(function(){
-    alert("Sign up success! Please Log-in.");
-    firebase.auth().signOut();
-    window.location.href = 'log_in.html';
-  }).catch(function(error){
-    alert("Sign up fail!");
-  });
-
-});
 function aut_signUp(){
   var username=document.getElementById("username").value;
   var email=document.getElementById("email").value;
@@ -85,23 +56,38 @@ function aut_signUp(){
   var birthday=document.getElementById("birthday").value;
   var hospital_name=document.getElementById("hospital_name").value;
   var area=document.getElementById("area").value;
+  if(username.length>=1 && address.length>=1 && phone_num.length>=1 && birthday.length>=1 &&
+      hospital_name.length>=1 && area.length>=1 && password==retype_password){
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+      var rootRef = firebase.database().ref('User/Admin/');
+      rootRef.push({
+        username:username,
+        email:email,
+        password:password,
+        address:address,
+        phone_num:phone_num,
+        birthday:birthday,
+        hospital_name:hospital_name,
+        area:area
+      });
+      alert("Sign up success! Please Log-in.");
+      setTimeout(function(){
+      firebase.auth().signOut();
+      window.location.href = 'log_in.html';},1000);
 
-  if(password==retype_password){
-    var rootRef = firebase.database().ref('User/Admin/');
-    rootRef.push({
-      username:username,
-      email:email,
-      password:password,
-      address:address,
-      phone_num:phone_num,
-      birthday:birthday,
-      hospital_name:hospital_name,
-      area:area
+    }).catch(function(error){
+      alert("Sign up fail!  Please enter more long password!");
     });
   }
   else{
-    window.alert("Password inconsistency detected");
+    if(password!=retype_password){
+      window.alert("Password inconsistency detected");
+    }
+    else{
+      alert("Sign up fail! Please enter all details");
+    }
   }
+
 }
 
 function mem_signUp(){
@@ -112,22 +98,38 @@ function mem_signUp(){
   var address=document.getElementById("address").value;
   var phone_num=document.getElementById("phone_num").value;
   var birthday=document.getElementById("birthday").value;
-  if(password==retype_password){
-    var rootRef = firebase.database().ref('User/Member/');
-      rootRef.push({
-        username:username,
-        email:email,
-        password:password,
-        address:address,
-        phone_num:phone_num,
-        birthday:birthday
-      });
-      window.alert("Welcome! Please login again");
+  if(username.length>=1 && address.length>=1 && phone_num.length>=1 && birthday.length>=1 &&
+      email.length>=1 && password==retype_password){
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+      var rootRef = firebase.database().ref('User/Member/');
+        rootRef.push({
+          username:username,
+          email:email,
+          password:password,
+          address:address,
+          phone_num:phone_num,
+          birthday:birthday
+        });
+      alert("Sign up success! Please Log-in.");
+      setTimeout(function(){
+      firebase.auth().signOut();
+      window.location.href = 'log_in.html';},1000);
+    }).catch(function(error){
+      alert("Sign up fail! Please enter more long password!");
+    });
   }
   else{
-    window.alert("Password inconsistency detected");
+    if(password!=retype_password){
+      window.alert("Password inconsistency detected");
+    }
+    else{
+      alert("Sign up fail! Please enter all details");
+    }
   }
+
 }
+
+
 
 function log(id){
   html = document.getElementById(id);
