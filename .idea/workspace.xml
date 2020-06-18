@@ -65,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592419132143</updated>
       <workItem from="1592419135034" duration="3095000" />
+      <workItem from="1592497454499" duration="3730000" />
     </task>
     <servers />
   </component>
@@ -82,5 +83,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="820" y="123" width="520" height="638" key="DiffContextDialog" timestamp="1592498958666">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="820" y="123" width="520" height="638" key="DiffContextDialog/0.23.1440.838@0.23.1440.838" timestamp="1592498958666" />
   </component>
 </project>

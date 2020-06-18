@@ -69,7 +69,8 @@
                                 </ul>
                                 <!-- Appointment Button -->
                                 <div id="on_btn">
-                                  <a id = "log-memu" href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    <a id="log-memu" href="log_in.html" type="button"
+                                       class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
                                 </div>
                             </div>
                         </nav>
@@ -126,46 +127,74 @@
 
 <script src="config.js"></script>    <!-- hosting info -->
 
+<script src="account.js"></script>
+
 <script type="text/javascript">
     var database = firebase.database();
     var ref = database.ref('ReservationDetail/');
+    var userRef = database.ref('User/');
+    var currentUser;
+    var mode;
 
+    //현재 유저의 이메일
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            console.log(user.email);
+            currentUser = user.email;
+        }
+    });
+
+    //Admin인지 Member인지 확인
+    userRef.on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+            data.forEach(function (ids){
+                if(currentUser===ids.val().email){
+                    mode = data.key
+                    console.log("mode", mode);
+                }
+            });
+        });
+    });
+
+    //currentUser가 Member인 경우
     ref.on("value", function (snapshot) {
         snapshot.forEach(function (data) {
-            var key = data.key
-            var number = 'No.' + data.val().reservationNumber;
-            var hospital = data.val().hospital;
-            var type = data.val().reservationType;
-            var time = data.val().date + ' ' + data.val().time;
-            var completion = data.val().completion;
+            if(data.val().clientId === currentUser){
+                var key = data.key
+                var number = 'No.' + data.val().reservationNumber;
+                var hospital = data.val().hospital;
+                var purpose = data.val().purpose;
+                var time = data.val().date + ' ' + data.val().time;
+                var completion = data.val().completion;
 
-            if (completion == 'false') {
-                $("#card-area").append("<div class=\"card m-3\">" +
-                    "                       <div class=\"card-body\">\n" +
-                    "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
-                    "                            <h4 class=\"card-title\">" + hospital + "</h4>\n" +
-                    "                            <p class=\"card-text mb-0\">" + type + "</p>\n" +
-                    "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
-                    "                            <div class=\"text-right\">\n" +
-                    "                                <a href=\"#\" onclick=\"modify('" + key + "');\" class=\"card-link mr-3\">예약 수정</a>\n" +
-                    "                                <a href=\"#\" onclick=\"cancel('" + key + "');\" class=\"card-link mr-3\">예약 취소</a>\n" +
-                    "                            </div>\n" +
-                    "                        </div>" +
-                    "</div>");
-            }
+                if (completion === 'false') {
+                    $("#card-area").append("<div class=\"card m-3\">" +
+                        "                       <div class=\"card-body\">\n" +
+                        "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
+                        "                            <h4 class=\"card-title\">" + hospital + "</h4>\n" +
+                        "                            <p class=\"card-text mb-0\">" + purpose + "</p>\n" +
+                        "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
+                        "                            <div class=\"text-right\">\n" +
+                        "                                <a href=\"#\" onclick=\"modify('" + key + "');\" class=\"card-link mr-3\">예약 수정</a>\n" +
+                        "                                <a href=\"#\" onclick=\"cancel('" + key + "');\" class=\"card-link mr-3\">예약 취소</a>\n" +
+                        "                            </div>\n" +
+                        "                        </div>" +
+                        "</div>");
+                }
 
-            //취소나 완료된 경우
-            if (completion == 'true') {
-                $("#cancel-area").append("<div class=\"card m-3\">" +
-                    "                       <div class=\"card-body\">\n" +
-                    "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
-                    "                            <h4 class=\"card-title\">" + hospital + "</h4>\n" +
-                    "                            <p class=\"card-text mb-0\">" + type + "</p>\n" +
-                    "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
-                    "                            <div class=\"text-right\">\n" +
-                    "                            </div>\n" +
-                    "                        </div>" +
-                    "</div>");
+                //취소나 완료된 경우
+                if (completion === 'true') {
+                    $("#cancel-area").append("<div class=\"card m-3\">" +
+                        "                       <div class=\"card-body\">\n" +
+                        "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
+                        "                            <h4 class=\"card-title\">" + hospital + "</h4>\n" +
+                        "                            <p class=\"card-text mb-0\">" + purpose + "</p>\n" +
+                        "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
+                        "                            <div class=\"text-right\">\n" +
+                        "                            </div>\n" +
+                        "                        </div>" +
+                        "</div>");
+                }
             }
         });
     });
@@ -176,8 +205,6 @@
                 completion: "true"
             })
             window.location.reload();
-            // history.go();
-            // window.location.href = window.location.href;
             return true;
         } else {
             return false;
