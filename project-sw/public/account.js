@@ -119,7 +119,6 @@ function log(id){
   if(html.innerHTML == "Hospital Information"){
     firebase.auth().onAuthStateChanged(function(user) {
          if (user) {
-           alert(html.innerHTML);
            html.setAttribute("href","hospital_info.html");
          } else {
            html.setAttribute("href","log_in.html");
