@@ -9,6 +9,7 @@ firebase.auth().onAuthStateChanged(function(user){
   }
 });
 
+/*
 function login(){
   var userEmail=document.getElementById("userEmail").value;
   var userPass=document.getElementById("userPass").value;
@@ -20,12 +21,43 @@ function login(){
     window.alert("Error: "+errorMessage);
   });
   window.alert("Sign in complete!");
+}*/
+function login(){
+  var userEmail=document.getElementById("userEmail").value;
+  var userPass=document.getElementById("userPass").value;
+
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(){
+      window.alert("Log in complete! Thank you.");
+      window.location.href = 'index.html';
+  }).catch(function(error){
+      window.alert("Log-in fail! ");
+  });
 }
 
 function logout(){
-  firebase.auth().signOut();
+  firebase.auth().signOut().then(function(){
+     alert("log out success!");
+     window.location.href = 'index.html';
+  }, function(error){
+     alert("log out fail!");
+  });
 }
 
+
+
+$('#btn_signup').click(function(){
+  var signup_mail = $('#email').val();
+  var signup_password = $('#password').val();
+
+  firebase.auth().createUserWithEmailAndPassword(signup_mail, signup_password).then(function(){
+    alert("Sign up success! Please Log-in.");
+    firebase.auth().signOut();
+    window.location.href = 'log_in.html';
+  }).catch(function(error){
+    alert("Sign up fail!");
+  });
+
+});
 function aut_signUp(){
   var username=document.getElementById("username").value;
   var email=document.getElementById("email").value;
@@ -36,6 +68,7 @@ function aut_signUp(){
   var birthday=document.getElementById("birthday").value;
   var hospital_name=document.getElementById("hospital_name").value;
   var area=document.getElementById("area").value;
+
   if(password==retype_password){
     var rootRef = firebase.database().ref('User/Admin/');
     rootRef.push({
@@ -48,7 +81,6 @@ function aut_signUp(){
       hospital_name:hospital_name,
       area:area
     });
-    window.alert("Welcome! Please login again");
   }
   else{
     window.alert("Password inconsistency detected");
