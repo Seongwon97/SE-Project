@@ -73,10 +73,10 @@ function aut_signUp(){
       alert("Sign up success! Please Log-in.");
       setTimeout(function(){
       firebase.auth().signOut();
-      window.location.href = 'log_in.html';},1000);
+      window.location.href = 'log_in.html';},2000);
 
     }).catch(function(error){
-      alert("Sign up fail!  Please enter more long password!");
+      alert("Sign up fail!  Please enter more long password! more than 6 digits.");
     });
   }
   else{
@@ -113,9 +113,9 @@ function mem_signUp(){
       alert("Sign up success! Please Log-in.");
       setTimeout(function(){
       firebase.auth().signOut();
-      window.location.href = 'log_in.html';},1000);
+      window.location.href = 'log_in.html';},2000);
     }).catch(function(error){
-      alert("Sign up fail! Please enter more long password!");
+      alert("Sign up fail! Please enter more long password! more than 6 digits.");
     });
   }
   else{
