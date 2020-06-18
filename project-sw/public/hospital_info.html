@@ -61,10 +61,7 @@
                                     </ul>
                                     <!-- Appointment Button -->
                                     <div id="on_btn">
-                                      <a href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
-                                    </div>
-                                    <div id="off_btn">
-                                      <a href="#" type="button" class="btn medilife-appoint-btn ml-30 " onclick="logout()">Logout</a>
+                                      <a id = "log-memu" href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
                                     </div>
                                 </div>
                             </nav>
@@ -306,7 +303,7 @@
       });
     }*/
     function searchHospitalInfo1(area){   //name, ti, pa, be, ho
-      
+
       inputArea(area);
       alert("Success! Please wait a moment!")
       name =  document.getElementById('hosName').value;

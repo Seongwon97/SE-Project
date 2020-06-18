@@ -1,11 +1,16 @@
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
-    document.getElementById("off_btn").style.display="block"
-    document.getElementById("on_btn").style.display="none"
+    var log = document.getElementById("log-memu");
+
+    log.innerHTML = "My Page";
+    log.setAttribute("href","MyPage.html");
+
+    //document.getElementById("off_btn").style.display="block"
+    //document.getElementById("on_btn").style.display="none"
   }
   else{
-    document.getElementById("off_btn").style.display="none"
-    document.getElementById("on_btn").style.display="block"
+  //document.getElementById("off_btn").style.display="none"
+    //document.getElementById("on_btn").style.display="block"
   }
 });
 
@@ -144,4 +149,8 @@ function log(id){
          }
     });
   }
+}
+
+function home(){
+  window.location.href = 'index.html';
 }
