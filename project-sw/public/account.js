@@ -1,7 +1,7 @@
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
     var log = document.getElementById("log-memu");
-    log.innerHTML = "My Page";
+    log.innerHTML = "My Page/Sign-out";
     log.setAttribute("href","index.html");
     var ref = firebase.database().ref("User/Admin/");
     ref.on("value", function (snapshot) {
