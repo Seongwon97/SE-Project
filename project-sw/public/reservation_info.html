@@ -104,7 +104,7 @@
                 <div id="card-area" class="col-12" style="padding-top: 10px; padding-bottom: 50px">
 
                 </div>
-                <h3 class="breadcumb-content">지난 예약 & 취소된 예약</h3>
+                <h3 class="breadcumb-content" id="cancel_text"></h3>
                 <div id="cancel-area" class="col-12" style="padding-top: 10px; padding-bottom: 200px">
 
                 </div>
@@ -135,31 +135,33 @@
     var userRef = database.ref('User/');
     var currentUser;
     var mode;
+    var exist = false;
+
+    var currentTime = new Date();
 
     $(document).ready(function () {
 
         //현재 유저의 이메일
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-                console.log(user.email);
                 currentUser = user.email;
             }
         });
 
-        //Admin인지 Member인지 확인
-        userRef.on("value", function (snapshot) {
-            snapshot.forEach(function (data) {
-                data.forEach(function (ids) {
-                    if (currentUser === ids.val().email) {
-                        mode = data.key
-                        console.log("mode", mode);
-                    }
-                });
-            });
-        });
+        // //Admin인지 Member인지 확인
+        // userRef.on("value", function (snapshot) {
+        //     snapshot.forEach(function (data) {
+        //         data.forEach(function (ids) {
+        //             if (currentUser === ids.val().email) {
+        //                 mode = data.key
+        //                 console.log("mode", mode);
+        //             }
+        //         });
+        //     });
+        // });
 
         //currentUser가 Member인 경우
-        ref.on("value", function (snapshot) {
+        ref.once("value", function (snapshot) {
             snapshot.forEach(function (data) {
                 if (data.val().clientId === currentUser) {
                     var key = data.key
@@ -168,8 +170,18 @@
                     var purpose = data.val().purpose;
                     var time = data.val().date + ' ' + data.val().time;
                     var completion = data.val().completion;
+                    var strArray = data.val().date.split('-');
+                    var cancel = data.val().cancel;
 
-                    if (completion === 'false') {
+                    //시간이 지난 예약인지 확인 (날짜, 시간)
+                    if (isExpired(strArray, data.val().time.replace("시", ""))) {
+                        ref.child(key).update({
+                            completion: 'true'
+                        });
+                    }
+
+                    //취소도 안되고 완료도 안된 예약
+                    if (completion === 'false' && cancel !== 'true') {
                         $("#card-area").append("<div class=\"card m-3\">" +
                             "                       <div class=\"card-body\">\n" +
                             "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
@@ -177,15 +189,19 @@
                             "                            <p class=\"card-text mb-0\">" + purpose + "</p>\n" +
                             "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
                             "                            <div class=\"text-right\">\n" +
-                            "                                <a href=\"#\" onclick=\"modify('" + key + "');\" class=\"card-link mr-3\">예약 수정</a>\n" +
-                            "                                <a href=\"#\" onclick=\"cancel('" + key + "');\" class=\"card-link mr-3\">예약 취소</a>\n" +
+                            "                                <a href=\"#\" onclick=\"modify('" + key + "');\" class=\"card-link mr-3\">Modify</a>\n" +
+                            "                                <a href=\"#\" onclick=\"cancel('" + key + "');\" class=\"card-link mr-3\">Cancel</a>\n" +
                             "                            </div>\n" +
                             "                        </div>" +
                             "</div>");
                     }
 
                     //취소나 완료된 경우
-                    if (completion === 'true') {
+                    if (completion === 'true' || cancel === 'true') {
+                        if (exist === false) {
+                            document.getElementById("cancel_text").textContent = "Last reservations & Cancelled reservations"
+                            exist = true;
+                        }
                         $("#cancel-area").append("<div class=\"card m-3\">" +
                             "                       <div class=\"card-body\">\n" +
                             "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
@@ -202,9 +218,8 @@
         });
 
         //currentUser가 Admin인 경우
-        ref.on("value", function (snapshot) {
+        ref.once("value", function (snapshot) {
             snapshot.forEach(function (data) {
-                console.log(data.val().hospitalAdminEmail);
                 if (data.val().hospitalAdminEmail === currentUser) {
                     var key = data.key
                     var number = 'No.' + data.val().reservationNumber;
@@ -218,8 +233,18 @@
                     var completion = data.val().completion;
                     var phoneNum = data.val().phoneNum;
                     var message = data.val().message;
+                    var strArray = data.val().date.split('-');
+                    var cancel = data.val().cancel;
 
-                    if (completion === 'false') {
+                    //시간이 지난 예약인지 확인 (날짜, 시간)
+                    if (isExpired(strArray, data.val().time.replace("시", ""))) {
+                        ref.child(key).update({
+                            completion: 'true'
+                        });
+                    }
+
+                    //취소도 안되고 완료도 안된 예약
+                    if (completion === 'false' && cancel !== 'true') {
                         $("#card-area").append("<div class=\"card border-dark m-3\">\n" +
                             "                            <div class=\"card-header mb-0\">" +
                             "<div class=\"row\">" +
@@ -254,7 +279,11 @@
                     }
 
                     //취소나 완료된 경우
-                    if (completion === 'true') {
+                    if (completion === 'true' || cancel === 'true') {
+                        if (exist === false) {
+                            document.getElementById("cancel_text").textContent = "Last reservations & Cancelled reservations"
+                            exist = true;
+                        }
                         $("#cancel-area").append("<div class=\"card border-dark m-3\">\n" +
                             "                            <div class=\"card-header mb-0\">" +
                             "<div class=\"row\">" +
@@ -270,15 +299,15 @@
                             "<div class=\"row\">" +
                             "<div class=\"col-sm-6\">" +
                             "                            <h5 class=\"card-title\">" + petName + "</h5>\n" +
-                            "                            <p class=\"card-text mb-0\">" + "종: " + petSpecies + "</p>\n" +
-                            "                            <p class=\"card-text mb-0\">" + "나이: " + petAge + "</p>\n" +
-                            "                            <p class=\"card-text mb-0\">" + "성별: " + petGender + "</p>\n" +
+                            "                            <p class=\"card-text mb-0\">" + "Species: " + petSpecies + "</p>\n" +
+                            "                            <p class=\"card-text mb-0\">" + "Age: " + petAge + "</p>\n" +
+                            "                            <p class=\"card-text mb-0\">" + "Gender: " + petGender + "</p>\n" +
                             "</div>" +
                             "<div class=\"col-sm-6\">" +
                             "                            <h5 class=\"card-title\">" + clientName + "</h5>\n" +
-                            "                            <p class=\"card-text mb-0\">" + "연락처: " + phoneNum + "</p>\n" +
-                            "                            <p class=\"card-text mb-0\">" + "방문목적: " + purpose + "</p>\n" +
-                            "                            <p class=\"card-text mb-0\">" + "메시지: " + message + "</p>\n" +
+                            "                            <p class=\"card-text mb-0\">" + "Phone: " + phoneNum + "</p>\n" +
+                            "                            <p class=\"card-text mb-0\">" + "Purpose: " + purpose + "</p>\n" +
+                            "                            <p class=\"card-text mb-0\">" + "Note: " + message + "</p>\n" +
                             "                        </div>" +
                             "</div>" +
                             "                        </div>" +
@@ -293,7 +322,7 @@
     function cancel(param) {
         if (confirm('예약을 취소하시겠습니까?')) {
             ref.child(param).update({
-                completion: "true",
+                cancel: "true",
                 time: ""
             })
             window.location.reload();
@@ -307,10 +336,23 @@
         window.location.href = "reservation_modify.html?param=" + param;
     }
 
-    //데이터베이스 변경 감지되었을 때
-    ref.on("child_changed", function(snapshot){
-        window.location.reload();
-    });
+    // //데이터베이스 변경 감지되었을 때
+    // ref.on("child_changed", function(snapshot){
+    //     window.location.reload();
+    // });
+
+    function isExpired(compareStr, compareTime) {
+        var compareDate = new Date();
+
+        compareDate.setFullYear(compareStr[0] * 1);
+        compareDate.setMonth(compareStr[1] * 1 - 1);
+        compareDate.setDate(compareStr[2] * 1);
+        compareDate.setHours(compareTime * 1, 0, 0, 0);
+
+        //현재 시각보다 예약시간이 지난 경우 true 리턴
+        return currentTime >= compareDate;
+
+    }
 
 </script>
 
