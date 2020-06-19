@@ -158,7 +158,7 @@
                                             </div>
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
-                                                    <input type="date" class="form-control" onchange="dateSelected(event);" name="date" id="date" placeholder="Date">
+                                                    <input type="date" class="form-control" onchange="dateSelected(event);" name="date" id="date" min="" placeholder="Date">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-4">
@@ -469,11 +469,12 @@
 
 
 
+
     <script type = "text/javascript">
     var reservationNum=0;
     var adminId="";
-    //document.getElementById('date').value = new Date().toISOString().substring(0, 10);
-
+    var today = new Date();
+    date.min = new Date(today.valueOf() + (24*60*60*1000)).toISOString().substring(0, 10);
     //지역 선택시 두번쨰 selcet의 option을 변경
   function categoryChange1(e) {
 
