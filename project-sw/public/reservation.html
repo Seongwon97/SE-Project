@@ -503,6 +503,8 @@
             });
         }
       });
+      document.getElementById('date').value = "";
+      document.getElementById('time').value = "Time";
     }
 
 
@@ -575,6 +577,7 @@
                 });
             }
           });
+          setTimeout(function(){
           available=[]
           for(i=openH; i<closeH; i++){
             var temp=String(i);
@@ -586,6 +589,7 @@
               target.appendChild(opt);
             }
           }
+        },500);
     }
 
 
@@ -636,6 +640,8 @@
               });
           }
         });
+        document.getElementById('date').value = "";
+        document.getElementById('time').value = "Time";
     }
 
 
