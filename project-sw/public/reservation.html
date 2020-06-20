@@ -158,7 +158,7 @@
                                             </div>
                                             <div class="col-12 col-md-4">
                                                 <div class="form-group">
-                                                    <input type="date" class="form-control" onchange="dateSelected(event);" name="date" id="date" placeholder="Date">
+                                                    <input type="date" class="form-control" onchange="dateSelected(event);" name="date" id="date" min="" placeholder="Date">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-4">
@@ -432,45 +432,52 @@
     </div>
 
 
+    <script>
+      setTimeout(function(){
+      firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+          var ref = firebase.database().ref("User/Admin/");
+          ref.on("value", function (snapshot) {
+              snapshot.forEach(function (data) {
+                if(data.val().email == firebase.auth().currentUser.email){
+                    document.getElementById("name").value = data.val().username;
+                    document.getElementById("phone").value = data.val().phone_num;
+
+                }
+            });
+
+          });
+
+          ref = firebase.database().ref('User/Member/');
+          ref.on("value", function (snapshot) {
+              snapshot.forEach(function (data) {
+                if(data.val().email == firebase.auth().currentUser.email){
+
+                    document.getElementById("name").value = data.val().username;
+                    document.getElementById("phone").value = data.val().phone_num;
+                }
+            });
+
+          });
+
+        }
+      });
+      },2000);
+  </script>
+
+
+
 
 
 
     <script type = "text/javascript">
-    //userID는 현재 접속중인 유저의 아이디 저장
-    var userId="";
     var reservationNum=0;
     var adminId="";
-    $(document).ready(function(){
-      var ref = firebase.database().ref("Hospital_Info/");
-      var id=firebase.auth().currentUser.email;
-      alert(id);
-
-      //사용자의 이메일과 전화번호 가져와서 저장
-      var name="";
-      var phone="";
-      var ref = firebase.database().ref("User/Member/");
-      ref.on("value", function(snapshot){
-          for(i = 0; i< Object.keys(snapshot.val()).length; i++){
-            var a = firebase.database().ref("User/Member/" + Object.keys(snapshot.val())[i]);
-
-            a.on("value", function(snapshot){
-              var t = Object.values(snapshot.val());
-              if((t[2] == userId)){
-                name=t[6];
-                phone=t[5];
-                }
-              });
-          }
-        });
-
-      document.getElementById('name').value=name;
-      document.getElementById('phone').value=phone;
-    });
-
-    //document.getElementById('date').value = new Date().toISOString().substring(0, 10);
-
+    var today = new Date();
+    date.min = new Date().toISOString().substring(0, 10);
     //지역 선택시 두번쨰 selcet의 option을 변경
   function categoryChange1(e) {
+
     var ref = firebase.database().ref("Hospital_Info/");
     var target = document.getElementById("hospital");
     target.options.length = 0;
@@ -497,6 +504,8 @@
             });
         }
       });
+      document.getElementById('date').value = "";
+      document.getElementById('time').value = "Time";
     }
 
 
@@ -569,6 +578,7 @@
                 });
             }
           });
+          setTimeout(function(){
           available=[]
           for(i=openH; i<closeH; i++){
             var temp=String(i);
@@ -580,6 +590,7 @@
               target.appendChild(opt);
             }
           }
+        },500);
     }
 
 
@@ -630,12 +641,15 @@
               });
           }
         });
+        document.getElementById('date').value = "";
+        document.getElementById('time').value = "Time";
     }
 
 
 
     //예약 정보 저장하는 함수
     function reserve(){
+      var userId=firebase.auth().currentUser.email;
       var area=document.getElementById('area');
       var area_v=area.options[area.selectedIndex].value;
       var hospital =document.getElementById('hospital');
@@ -675,7 +689,7 @@
             hospital: hospital_v,
             hospitalAdminEmail: adminId,
             completion: "false",
-            purose: purpose_v,
+            purpose: purpose_v,
             date: date_v,
             time: time_v,
             petName: petName_v,
