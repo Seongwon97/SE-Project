@@ -177,7 +177,6 @@
                     var completion = data.val().completion;
                     var strArray = data.val().date.split('-');
                     var cancel = data.val().cancel;
-                    var petName = data.val().petName;
 
                     //시간이 지난 예약인지 확인 (날짜, 시간)
                     if (isExpired(strArray, data.val().time.replace("시", ""))) {
@@ -192,7 +191,6 @@
                             "                       <div class=\"card-body\">\n" +
                             "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
                             "                            <h4 class=\"card-title\">" + hospital + "</h4>\n" +
-                            "                            <p class=\"card-text mb-0\">" + petName + "</p>\n" +
                             "                            <p class=\"card-text mb-0\">" + purpose + "</p>\n" +
                             "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
                             "                            <div class=\"text-right\">\n" +
