@@ -24,6 +24,10 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script crc="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="resource/alertify.core.css"/>
+    <link rel="stylesheet" href="resource/alertify.default.css" id = "toggleCSS"/>
+    <script src="resource/alertify.min.js"></script>
 
   </head>
   <body>
@@ -179,7 +183,7 @@
                  html.setAttribute("href","hospital_info.html");
                } else {
                  html.setAttribute("href","log_in.html");
-                 alert("Please Log-in to use the service.");
+                 alertify.alert("Please Log-in to use the service.");
                }
           });
         }
@@ -189,7 +193,7 @@
                  html.setAttribute("href","reservation.html");
                } else {
                  html.setAttribute("href","log_in.html");
-                 alert("Please Log-in to use the service.");
+                 alertify.alert("Please Log-in to use the service.");
                }
           });
         }
@@ -199,7 +203,7 @@
                  html.setAttribute("href","reservation_info.html");
                } else {
                  html.setAttribute("href","log_in.html");
-                 alert("Please Log-in to use the service.");
+                 alertify.alert("Please Log-in to use the service.");
                }
           });
         }

@@ -28,19 +28,19 @@ function login(){
   var userPass=document.getElementById("userPass").value;
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(){
-      window.alert("Log in complete! Thank you.");
+      alertify.alert("Log in complete! Thank you.");
       window.location.href = 'index.html';
   }).catch(function(error){
-      window.alert("Log-in fail! ");
+      alertify.alert("Log-in fail! ");
   });
 }
 
 function logout(){
   firebase.auth().signOut().then(function(){
-     alert("log out success!");
+     alertify.alert("log out success!");
      window.location.href = 'index.html';
   }, function(error){
-     alert("log out fail!");
+     alertify.alert("log out fail!");
   });
 }
 
@@ -70,21 +70,26 @@ function aut_signUp(){
         hospital_name:hospital_name,
         area:area
       });
-      alert("Sign up success! Please Log-in.");
+      alertify.alert("Sign up success! Please Log-in.");
       setTimeout(function(){
       firebase.auth().signOut();
       window.location.href = 'log_in.html';},2000);
 
     }).catch(function(error){
-      alert("Sign up fail!  Please enter more long password! more than 6 digits.");
+      if(password.toString().length <=5){
+        alertify.alert("Sign up fail! Please enter more long password! more than 6 digits.");
+      }
+      else {
+        alertify.alert("Sign ip fail! Please enter different E-mail.");
+      }
     });
   }
   else{
     if(password!=retype_password){
-      window.alert("Password inconsistency detected");
+      alertify.alert("Password inconsistency detected");
     }
     else{
-      alert("Sign up fail! Please enter all details");
+      alertify.alert("Sign up fail! Please enter all details");
     }
   }
 
@@ -110,20 +115,25 @@ function mem_signUp(){
           phone_num:phone_num,
           birthday:birthday
         });
-      alert("Sign up success! Please Log-in.");
+      alertify.alert("Sign up success! Please Log-in.");
       setTimeout(function(){
       firebase.auth().signOut();
       window.location.href = 'log_in.html';},2000);
     }).catch(function(error){
-      alert("Sign up fail! Please enter more long password! more than 6 digits.");
+      if(password.toString().length <=5){
+        alertify.alert("Sign up fail! Please enter more long password! more than 6 digits.");
+      }
+      else {
+        alertify.alert("Sign ip fail! Please enter different E-mail.");
+      }
     });
   }
   else{
     if(password!=retype_password){
-      window.alert("Password inconsistency detected");
+      alertify.alert("Password inconsistency detected");
     }
     else{
-      alert("Sign up fail! Please enter all details");
+      alertify.alert("Sign up fail! Please enter all details");
     }
   }
 
@@ -139,7 +149,7 @@ function log(id){
            html.setAttribute("href","hospital_info.html");
          } else {
            html.setAttribute("href","log_in.html");
-           alert("Please Log-in to use the service.");
+           alertify.alert("Please Log-in to use the service.");
          }
     });
   }
@@ -149,7 +159,7 @@ function log(id){
            html.setAttribute("href","reservation.html");
          } else {
            html.setAttribute("href","log_in.html");
-           alert("Please Log-in to use the service.");
+           alertify.alert("Please Log-in to use the service.");
          }
     });
   }
@@ -159,7 +169,7 @@ function log(id){
            html.setAttribute("href","reservation_info.html");
          } else {
            html.setAttribute("href","log_in.html");
-           alert("Please Log-in to use the service.");
+           alertify.alert("Please Log-in to use the service.");
          }
     });
   }
@@ -199,12 +209,16 @@ function aut_modify(){
                 hospital_name :hospital_name,
                 area:area
               });
-              window.alert("Modify complete!");
+              alertify.alert("Modify complete!");
               window.location.href = 'index.html';
             }).catch(function(error) {
+              user.updatePassword(data.val().password).then(function(){
+                alertify.alert("Please enter different E-mail.");
+              }).catch(function(error){
+              });
             });
           }).catch(function(error) {
-              window.alert("Please enter the more long password!")
+              alertify.alert("Please enter the more long password!")
           });
 
         }
@@ -239,12 +253,16 @@ function mem_modify(){
                   phone_num:phone_num,
                   birthday:birthday
                 });
-                window.alert("Modify complete!");
+                alertify.alert("Modify complete!");
                 window.location.href = 'index.html';
               }).catch(function(error) {
+                user.updatePassword(data.val().password).then(function(){
+                  alertify.alert("Please enter different E-mail.");
+                }).catch(function(error){
+                });
               });
             }).catch(function(error) {
-              window.alert("Please enter the more long password!")
+              alertify.alert("Please enter the more long password!")
             });
 
         }
@@ -267,10 +285,10 @@ function mem_withdraw(){
           var user = firebase.auth().currentUser;
           user.delete().then(function() {
             rootRef.remove();
-            window.alert("Delete complete!");
+            alertify.alert("Delete complete!");
             window.location.href = 'index.html';
           }).catch(function(error) {
-            window.alert("Delete fail!");
+            alertify.alert("Delete fail!");
           });
 
         }
@@ -295,10 +313,10 @@ function auth_withdraw(){
           var user = firebase.auth().currentUser;
           user.delete().then(function() {
             rootRef.remove();
-            window.alert("Delete complete!");
+            alertify.alert("Delete complete!");
             window.location.href = 'index.html';
           }).catch(function(error) {
-            window.alert("Delete fail!");
+            alertify.alert("Delete fail!");
           });
 
         }

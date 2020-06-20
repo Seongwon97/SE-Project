@@ -23,7 +23,11 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-
+    <script crc="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="resource/alertify.core.css"/>
+    <link rel="stylesheet" href="resource/alertify.default.css" id = "toggleCSS"/>
+    <script src="resource/alertify.min.js"></script>
+    
   </head>
   <body>
     <!-- Preloader -->
@@ -305,7 +309,7 @@
     function searchHospitalInfo1(area){   //name, ti, pa, be, ho
 
       inputArea(area);
-      alert("Success! Please wait a moment!")
+      alertify.alert("Success! Please wait a moment!")
       name =  document.getElementById('hosName').value;
       ti = document.getElementById('time').value;
       pa = document.getElementById('parking').value;
