@@ -98,6 +98,7 @@ function aut_signUp(){
       hospital_name:hospital_name,
       area:area
     });
+    window.alert("Welcome! Please login again");
   }
   else{
     window.alert("Password inconsistency detected");
@@ -165,4 +166,45 @@ function log(id){
 
 function home(){
   window.location.href = 'index.html';
+}
+
+function aut_modify(){
+  var username=document.getElementById("username").value;
+  var email=document.getElementById("email").value;
+  var password=document.getElementById("password").value;
+  var address=document.getElementById("address").value;
+  var phone_num=document.getElementById("phone_num").value;
+  var birthday=document.getElementById("birthday").value;
+  var hospital_name=document.getElementById("hospital_name").value;
+  var area=document.getElementById("area").value;var rootRef = firebase.database().ref('User/Member/');
+    ref.update({
+      username:username,
+      email:email,
+      password:password,
+      address:address,
+      phone_num:phone_num,
+      birthday:birthday
+    });
+    window.alert("Modify complete!");
+    window.location.href = 'index.html';
+}
+
+function mem_modify(){
+  var username=document.getElementById("username").value;
+  var email=document.getElementById("email").value;
+  var password=document.getElementById("password").value;
+  var address=document.getElementById("address").value;
+  var phone_num=document.getElementById("phone_num").value;
+  var birthday=document.getElementById("birthday").value;
+  var rootRef = firebase.database().ref('User/Member/');
+    ref.update({
+      username:username,
+      email:email,
+      password:password,
+      address:address,
+      phone_num:phone_num,
+      birthday:birthday
+    });
+    window.alert("Modify complete!");
+    window.location.href = 'index.html';
 }
