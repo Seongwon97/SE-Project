@@ -142,14 +142,16 @@ function mem_signUp(){
 
 
 function log(id){
+
   html = document.getElementById(id);
   if(html.innerHTML == "Hospital Information"){
     firebase.auth().onAuthStateChanged(function(user) {
          if (user) {
            html.setAttribute("href","hospital_info.html");
          } else {
-           html.setAttribute("href","log_in.html");
            alertify.alert("Please Log-in to use the service.");
+           setTimeout(function(){window.location.href = 'log_in.html';},1500);
+
          }
     });
   }
@@ -158,8 +160,8 @@ function log(id){
          if (user) {
            html.setAttribute("href","reservation.html");
          } else {
-           html.setAttribute("href","log_in.html");
            alertify.alert("Please Log-in to use the service.");
+           setTimeout(function(){window.location.href = 'log_in.html';},1500);
          }
     });
   }
@@ -168,8 +170,8 @@ function log(id){
          if (user) {
            html.setAttribute("href","reservation_info.html");
          } else {
-           html.setAttribute("href","log_in.html");
            alertify.alert("Please Log-in to use the service.");
+           setTimeout(function(){window.location.href = 'log_in.html';},1500);
          }
     });
   }
@@ -192,38 +194,50 @@ function aut_modify(){
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
         if(data.val().email == firebase.auth().currentUser.email){
+          var buf = data.val().email;
           var key = data.key;
-          var rootRef = firebase.database().ref('User/Admin/'+ key +'/');
-          var user = firebase.auth().currentUser;
-          user.updatePassword(password).then(function() {
-            user.updateEmail(email).then(function() {
-              rootRef.update({
-                username:username,
-                email:email,
-                password:password,
-                address:address,
-                phone_num:phone_num,
-                birthday:birthday,
-                hospital_name :hospital_name,
-                area:area
-              });
-              alertify.alert("Modify complete!");
-              setTimeout(function(){window.location.href = 'index.html';},1000);
-            }).catch(function(error) {
-              user.updatePassword(data.val().password).then(function(){
-                alertify.alert("Please enter different E-mail.");
-              }).catch(function(error){
-              });
+          var rootRef = firebase.database().ref('User/Admin/' + key + '/');
+
+            var user = firebase.auth().currentUser;
+            if(password != data.val().password || email != data.val().email){
+              user.updatePassword(password).then(function() {
+                user.updateEmail(email).then(function() {
+                }).catch(function(error){
+                  user.updatePassword(data.val().password).then(function(){
+                    alertify.alert("Please enter different E-mail.");
+                    return;
+                  }).catch(function(error){
+                  });
+                });
+              }).catch(function(error) {
+                  alertify.alert("Please enter the more long password!");
+                  return;
+                });
+            }
+
+            alertify.alert("Modify complete!");
+            rootRef.update({
+              username:username,
+              email:email,
+              password:password,
+              address:address,
+              phone_num:phone_num,
+              birthday:birthday,
+              hospital_name :hospital_name,
+              area:area
             });
-          }).catch(function(error) {
-              alertify.alert("Please enter the more long password!")
-          });
+            setTimeout(function(){if(email != buf){
+                alertify.alert("Changed your E-mail. Please reLogin!");
+                firebase.auth().signOut();
+            }},2000);
+            setTimeout(function(){window.location.href = 'index.html';},4000);
 
-        }
+          }
+      });
     });
-  });
 
-}
+  }
+
 
 function mem_modify(){
   var username=document.getElementById("username").value;
@@ -237,31 +251,41 @@ function mem_modify(){
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
         if(data.val().email == firebase.auth().currentUser.email){
+          var buf = data.val().email;
           var key = data.key;
           var rootRef = firebase.database().ref('User/Member/' + key + '/');
 
             var user = firebase.auth().currentUser;
-            user.updatePassword(password).then(function() {
-              user.updateEmail(email).then(function() {
-                rootRef.update({
-                  username:username,
-                  email:email,
-                  password:password,
-                  address:address,
-                  phone_num:phone_num,
-                  birthday:birthday
-                });
-                alertify.alert("Modify complete!");
-                setTimeout(function(){window.location.href = 'index.html';},1000);
-              }).catch(function(error) {
-                user.updatePassword(data.val().password).then(function(){
-                  alertify.alert("Please enter different E-mail.");
+            if(password != data.val().password || email != data.val().email){
+              user.updatePassword(password).then(function() {
+                user.updateEmail(email).then(function() {
                 }).catch(function(error){
+                  user.updatePassword(data.val().password).then(function(){
+                    alertify.alert("Please enter different E-mail.");
+                    return;
+                  }).catch(function(error){
+                  });
                 });
-              });
-            }).catch(function(error) {
-              alertify.alert("Please enter the more long password!")
+              }).catch(function(error) {
+                  alertify.alert("Please enter the more long password!");
+                  return;
+                });
+            }
+
+            alertify.alert("Modify complete!");
+            rootRef.update({
+              username:username,
+              email:email,
+              password:password,
+              address:address,
+              phone_num:phone_num,
+              birthday:birthday
             });
+            setTimeout(function(){if(email != buf){
+                alertify.alert("Changed your E-mail. Please reLogin!");
+                firebase.auth().signOut();
+            }},2000);
+            setTimeout(function(){window.location.href = 'index.html';},4000);
 
         }
     });

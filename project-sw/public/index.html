@@ -59,13 +59,13 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a id = "hospital" class="nav-link" onclick="log('hospital');" href="hospital_info.html">Hospital Information</a>
+                                            <a id = "hospital" class="nav-link" onclick="log('hospital');" >Hospital Information</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a id = "reservation" class="nav-link" onclick="log('reservation');" href="reservation.html">Reservation</a>
+                                            <a id = "reservation" class="nav-link" onclick="log('reservation');" >Reservation</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a id = "information" class="nav-link" onclick="log('information');" href="reservation_info.html">Reservation Information</a>
+                                            <a id = "information" class="nav-link" onclick="log('information');" >Reservation Information</a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
@@ -171,47 +171,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <script>
-      function log(id){
-        html = document.getElementById(id);
-        if(html.innerHTML == "Hospital Information"){
-          firebase.auth().onAuthStateChanged(function(user) {
-               if (user) {
-                 html.setAttribute("href","hospital_info.html");
-               } else {
-                 html.setAttribute("href","log_in.html");
-                 alertify.alert("Please Log-in to use the service.");
-               }
-          });
-        }
-        else if(html.innerHTML == "Reservation"){
-          firebase.auth().onAuthStateChanged(function(user) {
-               if (user) {
-                 html.setAttribute("href","reservation.html");
-               } else {
-                 html.setAttribute("href","log_in.html");
-                 alertify.alert("Please Log-in to use the service.");
-               }
-          });
-        }
-        else if(html.innerHTML == "Reservation Information"){
-          firebase.auth().onAuthStateChanged(function(user) {
-               if (user) {
-                 html.setAttribute("href","reservation_info.html");
-               } else {
-                 html.setAttribute("href","log_in.html");
-                 alertify.alert("Please Log-in to use the service.");
-               }
-          });
-        }
-      }
-    </script>
-
-
-
 
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
