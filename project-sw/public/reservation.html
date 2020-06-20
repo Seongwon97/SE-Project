@@ -474,7 +474,7 @@
     var reservationNum=0;
     var adminId="";
     var today = new Date();
-    date.min = new Date(today.valueOf() + (24*60*60*1000)).toISOString().substring(0, 10);
+    date.min = new Date().toISOString().substring(0, 10);
     //지역 선택시 두번쨰 selcet의 option을 변경
   function categoryChange1(e) {
 
