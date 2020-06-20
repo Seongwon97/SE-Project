@@ -188,7 +188,6 @@ function aut_modify(){
   var birthday=document.getElementById("birthday").value;
   var hospital_name=document.getElementById("hospital_name").value;
   var area=document.getElementById("area").value;
-
   var ref = firebase.database().ref("User/Admin/");
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
@@ -196,7 +195,6 @@ function aut_modify(){
           var key = data.key;
           var rootRef = firebase.database().ref('User/Admin/'+ key +'/');
           var user = firebase.auth().currentUser;
-
           user.updatePassword(password).then(function() {
             user.updateEmail(email).then(function() {
               rootRef.update({
