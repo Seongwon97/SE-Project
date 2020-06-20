@@ -568,10 +568,10 @@
               var a = firebase.database().ref("ReservationDetail/" + Object.keys(snapshot.val())[i]);
               a.on("value", function(snapshot){
                 var t = Object.values(snapshot.val());
-                if((t[5] == hospital_v)){
+                if((t[6] == hospital_v)){
                   if(t[0]==area_v){
-                    if(t[4]==e.target.value){
-                      arr.push(t[15]);
+                    if(t[5]==e.target.value){
+                      arr.push(t[16]);
                     }
                   }
                   }
@@ -696,7 +696,8 @@
             petAge: petAge_v,
             petSpecies: petSpecies_v,
             petGender:petGender_v,
-            message: message_v
+            message: message_v,
+            cancel:'false'
           });
           alert("예약되었습니다.");
           document.getElementById('area').value = "지역을 선택해주세요";
