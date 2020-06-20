@@ -25,7 +25,7 @@
 
     <script crc="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="stylesheet" href="resource/alertify.core.css"/>
-    <link rel="stylesheet" href="resource/alertify.default.css" id = "toggleCSS"/>
+    <link rel="stylesheet" href="resource/alertify.default.css" id="toggleCSS"/>
     <script src="resource/alertify.min.js"></script>
 </head>
 
@@ -234,7 +234,7 @@
             });
         });
 
-        // setTimeout(function () {
+        setTimeout(function () {
             var openT = open.toString().split(":");
             var openH = Number(openT[0]);
             var openM = Number(openT[1]);
@@ -248,36 +248,34 @@
             if (closeM > 0) {
                 closeH = closeH + 1;
             }
-        // }, 500);
 
-        //예약정보들을 확인하며 예약이 있는 시간 찾고 select option에 넣는 부분
-        target.options.length = 0;
-        var opt = document.createElement("option");
-        opt.value = origin_time;
-        opt.innerHTML = origin_time;
-        if (document.getElementById('date').value === date) {
-            target.appendChild(opt);
-        }
+            //예약정보들을 확인하며 예약이 있는 시간 찾고 select option에 넣는 부분
+            target.options.length = 0;
+            var opt = document.createElement("option");
+            opt.value = origin_time;
+            opt.innerHTML = origin_time;
+            if (document.getElementById('date').value === date) {
+                target.appendChild(opt);
+            }
 
-        var arr = [];
-        var ref = firebase.database().ref("ReservationDetail/");
+            var arr = [];
+            var ref = firebase.database().ref("ReservationDetail/");
 
-        //예약된 날짜와 같은 날짜의 예약 시간 받아 오는 코드
-        ref.on("value", function (snapshot) {
-            snapshot.forEach(function (data) {
-                if (data.val().hospital === hospital_v) {
-                    if (data.val().area === area_v) {
-                        if (data.val().date === e.target.value) {
-                            arr.push(data.val().time);
-                            console.log(arr);
+            //예약된 날짜와 같은 날짜의 예약 시간 받아 오는 코드
+            ref.on("value", function (snapshot) {
+                snapshot.forEach(function (data) {
+                    if (data.val().hospital === hospital_v) {
+                        if (data.val().area === area_v) {
+                            if (data.val().date === e.target.value) {
+                                arr.push(data.val().time);
+                                console.log(arr);
+                            }
                         }
                     }
-                }
+                });
             });
-        });
 
-        //예약된 시간을 제외한 시간을 출력
-        setTimeout(function () {
+            //예약된 시간을 제외한 시간을 출력
             available = []
             console.log(open);
 
@@ -291,11 +289,31 @@
                     target.appendChild(opt);
                 }
             }
+            sortSelect(target);
+
             //예약 날짜와 선택한 날짜가 같은 경우 예약 시간 추가
             if (document.getElementById('date').value === date) {
                 $("#time").val(origin_time).prop("selected", true);
             }
-        }, 500);
+        }, 1000);
+    }
+
+    function sortSelect(selElem) {
+        var tmpAry = [];
+        for (var i = 0; i < selElem.options.length; i++) {
+            tmpAry[i] = [];
+            tmpAry[i][0] = selElem.options[i].text;
+            tmpAry[i][1] = selElem.options[i].value;
+        }
+        tmpAry.sort();
+        while (selElem.options.length > 0) {
+            selElem.options[0] = null;
+        }
+        for (var i = 0; i < tmpAry.length; i++) {
+            var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+            selElem.options[i] = op;
+        }
+
     }
 
     //Modify 클릭시
@@ -314,10 +332,10 @@
             message: document.getElementById('Message').value
         });
 
-        if (!alert('예약이 수정되었습니다.')) {
-            // They clicked Yes
+        alertify.alert('예약이 수정되었습니다.', function(){
             window.location.href = 'reservation_info.html';
-        }
+        });
+
     }
 
 </script>
