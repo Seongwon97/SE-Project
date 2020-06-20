@@ -78,7 +78,6 @@ function aut_signUp(){
     }).catch(function(error){
       alert("Sign up fail!  Please enter more long password! more than 6 digits.");
     });
-    window.alert("Welcome! Please login again");
   }
   else{
     if(password!=retype_password){
@@ -178,17 +177,40 @@ function aut_modify(){
   var phone_num=document.getElementById("phone_num").value;
   var birthday=document.getElementById("birthday").value;
   var hospital_name=document.getElementById("hospital_name").value;
-  var area=document.getElementById("area").value;var rootRef = firebase.database().ref('User/Member/');
-    ref.update({
-      username:username,
-      email:email,
-      password:password,
-      address:address,
-      phone_num:phone_num,
-      birthday:birthday
+  var area=document.getElementById("area").value;
+
+  var ref = firebase.database().ref("User/Admin/");
+  ref.on("value", function (snapshot) {
+      snapshot.forEach(function (data) {
+        if(data.val().email == firebase.auth().currentUser.email){
+          var key = data.key;
+          var rootRef = firebase.database().ref('User/Admin/'+ key +'/');
+          var user = firebase.auth().currentUser;
+
+          user.updatePassword(password).then(function() {
+            user.updateEmail(email).then(function() {
+              rootRef.update({
+                username:username,
+                email:email,
+                password:password,
+                address:address,
+                phone_num:phone_num,
+                birthday:birthday,
+                hospital_name :hospital_name,
+                area:area
+              });
+              window.alert("Modify complete!");
+              window.location.href = 'index.html';
+            }).catch(function(error) {
+            });
+          }).catch(function(error) {
+              window.alert("Please enter the more long password!")
+          });
+
+        }
     });
-    window.alert("Modify complete!");
-    window.location.href = 'index.html';
+  });
+
 }
 
 function mem_modify(){
@@ -198,15 +220,92 @@ function mem_modify(){
   var address=document.getElementById("address").value;
   var phone_num=document.getElementById("phone_num").value;
   var birthday=document.getElementById("birthday").value;
-  var rootRef = firebase.database().ref('User/Member/');
-    ref.update({
-      username:username,
-      email:email,
-      password:password,
-      address:address,
-      phone_num:phone_num,
-      birthday:birthday
+
+  ref = firebase.database().ref('User/Member/');
+  ref.on("value", function (snapshot) {
+      snapshot.forEach(function (data) {
+        if(data.val().email == firebase.auth().currentUser.email){
+          var key = data.key;
+          var rootRef = firebase.database().ref('User/Member/' + key + '/');
+
+            var user = firebase.auth().currentUser;
+            user.updatePassword(password).then(function() {
+              user.updateEmail(email).then(function() {
+                rootRef.update({
+                  username:username,
+                  email:email,
+                  password:password,
+                  address:address,
+                  phone_num:phone_num,
+                  birthday:birthday
+                });
+                window.alert("Modify complete!");
+                window.location.href = 'index.html';
+              }).catch(function(error) {
+              });
+            }).catch(function(error) {
+              window.alert("Please enter the more long password!")
+            });
+
+        }
     });
-    window.alert("Modify complete!");
-    window.location.href = 'index.html';
+  });
+
+}
+
+
+function mem_withdraw(){
+  if(confirm("Are you sure you want to delete your account?") == true){
+
+  var ref = firebase.database().ref('User/Member/');
+  ref.on("value", function (snapshot) {
+      snapshot.forEach(function (data) {
+        if(data.val().email == firebase.auth().currentUser.email){
+          var key = data.key;
+          var rootRef = firebase.database().ref('User/Member/' + key + '/');
+
+          var user = firebase.auth().currentUser;
+          user.delete().then(function() {
+            rootRef.remove();
+            window.alert("Delete complete!");
+            window.location.href = 'index.html';
+          }).catch(function(error) {
+            window.alert("Delete fail!");
+          });
+
+        }
+    });
+  });
+  }
+  else{
+      return ;
+  }
+}
+
+function auth_withdraw(){
+  if(confirm("Are you sure you want to delete your account?") == true){
+
+  var ref = firebase.database().ref('User/Admin/');
+  ref.on("value", function (snapshot) {
+      snapshot.forEach(function (data) {
+        if(data.val().email == firebase.auth().currentUser.email){
+          var key = data.key;
+          var rootRef = firebase.database().ref('User/Admin/' + key + '/');
+
+          var user = firebase.auth().currentUser;
+          user.delete().then(function() {
+            rootRef.remove();
+            window.alert("Delete complete!");
+            window.location.href = 'index.html';
+          }).catch(function(error) {
+            window.alert("Delete fail!");
+          });
+
+        }
+    });
+  });
+  }
+  else{
+      return ;
+  }
 }
