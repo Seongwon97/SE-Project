@@ -273,8 +273,9 @@ function mem_modify(){
 
 
 function mem_withdraw(){
-  if(confirm("Are you sure you want to delete your account?") == true){
-
+  alertify.confirm("Are you sure you want to delete your account?", function(e){
+  if(e){
+    alertify.alert("Delete Success!");
   var ref = firebase.database().ref('User/Member/');
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
@@ -285,7 +286,6 @@ function mem_withdraw(){
           var user = firebase.auth().currentUser;
           user.delete().then(function() {
             rootRef.remove();
-            alertify.alert("Delete complete!");
             window.location.href = 'index.html';
           }).catch(function(error) {
             alertify.alert("Delete fail!");
@@ -298,11 +298,13 @@ function mem_withdraw(){
   else{
       return ;
   }
+  })
 }
 
 function auth_withdraw(){
-  if(confirm("Are you sure you want to delete your account?") == true){
-
+  alertify.confirm("Are you sure you want to delete your account?", function(e){
+  if(e){
+    alertify.alert("Delete Success!");
   var ref = firebase.database().ref('User/Admin/');
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
@@ -313,7 +315,8 @@ function auth_withdraw(){
           var user = firebase.auth().currentUser;
           user.delete().then(function() {
             rootRef.remove();
-            alertify.alert("Delete complete!");
+
+
             window.location.href = 'index.html';
           }).catch(function(error) {
             alertify.alert("Delete fail!");
@@ -324,6 +327,7 @@ function auth_withdraw(){
   });
   }
   else{
-      return ;
+      alertify.alert("Cancel!");
   }
+  })
 }
