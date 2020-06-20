@@ -213,6 +213,7 @@
                             "                       <div class=\"card-body\">\n" +
                             "                            <p class=\"card-text mb-0\">" + number + "</p>\n" +
                             "                            <h4 class=\"card-title\">" + hospital + "</h4>\n" +
+                            "                            <p class=\"card-text mb-0\">" + petName + "</p>\n" +
                             "                            <p class=\"card-text mb-0\">" + purpose + "</p>\n" +
                             "                            <p class=\"card-text mb-0\">" + time + "</p>\n" +
                             "                            <div class=\"text-right\">\n" +
@@ -340,17 +341,20 @@
     });
 
     function cancel(param) {
-        if (confirm('예약을 취소하시겠습니까?')) {
-            ref.child(param).update({
-                cancel: "true",
-                time: ""
-            })
-            window.location.reload();
-            return true;
-        } else {
-            return false;
-        }
+        alertify.confirm('예약을 취소하시겠습니까?', function (e) {
+            if (e) {
+                ref.child(param).update({
+                    cancel: "true",
+                    time: ""
+                })
+                window.location.reload();
+                return true;
+            } else {
+                return false;
+            }
+        });
     }
+
 
     function modify(param) {
         window.location.href = "reservation_modify.html?param=" + param;
