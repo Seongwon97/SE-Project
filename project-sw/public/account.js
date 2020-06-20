@@ -29,7 +29,7 @@ function login(){
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(){
       alertify.alert("Log in complete! Thank you.");
-      window.location.href = 'index.html';
+      setTimeout(function(){window.location.href = 'index.html';},1000);
   }).catch(function(error){
       alertify.alert("Log-in fail! ");
   });
@@ -38,7 +38,7 @@ function login(){
 function logout(){
   firebase.auth().signOut().then(function(){
      alertify.alert("log out success!");
-     window.location.href = 'index.html';
+     setTimeout(function(){     window.location.href = 'index.html';},1000);
   }, function(error){
      alertify.alert("log out fail!");
   });
@@ -210,7 +210,7 @@ function aut_modify(){
                 area:area
               });
               alertify.alert("Modify complete!");
-              window.location.href = 'index.html';
+              setTimeout(function(){window.location.href = 'index.html';},1000);
             }).catch(function(error) {
               user.updatePassword(data.val().password).then(function(){
                 alertify.alert("Please enter different E-mail.");
@@ -254,7 +254,7 @@ function mem_modify(){
                   birthday:birthday
                 });
                 alertify.alert("Modify complete!");
-                window.location.href = 'index.html';
+                setTimeout(function(){window.location.href = 'index.html';},1000);
               }).catch(function(error) {
                 user.updatePassword(data.val().password).then(function(){
                   alertify.alert("Please enter different E-mail.");
