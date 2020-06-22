@@ -30,14 +30,17 @@
 
     <meta name="viewport" content="width=device-width">
     <title>QUnit Example</title>
-    <link rel="stylesheet" href="Qunit/qunit.css">
+    <link rel="stylesheet" href="Qunit/qunit-1.14.0.css">
 </head>
 
 <body>
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
-<script src="Qunit/qunit.js"></script>
+<script src="Qunit/qunit-1.14.0.js"></script>
+<script src="blanket.min.js"></script>
+<script src="js/reservation_modify.js" data-cover></script>
 <script src="js/reservation_modify_test.js"></script>
+
 <!-- Preloader -->
 <div id="preloader">
     <div class="medilife-load"></div>

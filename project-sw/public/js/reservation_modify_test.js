@@ -1,17 +1,17 @@
-// QUnit.test( "dateSelected function test", function( assert ) {
-//     const result = dateSelected();
-//     assert.equal( result,1,  "Passed!" );
-// });
-//
-// QUnit.test( "sortSelect function test", function( assert ) {
-//     const result = sortSelect();
-//     assert.equal( result,1,  "Passed!" );
-// });
-//
-// QUnit.test( "submitBtn function test", function( assert ) {
-//     const result = submitBtn();
-//     assert.equal(result, 1,  "Passed!" );
-// });
+QUnit.test( "dateSelected function test", function( assert ) {
+    const result = dateSelected();
+    assert.equal( result,1,  "Passed!" );
+});
+
+QUnit.test( "sortSelect function test", function( assert ) {
+    const result = sortSelect();
+    assert.equal( result,1,  "Passed!" );
+});
+
+QUnit.test( "submitBtn function test", function( assert ) {
+    const result = submitBtn();
+    assert.equal(result, 1,  "Passed!" );
+});
 
 var database = firebase.database();
 var detailRef = database.ref('ReservationDetail/');

@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2f6afb6-0615-44d2-944f-fddda6ec4bb5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project-sw/public/Qunit/qunit-1.14.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-sw/public/Qunit/qunit-1.14.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-sw/public/blanket.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-sw/public/js/tests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-sw/public/reservation_info_cover.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-sw/public/reservation_modify_cover.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-sw/public/js/reservation_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-sw/public/js/reservation_modify.js" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_modify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-sw/public/js/reservation_modify_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_modify_test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_modify_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_modify_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project-sw/public/Qunit" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -62,10 +68,20 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.reservation_info.html">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project-sw/public/Qunit" />
+      <recent name="$PROJECT_DIR$/project-sw/public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.reservation_modify_cover.html">
     <configuration name="reservation_info.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SE-Project/project-sw/public/reservation_info.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="reservation_modify_cover.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SE-Project/project-sw/public/reservation_modify_cover.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="reservation_modify.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SE-Project/project-sw/public/reservation_modify.html" useBuiltInWebServerPort="true">
@@ -89,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.reservation_modify_cover.html" />
         <item itemvalue="JavaScript Debug.reservation_info.html" />
         <item itemvalue="JavaScript Debug.reservation_modify.html" />
         <item itemvalue="JavaScript Debug.reservation_success.html" />
@@ -149,6 +166,10 @@
       <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="766" y="120" key="#functions.js/0.23.1440.838@0.23.1440.838" timestamp="1592762220607" />
+    <state x="825" y="305" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1592820302508">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="825" y="305" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.838@0.23.1440.838" timestamp="1592820302508" />
     <state x="820" y="123" width="520" height="638" key="DiffContextDialog" timestamp="1592498958666">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
