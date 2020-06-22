@@ -23,7 +23,6 @@ QUnit.test( "mem_modify", function( assert ) {
   assert.equal( result, 1, "Passed!" );
 });
 
-
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
     var log = document.getElementById("log-memu");
