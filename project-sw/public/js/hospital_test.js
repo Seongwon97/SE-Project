@@ -73,7 +73,7 @@ function delete_row(){
 function searchHospitalInfo1(area){   //name, ti, pa, be, ho
 
   inputArea(area);
-  alertify.alert("Success! Please wait a moment!")
+  //alertify.alert("Success! Please wait a moment!")
   name =  document.getElementById('hosName').value;
   ti = document.getElementById('time').value;
   pa = document.getElementById('parking').value;
