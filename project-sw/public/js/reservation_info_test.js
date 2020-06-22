@@ -1,13 +1,20 @@
 
 
-QUnit.test( "test function test", function( assert ) {
-  const result = test();
+QUnit.test( "cancel function test", function( assert ) {
+  const result = cancel('-MA1mqb3ETr69LZ-Zze_');
   assert.equal( result,1,  "Passed!" );
 });
 
-function test(){
-  return 1;
-}
+QUnit.test( "modify function test", function( assert ) {
+    const result = modify('-MA1mqb3ETr69LZ-Zze_');
+    assert.equal( result,1,  "Passed!" );
+});
+
+QUnit.test( "isExpired function test", function( assert ) {
+    let strArr = ['2020', '01', '01']
+    const result = isExpired(strArr,17);
+    assert.equal(result, false,  "Passed!" );
+});
 
 var database = firebase.database();
 var ref = database.ref('ReservationDetail/');
@@ -227,11 +234,13 @@ function cancel(param) {
             return false;
         }
     });
+    return 1;
 }
 
 
 function modify(param) {
-    window.location.href = "reservation_modify.html?param=" + param;
+    // window.location.href = "reservation_modify.html?param=" + param;
+    return 1;
 }
 
 
