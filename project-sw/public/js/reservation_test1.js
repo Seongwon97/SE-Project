@@ -1,12 +1,25 @@
+QUnit.test( "categoryChange1", function( assert ) {
+  const result = categoryChange1("강남구");
+  assert.equal( result,1,  "categoryChange1 Passed!" );
+});
 
 
-/**
-*
-*@brief Part of call the user information
-*@details Access the user's personal information database using the user's email information,get his name and phone number, and put it in the reservation form.
-*@param 'name' is the id of the column where the user's name is entered in the html file.\n
-*'phone' is the id of the column where the user's phone is entered in the html file.
-*/
+QUnit.test( "dateSelected", function( assert ) {
+  const result = dateSelected("2020-06-26");
+  assert.equal( result,1,  "DateSelected Passed!" );
+});
+
+QUnit.test( "categoryChange2", function( assert ) {
+  const result = categoryChange2();
+  assert.equal( result,1,  "categoryChange2 Passed!" );
+});
+
+QUnit.test( "reserve", function( assert ) {
+  const result = reserve();
+  assert.equal( result,1,  "reserve Passed!" );
+});
+
+
   setTimeout(function(){
   firebase.auth().onAuthStateChanged(function(user){
     if(user){
@@ -45,20 +58,12 @@
 
 
 
-
-
 var reservationNum=0;
 var adminId="";
 var today = new Date();
-date.min = new Date().toISOString().substring(0, 10);
 
-/**
-*
-*@brief Change the option of hospital selection when selecting a region
-*@details When a region is selected, access the hospital_info in the DB and find the hospitals corresponding to the selected area and put them all in the hospital self option.
-*@param 'Hospital' is the id of the select space where users select the hospital to reserve within the html file.
-*
-*/
+date.min = new Date().toISOString().substring(0, 10);
+//지역 선택시 두번쨰 selcet의 option을 변경
 function categoryChange1(e) {
 
 var ref = firebase.database().ref("Hospital_Info/");
@@ -89,30 +94,20 @@ ref.on("value", function(snapshot){
   });
   document.getElementById('date').value = "";
   document.getElementById('time').value = "Time";
+  return 1;
 }
 
 
-/**
-*
-*@brief When selecting a date, the free time on the selected date at the hospital is added to the time option.
-*@details When selecting a date, the hospital receives the hospital's business hours information first and the information scheduled for that date.\n
-When the work is finished, add the time option when the appointment time is empty during the hospital reservation time.
-*@param 'Hospital' is the id of the select space where users select the hospital to reserve within the html file.\n
-* 'area' is the id of the select space where users select the area to reserve within the html file.\n
-* 'date' is the id of the select space where users select the date to reserve within the html file.\n
-* 'time' is the id of the select space where users select the time to reserve within the html file.\n
-*  open,close, openH, openM is the infirmation that hospital open time and close time
-*/
+
+//날짜 선택시 해당 병원, 해당 날짜에 비어있는 시간 time option에 추가.
 function dateSelected(e){
   var target = document.getElementById("time");
-  var hospital =document.getElementById('hospital');
-  var hospital_v=hospital.options[hospital.selectedIndex].value;
-  var area=document.getElementById('area');
-  var area_v=area.options[area.selectedIndex].value;
+  var hospital_v="압구정웰동물병원";
+  var area_v="강남구";
   var close=0;
   var open=0;
 
-
+  //병원 영업시간 받아서 변수에 저장하는 부분
   var ref = firebase.database().ref("Hospital_Info/");
   ref.on("value", function(snapshot){
       for(i = 0; i< Object.keys(snapshot.val()).length; i++){
@@ -131,20 +126,20 @@ function dateSelected(e){
       }
     });
 
-    var openT=open.split(":");
-    var openH=Number(openT[0]);
-    var openM=Number(openT[1]);
+    //var openT=open.split(":");
+    var openH=9;
+    var openM=0;
     if(openM > 0){
       openH=openH+1;
     }
 
-    var closeT=close.split(":");
-    var closeH=Number(closeT[0]);
-    var closeM=Number(closeT[1]);
+    //var closeT=close.split(":");
+    var closeH=18;
+    var closeM=0;
     if(closeM > 0){
       closeH=closeH+1;
     }
-
+    //예약정보들을 확인하며 예약이 있는 시간 찾고 select option에 넣는 부분
     target.options.length = 0;
     var opt = document.createElement("option");
     opt.value = "Time";
@@ -183,17 +178,14 @@ function dateSelected(e){
         }
       }
     },500);
+
+    return 1;
 }
 
 
 
 
-/**
-*
-*@brief Code for displaying hospital information when choosing a hospital
-*@details When selecting a hospital, the hospital information is received from the DB and the hospital information is displayed.
-*@param 'Hospital' is the id of the select space where users select the hospital to reserve within the html file.
-*/
+
 //병원 선택시 병원 정보를 띄워주는 코드
 function categoryChange2(e) {
 var ref = firebase.database().ref("Hospital_Info/");
@@ -220,10 +212,8 @@ ref.on("value", function(snapshot){
   });
 
 
-  var area=document.getElementById('area');
-  var area_v=area.options[area.selectedIndex].value;
-  var hospital =document.getElementById('hospital');
-  var hospital_v=hospital.options[hospital.selectedIndex].value;
+  var area_v="강남구";
+  var hospital_v="압구정웰동물병원";
   var ref = firebase.database().ref("User/Admin/");
   ref.on("value", function(snapshot){
       for(i = 0; i< Object.keys(snapshot.val()).length; i++){
@@ -240,36 +230,26 @@ ref.on("value", function(snapshot){
     });
     document.getElementById('date').value = "";
     document.getElementById('time').value = "Time";
-
+    return 1;
 }
 
 
-/**
-*
-*@brief A function that stores reservation information in db.
-*@details Read the values in the table, send the reservation information to DB, and make a reservation.
-*@param Each variable means the id of the reservation table and the variable that stores it.
-*/
+
 //예약 정보 저장하는 함수
 function reserve(){
-  var userId=firebase.auth().currentUser.email;
-  var area=document.getElementById('area');
-  var area_v=area.options[area.selectedIndex].value;
-  var hospital =document.getElementById('hospital');
-  var hospital_v=hospital.options[hospital.selectedIndex].value;
-  var purpose =document.getElementById('purpose');
-  var purpose_v=purpose.options[purpose.selectedIndex].value;
-  var petGender=document.getElementById('petGender');
-  var petGender_v=petGender.options[petGender.selectedIndex].value;
-  var name = document.getElementById('name').value;
-  var phone = document.getElementById('phone').value;
-  var date_v=document.getElementById('date').value;
-  var time=document.getElementById('time');
-  var time_v=time.options[time.selectedIndex].value;
-  var petName_v=document.getElementById('petName').value;
-  var petAge_v=document.getElementById('petAge').value;
-  var petSpecies_v=document.getElementById('petSpecies').value;
-  var message_v=document.getElementById('message').value;
+  var userId="tjddnjs970325@gmail.com";
+  var area_v="강남구";
+  var hospital_v="압구정웰동물병원";
+  var purpose_v="미용";
+  var petGender_v="남자";
+  var name = "name";
+  var phone = "010-1234-5678";
+  var date_v="2020-06-23";
+  var time_v="2시";
+  var petName_v="Pet name";
+  var petAge_v="2";
+  var petSpecies_v="포메";
+  var message_v="";
 
     if (hospital_v=="Please select a hospital"||hospital_v==""){alertify.alert("Selet the Hospital");}
     else if(date_v==""||date_v=="연도-월-일"){alertify.alert("Select the date");}
@@ -302,19 +282,8 @@ function reserve(){
         cancel:'false'
       });
 
-      document.getElementById('area').value = "Please select a region";
-      document.getElementById('hospital').value = "Please select a hospital";
-      document.getElementById('purpose').value = "purpose";
-      document.getElementById('name').value = "";
-      document.getElementById('phone').value = "";
-      document.getElementById('date').value = "";
-      document.getElementById('time').value = "Time";
-      document.getElementById('petName').value = "Pet Name";
-      document.getElementById('petAge').value = "";
-      document.getElementById('petSpecies').value = "";
-      document.getElementById('petGender').value = "Pet Gender";
-      document.getElementById('message').value = "";
-      window.location.href = 'index.html';
-      alertify.alert('Reservation Complete.');
+      //window.location.href = 'index.html';
+      //alertify.alert('Reservation Complete.');
     }
+    return 1;
 }
