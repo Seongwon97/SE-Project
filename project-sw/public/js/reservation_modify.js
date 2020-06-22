@@ -28,7 +28,6 @@ $(document).ready(function () {
         // var event = new Event('change');
         // document.getElementById('date').dispatchEvent(event);
 
-        //여기서 강제로 발생시키는 거에요
         $('#date').change();
 
         if (type === '미용') {
@@ -43,7 +42,11 @@ $(document).ready(function () {
     });
 });
 
-//날짜 선택시 해당 병원, 해당 날짜에 비어있는 시간 time option에 추가.
+/**
+ * @brief Method for creating time option
+ * @details When selecting a date, add the hospital, free time on that date to the time option.
+ * @param param: Date Select event
+ */
 function dateSelected(e) {
     var target = document.getElementById("time");
     var hospital_v = document.getElementById('Name').value;
@@ -129,6 +132,11 @@ function dateSelected(e) {
     }, 1000);
 }
 
+/**
+ * @brief Method to sort the options in select
+ * @details Arrange the available times in ascending order.
+ * @param param: Select element in HTML
+ */
 function sortSelect(selElem) {
     var tmpAry = [];
     for (var i = 0; i < selElem.options.length; i++) {
@@ -147,7 +155,11 @@ function sortSelect(selElem) {
 
 }
 
-//Modify 클릭시
+/**
+ * @brief Update method to modify ReservationDetail
+ * @details After the user modifies the reservation details, press the button to update the content in the Firebase database.
+ * @param param: none
+ */
 function submitBtn() {
     var purpose = document.getElementById('Purpose');
     var purpose_v = purpose.options[purpose.selectedIndex].innerHTML;
