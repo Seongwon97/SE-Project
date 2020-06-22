@@ -1,6 +1,26 @@
 
+
+QUnit.test( "test function test", function( assert ) {
+  const result = test();
+  assert.equal( result,1,  "Passed!" );
+});
+QUnit.test( "delete row function test", function( assert ) {
+  const result = test();
+  assert.equal( result,1,  "Passed!" );
+});
+QUnit.test( "chgMainMap function test", function( assert ) {
+  const result = chgMainMap(1);
+  assert.equal( result,"img/map1/map1.png",  "Passed!" );
+});
+
+function test(){
+  alert("1");
+  return 1;
+}
+
 function chgMainMap(guNum){
   document.getElementById("mainMap").src = "img/map1/map"+guNum+".png";
+  return "img/map1/map"+guNum+".png";
 }
 function inputArea(val){
   var a  = document.getElementById('choiceArea');
@@ -28,6 +48,8 @@ function delete_row(){
 
     table.deleteRow(i);
   }
+  return 1;
+
 }
 /*function searchHospitalInfo1(area){
 

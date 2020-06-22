@@ -1,3 +1,4 @@
 QUnit.test( "hello test", function( assert ) {
-  assert.equal( 1, 1, "Passed!" );
+  const result = delete_row()
+  assert.equal( result, 1, "Passed!" );
 });
