@@ -22,7 +22,38 @@ firebase.auth().onAuthStateChanged(function(user){
   }
 });
 
+/**
 
+*
+
+*    @file        source.cpp
+
+*    @author    Garlic
+
+*    @version    1.0.0
+
+*    @date        20/05/17
+
+*    @bug        없음
+
+*
+
+*    @par Revision:
+
+*        - 200517
+
+*            최초 작성
+
+*
+
+*    @par Description:
+
+*
+
+*
+
+*/
+[출처] [2주차 과제] Doxygen 설치 및 사용법|작성자 마늘
 function login(){
   var userEmail=document.getElementById("userEmail").value;
   var userPass=document.getElementById("userPass").value;
