@@ -20,15 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2f6afb6-0615-44d2-944f-fddda6ec4bb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project-sw/public/Qunit/qunit-1.14.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-sw/public/Qunit/qunit-1.14.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-sw/public/blanket.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-sw/public/js/tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-sw/public/reservation_info_cover.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-sw/public/reservation_modify_cover.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-sw/public/js/reservation_modify_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_modify_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_modify_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_modify_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_info_cover.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_info_cover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
