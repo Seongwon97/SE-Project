@@ -25,9 +25,35 @@ QUnit.test( "delete_row function test", function( assert ) {
   assert.equal( result,1,  "Passed!" );
 });
 QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
-  const result = searchHospitalInfo1("광진구");
+  const result = searchHospitalInfo1("광진구", "마포동물병원", "11:00", "o", "x", "o");
   assert.equal( result,1,  "Passed!" );
 });
+
+QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
+  const result = searchHospitalInfo1("", "", "", "", "", "k");
+  assert.equal( result,1,  "Passed!" );
+});
+QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
+  const result = searchHospitalInfo1("광진구", "마포동물병원", "11:00", "o", "x", "o");
+  assert.equal( result,1,  "Passed!" );
+});
+QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
+  const result = searchHospitalInfo1("광진구", "서울동물병원", "11:00", "k", "l", "o");
+  assert.equal( result,1,  "Passed!" );
+});
+QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
+  const result = searchHospitalInfo1("", "", "3", "", "", "");
+  assert.equal( result,1,  "Passed!" );
+});
+QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
+  const result = searchHospitalInfo1("", "", "", "", "", "");
+  assert.equal( result,1,  "Passed!" );
+});
+QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
+  const result = searchHospitalInfo1("마포구", "뉴욕종합동물병원", "", "x", "x", "x");
+  assert.equal( result,1,  "Passed!" );
+});
+
 
 
 function test(){
@@ -70,21 +96,15 @@ function delete_row(){
 
 }
 
-function searchHospitalInfo1(area){   //name, ti, pa, be, ho
+function searchHospitalInfo1(area, name, ti, pa, be, ho){   //name, ti, pa, be, ho
 
   inputArea(area);
   //alertify.alert("Success! Please wait a moment!")
-  name =  document.getElementById('hosName').value;
-  ti = document.getElementById('time').value;
-  pa = document.getElementById('parking').value;
-  be = document.getElementById('beauty').value;
-  ho = document.getElementById('hotel').value;
-  name = "서울동물병원";
-  ti = "11:00";
-  pa = "o";
-  be = "x";
-  ho = "o";
-  document.getElementById("count").innerHTML = "◆ Count :&nbsp;&nbsp;";
+  //name =  document.getElementById('hosName').value;
+  //ti = document.getElementById('time').value;
+  //pa = document.getElementById('parking').value;
+  //be = document.getElementById('beauty').value;
+  //ho = document.getElementById('hotel').value;
 
   var count = 0;
   var ref = firebase.database().ref("Hospital_Info/");
@@ -106,7 +126,6 @@ function searchHospitalInfo1(area){   //name, ti, pa, be, ho
       time = time + 12;
     }
     ref.on("value", function(snapshot){
-
         for(i = 0; i< Object.keys(snapshot.val()).length; i++){
           var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
           a.on("value", function(snapshot){
@@ -121,14 +140,17 @@ function searchHospitalInfo1(area){   //name, ti, pa, be, ho
               if(t[9].length <2){
                 t[9] = "Non-Value";
               }
-              add_row(t[5], t[4], t[9], t[1], t[0], t[7], t[3], t[8], t[6], t[2]);
-              count++;
+               add_row(t[5], t[4], t[9], t[1], t[0], t[7], t[3], t[8], t[6], t[2]);
+                count++;
+
+
 
             }
         });
       }
       var table = document.getElementById("hosTable");
       if (table.rows.length -1==0){
+        alert("no data!");
         add_row("No", "No Data", "No Data", "No Data", "No Data", "No", "No","No Data", "No Data", "No Data");
       }
 
@@ -143,3 +165,4 @@ function searchHospitalInfo1(area){   //name, ti, pa, be, ho
     document.getElementById('hotel').value = "";
     return 1;
   }
+
