@@ -2,9 +2,11 @@
     @mainpage Project : Animal Hospital Reservation System.
     @section intro
         - intro : You can make the reservation more easily
-        - description : you can select the hospital of seoul.\nand make the reservation from available time & date
+        - description : you can select the hospital of seoul.\n
+        and make the reservation from available time & date \n
+        Animal Hospital reservation system that you can do it easily.
     @section Program : animal-hospital-project.web.app
-    @section Input & Output
+    @section Input Output
         - INPUT : reservation\n
                   data for manage % change informations\n
                   data for searching his/her information.

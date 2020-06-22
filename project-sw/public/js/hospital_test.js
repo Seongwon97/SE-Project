@@ -1,5 +1,4 @@
 
-
 QUnit.test( "test function test", function( assert ) {
   const result = test();
   assert.equal( result,1,  "Passed!" );
@@ -29,6 +28,7 @@ QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
   const result = searchHospitalInfo1("광진구");
   assert.equal( result,1,  "Passed!" );
 });
+
 
 function test(){
   return 1;
