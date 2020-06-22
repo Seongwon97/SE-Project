@@ -1,60 +1,3 @@
-/**
-
-    @mainpage Project : 프로젝트 이름
-
-    @section intro 소개
-
-        - 소개 : 간단한 프로젝트 소개
-
-        - 설명 : 프로젝트 설명을 "\n"을 넣어서 행을 바꾸어 가며 \n
-
-                  넣을 수 있습니다.
-
-    @section Program 프로그램명 : app_실행_파일_이름
-
-    @section InOut 입/출력
-
-        - INPUT : GPIO 출력 제어\n
-
-                  모니터링을 위한 값 요구
-
-        - OUTPUT : 온도,습도,풍속, 차압 제어
-
-    @section  CreateInfo 작성 정보
-
-        - 작성자 :   장길석
-
-        - 작성일 :   2013/11/05
-
-    @section  ModifyInfo 수정 정보
-
-        - 2013/11/05
-
-            -# 메인 루틴 작성
-
-            -# GPIP 제어 루틴 추가
-
-    @section Caution 주의할 사항
-
-        -
-
-    @subsection exec >> 실행 방법 및 인수 설명
-
-        - 실행 방법\n
-
-        실행-파일-이름\n
-
-        ./app_실행_파일_이름
-
-
-
-    @section common 기타 정보
-
-        - 저작권    에프에이리눅스(주)
-
-        - 외부공개 금지
-
-*/
 
 QUnit.test( "test function test", function( assert ) {
   const result = test();
@@ -86,43 +29,11 @@ QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
   assert.equal( result,1,  "Passed!" );
 });
 
-/**
-*    Copyright 2020. TEST Co.,Ltd. All rights reserved.
-*
-*    @file		파일명
-*    @author	저작권자
-*    @version	버전
-*    @date		날짜
-*    @bug		버그
-*
-*    @par Revision:
-*		- 수정 정보
-*			수정 내용
-*
-*    @par Description:
-*
-*
-*/
+
 function test(){
   return 1;
 }
-/**
-*    Copyright 2020. TEST Co.,Ltd. All rights reserved.
-*
-*    @file		파일명
-*    @author	저작권자
-*    @version	버전
-*    @date		날짜
-*    @bug		버그
-*
-*    @par Revision:
-*		- 수정 정보
-*			수정 내용
-*
-*    @par Description:
-*
-*
-*/
+
 function chgMainMap(guNum){
   document.getElementById("mainMap").src = "img/map1/map"+guNum+".png";
   return "img/map1/map"+guNum+".png";
