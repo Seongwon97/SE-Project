@@ -1,3 +1,10 @@
+/**
+* @brief : check the user is whether sign-in or not
+* @details : access to firebase admin or member file to check if the user data is valid and if it's valid, change sign-in state into "on"
+* @param : log id, user email, input email
+*/
+
+
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
     var log = document.getElementById("log-memu");
@@ -23,6 +30,13 @@ firebase.auth().onAuthStateChanged(function(user){
 });
 
 
+
+/**
+* @brief : check whether the user is valid to sign-in
+* @details : by checking input user email and user password, distribute the user is valid
+* @param : user email, user password
+*/
+
 function login(){
   var userEmail=document.getElementById("userEmail").value;
   var userPass=document.getElementById("userPass").value;
@@ -35,6 +49,15 @@ function login(){
   });
 }
 
+
+
+
+/**
+* @brief : check user to sign-out
+* @details : permit user to logout if there's no error
+* @param : none
+*/
+
 function logout(){
   firebase.auth().signOut().then(function(){
      alertify.alert("log out success!");
@@ -44,6 +67,16 @@ function logout(){
   });
 }
 
+
+
+
+
+
+/**
+* @brief : receive administrator user's input and permit to sign up on site
+* @details : if received administrator user's inputs have no error to sign up, send those information to firebase for sign up
+* @param : username, email, password, retype_password, address, phone_num, birthday, hospital_name, area
+*/
 
 
 function aut_signUp(){
@@ -95,6 +128,20 @@ function aut_signUp(){
 
 }
 
+
+
+
+
+
+
+
+/**
+* @brief : receive member user's input and permit to sign up on site
+* @details : if received member user's inputs have no error to sign up, send those information to firebase for sign up
+* @param : username, email, password, retype_password, address, phone_num, birthday
+*/
+
+
 function mem_signUp(){
   var username=document.getElementById("username").value;
   var email=document.getElementById("email").value;
@@ -141,6 +188,14 @@ function mem_signUp(){
 
 
 
+
+
+/**
+* @brief : check user's sign-in state to block using other functions if he's not in sign-in state
+* @details : by checking user's sign-in state, block other functions if the user is not the registered user to prevent illegal user
+* @param : each html id, user state
+*/
+
 function log(id){
 
   html = document.getElementById(id);
@@ -177,9 +232,31 @@ function log(id){
   }
 }
 
+
+
+
+
+
+
+/**
+* @brief : function to send main page
+* @details : a simple function to send user to main page
+* @param : none
+*/
+
 function home(){
   window.location.href = 'index.html';
 }
+
+
+
+
+
+/**
+* @brief : function for administrator users to modify their information
+* @details : if sign-in user use this function, show every information they typed and permit them to modify their information if they want. Access to firebase and replace old data into new modified data
+* @param : username, email, password, retype_password, address, phone_num, birthday, hospital_name, area, current user email, user's key value, current user's password
+*/
 
 function aut_modify(){
   var username=document.getElementById("username").value;
@@ -237,6 +314,23 @@ function aut_modify(){
     });
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  /**
+  * @brief : function for member users to modify their information
+  * @details : if sign-in user use this function, show every information they typed and permit them to modify their information if they want. Access to firebase and replace old data into new modified data
+  * @param : username, email, password, retype_password, address, phone_num, birthday, current user email, user's key value, current user's password
+  */
 
 
 function mem_modify(){
