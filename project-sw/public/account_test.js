@@ -1,9 +1,27 @@
-/**
-* @brief : check the user is whether sign-in or not
-* @details : access to firebase admin or member file to check if the user data is valid and if it's valid, change sign-in state into "on"
-* @param : log id, user email, input email
-*/
-
+QUnit.test( "login", function( assert ) {
+  const result = login()
+  assert.equal( result, 1, "Passed!" );
+});
+QUnit.test( "logout", function( assert ) {
+  const result = logout()
+  assert.equal( result, 1, "Passed!" );
+});
+QUnit.test( "aut_signUp", function( assert ) {
+  const result = aut_signUp()
+  assert.equal( result, 1, "Passed!" );
+});
+QUnit.test( "mem_signUp", function( assert ) {
+  const result = mem_signUp()
+  assert.equal( result, 1, "Passed!" );
+});
+QUnit.test( "aut_modify", function( assert ) {
+  const result = aut_modify()
+  assert.equal( result, 1, "Passed!" );
+});
+QUnit.test( "mem_modify", function( assert ) {
+  const result = mem_modify()
+  assert.equal( result, 1, "Passed!" );
+});
 
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
@@ -30,65 +48,39 @@ firebase.auth().onAuthStateChanged(function(user){
 });
 
 
-
-/**
-* @brief : check whether the user is valid to sign-in
-* @details : by checking input user email and user password, distribute the user is valid
-* @param : user email, user password
-*/
-
 function login(){
-  var userEmail=document.getElementById("userEmail").value;
-  var userPass=document.getElementById("userPass").value;
+  var userEmail="yjk5591@naver.com";
+  var userPass="201635824";
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(){
-      alertify.alert("Log in complete! Thank you.");
-      setTimeout(function(){window.location.href = 'index.html';},1000);
+
   }).catch(function(error){
-      alertify.alert("Log-in fail! ");
+
   });
+  return 1;
 }
-
-
-
-
-/**
-* @brief : check user to sign-out
-* @details : permit user to logout if there's no error
-* @param : none
-*/
 
 function logout(){
   firebase.auth().signOut().then(function(){
-     alertify.alert("log out success!");
-     setTimeout(function(){     window.location.href = 'index.html';},1000);
+
   }, function(error){
-     alertify.alert("log out fail!");
+
   });
+  return 1;
 }
 
 
 
-
-
-
-/**
-* @brief : receive administrator user's input and permit to sign up on site
-* @details : if received administrator user's inputs have no error to sign up, send those information to firebase for sign up
-* @param : username, email, password, retype_password, address, phone_num, birthday, hospital_name, area
-*/
-
-
 function aut_signUp(){
-  var username=document.getElementById("username").value;
-  var email=document.getElementById("email").value;
-  var password=document.getElementById("password").value;
-  var retype_password=document.getElementById("retype_password").value;
-  var address=document.getElementById("address").value;
-  var phone_num=document.getElementById("phone_num").value;
-  var birthday=document.getElementById("birthday").value;
-  var hospital_name=document.getElementById("hospital_name").value;
-  var area=document.getElementById("area").value;
+  var username="여준구";
+  var email="yjk5591@naver.com";
+  var password="201635824";
+  var retype_password="201635824";
+  var address="경기도 수원시";
+  var phone_num="01062205593";
+  var birthday="19960804";
+  var hospital_name="축덕동물병원";
+  var area="수원시";
   if(username.length>=1 && address.length>=1 && phone_num.length>=1 && birthday.length>=1 &&
       hospital_name.length>=1 && area.length>=1 && password==retype_password){
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
@@ -103,53 +95,36 @@ function aut_signUp(){
         hospital_name:hospital_name,
         area:area
       });
-      alertify.alert("Sign up success! Please Log-in.");
-      setTimeout(function(){
-      firebase.auth().signOut();
-      window.location.href = 'log_in.html';},2000);
 
     }).catch(function(error){
       if(password.toString().length <=5){
-        alertify.alert("Sign up fail! Please enter more long password! more than 6 digits.");
+
       }
       else {
-        alertify.alert("Sign ip fail! Please enter different E-mail.");
+
       }
     });
   }
   else{
     if(password!=retype_password){
-      alertify.alert("Password inconsistency detected");
+
     }
     else{
-      alertify.alert("Sign up fail! Please enter all details");
+
     }
   }
+  return 1;
 
 }
 
-
-
-
-
-
-
-
-/**
-* @brief : receive member user's input and permit to sign up on site
-* @details : if received member user's inputs have no error to sign up, send those information to firebase for sign up
-* @param : username, email, password, retype_password, address, phone_num, birthday
-*/
-
-
 function mem_signUp(){
-  var username=document.getElementById("username").value;
-  var email=document.getElementById("email").value;
-  var password=document.getElementById("password").value;
-  var retype_password=document.getElementById("retype_password").value;
-  var address=document.getElementById("address").value;
-  var phone_num=document.getElementById("phone_num").value;
-  var birthday=document.getElementById("birthday").value;
+  var username="여준구";
+  var email="yjk5591@naver.com";
+  var password="201635824";
+  var retype_password="201635824";
+  var address="경기도 수원시";
+  var phone_num="01062205593";
+  var birthday="19960804";
   if(username.length>=1 && address.length>=1 && phone_num.length>=1 && birthday.length>=1 &&
       email.length>=1 && password==retype_password){
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
@@ -162,39 +137,28 @@ function mem_signUp(){
           phone_num:phone_num,
           birthday:birthday
         });
-      alertify.alert("Sign up success! Please Log-in.");
-      setTimeout(function(){
-      firebase.auth().signOut();
-      window.location.href = 'log_in.html';},2000);
     }).catch(function(error){
       if(password.toString().length <=5){
-        alertify.alert("Sign up fail! Please enter more long password! more than 6 digits.");
+
       }
       else {
-        alertify.alert("Sign ip fail! Please enter different E-mail.");
+
       }
     });
   }
   else{
     if(password!=retype_password){
-      alertify.alert("Password inconsistency detected");
+
     }
     else{
-      alertify.alert("Sign up fail! Please enter all details");
+
     }
   }
+  return 1;
 
 }
 
 
-
-
-
-/**
-* @brief : check user's sign-in state to block using other functions if he's not in sign-in state
-* @details : by checking user's sign-in state, block other functions if the user is not the registered user to prevent illegal user
-* @param : each html id, user state
-*/
 
 function log(id){
 
@@ -232,67 +196,43 @@ function log(id){
   }
 }
 
-
-
-
-
-
-
-/**
-* @brief : function to send main page
-* @details : a simple function to send user to main page
-* @param : none
-*/
-
 function home(){
   window.location.href = 'index.html';
 }
 
-
-
-
-
-/**
-* @brief : function for administrator users to modify their information
-* @details : if sign-in user use this function, show every information they typed and permit them to modify their information if they want. Access to firebase and replace old data into new modified data
-* @param : username, email, password, retype_password, address, phone_num, birthday, hospital_name, area, current user email, user's key value, current user's password
-*/
-
 function aut_modify(){
-  var username=document.getElementById("username").value;
-  var email=document.getElementById("email").value;
-  var password=document.getElementById("password").value;
-  var address=document.getElementById("address").value;
-  var phone_num=document.getElementById("phone_num").value;
-  var birthday=document.getElementById("birthday").value;
-  var hospital_name=document.getElementById("hospital_name").value;
-  var area=document.getElementById("area").value;
+  var username="여준구";
+  var email="yjk5591@naver.com";
+  var password="201635824";
+  var address="경기도 수원시";
+  var phone_num="01062205593";
+  var birthday="19960804";
+  var hospital_name="축덕동물병원";
+  var area="수원시";
   var ref = firebase.database().ref("User/Admin/");
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
         if(data.val().email == firebase.auth().currentUser.email){
-          var buf = data.val().email;
-          var key = data.key;
+          var buf = "yjk5591@naver.com";
+          var key = "MA341957+34";
           var rootRef = firebase.database().ref('User/Admin/' + key + '/');
 
-            var user = firebase.auth().currentUser;
+            var user = "MA341957+34";
             if(password != data.val().password || email != data.val().email){
               user.updatePassword(password).then(function() {
                 user.updateEmail(email).then(function() {
                 }).catch(function(error){
                   user.updatePassword(data.val().password).then(function(){
-                    alertify.alert("Please enter different E-mail.");
-                    return;
+
                   }).catch(function(error){
                   });
                 });
               }).catch(function(error) {
-                  alertify.alert("Please enter the more long password!");
-                  return;
+
                 });
             }
 
-            alertify.alert("Modify complete!");
+
             rootRef.update({
               username:username,
               email:email,
@@ -303,70 +243,47 @@ function aut_modify(){
               hospital_name :hospital_name,
               area:area
             });
-            setTimeout(function(){if(email != buf){
-                alertify.alert("Changed your E-mail. Please reLogin!");
-                firebase.auth().signOut();
-            }},2000);
-            setTimeout(function(){window.location.href = 'index.html';},4000);
+
 
           }
       });
     });
+    return 1;
 
   }
 
 
-
-
-
-
-
-
-
-
-
-
-  /**
-  * @brief : function for member users to modify their information
-  * @details : if sign-in user use this function, show every information they typed and permit them to modify their information if they want. Access to firebase and replace old data into new modified data
-  * @param : username, email, password, retype_password, address, phone_num, birthday, current user email, user's key value, current user's password
-  */
-
-
 function mem_modify(){
-  var username=document.getElementById("username").value;
-  var email=document.getElementById("email").value;
-  var password=document.getElementById("password").value;
-  var address=document.getElementById("address").value;
-  var phone_num=document.getElementById("phone_num").value;
-  var birthday=document.getElementById("birthday").value;
+  var username="여준구";
+  var email="yjk5591@naver.com";
+  var password="201635824";
+  var address="경기도 수원시";
+  var phone_num="01062205593";
+  var birthday="19960804";
 
   ref = firebase.database().ref('User/Member/');
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
         if(data.val().email == firebase.auth().currentUser.email){
-          var buf = data.val().email;
-          var key = data.key;
+          var buf = "yjk5591@naver.com";
+          var key = "MA1234+45";
           var rootRef = firebase.database().ref('User/Member/' + key + '/');
 
-            var user = firebase.auth().currentUser;
+            var user = "MA1234+45";
             if(password != data.val().password || email != data.val().email){
               user.updatePassword(password).then(function() {
                 user.updateEmail(email).then(function() {
                 }).catch(function(error){
                   user.updatePassword(data.val().password).then(function(){
-                    alertify.alert("Please enter different E-mail.");
-                    return;
+
                   }).catch(function(error){
                   });
                 });
               }).catch(function(error) {
-                  alertify.alert("Please enter the more long password!");
-                  return;
+
                 });
             }
 
-            alertify.alert("Modify complete!");
             rootRef.update({
               username:username,
               email:email,
@@ -375,16 +292,12 @@ function mem_modify(){
               phone_num:phone_num,
               birthday:birthday
             });
-            setTimeout(function(){if(email != buf){
-                alertify.alert("Changed your E-mail. Please reLogin!");
-                firebase.auth().signOut();
-            }},2000);
-            setTimeout(function(){window.location.href = 'index.html';},4000);
+
 
         }
     });
   });
-
+  return 1;
 }
 
 
