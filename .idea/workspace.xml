@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2f6afb6-0615-44d2-944f-fddda6ec4bb5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_modify.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_modify.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -48,11 +52,50 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.reservation_info.html">
+    <configuration name="reservation_info.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SE-Project/project-sw/public/reservation_info.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="reservation_modify.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SE-Project/project-sw/public/reservation_modify.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="reservation_success.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SE-Project/project-sw/public/reservation_success.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$</mocha-package>
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/project-sw/public</test-directory>
+      <recursive>false</recursive>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.reservation_info.html" />
+        <item itemvalue="JavaScript Debug.reservation_modify.html" />
+        <item itemvalue="JavaScript Debug.reservation_success.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -68,6 +111,10 @@
       <workItem from="1592497454499" duration="8872000" />
       <workItem from="1592638981859" duration="14367000" />
       <workItem from="1592667553997" duration="273000" />
+      <workItem from="1592706704079" duration="500000" />
+      <workItem from="1592724424062" duration="395000" />
+      <workItem from="1592762152184" duration="1586000" />
+      <workItem from="1592799476489" duration="1628000" />
     </task>
     <servers />
   </component>
@@ -87,9 +134,60 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="618" y="117" key="#Project_Structure" timestamp="1592724783468">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="618" y="117" key="#Project_Structure/0.23.1440.838@0.23.1440.838" timestamp="1592724783468" />
+    <state x="506" y="185" width="934" height="595" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592762750315">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="506" y="185" width="934" height="595" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.838@0.23.1440.838" timestamp="1592762750315" />
+    <state x="766" y="120" key="#functions.js" timestamp="1592762220607">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="766" y="120" key="#functions.js/0.23.1440.838@0.23.1440.838" timestamp="1592762220607" />
     <state x="820" y="123" width="520" height="638" key="DiffContextDialog" timestamp="1592498958666">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="820" y="123" width="520" height="638" key="DiffContextDialog/0.23.1440.838@0.23.1440.838" timestamp="1592498958666" />
+    <state width="678" height="218" key="GridCell.Tab.0.bottom" timestamp="1592799741634">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.0.bottom/0.23.1440.838@0.23.1440.838" timestamp="1592799741634" />
+    <state width="678" height="218" key="GridCell.Tab.0.center" timestamp="1592799741633">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.0.center/0.23.1440.838@0.23.1440.838" timestamp="1592799741633" />
+    <state width="678" height="218" key="GridCell.Tab.0.left" timestamp="1592799741632">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.0.left/0.23.1440.838@0.23.1440.838" timestamp="1592799741632" />
+    <state width="678" height="218" key="GridCell.Tab.0.right" timestamp="1592799741633">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.0.right/0.23.1440.838@0.23.1440.838" timestamp="1592799741633" />
+    <state width="678" height="218" key="GridCell.Tab.1.bottom" timestamp="1592799741635">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.1.bottom/0.23.1440.838@0.23.1440.838" timestamp="1592799741635" />
+    <state width="678" height="218" key="GridCell.Tab.1.center" timestamp="1592799741635">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.1.center/0.23.1440.838@0.23.1440.838" timestamp="1592799741635" />
+    <state width="678" height="218" key="GridCell.Tab.1.left" timestamp="1592799741634">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.1.left/0.23.1440.838@0.23.1440.838" timestamp="1592799741634" />
+    <state width="678" height="218" key="GridCell.Tab.1.right" timestamp="1592799741635">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state width="678" height="218" key="GridCell.Tab.1.right/0.23.1440.838@0.23.1440.838" timestamp="1592799741635" />
+    <state x="443" y="81" key="SettingsEditor" timestamp="1592726877775">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="443" y="81" key="SettingsEditor/0.23.1440.838@0.23.1440.838" timestamp="1592726877775" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SE_Project$reservation_info_html.dat" NAME="reservation_info.html Coverage Results" MODIFIED="1592799549616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
