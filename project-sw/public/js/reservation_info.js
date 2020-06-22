@@ -16,18 +16,6 @@ $(document).ready(function () {
         }
     });
 
-    // //Admin인지 Member인지 확인
-    // userRef.on("value", function (snapshot) {
-    //     snapshot.forEach(function (data) {
-    //         data.forEach(function (ids) {
-    //             if (currentUser === ids.val().email) {
-    //                 mode = data.key
-    //                 console.log("mode", mode);
-    //             }
-    //         });
-    //     });
-    // });
-
     //currentUser가 Member인 경우
     ref.once("value", function (snapshot) {
         snapshot.forEach(function (data) {
@@ -102,7 +90,6 @@ $(document).ready(function () {
         //currentUser가 Admin인 경우
         ref.once("value", function (snapshot) {
             snapshot.forEach(function (data) {
-                //if (data.val().hospitalAdminEmail === currentUser) {
                 if (data.val().hospital ==hos_name && data.val().area == area_name) {
                     var key = data.key
                     var number = 'No.' + data.val().reservationNumber;
@@ -203,6 +190,11 @@ $(document).ready(function () {
     },1500);
 });
 
+/**
+ * @brief Cancel Reservation method
+ * @details Ask if you really want to cancel and proceed with the cancellation.
+ * @param param: ReservationDetail key in Firebase database
+ */
 function cancel(param) {
     alertify.confirm('예약을 취소하시겠습니까?', function (e) {
         if (e) {
@@ -218,12 +210,20 @@ function cancel(param) {
     });
 }
 
-
+/**
+ * @brief Modify Reservation method
+ * @details Touch the Modify button to go to the page where you want to modify the details.
+ * @param param: ReservationDetail key in Firebase database
+ */
 function modify(param) {
     window.location.href = "reservation_modify.html?param=" + param;
 }
 
-
+/**
+ * @brief Method to confirm if this is a past reservation
+ * @details Returns 'true' over time compared to current time
+ * @param param: Date, time to compare
+ */
 function isExpired(compareStr, compareTime) {
     var compareDate = new Date();
 

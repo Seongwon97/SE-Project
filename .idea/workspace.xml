@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2f6afb6-0615-44d2-944f-fddda6ec4bb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_info.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_modify.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-sw/public/reservation_modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/reservation_modify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-sw/public/js/reservation_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-sw/public/js/reservation_modify.js" beforeDir="false" afterPath="$PROJECT_DIR$/project-sw/public/js/reservation_modify.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +113,7 @@
       <workItem from="1592724424062" duration="395000" />
       <workItem from="1592762152184" duration="1586000" />
       <workItem from="1592799476489" duration="1628000" />
+      <workItem from="1592809799765" duration="1751000" />
     </task>
     <servers />
   </component>
@@ -142,6 +141,10 @@
       <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="506" y="185" width="934" height="595" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.838@0.23.1440.838" timestamp="1592762750315" />
+    <state x="818" y="196" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592813485202">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="818" y="196" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.838@0.23.1440.838" timestamp="1592813485202" />
     <state x="766" y="120" key="#functions.js" timestamp="1592762220607">
       <screen x="0" y="23" width="1440" height="838" />
     </state>

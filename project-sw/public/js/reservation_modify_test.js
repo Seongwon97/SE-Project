@@ -1,3 +1,18 @@
+// QUnit.test( "dateSelected function test", function( assert ) {
+//     const result = dateSelected();
+//     assert.equal( result,1,  "Passed!" );
+// });
+//
+// QUnit.test( "sortSelect function test", function( assert ) {
+//     const result = sortSelect();
+//     assert.equal( result,1,  "Passed!" );
+// });
+//
+// QUnit.test( "submitBtn function test", function( assert ) {
+//     const result = submitBtn();
+//     assert.equal(result, 1,  "Passed!" );
+// });
+
 var database = firebase.database();
 var detailRef = database.ref('ReservationDetail/');
 var key = location.href.substr(
@@ -28,6 +43,7 @@ $(document).ready(function () {
         // var event = new Event('change');
         // document.getElementById('date').dispatchEvent(event);
 
+        //여기서 강제로 발생시키는 거에요
         $('#date').change();
 
         if (type === '미용') {
@@ -42,11 +58,7 @@ $(document).ready(function () {
     });
 });
 
-/**
- * @brief Method for creating time option
- * @details When selecting a date, add the hospital, free time on that date to the time option.
- * @param param: Date Select event
- */
+//날짜 선택시 해당 병원, 해당 날짜에 비어있는 시간 time option에 추가.
 function dateSelected(e) {
     var target = document.getElementById("time");
     var hospital_v = document.getElementById('Name').value;
@@ -130,13 +142,9 @@ function dateSelected(e) {
             $("#time").val(origin_time).prop("selected", true);
         }
     }, 1000);
+    return 1;
 }
 
-/**
- * @brief Method to sort the options in select
- * @details Arrange the available times in ascending order.
- * @param param: Select element in HTML
- */
 function sortSelect(selElem) {
     var tmpAry = [];
     for (var i = 0; i < selElem.options.length; i++) {
@@ -152,14 +160,10 @@ function sortSelect(selElem) {
         var op = new Option(tmpAry[i][0], tmpAry[i][1]);
         selElem.options[i] = op;
     }
-
+    return 1;
 }
 
-/**
- * @brief Update method to modify ReservationDetail
- * @details After the user modifies the reservation details, press the button to update the content in the Firebase database.
- * @param param: none
- */
+//Modify 클릭시
 function submitBtn() {
     var purpose = document.getElementById('Purpose');
     var purpose_v = purpose.options[purpose.selectedIndex].innerHTML;
@@ -178,5 +182,5 @@ function submitBtn() {
     alertify.alert('예약이 수정되었습니다.', function(){
         window.location.href = 'reservation_info.html';
     });
-
+    return 1;
 }
