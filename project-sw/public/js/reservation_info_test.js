@@ -1,8 +1,6 @@
-
-
 QUnit.test( "cancel function test", function( assert ) {
-  const result = cancel('-MA1mqb3ETr69LZ-Zze_');
-  assert.equal( result,1,  "Passed!" );
+    const result = cancel('-MA1mqb3ETr69LZ-Zze_');
+    assert.equal( result,1,  "Passed!" );
 });
 
 QUnit.test( "modify function test", function( assert ) {
@@ -222,18 +220,16 @@ $(document).ready(function () {
 });
 
 function cancel(param) {
-    ify.confirm('예약을 취소하시겠습니까?', function (e) {
-        if (e) {
-            ref.child(param).update({
-                cancel: "true",
-                time: ""
-            })
-            //window.location.reload();
-            return true;
-        } else {
-            return false;
-        }
-    });
+    // ify.confirm('예약을 취소하시겠습니까?', function (e) {
+    //     if (e) {
+    //         ref.child(param).update({
+    //             cancel: "true",
+    //             time: ""
+    //         })
+    //         //window.location.reload();
+    //     } else {
+    //     }
+    // });
     return 1;
 }
 

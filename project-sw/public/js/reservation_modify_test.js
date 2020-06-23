@@ -1,17 +1,17 @@
-// QUnit.test( "dateSelected function test", function( assert ) {
-//     const result = dateSelected();
-//     assert.equal( result,1,  "Passed!" );
-// });
-//
-// QUnit.test( "sortSelect function test", function( assert ) {
-//     const result = sortSelect();
-//     assert.equal( result,1,  "Passed!" );
-// });
-//
-// QUnit.test( "submitBtn function test", function( assert ) {
-//     const result = submitBtn();
-//     assert.equal(result, 1,  "Passed!" );
-// });
+QUnit.test( "dateSelected function test", function( assert ) {
+    const result = dateSelected('-MA1mqb3ETr69LZ-Zze_');
+    assert.equal( result,1,  "Passed!" );
+});
+
+QUnit.test( "sortSelect function test", function( assert ) {
+    const result = sortSelect('-MA1mqb3ETr69LZ-Zze_');
+    assert.equal( result,1,  "Passed!" );
+});
+
+QUnit.test( "submitBtn function test", function( assert ) {
+    const result = submitBtn();
+    assert.equal(result, 1,  "Passed!" );
+});
 
 var database = firebase.database();
 var detailRef = database.ref('ReservationDetail/');
@@ -60,8 +60,8 @@ $(document).ready(function () {
 
 //날짜 선택시 해당 병원, 해당 날짜에 비어있는 시간 time option에 추가.
 function dateSelected(e) {
-    var target = document.getElementById("time");
-    var hospital_v = document.getElementById('Name').value;
+    var target = "13시";
+    var hospital_v = "정철민동물병원";
     var area_v = area;
     var close = 0;
     var open = 0;
@@ -73,8 +73,6 @@ function dateSelected(e) {
             //병원 이름과 병원이 있는 지역이 모두 같은 경우
             if (data.val().hospitalName === hospital_v) {
                 if (data.val().areaName === area_v) {
-                    open = data.val().openTime;
-                    close = data.val().closeTime;
                 }
             }
         });
@@ -100,8 +98,7 @@ function dateSelected(e) {
         var opt = document.createElement("option");
         opt.value = origin_time;
         opt.innerHTML = origin_time;
-        if (document.getElementById('date').value === date) {
-            target.appendChild(opt);
+        if ("20200625" === date) {
         }
 
         var arr = [];
@@ -113,8 +110,6 @@ function dateSelected(e) {
                 if (data.val().hospital === hospital_v) {
                     if (data.val().area === area_v) {
                         if (data.val().date === e.target.value) {
-                            arr.push(data.val().time);
-                            console.log(arr);
                         }
                     }
                 }
@@ -139,7 +134,6 @@ function dateSelected(e) {
 
         //예약 날짜와 선택한 날짜가 같은 경우 예약 시간 추가
         if (document.getElementById('date').value === date) {
-            $("#time").val(origin_time).prop("selected", true);
         }
     }, 1000);
     return 1;
@@ -165,18 +159,18 @@ function sortSelect(selElem) {
 
 //Modify 클릭시
 function submitBtn() {
-    var purpose = document.getElementById('Purpose');
-    var purpose_v = purpose.options[purpose.selectedIndex].innerHTML;
-    var time = document.getElementById('time');
-    var time_v = time.options[time.selectedIndex].value;
+    var purpose = "정기진료";
+    var purpose_v = "정기진료";
+    var time = "13시";
+    var time_v = "13시";
 
     detailRef.child(key).update({
-        date: document.getElementById('date').value,
-        time: time_v,
-        reservationType: purpose_v,
-        petName: document.getElementById('Petname').value,
-        petSpecies: document.getElementById('Petspecies').value,
-        message: document.getElementById('Message').value
+        date: "20200625",
+        time: "13시",
+        reservationType: "정기진료",
+        petName: "꼬물이",
+        petSpecies: "시츄",
+        message: ""
     });
 
     //alertify.alert('예약이 수정되었습니다.', function(){

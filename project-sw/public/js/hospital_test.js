@@ -1,4 +1,3 @@
-
 QUnit.test( "test function test", function( assert ) {
   const result = test();
   assert.equal( result,1,  "Passed!" );
@@ -165,4 +164,3 @@ function searchHospitalInfo1(area, name, ti, pa, be, ho){   //name, ti, pa, be, 
     document.getElementById('hotel').value = "";
     return 1;
   }
-

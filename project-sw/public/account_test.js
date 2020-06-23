@@ -22,6 +22,14 @@ QUnit.test( "mem_modify", function( assert ) {
   const result = mem_modify()
   assert.equal( result, 1, "Passed!" );
 });
+QUnit.test( "mem_withdraw", function( assert ) {
+  const result = mem_withdraw()
+  assert.equal( result, 1, "Passed!" );
+});
+QUnit.test( "auth_withdraw", function( assert ) {
+  const result = auth_withdraw()
+  assert.equal( result, 1, "Passed!" );
+});
 
 firebase.auth().onAuthStateChanged(function(user){
   if(user){
@@ -302,9 +310,9 @@ function mem_modify(){
 
 
 function mem_withdraw(){
-  alertify.confirm("Are you sure you want to delete your account?", function(e){
+  alertify.confirm("Are you sure you want to delete your account?",
+  function(e){
   if(e){
-    alertify.alert("Delete Success!");
   var ref = firebase.database().ref('User/Member/');
   ref.on("value", function (snapshot) {
       snapshot.forEach(function (data) {
@@ -314,10 +322,7 @@ function mem_withdraw(){
 
           var user = firebase.auth().currentUser;
           user.delete().then(function() {
-            rootRef.remove();
-            window.location.href = 'index.html';
           }).catch(function(error) {
-            alertify.alert("Delete fail!");
           });
 
         }
@@ -325,9 +330,10 @@ function mem_withdraw(){
   });
   }
   else{
-      return ;
+
   }
   })
+  return 1;
 }
 
 function auth_withdraw(){
@@ -343,12 +349,7 @@ function auth_withdraw(){
 
           var user = firebase.auth().currentUser;
           user.delete().then(function() {
-            rootRef.remove();
-
-
-            window.location.href = 'index.html';
           }).catch(function(error) {
-            alertify.alert("Delete fail!");
           });
 
         }
@@ -356,7 +357,7 @@ function auth_withdraw(){
   });
   }
   else{
-      alertify.alert("Cancel!");
   }
   })
+  return 1;
 }
