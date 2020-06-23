@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="hospital__doxygen_8c" kind="file" language="C++">
+    <compoundname>hospital_doxygen.c</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hospital__doxygen_8c_1ab584f86d7d329142383709d9c8a2472e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function chgMainMap</definition>
+        <argsstring>(guNum)</argsstring>
+        <name>chgMainMap</name>
+        <param>
+          <type>guNum</type>
+        </param>
+        <briefdescription>
+<para>change the photo of seoul mapp </para>
+        </briefdescription>
+        <detaileddescription>
+<para>if you click the map of seoul, the photo of seoul change to represent your area. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of photo. each number is matched each photo of seoul map. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" line="36" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="hospital__doxygen_8c_1a33fa4c67909b63a9e8203baf0681dc28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function inputArea</definition>
+        <argsstring>(val)</argsstring>
+        <name>inputArea</name>
+        <param>
+          <type>val</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>when you click the map of seoul, the area info box change synchronously. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name selected from map. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" line="44" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" bodystart="44" bodyend="48"/>
+        <referencedby refid="hospital__doxygen_8c_1a95233dae4a57ef8ec56ac54c5afb8da5" compoundref="hospital__doxygen_8c" startline="94" endline="160">searchHospitalInfo1</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="hospital__doxygen_8c_1aee02be60d1e13a3d7a999fd509e8ad0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function add_row</definition>
+        <argsstring>(a, b, c, d, e, f, g, h, i, j)</argsstring>
+        <name>add_row</name>
+        <param>
+          <type>a</type>
+        </param>
+        <param>
+          <type>b</type>
+        </param>
+        <param>
+          <type>c</type>
+        </param>
+        <param>
+          <type>d</type>
+        </param>
+        <param>
+          <type>e</type>
+        </param>
+        <param>
+          <type>f</type>
+        </param>
+        <param>
+          <type>g</type>
+        </param>
+        <param>
+          <type>h</type>
+        </param>
+        <param>
+          <type>i</type>
+        </param>
+        <param>
+          <type>j</type>
+        </param>
+        <briefdescription>
+<para>make the table to show the hospital information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>the hospital information is shown at the info table. <linebreak/>
+ The hospital information is selected and displayed by the options you choose. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>each</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>option value for select the hospital information. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" line="55" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" bodystart="55" bodyend="71"/>
+        <referencedby refid="hospital__doxygen_8c_1a95233dae4a57ef8ec56ac54c5afb8da5" compoundref="hospital__doxygen_8c" startline="94" endline="160">searchHospitalInfo1</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="hospital__doxygen_8c_1a724e00620cb0e96e8ab83314b0ae373a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function delete_row</definition>
+        <argsstring>()</argsstring>
+        <name>delete_row</name>
+        <briefdescription>
+<para>delete all rows of table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To show new hospital informations, <linebreak/>
+ Delete the existing information in the table and display the required information in the table. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>no</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" line="78" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" bodystart="78" bodyend="86"/>
+        <referencedby refid="hospital__doxygen_8c_1a95233dae4a57ef8ec56ac54c5afb8da5" compoundref="hospital__doxygen_8c" startline="94" endline="160">searchHospitalInfo1</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="hospital__doxygen_8c_1a95233dae4a57ef8ec56ac54c5afb8da5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function searchHospitalInfo1</definition>
+        <argsstring>(area)</argsstring>
+        <name>searchHospitalInfo1</name>
+        <param>
+          <type><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref></type>
+        </param>
+        <briefdescription>
+<para>search the hospital information you want. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>you can choose various options to select the hospital information. <linebreak/>
+Hospital information is selected and displayed by the options you choose. <linebreak/>
+You can simply check the hospital information you want through this information. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>area name of the hospital you want to get. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" line="94" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c" bodystart="94" bodyend="160"/>
+        <references refid="hospital__doxygen_8c_1aee02be60d1e13a3d7a999fd509e8ad0a" compoundref="hospital__doxygen_8c" startline="55" endline="71">add_row</references>
+        <references refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" compoundref="reservation__modify__doxygen_8c" startline="7">area</references>
+        <references refid="hospital__doxygen_8c_1a724e00620cb0e96e8ab83314b0ae373a" compoundref="hospital__doxygen_8c" startline="78" endline="86">delete_row</references>
+        <references refid="hospital__doxygen_8c_1a33fa4c67909b63a9e8203baf0681dc28" compoundref="hospital__doxygen_8c" startline="44" endline="48">inputArea</references>
+        <references refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" compoundref="reservation__info__doxygen_8c" startline="2">ref</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36" refid="hospital__doxygen_8c_1ab584f86d7d329142383709d9c8a2472e" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="hospital__doxygen_8c_1ab584f86d7d329142383709d9c8a2472e" kindref="member">chgMainMap</ref>(guNum){</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;mainMap&quot;</highlight><highlight class="normal">).src<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;img/map1/map&quot;</highlight><highlight class="normal">+guNum+</highlight><highlight class="stringliteral">&quot;.png&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44" refid="hospital__doxygen_8c_1a33fa4c67909b63a9e8203baf0681dc28" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="hospital__doxygen_8c_1a33fa4c67909b63a9e8203baf0681dc28" kindref="member">inputArea</ref>(val){</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>var<sp/>a<sp/><sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;choiceArea&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>a.value<sp/>=<sp/>val;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55" refid="hospital__doxygen_8c_1aee02be60d1e13a3d7a999fd509e8ad0a" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="hospital__doxygen_8c_1aee02be60d1e13a3d7a999fd509e8ad0a" kindref="member">add_row</ref>(a,b,c,d,e,f,g,h,i,j){</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>var<sp/>listview<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;hosTable&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>addTbody<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;TBODY&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>addTr<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;TR&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>var<sp/>arr<sp/>=<sp/>[a,b,c,d,e,f,g,h,i,j];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>addTr.setAttribute(</highlight><highlight class="stringliteral">&quot;align&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;center&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;10;<sp/>i++){</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>addTd<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;TD&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>addTd.innerHTML<sp/>=<sp/>arr[i];</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>addTr.appendChild(addTd);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>addTbody.appendChild(addTr</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>listview.appendChild(addTbody);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78" refid="hospital__doxygen_8c_1a724e00620cb0e96e8ab83314b0ae373a" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="hospital__doxygen_8c_1a724e00620cb0e96e8ab83314b0ae373a" kindref="member">delete_row</ref>(){</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>var<sp/>table<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;hosTable&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>table.rows.length<sp/>-1;<sp/>i&gt;=1;<sp/>i--){</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>table.deleteRow(i);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94" refid="hospital__doxygen_8c_1a95233dae4a57ef8ec56ac54c5afb8da5" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="hospital__doxygen_8c_1a95233dae4a57ef8ec56ac54c5afb8da5" kindref="member">searchHospitalInfo1</ref>(<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>){<sp/><sp/><sp/></highlight><highlight class="comment">//name,<sp/>ti,<sp/>pa,<sp/>be,<sp/>ho</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><ref refid="hospital__doxygen_8c_1a33fa4c67909b63a9e8203baf0681dc28" kindref="member">inputArea</ref>(<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>alertify.alert(</highlight><highlight class="stringliteral">&quot;Success!<sp/>Please<sp/>wait<sp/>a<sp/>moment!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>name<sp/>=<sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hosName&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>ti<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>pa<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;parking&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>be<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;beauty&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>ho<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hotel&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;count&quot;</highlight><highlight class="normal">).innerHTML<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;◆<sp/>Count<sp/>:&amp;nbsp;&amp;nbsp;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>var<sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hospital__doxygen_8c_1a724e00620cb0e96e8ab83314b0ae373a" kindref="member">delete_row</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>arr<sp/>=<sp/>[<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>,<sp/>name,<sp/>ti,<sp/>pa,<sp/>be,<sp/>ho];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;3;<sp/>i++){</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;O&quot;</highlight><highlight class="normal"><sp/>||<sp/>arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;o&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr[i+3]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;True&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;X&quot;</highlight><highlight class="normal"><sp/>||<sp/>arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr[i+3]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;False&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr[i+3]=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>time<sp/>=<sp/>parseInt(arr[2].substring(0,2));</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(time<sp/>&lt;<sp/>9){</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>time<sp/>=<sp/>time<sp/>+<sp/>12;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i&lt;<sp/>Object.keys(snapshot.val()).length;<sp/>i++){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>a<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal"><sp/>+<sp/>Object.keys(snapshot.val())[i]);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/>function(snapshot){</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>t<sp/>=<sp/>Object.values(snapshot.val());</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if((t[1]<sp/>==<sp/>arr[0]<sp/>||<sp/>arr[0].length==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[4]<sp/>==<sp/>arr[1]<sp/>||<sp/>arr[1].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(parseInt(t[7].substring(0,2))<sp/>&lt;=<sp/>time<sp/>||<sp/>arr[2].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(parseInt(t[3].substring(0,2))<sp/>&gt;<sp/>time<sp/>||<sp/>arr[2].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[8]<sp/>==<sp/>arr[3]<sp/>||<sp/>arr[3].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[2]<sp/>==<sp/>arr[4]<sp/>||<sp/>arr[4].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[6]<sp/>==<sp/>arr[5]<sp/>||<sp/>arr[5].length<sp/>==0)){</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[9].length<sp/>&lt;2){</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t[9]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Non-Value&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>add_row(t[5],<sp/>t[4],<sp/>t[9],<sp/>t[1],<sp/>t[0],<sp/>t[7],<sp/>t[3],<sp/>t[8],<sp/>t[6],<sp/>t[2]);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>table<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;hosTable&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(table.rows.length<sp/>-1==0){</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="hospital__doxygen_8c_1aee02be60d1e13a3d7a999fd509e8ad0a" kindref="member">add_row</ref>(</highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;count&apos;</highlight><highlight class="normal">).innerHTML<sp/>+=<sp/>count.toString();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hosName&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;parking&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;beauty&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hotel&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/hospital_doxygen.c"/>
+  </compounddef>
+</doxygen>

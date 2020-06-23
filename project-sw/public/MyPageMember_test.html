@@ -32,10 +32,13 @@
     <link rel="stylesheet" href="Qunit/qunit.css">
   </head>
   <body>
-    <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
-    <script src="Qunit/qunit.js"></script>
-    <!-- Preloader -->
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="Qunit/qunit.js"></script>
+  <script src="js/blanket.min.js"></script>
+  <script src="js/mypagemember_test.js" data-cover></script>
+
+  <!-- Preloader -->
     <div id="preloader">
         <div class="medilife-load"></div>
     </div>
@@ -118,9 +121,6 @@
                               <input type="text" placeholder="Birthday" id="birthday" name="" value="">
                             </div>
                             <input id = "btn_modify" class="sign-btn" type="button" name="" value="Modify" onclick="mem_modify();" style = "width:120px;">
-                            <input id = "btn_cancel" class="sign-btn" type="button" name="" value="Withdrawal" onclick="mem_withdraw();" style = "width:120px; margin-left:10px;">
-
-                            <input id = "btn_cancel" class="sign-btn" type="button" name="" value="Cancel" onclick="home();" style = "width:120px;margin-left:10px;">
 
                           </div>
                         </div>
@@ -128,47 +128,7 @@
                 </div>
             </div>
 
-            <!--Bottom Area-->
-            <div class="bottom-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12 col-md-3">
-                          <div class="footer-widget-area">
-                            <div class="footer-logo">
-                              <img src="img/core-img/logo.png" alt="">
-                            </div>
-                            <p>We offer a convenient reservation service for animal hospitals in Seoul. Using our system, you can easily see the reservation status of Seoul Animal Hospital and make reservations.</p>
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-1">
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="h-100 d-md-flex justify-content-between align-items-center">
-                                <p><span>Jo Wonbeen</span><br>Gachon Univ. <br>Department of software
-                                  <br>201533266<br>010-4043-2907<br>jwb2906@naver.com</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="h-100 d-md-flex justify-content-between align-items-center">
-                                <p><span>Yeo Junku</span><br>Gachon Univ.<br>Department of software
-                                  <br>201635824<br>010-6220-5593<br>yjk5591@naver.com</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="h-100 d-md-flex justify-content-between align-items-center">
-                                <p><span>Oh Seongwon</span><br>Gachon Univ.<br>Department of software
-                                  <br>201635825<br>010-9446-1528<br>osw970325@naver.com</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="h-100 d-md-flex justify-content-between align-items-center">
-                                <p><span>Jang Hayeong</span><br>Gachon Univ.<br>Department of software
-                                  <br>201735872<br>010-7942-7439<br>hyj9829@naver.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -183,42 +143,7 @@
 
     <script src="config.js"></script>    <!-- hosting info -->
 
-    <script src="account_test.js"></script>
 
-    <script>
-    var name = "";
-    var name = "";
-    var email = "";
-    var password = "";
-    var address = "";
-    var number = "";
-    var birthday = "";
-    var area ="";
-    var hosName = "";
-
-    var ref = firebase.database().ref('User/Member/');
-    ref.on("value", function (snapshot) {
-        snapshot.forEach(function (data) {
-          if(data.val().email == firebase.auth().currentUser.email){
-            name = data.val().username;
-            email = data.val().email;
-            password = data.val().password;
-            address = data.val().address;
-            number = data.val().phone_num;
-            birthday = data.val().birthday;
-          }
-      });
-
-      document.getElementById("username").value = name;
-      document.getElementById("email").value = email;
-      document.getElementById("password").value = password;
-      document.getElementById("address").value = address;
-      document.getElementById("phone_num").value = number;
-      document.getElementById("birthday").value = birthday;
-    });
-
-
-    </script>
   </body>
 
 </html>

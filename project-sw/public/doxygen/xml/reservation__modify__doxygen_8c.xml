@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="reservation__modify__doxygen_8c" kind="file" language="C++">
+    <compoundname>reservation_modify_doxygen.c</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="reservation__modify__doxygen_8c_1af4a1450f9b9ce47601f3bfba80dc2580" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var database</definition>
+        <argsstring></argsstring>
+        <name>database</name>
+        <initializer>= firebase.database()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="1" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__modify__doxygen_8c_1a98340c07ef96293118bf1fe43bfe89cc" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var detailRef</definition>
+        <argsstring></argsstring>
+        <name>detailRef</name>
+        <initializer>= <ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">database.ref</ref>(&apos;ReservationDetail/&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="2" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="2" bodyend="-1"/>
+        <referencedby refid="reservation__modify__doxygen_8c_1a3fc7bfc68ced3a1525b7ae1c081fa922">ready</referencedby>
+        <referencedby refid="reservation__modify__doxygen_8c_1a4e6a1d53cd92d84f49145f21d22b1310" compoundref="reservation__modify__doxygen_8c" startline="163" endline="182">submitBtn</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <initializer>= location.href.substr(
+    location.href.lastIndexOf(&apos;=&apos;) + 1
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="3" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="3" bodyend="-1"/>
+        <referencedby refid="reservation__info__doxygen_8c_1a74b07290868d847fe4ea449477bbf6a7">ready</referencedby>
+        <referencedby refid="reservation__modify__doxygen_8c_1a4e6a1d53cd92d84f49145f21d22b1310" compoundref="reservation__modify__doxygen_8c" startline="163" endline="182">submitBtn</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var date</definition>
+        <argsstring></argsstring>
+        <name>date</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="6" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="6" bodyend="-1"/>
+        <referencedby refid="reservation__doxygen_8c_1ad2d1d22f0d718fb7a1644b437ccf0903" compoundref="reservation__doxygen_8c" startline="254" endline="320">reserve</referencedby>
+        <referencedby refid="reservation__modify__doxygen_8c_1a3fc7bfc68ced3a1525b7ae1c081fa922">ready</referencedby>
+        <referencedby refid="reservation__modify__doxygen_8c_1a4e6a1d53cd92d84f49145f21d22b1310" compoundref="reservation__modify__doxygen_8c" startline="163" endline="182">submitBtn</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var area</definition>
+        <argsstring></argsstring>
+        <name>area</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="7" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="7" bodyend="-1"/>
+        <referencedby refid="account__doxygen_8c_1a81d4888a726f78bbfca447a92ef07c76" compoundref="account__doxygen_8c" startline="82" endline="129">aut_signUp</referencedby>
+        <referencedby refid="account__doxygen_8c_1a02b7de3672e5444c750ec6514cf46b64" compoundref="account__doxygen_8c" startline="261" endline="316">aut_modify</referencedby>
+        <referencedby refid="hospital__doxygen_8c_1a95233dae4a57ef8ec56ac54c5afb8da5" compoundref="hospital__doxygen_8c" startline="94" endline="160">searchHospitalInfo1</referencedby>
+        <referencedby refid="reservation__doxygen_8c_1afc90b7e89337bf10110075a1e9d84ede" compoundref="reservation__doxygen_8c" startline="106" endline="186">dateSelected</referencedby>
+        <referencedby refid="reservation__doxygen_8c_1ad2d1d22f0d718fb7a1644b437ccf0903" compoundref="reservation__doxygen_8c" startline="254" endline="320">reserve</referencedby>
+        <referencedby refid="reservation__modify__doxygen_8c_1a3fc7bfc68ced3a1525b7ae1c081fa922">ready</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var origin_time</definition>
+        <argsstring></argsstring>
+        <name>origin_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="8" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="8" bodyend="-1"/>
+        <referencedby refid="reservation__modify__doxygen_8c_1a3fc7bfc68ced3a1525b7ae1c081fa922">ready</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="reservation__modify__doxygen_8c_1a3fc7bfc68ced3a1525b7ae1c081fa922" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>document</type>
+        <definition>document ready</definition>
+        <argsstring>(function() { detailRef.on(&quot;value&quot;, function(snapshot) { var number=&apos;No.&apos;+snapshot.child(key).val().reservationNumber;var hospital=snapshot.child(key).val().hospital;var petName=snapshot.child(key).val().petName;var petSpecies=snapshot.child(key).val().petSpecies;var type=snapshot.child(key).val().purpose;var message=snapshot.child(key).val().message;date=snapshot.child(key).val().date;origin_time=snapshot.child(key).val().time;area=snapshot.child(key).val().area;document.getElementById(&apos;Number&apos;).value=number;document.getElementById(&apos;Name&apos;).value=hospital;document.getElementById(&apos;Petname&apos;).value=petName;document.getElementById(&apos;Petspecies&apos;).value=petSpecies;document.getElementById(&apos;Message&apos;).value=message;document.getElementById(&apos;date&apos;).value=date;$(&apos;#date&apos;).change();if(type===&apos;미용&apos;) { $(&quot;#Purpose option:eq(0)&quot;).prop(&quot;selected&quot;, true);} else if(type===&apos;예방접종&apos;) { $(&quot;#Purpose option:eq(1)&quot;).prop(&quot;selected&quot;, true);} else if(type===&apos;정기검진&apos;) { $(&quot;#Purpose option:eq(2)&quot;).prop(&quot;selected&quot;, true);} else if(type===&apos;치료&apos;) { $(&quot;#Purpose option:eq(3)&quot;).prop(&quot;selected&quot;, true);} });})</argsstring>
+        <name>ready</name>
+        <param>
+          <type>function() { detailRef.on(&quot;value&quot;, function(snapshot) { var number=&apos;No.&apos;+snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().reservationNumber;var hospital=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().hospital;var petName=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().petName;var petSpecies=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().petSpecies;var type=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().purpose;var message=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().message;<ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().<ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>;<ref refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" kindref="member">origin_time</ref>=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().time;<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>=snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>;document.getElementById(&apos;Number&apos;).value=number;document.getElementById(&apos;Name&apos;).value=hospital;document.getElementById(&apos;Petname&apos;).value=petName;document.getElementById(&apos;Petspecies&apos;).value=petSpecies;document.getElementById(&apos;Message&apos;).value=message;document.getElementById(&apos;<ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>&apos;).value=<ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>;$(&apos;#<ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>&apos;).change();if(type===&apos;미용&apos;) { $(&quot;#Purpose option:eq(0)&quot;).prop(&quot;selected&quot;, true);} else if(type===&apos;예방접종&apos;) { $(&quot;#Purpose option:eq(1)&quot;).prop(&quot;selected&quot;, true);} else if(type===&apos;정기검진&apos;) { $(&quot;#Purpose option:eq(2)&quot;).prop(&quot;selected&quot;, true);} else if(type===&apos;치료&apos;) { $(&quot;#Purpose option:eq(3)&quot;).prop(&quot;selected&quot;, true);} });}</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="10" column="9" declfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" declline="10" declcolumn="9"/>
+        <references refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" compoundref="reservation__modify__doxygen_8c" startline="7">area</references>
+        <references refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" compoundref="reservation__modify__doxygen_8c" startline="6">date</references>
+        <references refid="reservation__modify__doxygen_8c_1a98340c07ef96293118bf1fe43bfe89cc" compoundref="reservation__modify__doxygen_8c" startline="2">detailRef</references>
+        <references refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" compoundref="reservation__modify__doxygen_8c" startline="3">key</references>
+        <references refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" compoundref="reservation__modify__doxygen_8c" startline="8">origin_time</references>
+      </memberdef>
+      <memberdef kind="function" id="reservation__modify__doxygen_8c_1afc90b7e89337bf10110075a1e9d84ede" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function dateSelected</definition>
+        <argsstring>(e)</argsstring>
+        <name>dateSelected</name>
+        <param>
+          <type>e</type>
+        </param>
+        <briefdescription>
+<para>Method for creating time option. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When selecting a date, add the hospital, free time on that date to the time option. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Date Select event </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="50" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="50" bodyend="133"/>
+        <references refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" compoundref="reservation__modify__doxygen_8c" startline="7">area</references>
+        <references refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" compoundref="reservation__info__doxygen_8c" startline="2">ref</references>
+      </memberdef>
+      <memberdef kind="function" id="reservation__modify__doxygen_8c_1a954c49c27048c71128a390c38ca99a88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function sortSelect</definition>
+        <argsstring>(selElem)</argsstring>
+        <name>sortSelect</name>
+        <param>
+          <type>selElem</type>
+        </param>
+        <briefdescription>
+<para>Method to sort the options in select. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Arrange the available times in ascending order. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Select element in HTML </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="140" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="140" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="reservation__modify__doxygen_8c_1a4e6a1d53cd92d84f49145f21d22b1310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function submitBtn</definition>
+        <argsstring>()</argsstring>
+        <name>submitBtn</name>
+        <briefdescription>
+<para>Update method to modify ReservationDetail. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After the user modifies the reservation details, press the button to update the content in the Firebase database. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>none </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" line="163" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c" bodystart="163" bodyend="182"/>
+        <references refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" compoundref="reservation__modify__doxygen_8c" startline="6">date</references>
+        <references refid="reservation__modify__doxygen_8c_1a98340c07ef96293118bf1fe43bfe89cc" compoundref="reservation__modify__doxygen_8c" startline="2">detailRef</references>
+        <references refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" compoundref="reservation__modify__doxygen_8c" startline="3">key</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="reservation__modify__doxygen_8c_1af4a1450f9b9ce47601f3bfba80dc2580" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__modify__doxygen_8c_1af4a1450f9b9ce47601f3bfba80dc2580" kindref="member">database</ref><sp/>=<sp/>firebase.database();</highlight></codeline>
+<codeline lineno="2" refid="reservation__modify__doxygen_8c_1a98340c07ef96293118bf1fe43bfe89cc" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__modify__doxygen_8c_1a98340c07ef96293118bf1fe43bfe89cc" kindref="member">detailRef</ref><sp/>=<sp/><ref refid="reservation__modify__doxygen_8c_1af4a1450f9b9ce47601f3bfba80dc2580" kindref="member">database</ref>.ref(</highlight><highlight class="stringliteral">&apos;ReservationDetail/&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="3" refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref><sp/>=<sp/>location.href.substr(</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/>location.href.lastIndexOf(</highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal">)<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="6" refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>;</highlight></codeline>
+<codeline lineno="7" refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>;</highlight></codeline>
+<codeline lineno="8" refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" kindref="member">origin_time</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="reservation__modify__doxygen_8c_1a3fc7bfc68ced3a1525b7ae1c081fa922" refkind="member"><highlight class="normal">$(document).<ref refid="reservation__modify__doxygen_8c_1a3fc7bfc68ced3a1525b7ae1c081fa922" kindref="member">ready</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>()<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1a98340c07ef96293118bf1fe43bfe89cc" kindref="member">detailRef</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(snapshot)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>number<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;No.&apos;</highlight><highlight class="normal"><sp/>+<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().reservationNumber;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>hospital<sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().hospital;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>petName<sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().petName;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>petSpecies<sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().petSpecies;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>type<sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().purpose;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>message<sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().message;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref><sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().<ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" kindref="member">origin_time</ref><sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().time;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref><sp/>=<sp/>snapshot.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).val().<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Number&apos;</highlight><highlight class="normal">).value<sp/>=<sp/>number;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Name&apos;</highlight><highlight class="normal">).value<sp/>=<sp/>hospital;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Petname&apos;</highlight><highlight class="normal">).value<sp/>=<sp/>petName;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Petspecies&apos;</highlight><highlight class="normal">).value<sp/>=<sp/>petSpecies;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Message&apos;</highlight><highlight class="normal">).value<sp/>=<sp/>message;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value<sp/>=<sp/><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>var<sp/>event<sp/>=<sp/>new<sp/>Event(&apos;change&apos;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>document.getElementById(&apos;date&apos;).dispatchEvent(event);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$(</highlight><highlight class="stringliteral">&apos;#date&apos;</highlight><highlight class="normal">).change();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;미용&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$(</highlight><highlight class="stringliteral">&quot;#Purpose<sp/>option:eq(0)&quot;</highlight><highlight class="normal">).prop(</highlight><highlight class="stringliteral">&quot;selected&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;예방접종&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$(</highlight><highlight class="stringliteral">&quot;#Purpose<sp/>option:eq(1)&quot;</highlight><highlight class="normal">).prop(</highlight><highlight class="stringliteral">&quot;selected&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;정기검진&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$(</highlight><highlight class="stringliteral">&quot;#Purpose<sp/>option:eq(2)&quot;</highlight><highlight class="normal">).prop(</highlight><highlight class="stringliteral">&quot;selected&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;치료&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$(</highlight><highlight class="stringliteral">&quot;#Purpose<sp/>option:eq(3)&quot;</highlight><highlight class="normal">).prop(</highlight><highlight class="stringliteral">&quot;selected&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="reservation__modify__doxygen_8c_1afc90b7e89337bf10110075a1e9d84ede" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="reservation__modify__doxygen_8c_1afc90b7e89337bf10110075a1e9d84ede" kindref="member">dateSelected</ref>(e)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>target<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;time&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>hospital_v<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Name&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>area_v<sp/>=<sp/><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>close<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>open<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//병원<sp/>영업시간<sp/>받아서<sp/>변수에<sp/>저장하는<sp/>부분</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(snapshot)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snapshot.forEach(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(data)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//병원<sp/>이름과<sp/>병원이<sp/>있는<sp/>지역이<sp/>모두<sp/>같은<sp/>경우</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.val().hospitalName<sp/>===<sp/>hospital_v)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(data.val().areaName<sp/>===<sp/>area_v)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>open<sp/>=<sp/>data.val().openTime;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close<sp/>=<sp/>data.val().closeTime;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reservation__doxygen_8c_1ab7b5e595f925645f61dde5998c2920f8" kindref="member">setTimeout</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>()<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>openT<sp/>=<sp/>open.toString().split(</highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>openH<sp/>=<sp/>Number(openT[0]);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>openM<sp/>=<sp/>Number(openT[1]);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(openM<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>openH<sp/>=<sp/>openH<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>closeT<sp/>=<sp/>close.toString().split(</highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>closeH<sp/>=<sp/>Number(closeT[0]);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>closeM<sp/>=<sp/>Number(closeT[1]);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(closeM<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closeH<sp/>=<sp/>closeH<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//예약정보들을<sp/>확인하며<sp/>예약이<sp/>있는<sp/>시간<sp/>찾고<sp/>select<sp/>option에<sp/>넣는<sp/>부분</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target.options.length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>opt<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.value<sp/>=<sp/><ref refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" kindref="member">origin_time</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.innerHTML<sp/>=<sp/><ref refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" kindref="member">origin_time</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value<sp/>===<sp/><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target.appendChild(opt);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>arr<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;ReservationDetail/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//예약된<sp/>날짜와<sp/>같은<sp/>날짜의<sp/>예약<sp/>시간<sp/>받아<sp/>오는<sp/>코드</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(snapshot)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snapshot.forEach(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(data)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.val().hospital<sp/>===<sp/>hospital_v)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(data.val().area<sp/>===<sp/>area_v)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(data.val().date<sp/>===<sp/>e.target.value)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr.push(data.val().time);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>console.log(arr);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//예약된<sp/>시간을<sp/>제외한<sp/>시간을<sp/>출력</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>available<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>console.log(open);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>openH;<sp/>i<sp/>&lt;<sp/>closeH;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>temp<sp/>=<sp/>String(i);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>temp.concat(</highlight><highlight class="stringliteral">&quot;시&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(arr.indexOf(temp)<sp/>===<sp/>(-1))<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>opt<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.value<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.innerHTML<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target.appendChild(opt);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1a954c49c27048c71128a390c38ca99a88" kindref="member">sortSelect</ref>(target);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//예약<sp/>날짜와<sp/>선택한<sp/>날짜가<sp/>같은<sp/>경우<sp/>예약<sp/>시간<sp/>추가</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value<sp/>===<sp/><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$(</highlight><highlight class="stringliteral">&quot;#time&quot;</highlight><highlight class="normal">).val(<ref refid="reservation__modify__doxygen_8c_1addcf526dd05075e2fc0c0cf2d6d32a10" kindref="member">origin_time</ref>).prop(</highlight><highlight class="stringliteral">&quot;selected&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>},<sp/>1000);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="reservation__modify__doxygen_8c_1a954c49c27048c71128a390c38ca99a88" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="reservation__modify__doxygen_8c_1a954c49c27048c71128a390c38ca99a88" kindref="member">sortSelect</ref>(selElem)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>tmpAry<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(var<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>selElem.options.length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmpAry[i]<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmpAry[i][0]<sp/>=<sp/>selElem.options[i].text;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmpAry[i][1]<sp/>=<sp/>selElem.options[i].value;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>tmpAry.sort();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(selElem.options.length<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selElem.options[0]<sp/>=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(var<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>tmpAry.length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>op<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Option(tmpAry[i][0],<sp/>tmpAry[i][1]);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selElem.options[i]<sp/>=<sp/>op;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="reservation__modify__doxygen_8c_1a4e6a1d53cd92d84f49145f21d22b1310" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="reservation__modify__doxygen_8c_1a4e6a1d53cd92d84f49145f21d22b1310" kindref="member">submitBtn</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>purpose<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Purpose&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>purpose_v<sp/>=<sp/>purpose.options[purpose.selectedIndex].innerHTML;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>time<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>time_v<sp/>=<sp/>time.options[time.selectedIndex].value;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1a98340c07ef96293118bf1fe43bfe89cc" kindref="member">detailRef</ref>.child(<ref refid="reservation__modify__doxygen_8c_1a9bbe78e9381a5fe38011c4fa0f948854" kindref="member">key</ref>).update({</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>:<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time:<sp/>time_v,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reservationType:<sp/>purpose_v,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petName:<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Petname&apos;</highlight><highlight class="normal">).value,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petSpecies:<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Petspecies&apos;</highlight><highlight class="normal">).value,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>message:<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;Message&apos;</highlight><highlight class="normal">).value</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>alertify.alert(</highlight><highlight class="stringliteral">&apos;예약이<sp/>수정되었습니다.&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(){</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>window.location.href<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;reservation_info.html&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_modify_doxygen.c"/>
+  </compounddef>
+</doxygen>

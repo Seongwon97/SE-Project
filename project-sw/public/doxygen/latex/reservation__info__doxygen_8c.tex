@@ -1,0 +1,214 @@
+\doxysection{D\+:/\+Users/콩하나/workspace/\+Github/\+S\+E-\/\+Project/project-\/sw/public/js/doxygen js file/reservation\+\_\+info\+\_\+doxygen.c File Reference}
+\label{reservation__info__doxygen_8c}\index{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/reservation\_info\_doxygen.c@{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/reservation\_info\_doxygen.c}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+document \textbf{ ready} (function() \{ \textbf{ firebase.\+auth}().on\+Auth\+State\+Changed((user)=$>$ \{ if(user) \{ \textbf{ current\+User}=user.\+email;\} \});ref.\+once(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().client\+Id===\textbf{ current\+User}) \{ var \textbf{ key}=\textbf{ data.\+key} var number=\textquotesingle{}No.\textquotesingle{}+data.\+val().reservation\+Number;var hospital=data.\+val().hospital;var purpose=data.\+val().purpose;var time=data.\+val().\textbf{ date}+\textquotesingle{} \textquotesingle{}+data.\+val().time;var completion=data.\+val().completion;var str\+Array=data.\+val().date.\+split(\textquotesingle{}-\/\textquotesingle{});var \textbf{ cancel}=data.\+val().\textbf{ cancel};var pet\+Name=data.\+val().pet\+Name;if(\textbf{ is\+Expired}(str\+Array, data.\+val().time.\+replace(\char`\"{}시\char`\"{}, \char`\"{}\char`\"{}))) \{ ref.\+child(\textbf{ key}).update(\{ completion\+:\textquotesingle{}true\textquotesingle{} \});\} if(completion===\textquotesingle{}false\textquotesingle{} \&\&\textbf{ cancel} !==\textquotesingle{}true\textquotesingle{}) \{ \$(\char`\"{}\#card-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card m-\/3\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                       $<$div class=\textbackslash{}\char`\"{}card-\/body\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$h4 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+hospital+\char`\"{}$<$/h4$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}text-\/right\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                                $<$a href=\textbackslash{}\char`\"{}\#\textbackslash{}\char`\"{} onclick=\textbackslash{}\char`\"{}modify(\textquotesingle{}\char`\"{}+key+\char`\"{}\textquotesingle{});\textbackslash{}\char`\"{} class=\textbackslash{}\char`\"{}card-\/link mr-\/3\textbackslash{}\char`\"{}$>$Modify$<$/a$>$\textbackslash{}n\char`\"{}+\char`\"{}                                $<$a href=\textbackslash{}\char`\"{}\#\textbackslash{}\char`\"{} onclick=\textbackslash{}\char`\"{}cancel(\textquotesingle{}\char`\"{}+key+\char`\"{}\textquotesingle{});\textbackslash{}\char`\"{} class=\textbackslash{}\char`\"{}card-\/link mr-\/3\textbackslash{}\char`\"{}$>$Cancel$<$/a$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{});\} if(completion===\textquotesingle{}true\textquotesingle{}$\vert$$\vert$\textbf{ cancel}===\textquotesingle{}true\textquotesingle{}) \{ if(\textbf{ exist}===false) \{ document.\+get\+Element\+By\+Id(\char`\"{}cancel\+\_\+text\char`\"{}).text\+Content=\char`\"{}Last reservations \& Cancelled reservations\char`\"{} exist=true;\} \$(\char`\"{}\#cancel-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card m-\/3\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                       $<$div class=\textbackslash{}\char`\"{}card-\/body\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$h4 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+hospital+\char`\"{}$<$/h4$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}text-\/right\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{});\} \} \});\});var hos\+\_\+name;var area\+\_\+name;var root=\textbf{ firebase.\+database}().\textbf{ ref}(\char`\"{}User/Admin/\char`\"{});root.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().email==\textbf{ firebase.\+auth}().current\+User.\+email)\{ hos\+\_\+name=data.\+val().hospital\+\_\+name;area\+\_\+name=data.\+val().\textbf{ area};\} \});\});\textbf{ set\+Timeout}(function()\{ ref.\+once(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().hospital==hos\+\_\+name \&\&data.\+val().\textbf{ area}==area\+\_\+name) \{ var \textbf{ key}=\textbf{ data.\+key} var number=\textquotesingle{}No.\textquotesingle{}+data.\+val().reservation\+Number;var pet\+Name=data.\+val().pet\+Name;var pet\+Age=data.\+val().pet\+Age;var pet\+Gender=data.\+val().pet\+Gender;var pet\+Species=data.\+val().pet\+Species;var client\+Name=data.\+val().client\+Name;var purpose=data.\+val().purpose;var time=data.\+val().\textbf{ date}+\textquotesingle{} \textquotesingle{}+data.\+val().time;var completion=data.\+val().completion;var phone\+Num=data.\+val().phone\+Num;var message=data.\+val().message;var str\+Array=data.\+val().date.\+split(\textquotesingle{}-\/\textquotesingle{});var \textbf{ cancel}=data.\+val().\textbf{ cancel};if(\textbf{ is\+Expired}(str\+Array, data.\+val().time.\+replace(\char`\"{}시\char`\"{}, \char`\"{}\char`\"{}))) \{ ref.\+child(\textbf{ key}).update(\{ completion\+:\textquotesingle{}true\textquotesingle{} \});\} if(completion===\textquotesingle{}false\textquotesingle{} \&\&\textbf{ cancel} !==\textquotesingle{}true\textquotesingle{}) \{ \$(\char`\"{}\#card-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card border-\/dark m-\/3\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/header mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text text-\/right mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/body text-\/success\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}종\+: \char`\"{}+pet\+Species+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}나이\+: \char`\"{}+pet\+Age+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}성별\+: \char`\"{}+pet\+Gender+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+client\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}연락처\+: \char`\"{}+phone\+Num+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}방문목적\+: \char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}메시지\+: \char`\"{}+message+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}) ;\} if(completion===\textquotesingle{}true\textquotesingle{}$\vert$$\vert$\textbf{ cancel}===\textquotesingle{}true\textquotesingle{}) \{ if(\textbf{ exist}===false) \{ document.\+get\+Element\+By\+Id(\char`\"{}cancel\+\_\+text\char`\"{}).text\+Content=\char`\"{}Last reservations \& Cancelled reservations\char`\"{} exist=true;\} \$(\char`\"{}\#cancel-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card border-\/dark m-\/3\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/header mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text text-\/right mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/body text-\/success\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Species\+: \char`\"{}+pet\+Species+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Age\+: \char`\"{}+pet\+Age+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Gender\+: \char`\"{}+pet\+Gender+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+client\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Phone\+: \char`\"{}+phone\+Num+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Purpose\+: \char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Note\+: \char`\"{}+message+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{});\} \} \});\});\}, 1500);\})
+\item 
+function \textbf{ cancel} (param)
+\begin{DoxyCompactList}\small\item\em Cancel Reservation method. \end{DoxyCompactList}\item 
+function \textbf{ modify} (param)
+\begin{DoxyCompactList}\small\item\em Modify Reservation method. \end{DoxyCompactList}\item 
+function \textbf{ is\+Expired} (compare\+Str, compare\+Time)
+\begin{DoxyCompactList}\small\item\em Method to confirm if this is a past reservation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \textbf{ database} = firebase.\+database()
+\item 
+var \textbf{ ref} = database.\+ref(\textquotesingle{}Reservation\+Detail/\textquotesingle{})
+\item 
+var \textbf{ user\+Ref} = \textbf{ database.\+ref}(\textquotesingle{}User/\textquotesingle{})
+\item 
+var \textbf{ current\+User}
+\item 
+var \textbf{ mode}
+\item 
+var \textbf{ exist} = false
+\item 
+var \textbf{ current\+Time} = new Date()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{reservation__info__doxygen_8c_a1218ce87f7193c961920352be76d49d4}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!cancel@{cancel}}
+\index{cancel@{cancel}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{cancel()}
+{\footnotesize\ttfamily function cancel (\begin{DoxyParamCaption}\item[{param}]{ }\end{DoxyParamCaption})}
+
+
+
+Cancel Reservation method. 
+
+Ask if you really want to cancel and proceed with the cancellation. 
+\begin{DoxyParams}{Parameters}
+{\em param} & Reservation\+Detail key in Firebase database \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 198 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{198                        \{}
+\DoxyCodeLine{199     alertify.confirm(\textcolor{stringliteral}{'예약을 취소하시겠습니까?'}, \textcolor{keyword}{function} (e) \{}
+\DoxyCodeLine{200         \textcolor{keywordflow}{if} (e) \{}
+\DoxyCodeLine{201             ref.child(param).update(\{}
+\DoxyCodeLine{202                 cancel: \textcolor{stringliteral}{"true"},}
+\DoxyCodeLine{203                 time: \textcolor{stringliteral}{""}}
+\DoxyCodeLine{204             \})}
+\DoxyCodeLine{205             window.location.reload();}
+\DoxyCodeLine{206             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{207         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{208             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{209         \}}
+\DoxyCodeLine{210     \});}
+\DoxyCodeLine{211 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\label{reservation__info__doxygen_8c_ad121afd0421fdcafa6bb30269b3c5894}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!isExpired@{isExpired}}
+\index{isExpired@{isExpired}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{isExpired()}
+{\footnotesize\ttfamily function is\+Expired (\begin{DoxyParamCaption}\item[{compare\+Str}]{,  }\item[{compare\+Time}]{ }\end{DoxyParamCaption})}
+
+
+
+Method to confirm if this is a past reservation. 
+
+Returns \textquotesingle{}true\textquotesingle{} over time compared to current time 
+\begin{DoxyParams}{Parameters}
+{\em param} & Date, time to compare \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{227                                             \{}
+\DoxyCodeLine{228     var compareDate = \textcolor{keyword}{new} Date();}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230     compareDate.setFullYear(compareStr[0] * 1);}
+\DoxyCodeLine{231     compareDate.setMonth(compareStr[1] * 1 -\/ 1);}
+\DoxyCodeLine{232     compareDate.setDate(compareStr[2] * 1);}
+\DoxyCodeLine{233     compareDate.setHours(compareTime * 1, 0, 0, 0);}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235     \textcolor{comment}{//현재 시각보다 예약시간이 지난 경우 true 리턴}}
+\DoxyCodeLine{236     \textcolor{keywordflow}{return} currentTime >= compareDate;}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \}}
+
+\end{DoxyCode}
+\mbox{\label{reservation__info__doxygen_8c_a5d75a89a55fd46d6a34635f6c5841e27}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!modify@{modify}}
+\index{modify@{modify}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{modify()}
+{\footnotesize\ttfamily function modify (\begin{DoxyParamCaption}\item[{param}]{ }\end{DoxyParamCaption})}
+
+
+
+Modify Reservation method. 
+
+Touch the Modify button to go to the page where you want to modify the details. 
+\begin{DoxyParams}{Parameters}
+{\em param} & Reservation\+Detail key in Firebase database \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 218 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{218                        \{}
+\DoxyCodeLine{219     window.location.href = \textcolor{stringliteral}{"reservation\_modify.html?param="} + param;}
+\DoxyCodeLine{220 \}}
+
+\end{DoxyCode}
+\mbox{\label{reservation__info__doxygen_8c_a74b07290868d847fe4ea449477bbf6a7}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!ready@{ready}}
+\index{ready@{ready}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{ready()}
+{\footnotesize\ttfamily document ready (\begin{DoxyParamCaption}\item[{function() \{ \textbf{ firebase.\+auth}().on\+Auth\+State\+Changed((user)=$>$ \{ if(user) \{ \textbf{ current\+User}=user.\+email;\} \});ref.\+once(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().client\+Id===\textbf{ current\+User}) \{ var \textbf{ key}=\textbf{ data.\+key} var number=\textquotesingle{}No.\textquotesingle{}+data.\+val().reservation\+Number;var hospital=data.\+val().hospital;var purpose=data.\+val().purpose;var time=data.\+val().\textbf{ date}+\textquotesingle{} \textquotesingle{}+data.\+val().time;var completion=data.\+val().completion;var str\+Array=data.\+val().date.\+split(\textquotesingle{}-\/\textquotesingle{});var \textbf{ cancel}=data.\+val().\textbf{ cancel};var pet\+Name=data.\+val().pet\+Name;if(\textbf{ is\+Expired}(str\+Array, data.\+val().time.\+replace(\char`\"{}시\char`\"{}, \char`\"{}\char`\"{}))) \{ ref.\+child(\textbf{ key}).update(\{ completion\+:\textquotesingle{}true\textquotesingle{} \});\} if(completion===\textquotesingle{}false\textquotesingle{} \&\&\textbf{ cancel} !==\textquotesingle{}true\textquotesingle{}) \{ \$(\char`\"{}\#card-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card m-\/3\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                       $<$div class=\textbackslash{}\char`\"{}card-\/body\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$h4 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+hospital+\char`\"{}$<$/h4$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}text-\/right\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                                $<$a href=\textbackslash{}\char`\"{}\#\textbackslash{}\char`\"{} onclick=\textbackslash{}\char`\"{}modify(\textquotesingle{}\char`\"{}+key+\char`\"{}\textquotesingle{});\textbackslash{}\char`\"{} class=\textbackslash{}\char`\"{}card-\/link mr-\/3\textbackslash{}\char`\"{}$>$Modify$<$/a$>$\textbackslash{}n\char`\"{}+\char`\"{}                                $<$a href=\textbackslash{}\char`\"{}\#\textbackslash{}\char`\"{} onclick=\textbackslash{}\char`\"{}cancel(\textquotesingle{}\char`\"{}+key+\char`\"{}\textquotesingle{});\textbackslash{}\char`\"{} class=\textbackslash{}\char`\"{}card-\/link mr-\/3\textbackslash{}\char`\"{}$>$Cancel$<$/a$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{});\} if(completion===\textquotesingle{}true\textquotesingle{}$\vert$$\vert$\textbf{ cancel}===\textquotesingle{}true\textquotesingle{}) \{ if(\textbf{ exist}===false) \{ document.\+get\+Element\+By\+Id(\char`\"{}cancel\+\_\+text\char`\"{}).text\+Content=\char`\"{}Last reservations \& Cancelled reservations\char`\"{} exist=true;\} \$(\char`\"{}\#cancel-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card m-\/3\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                       $<$div class=\textbackslash{}\char`\"{}card-\/body\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$h4 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+hospital+\char`\"{}$<$/h4$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}text-\/right\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{});\} \} \});\});var hos\+\_\+name;var area\+\_\+name;var root=\textbf{ firebase.\+database}().\textbf{ ref}(\char`\"{}User/Admin/\char`\"{});root.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().email==\textbf{ firebase.\+auth}().current\+User.\+email)\{ hos\+\_\+name=data.\+val().hospital\+\_\+name;area\+\_\+name=data.\+val().\textbf{ area};\} \});\});\textbf{ set\+Timeout}(function()\{ ref.\+once(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().hospital==hos\+\_\+name \&\&data.\+val().\textbf{ area}==area\+\_\+name) \{ var \textbf{ key}=\textbf{ data.\+key} var number=\textquotesingle{}No.\textquotesingle{}+data.\+val().reservation\+Number;var pet\+Name=data.\+val().pet\+Name;var pet\+Age=data.\+val().pet\+Age;var pet\+Gender=data.\+val().pet\+Gender;var pet\+Species=data.\+val().pet\+Species;var client\+Name=data.\+val().client\+Name;var purpose=data.\+val().purpose;var time=data.\+val().\textbf{ date}+\textquotesingle{} \textquotesingle{}+data.\+val().time;var completion=data.\+val().completion;var phone\+Num=data.\+val().phone\+Num;var message=data.\+val().message;var str\+Array=data.\+val().date.\+split(\textquotesingle{}-\/\textquotesingle{});var \textbf{ cancel}=data.\+val().\textbf{ cancel};if(\textbf{ is\+Expired}(str\+Array, data.\+val().time.\+replace(\char`\"{}시\char`\"{}, \char`\"{}\char`\"{}))) \{ ref.\+child(\textbf{ key}).update(\{ completion\+:\textquotesingle{}true\textquotesingle{} \});\} if(completion===\textquotesingle{}false\textquotesingle{} \&\&\textbf{ cancel} !==\textquotesingle{}true\textquotesingle{}) \{ \$(\char`\"{}\#card-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card border-\/dark m-\/3\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/header mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text text-\/right mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/body text-\/success\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}종\+: \char`\"{}+pet\+Species+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}나이\+: \char`\"{}+pet\+Age+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}성별\+: \char`\"{}+pet\+Gender+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+client\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}연락처\+: \char`\"{}+phone\+Num+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}방문목적\+: \char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}메시지\+: \char`\"{}+message+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}) ;\} if(completion===\textquotesingle{}true\textquotesingle{}$\vert$$\vert$\textbf{ cancel}===\textquotesingle{}true\textquotesingle{}) \{ if(\textbf{ exist}===false) \{ document.\+get\+Element\+By\+Id(\char`\"{}cancel\+\_\+text\char`\"{}).text\+Content=\char`\"{}Last reservations \& Cancelled reservations\char`\"{} exist=true;\} \$(\char`\"{}\#cancel-\/\textbf{ area}\char`\"{}).append(\char`\"{}$<$div class=\textbackslash{}\char`\"{}card border-\/dark m-\/3\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/header mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+number+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text text-\/right mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+time+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$div class=\textbackslash{}\char`\"{}card-\/body text-\/success\textbackslash{}\char`\"{}$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}row\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+pet\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Species\+: \char`\"{}+pet\+Species+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Age\+: \char`\"{}+pet\+Age+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Gender\+: \char`\"{}+pet\+Gender+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}$<$div class=\textbackslash{}\char`\"{}col-\/sm-\/6\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}                            $<$h5 class=\textbackslash{}\char`\"{}card-\/title\textbackslash{}\char`\"{}$>$\char`\"{}+client\+Name+\char`\"{}$<$/h5$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Phone\+: \char`\"{}+phone\+Num+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Purpose\+: \char`\"{}+purpose+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                            $<$p class=\textbackslash{}\char`\"{}card-\/text mb-\/0\textbackslash{}\char`\"{}$>$\char`\"{}+\char`\"{}Note\+: \char`\"{}+message+\char`\"{}$<$/p$>$\textbackslash{}n\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}                        $<$/div$>$\char`\"{}+\char`\"{}$<$/div$>$\char`\"{});\} \} \});\});\}, 1500);\}}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{reservation__info__doxygen_8c_af0a33eb8350ca27858815b438e1ea7ce}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!currentTime@{currentTime}}
+\index{currentTime@{currentTime}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{currentTime}
+{\footnotesize\ttfamily var current\+Time = new Date()}
+
+
+
+Definition at line 8 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__info__doxygen_8c_a4df8767f0d4fdfb10fad73dc02b9921a}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!currentUser@{currentUser}}
+\index{currentUser@{currentUser}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{currentUser}
+{\footnotesize\ttfamily var current\+User}
+
+
+
+Definition at line 4 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__info__doxygen_8c_af4a1450f9b9ce47601f3bfba80dc2580}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!database@{database}}
+\index{database@{database}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{database}
+{\footnotesize\ttfamily var database = firebase.\+database()}
+
+
+
+Definition at line 1 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__info__doxygen_8c_a128897ac976ec2cb6e7b777624e00039}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!exist@{exist}}
+\index{exist@{exist}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{exist}
+{\footnotesize\ttfamily var exist = false}
+
+
+
+Definition at line 6 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__info__doxygen_8c_a33471905f6fe82663fd58d5507b49149}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!mode@{mode}}
+\index{mode@{mode}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{mode}
+{\footnotesize\ttfamily var mode}
+
+
+
+Definition at line 5 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__info__doxygen_8c_af6782f1c035d1db3deee7959decebb23}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!ref@{ref}}
+\index{ref@{ref}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{ref}
+{\footnotesize\ttfamily var ref = database.\+ref(\textquotesingle{}Reservation\+Detail/\textquotesingle{})}
+
+
+
+Definition at line 2 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__info__doxygen_8c_a065f30545f9fb85b706ed1e25c11bff5}} 
+\index{reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}!userRef@{userRef}}
+\index{userRef@{userRef}!reservation\_info\_doxygen.c@{reservation\_info\_doxygen.c}}
+\doxysubsubsection{userRef}
+{\footnotesize\ttfamily var user\+Ref = \textbf{ database.\+ref}(\textquotesingle{}User/\textquotesingle{})}
+
+
+
+Definition at line 3 of file reservation\+\_\+info\+\_\+doxygen.\+c.
+

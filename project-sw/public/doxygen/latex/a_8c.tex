@@ -1,0 +1,176 @@
+\doxysection{D\+:/\+Users/콩하나/workspace/\+Github/\+S\+E-\/\+Project/project-\/sw/public/js/a.c File Reference}
+\label{a_8c}\index{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/a.c@{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/a.c}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+function \textbf{ chg\+Main\+Map} (gu\+Num)
+\item 
+function \textbf{ input\+Area} (val)
+\item 
+function \textbf{ add\+\_\+row} (a, b, c, d, e, f, g, h, i, j)
+\item 
+function \textbf{ delete\+\_\+row} ()
+\item 
+function \textbf{ search\+Hospital\+Info1} (area)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{a_8c_aee02be60d1e13a3d7a999fd509e8ad0a}} 
+\index{a.c@{a.c}!add\_row@{add\_row}}
+\index{add\_row@{add\_row}!a.c@{a.c}}
+\doxysubsubsection{add\_row()}
+{\footnotesize\ttfamily function add\+\_\+row (\begin{DoxyParamCaption}\item[{a}]{,  }\item[{b}]{,  }\item[{c}]{,  }\item[{d}]{,  }\item[{e}]{,  }\item[{f}]{,  }\item[{g}]{,  }\item[{h}]{,  }\item[{i}]{,  }\item[{j}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37                                      \{}
+\DoxyCodeLine{38   var listview = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{39   addTbody = document.createElement(\textcolor{stringliteral}{"TBODY"});}
+\DoxyCodeLine{40   addTr = document.createElement(\textcolor{stringliteral}{"TR"});}
+\DoxyCodeLine{41   var arr = [a,b,c,d,e,f,g,h,i,j];}
+\DoxyCodeLine{42   addTr.setAttribute(\textcolor{stringliteral}{"align"},\textcolor{stringliteral}{"center"});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordflow}{for}(i=0; i<10; i++)\{}
+\DoxyCodeLine{45     addTd = document.createElement(\textcolor{stringliteral}{"TD"});}
+\DoxyCodeLine{46     addTd.innerHTML = arr[i];}
+\DoxyCodeLine{47     addTr.appendChild(addTd);}
+\DoxyCodeLine{48     addTbody.appendChild(addTr}
+\DoxyCodeLine{49     );}
+\DoxyCodeLine{50     listview.appendChild(addTbody);}
+\DoxyCodeLine{51   \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\label{a_8c_ab584f86d7d329142383709d9c8a2472e}} 
+\index{a.c@{a.c}!chgMainMap@{chgMainMap}}
+\index{chgMainMap@{chgMainMap}!a.c@{a.c}}
+\doxysubsubsection{chgMainMap()}
+{\footnotesize\ttfamily function chg\+Main\+Map (\begin{DoxyParamCaption}\item[{gu\+Num}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                           \{}
+\DoxyCodeLine{29   document.getElementById(\textcolor{stringliteral}{"mainMap"}).src = \textcolor{stringliteral}{"img/map1/map"}+guNum+\textcolor{stringliteral}{".png"};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}
+\mbox{\label{a_8c_a724e00620cb0e96e8ab83314b0ae373a}} 
+\index{a.c@{a.c}!delete\_row@{delete\_row}}
+\index{delete\_row@{delete\_row}!a.c@{a.c}}
+\doxysubsubsection{delete\_row()}
+{\footnotesize\ttfamily function delete\+\_\+row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54                      \{}
+\DoxyCodeLine{55   var table = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{56   \textcolor{keywordflow}{for}(i = table.rows.length -\/1; i>=1; i-\/-\/)\{}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     table.deleteRow(i);}
+\DoxyCodeLine{59   \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\label{a_8c_a33fa4c67909b63a9e8203baf0681dc28}} 
+\index{a.c@{a.c}!inputArea@{inputArea}}
+\index{inputArea@{inputArea}!a.c@{a.c}}
+\doxysubsubsection{inputArea()}
+{\footnotesize\ttfamily function input\+Area (\begin{DoxyParamCaption}\item[{val}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32                        \{}
+\DoxyCodeLine{33   var a  = document.getElementById(\textcolor{stringliteral}{'choiceArea'});}
+\DoxyCodeLine{34   a.value = val;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\label{a_8c_a95233dae4a57ef8ec56ac54c5afb8da5}} 
+\index{a.c@{a.c}!searchHospitalInfo1@{searchHospitalInfo1}}
+\index{searchHospitalInfo1@{searchHospitalInfo1}!a.c@{a.c}}
+\doxysubsubsection{searchHospitalInfo1()}
+{\footnotesize\ttfamily function search\+Hospital\+Info1 (\begin{DoxyParamCaption}\item[{area}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64                                   \{   \textcolor{comment}{//name, ti, pa, be, ho}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   inputArea(area);}
+\DoxyCodeLine{67   alertify.alert(\textcolor{stringliteral}{"Success! Please wait a moment!"})}
+\DoxyCodeLine{68   name =  document.getElementById(\textcolor{stringliteral}{'hosName'}).value;}
+\DoxyCodeLine{69   ti = document.getElementById(\textcolor{stringliteral}{'time'}).value;}
+\DoxyCodeLine{70   pa = document.getElementById(\textcolor{stringliteral}{'parking'}).value;}
+\DoxyCodeLine{71   be = document.getElementById(\textcolor{stringliteral}{'beauty'}).value;}
+\DoxyCodeLine{72   ho = document.getElementById(\textcolor{stringliteral}{'hotel'}).value;}
+\DoxyCodeLine{73   document.getElementById(\textcolor{stringliteral}{"count"}).innerHTML = \textcolor{stringliteral}{"◆ Count :\&nbsp;\&nbsp;"};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   var count = 0;}
+\DoxyCodeLine{76   var ref = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"});}
+\DoxyCodeLine{77     delete\_row();}
+\DoxyCodeLine{78     var arr = [area, name, ti, pa, be, ho];}
+\DoxyCodeLine{79     \textcolor{keywordflow}{for}(i=0; i<3; i++)\{}
+\DoxyCodeLine{80       \textcolor{keywordflow}{if}(arr[i+3] == \textcolor{stringliteral}{"O"} || arr[i+3] == \textcolor{stringliteral}{"o"})\{}
+\DoxyCodeLine{81         arr[i+3] = \textcolor{stringliteral}{"True"};}
+\DoxyCodeLine{82       \}}
+\DoxyCodeLine{83       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(arr[i+3] == \textcolor{stringliteral}{"X"} || arr[i+3] == \textcolor{stringliteral}{"x"}) \{}
+\DoxyCodeLine{84         arr[i+3] = \textcolor{stringliteral}{"False"};}
+\DoxyCodeLine{85       \}}
+\DoxyCodeLine{86       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{87         arr[i+3]= \textcolor{stringliteral}{""};}
+\DoxyCodeLine{88       \}}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     var time = parseInt(arr[2].substring(0,2));}
+\DoxyCodeLine{91     \textcolor{keywordflow}{if}(time < 9)\{}
+\DoxyCodeLine{92       time = time + 12;}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96         \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{97           var a = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{98           a.on(\textcolor{stringliteral}{"value"}, function(snapshot)\{}
+\DoxyCodeLine{99             var t = Object.values(snapshot.val());}
+\DoxyCodeLine{100             if((t[1] == arr[0] || arr[0].length==0)\&\&}
+\DoxyCodeLine{101                (t[4] == arr[1] || arr[1].length ==0)\&\&}
+\DoxyCodeLine{102                (parseInt(t[7].substring(0,2)) <= time || arr[2].length ==0)\&\&}
+\DoxyCodeLine{103                (parseInt(t[3].substring(0,2)) > time || arr[2].length ==0)\&\&}
+\DoxyCodeLine{104                (t[8] == arr[3] || arr[3].length ==0)\&\&}
+\DoxyCodeLine{105                (t[2] == arr[4] || arr[4].length ==0)\&\&}
+\DoxyCodeLine{106                (t[6] == arr[5] || arr[5].length ==0))\{}
+\DoxyCodeLine{107               if(t[9].length <2)\{}
+\DoxyCodeLine{108                 t[9] = \textcolor{stringliteral}{"Non-\/Value"};}
+\DoxyCodeLine{109               \}}
+\DoxyCodeLine{110               add\_row(t[5], t[4], t[9], t[1], t[0], t[7], t[3], t[8], t[6], t[2]);}
+\DoxyCodeLine{111               count++;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113             \}}
+\DoxyCodeLine{114         \});}
+\DoxyCodeLine{115       \}}
+\DoxyCodeLine{116       var table = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{117       \textcolor{keywordflow}{if} (table.rows.length -\/1==0)\{}
+\DoxyCodeLine{118         add\_row(\textcolor{stringliteral}{"No"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No"}, \textcolor{stringliteral}{"No"},\textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"});}
+\DoxyCodeLine{119       \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121       document.getElementById(\textcolor{stringliteral}{'count'}).innerHTML += count.toString();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \});}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     document.getElementById(\textcolor{stringliteral}{'hosName'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{126     document.getElementById(\textcolor{stringliteral}{'time'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{127     document.getElementById(\textcolor{stringliteral}{'parking'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{128     document.getElementById(\textcolor{stringliteral}{'beauty'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{129     document.getElementById(\textcolor{stringliteral}{'hotel'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{130   \}}
+
+\end{DoxyCode}

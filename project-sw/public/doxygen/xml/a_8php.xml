@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="a_8php" kind="file" language="PHP">
+    <compoundname>a.php</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="60"><highlight class="normal">QUnit.test(<sp/></highlight><highlight class="stringliteral">&quot;test<sp/>function<sp/>test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(<sp/>assert<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>test();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>assert.equal(<sp/>result,1,<sp/><sp/></highlight><highlight class="stringliteral">&quot;Passed!&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">QUnit.test(<sp/></highlight><highlight class="stringliteral">&quot;delete<sp/>row<sp/>function<sp/>test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(<sp/>assert<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>test();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>assert.equal(<sp/>result,1,<sp/><sp/></highlight><highlight class="stringliteral">&quot;Passed!&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">QUnit.test(<sp/></highlight><highlight class="stringliteral">&quot;chgMainMap<sp/>function<sp/>test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(<sp/>assert<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>chgMainMap(1);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>assert.equal(<sp/>result,</highlight><highlight class="stringliteral">&quot;img/map1/map1.png&quot;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="stringliteral">&quot;Passed!&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">QUnit.test(<sp/></highlight><highlight class="stringliteral">&quot;insertArea<sp/>function<sp/>test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(<sp/>assert<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>inputArea(</highlight><highlight class="stringliteral">&quot;강남구&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>assert.equal(<sp/>result,</highlight><highlight class="stringliteral">&quot;강남구&quot;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="stringliteral">&quot;Passed!&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">QUnit.test(<sp/></highlight><highlight class="stringliteral">&quot;add_row<sp/>function<sp/>test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(<sp/>assert<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>add_row(1,<sp/></highlight><highlight class="stringliteral">&quot;서울동물병원&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;010-4043-2907&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;강남구&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;서울특별시&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;09:00&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;18:00&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>assert.equal(<sp/>result,1,<sp/><sp/></highlight><highlight class="stringliteral">&quot;Passed!&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">QUnit.test(<sp/></highlight><highlight class="stringliteral">&quot;delete_row<sp/>function<sp/>test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(<sp/>assert<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>delete_row();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>assert.equal(<sp/>result,1,<sp/><sp/></highlight><highlight class="stringliteral">&quot;Passed!&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">QUnit.test(<sp/></highlight><highlight class="stringliteral">&quot;searchHospitalInfo1<sp/>function<sp/>test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(<sp/>assert<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>searchHospitalInfo1(</highlight><highlight class="stringliteral">&quot;광진구&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>assert.equal(<sp/>result,1,<sp/><sp/></highlight><highlight class="stringliteral">&quot;Passed!&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="keyword">function</highlight><highlight class="normal"><sp/>test(){</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="keyword">function</highlight><highlight class="normal"><sp/>chgMainMap(guNum){</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;mainMap&quot;</highlight><highlight class="normal">).src<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;img/map1/map&quot;</highlight><highlight class="normal">+guNum+</highlight><highlight class="stringliteral">&quot;.png&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;img/map1/map&quot;</highlight><highlight class="normal">+guNum+</highlight><highlight class="stringliteral">&quot;.png&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>inputArea(val){</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>var<sp/>a<sp/><sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;choiceArea&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>a.value<sp/>=<sp/>val;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a.value;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>add_row(a,b,c,d,e,f,g,h,i,j){</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>var<sp/>listview<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;hosTable&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>addTbody<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;TBODY&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>addTr<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;TR&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>var<sp/>arr<sp/>=<sp/>[a,b,c,d,e,f,g,h,i,j];</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>addTr.setAttribute(</highlight><highlight class="stringliteral">&quot;align&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;center&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;10;<sp/>i++){</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>addTd<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;TD&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>addTd.innerHTML<sp/>=<sp/>arr[i];</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>addTr.appendChild(addTd);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>addTbody.appendChild(addTr</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>listview.appendChild(addTbody);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>delete_row(){</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>var<sp/>table<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;hosTable&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>table.rows.length<sp/>-1;<sp/>i&gt;=1;<sp/>i--){</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>table.deleteRow(i);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>searchHospitalInfo1(area){<sp/><sp/><sp/></highlight><highlight class="comment">//name,<sp/>ti,<sp/>pa,<sp/>be,<sp/>ho</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>inputArea(area);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>alertify.alert(</highlight><highlight class="stringliteral">&quot;Success!<sp/>Please<sp/>wait<sp/>a<sp/>moment!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>name<sp/>=<sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hosName&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>ti<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>pa<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;parking&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>be<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;beauty&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>ho<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hotel&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;서울동물병원&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>ti<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;11:00&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>pa<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;o&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>be<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>ho<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;o&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;count&quot;</highlight><highlight class="normal">).innerHTML<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;◆<sp/>Count<sp/>:&amp;nbsp;&amp;nbsp;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>var<sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>var<sp/>ref<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>delete_row();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>arr<sp/>=<sp/>[area,<sp/>name,<sp/>ti,<sp/>pa,<sp/>be,<sp/>ho];</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;3;<sp/>i++){</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;O&quot;</highlight><highlight class="normal"><sp/>||<sp/>arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;o&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr[i+3]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;True&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;X&quot;</highlight><highlight class="normal"><sp/>||<sp/>arr[i+3]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr[i+3]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;False&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr[i+3]=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>time<sp/>=<sp/>parseInt(arr[2].substring(0,2));</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(time<sp/>&lt;<sp/>9){</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>time<sp/>=<sp/>time<sp/>+<sp/>12;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>ref.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i&lt;<sp/>Object.keys(snapshot.val()).length;<sp/>i++){</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>a<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal"><sp/>+<sp/>Object.keys(snapshot.val())[i]);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/>function(snapshot){</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>t<sp/>=<sp/>Object.values(snapshot.val());</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if((t[1]<sp/>==<sp/>arr[0]<sp/>||<sp/>arr[0].length==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[4]<sp/>==<sp/>arr[1]<sp/>||<sp/>arr[1].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(parseInt(t[7].substring(0,2))<sp/>&lt;=<sp/>time<sp/>||<sp/>arr[2].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(parseInt(t[3].substring(0,2))<sp/>&gt;<sp/>time<sp/>||<sp/>arr[2].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[8]<sp/>==<sp/>arr[3]<sp/>||<sp/>arr[3].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[2]<sp/>==<sp/>arr[4]<sp/>||<sp/>arr[4].length<sp/>==0)&amp;&amp;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(t[6]<sp/>==<sp/>arr[5]<sp/>||<sp/>arr[5].length<sp/>==0)){</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[9].length<sp/>&lt;2){</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t[9]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Non-Value&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>add_row(t[5],<sp/>t[4],<sp/>t[9],<sp/>t[1],<sp/>t[0],<sp/>t[7],<sp/>t[3],<sp/>t[8],<sp/>t[6],<sp/>t[2]);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>table<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;hosTable&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(table.rows.length<sp/>-1==0){</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>add_row(</highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;count&apos;</highlight><highlight class="normal">).innerHTML<sp/>+=<sp/>count.toString();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hosName&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;parking&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;beauty&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hotel&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/a.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,24 @@
+digraph "setTimeout"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="setTimeout",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Part of call the user information."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="aut_modify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#a02b7de3672e5444c750ec6514cf46b64",tooltip=": function for administrator users to modify their information"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="aut_signUp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#a81d4888a726f78bbfca447a92ef07c76",tooltip=": receive administrator user's input and permit to sign up on site"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="log",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#ad9bf319908ad9cc741a7719cd978f609",tooltip=": check user's sign-in state to block using other functions if he's not in sign-in state"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="auth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#a05c1b946e33de480386e2399620376a6",tooltip=": check the user is whether sign-in or not"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="login",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#ae57b549e595facf624ceca9ba37f2c14",tooltip=": check whether the user is valid to sign-in"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="logout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#a5ac1c48041cdff0691b88eba8a23a86b",tooltip=": check user to sign-out"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="mem_modify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#a25627251a3e82742cd370fcc78f16dc2",tooltip=": function for member users to modify their information"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="mem_signUp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#adab94730bac3b69d7212c51d3fbf8f4a",tooltip=": receive member user's input and permit to sign up on site"];
+}

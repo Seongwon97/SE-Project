@@ -1,0 +1,221 @@
+\doxysection{D\+:/\+Users/콩하나/workspace/\+Github/\+S\+E-\/\+Project/project-\/sw/public/js/doxygen js file/hospital\+\_\+doxygen.c File Reference}
+\label{hospital__doxygen_8c}\index{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/hospital\_doxygen.c@{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/hospital\_doxygen.c}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+function \textbf{ chg\+Main\+Map} (gu\+Num)
+\begin{DoxyCompactList}\small\item\em change the photo of seoul mapp \end{DoxyCompactList}\item 
+function \textbf{ input\+Area} (val)
+\item 
+function \textbf{ add\+\_\+row} (a, b, c, d, e, f, g, h, i, j)
+\begin{DoxyCompactList}\small\item\em make the table to show the hospital information. \end{DoxyCompactList}\item 
+function \textbf{ delete\+\_\+row} ()
+\begin{DoxyCompactList}\small\item\em delete all rows of table. \end{DoxyCompactList}\item 
+function \textbf{ search\+Hospital\+Info1} (\textbf{ area})
+\begin{DoxyCompactList}\small\item\em search the hospital information you want. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{hospital__doxygen_8c_aee02be60d1e13a3d7a999fd509e8ad0a}} 
+\index{hospital\_doxygen.c@{hospital\_doxygen.c}!add\_row@{add\_row}}
+\index{add\_row@{add\_row}!hospital\_doxygen.c@{hospital\_doxygen.c}}
+\doxysubsubsection{add\_row()}
+{\footnotesize\ttfamily function add\+\_\+row (\begin{DoxyParamCaption}\item[{a}]{,  }\item[{b}]{,  }\item[{c}]{,  }\item[{d}]{,  }\item[{e}]{,  }\item[{f}]{,  }\item[{g}]{,  }\item[{h}]{,  }\item[{i}]{,  }\item[{j}]{ }\end{DoxyParamCaption})}
+
+
+
+make the table to show the hospital information. 
+
+the hospital information is shown at the info table. ~\newline
+ The hospital information is selected and displayed by the options you choose. 
+\begin{DoxyParams}{Parameters}
+{\em each} & option value for select the hospital information. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53                                      \{}
+\DoxyCodeLine{54   var listview = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{55   addTbody = document.createElement(\textcolor{stringliteral}{"TBODY"});}
+\DoxyCodeLine{56   addTr = document.createElement(\textcolor{stringliteral}{"TR"});}
+\DoxyCodeLine{57   var arr = [a,b,c,d,e,f,g,h,i,j];}
+\DoxyCodeLine{58   addTr.setAttribute(\textcolor{stringliteral}{"align"},\textcolor{stringliteral}{"center"});}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordflow}{for}(i=0; i<10; i++)\{}
+\DoxyCodeLine{61     addTd = document.createElement(\textcolor{stringliteral}{"TD"});}
+\DoxyCodeLine{62     addTd.innerHTML = arr[i];}
+\DoxyCodeLine{63     addTr.appendChild(addTd);}
+\DoxyCodeLine{64     addTbody.appendChild(addTr}
+\DoxyCodeLine{65     );}
+\DoxyCodeLine{66     listview.appendChild(addTbody);}
+\DoxyCodeLine{67   \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\label{hospital__doxygen_8c_ab584f86d7d329142383709d9c8a2472e}} 
+\index{hospital\_doxygen.c@{hospital\_doxygen.c}!chgMainMap@{chgMainMap}}
+\index{chgMainMap@{chgMainMap}!hospital\_doxygen.c@{hospital\_doxygen.c}}
+\doxysubsubsection{chgMainMap()}
+{\footnotesize\ttfamily function chg\+Main\+Map (\begin{DoxyParamCaption}\item[{gu\+Num}]{ }\end{DoxyParamCaption})}
+
+
+
+change the photo of seoul mapp 
+
+if you click the map of seoul, the photo of seoul change to represent your area. 
+\begin{DoxyParams}{Parameters}
+{\em number} & of photo. each number is matched each photo of seoul map. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                           \{}
+\DoxyCodeLine{35   document.getElementById(\textcolor{stringliteral}{"mainMap"}).src = \textcolor{stringliteral}{"img/map1/map"}+guNum+\textcolor{stringliteral}{".png"};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\label{hospital__doxygen_8c_a724e00620cb0e96e8ab83314b0ae373a}} 
+\index{hospital\_doxygen.c@{hospital\_doxygen.c}!delete\_row@{delete\_row}}
+\index{delete\_row@{delete\_row}!hospital\_doxygen.c@{hospital\_doxygen.c}}
+\doxysubsubsection{delete\_row()}
+{\footnotesize\ttfamily function delete\+\_\+row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+delete all rows of table. 
+
+To show new hospital informations, ~\newline
+ Delete the existing information in the table and display the required information in the table. 
+\begin{DoxyParams}{Parameters}
+{\em no} & parameter. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76                      \{}
+\DoxyCodeLine{77   var table = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{78   \textcolor{keywordflow}{for}(i = table.rows.length -\/1; i>=1; i-\/-\/)\{}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     table.deleteRow(i);}
+\DoxyCodeLine{81   \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\label{hospital__doxygen_8c_a33fa4c67909b63a9e8203baf0681dc28}} 
+\index{hospital\_doxygen.c@{hospital\_doxygen.c}!inputArea@{inputArea}}
+\index{inputArea@{inputArea}!hospital\_doxygen.c@{hospital\_doxygen.c}}
+\doxysubsubsection{inputArea()}
+{\footnotesize\ttfamily function input\+Area (\begin{DoxyParamCaption}\item[{val}]{ }\end{DoxyParamCaption})}
+
+when you click the map of seoul, the area info box change synchronously. 
+\begin{DoxyParams}{Parameters}
+{\em area} & name selected from map. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42                        \{}
+\DoxyCodeLine{43   var a  = document.getElementById(\textcolor{stringliteral}{'choiceArea'});}
+\DoxyCodeLine{44   a.value = val;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\label{hospital__doxygen_8c_a95233dae4a57ef8ec56ac54c5afb8da5}} 
+\index{hospital\_doxygen.c@{hospital\_doxygen.c}!searchHospitalInfo1@{searchHospitalInfo1}}
+\index{searchHospitalInfo1@{searchHospitalInfo1}!hospital\_doxygen.c@{hospital\_doxygen.c}}
+\doxysubsubsection{searchHospitalInfo1()}
+{\footnotesize\ttfamily function search\+Hospital\+Info1 (\begin{DoxyParamCaption}\item[{\textbf{ area}}]{ }\end{DoxyParamCaption})}
+
+
+
+search the hospital information you want. 
+
+you can choose various options to select the hospital information. ~\newline
+Hospital information is selected and displayed by the options you choose. ~\newline
+You can simply check the hospital information you want through this information. 
+\begin{DoxyParams}{Parameters}
+{\em The} & area name of the hospital you want to get. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                                   \{   \textcolor{comment}{//name, ti, pa, be, ho}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   inputArea(area);}
+\DoxyCodeLine{95   alertify.alert(\textcolor{stringliteral}{"Success! Please wait a moment!"})}
+\DoxyCodeLine{96   name =  document.getElementById(\textcolor{stringliteral}{'hosName'}).value;}
+\DoxyCodeLine{97   ti = document.getElementById(\textcolor{stringliteral}{'time'}).value;}
+\DoxyCodeLine{98   pa = document.getElementById(\textcolor{stringliteral}{'parking'}).value;}
+\DoxyCodeLine{99   be = document.getElementById(\textcolor{stringliteral}{'beauty'}).value;}
+\DoxyCodeLine{100   ho = document.getElementById(\textcolor{stringliteral}{'hotel'}).value;}
+\DoxyCodeLine{101   document.getElementById(\textcolor{stringliteral}{"count"}).innerHTML = \textcolor{stringliteral}{"◆ Count :\&nbsp;\&nbsp;"};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   var count = 0;}
+\DoxyCodeLine{104   var ref = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"});}
+\DoxyCodeLine{105     delete\_row();}
+\DoxyCodeLine{106     var arr = [area, name, ti, pa, be, ho];}
+\DoxyCodeLine{107     \textcolor{keywordflow}{for}(i=0; i<3; i++)\{}
+\DoxyCodeLine{108       \textcolor{keywordflow}{if}(arr[i+3] == \textcolor{stringliteral}{"O"} || arr[i+3] == \textcolor{stringliteral}{"o"})\{}
+\DoxyCodeLine{109         arr[i+3] = \textcolor{stringliteral}{"True"};}
+\DoxyCodeLine{110       \}}
+\DoxyCodeLine{111       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(arr[i+3] == \textcolor{stringliteral}{"X"} || arr[i+3] == \textcolor{stringliteral}{"x"}) \{}
+\DoxyCodeLine{112         arr[i+3] = \textcolor{stringliteral}{"False"};}
+\DoxyCodeLine{113       \}}
+\DoxyCodeLine{114       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{115         arr[i+3]= \textcolor{stringliteral}{""};}
+\DoxyCodeLine{116       \}}
+\DoxyCodeLine{117     \}}
+\DoxyCodeLine{118     var time = parseInt(arr[2].substring(0,2));}
+\DoxyCodeLine{119     \textcolor{keywordflow}{if}(time < 9)\{}
+\DoxyCodeLine{120       time = time + 12;}
+\DoxyCodeLine{121     \}}
+\DoxyCodeLine{122     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{125           var a = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{126           a.on(\textcolor{stringliteral}{"value"}, function(snapshot)\{}
+\DoxyCodeLine{127             var t = Object.values(snapshot.val());}
+\DoxyCodeLine{128             if((t[1] == arr[0] || arr[0].length==0)\&\&}
+\DoxyCodeLine{129                (t[4] == arr[1] || arr[1].length ==0)\&\&}
+\DoxyCodeLine{130                (parseInt(t[7].substring(0,2)) <= time || arr[2].length ==0)\&\&}
+\DoxyCodeLine{131                (parseInt(t[3].substring(0,2)) > time || arr[2].length ==0)\&\&}
+\DoxyCodeLine{132                (t[8] == arr[3] || arr[3].length ==0)\&\&}
+\DoxyCodeLine{133                (t[2] == arr[4] || arr[4].length ==0)\&\&}
+\DoxyCodeLine{134                (t[6] == arr[5] || arr[5].length ==0))\{}
+\DoxyCodeLine{135               if(t[9].length <2)\{}
+\DoxyCodeLine{136                 t[9] = \textcolor{stringliteral}{"Non-\/Value"};}
+\DoxyCodeLine{137               \}}
+\DoxyCodeLine{138               add\_row(t[5], t[4], t[9], t[1], t[0], t[7], t[3], t[8], t[6], t[2]);}
+\DoxyCodeLine{139               count++;}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141             \}}
+\DoxyCodeLine{142         \});}
+\DoxyCodeLine{143       \}}
+\DoxyCodeLine{144       var table = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{145       \textcolor{keywordflow}{if} (table.rows.length -\/1==0)\{}
+\DoxyCodeLine{146         add\_row(\textcolor{stringliteral}{"No"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No"}, \textcolor{stringliteral}{"No"},\textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"});}
+\DoxyCodeLine{147       \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149       document.getElementById(\textcolor{stringliteral}{'count'}).innerHTML += count.toString();}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \});}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     document.getElementById(\textcolor{stringliteral}{'hosName'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{154     document.getElementById(\textcolor{stringliteral}{'time'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{155     document.getElementById(\textcolor{stringliteral}{'parking'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{156     document.getElementById(\textcolor{stringliteral}{'beauty'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{157     document.getElementById(\textcolor{stringliteral}{'hotel'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{158   \}}
+
+\end{DoxyCode}

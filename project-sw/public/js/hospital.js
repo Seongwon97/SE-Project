@@ -1,13 +1,55 @@
+/**
+    @mainpage Project : Animal Hospital Reservation System.
+    @section intro
+        - intro : You can make the reservation more easily
+        - description : you can select the hospital of seoul.\nand make the reservation from available time & date
+    @section Program : animal-hospital-project.web.app
+    @section Input & Output
+        - INPUT : reservation\n
+                  data for manage % change informations\n
+                  data for searching his/her information.
+        - OUTPUT : data from firebase database.
+    @section  CreateInfo
+        - author :   \nJo Wonbeen\n
+                     Jang Haeyoung\n
+                     Oh Sungwon\n
+                     Yeo Junku
+        - data :   2020-06-22
+    @section  ModifyInfo
+        - 2020/06/22
+            -# write document
+            -# wtite each function
+    @subsection execution
+        - animal-hospital-project.web.app
+    @section copyright
+        - Software department of Gachon univ.
+        - prohibition of external disclosure
+*/
 
+/**
+ *@brief change the photo of seoul mapp
+ *@details if you click the map of seoul, the photo of seoul change to represent your area.
+ *@param number of photo. each number is matched each photo of seoul map.
+*/
 function chgMainMap(guNum){
   document.getElementById("mainMap").src = "img/map1/map"+guNum+".png";
 
 }
+/**
+ *@details when you click the map of seoul, the area info box change synchronously.
+ *@param area name selected from map.
+*/
 function inputArea(val){
   var a  = document.getElementById('choiceArea');
   a.value = val;
 
 }
+/**
+ *@brief make the table to show the hospital information.
+ *@details the hospital information is shown at the info table. \n
+           The hospital information is selected and displayed by the options you choose.
+ *@param each option value for select the hospital information.
+*/
 function add_row(a,b,c,d,e,f,g,h,i,j){
   var listview = document.getElementById("hosTable");
   addTbody = document.createElement("TBODY");
@@ -25,16 +67,28 @@ function add_row(a,b,c,d,e,f,g,h,i,j){
   }
 
 }
+/**
+ *@brief delete all rows of table.
+ *@details To show new hospital informations, \n
+           Delete the existing information in the table and display the required information in the table.
+ *@param no parameter.
+*/
 function delete_row(){
   var table = document.getElementById("hosTable");
   for(i = table.rows.length -1; i>=1; i--){
 
     table.deleteRow(i);
   }
-  
+
 
 }
-
+/**
+ *@brief search the hospital information you want.
+ *@details you can choose various options to select the hospital information. \n
+ Hospital information is selected and displayed by the options you choose. \n
+ You can simply check the hospital information you want through this information.
+ *@param The area name of the hospital you want to get.
+*/
 function searchHospitalInfo1(area){   //name, ti, pa, be, ho
 
   inputArea(area);

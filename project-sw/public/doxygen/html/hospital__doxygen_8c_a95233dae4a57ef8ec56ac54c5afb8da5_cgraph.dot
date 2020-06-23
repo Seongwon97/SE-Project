@@ -1,0 +1,14 @@
+digraph "searchHospitalInfo1"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="searchHospitalInfo1",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="search the hospital information you want."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="add_row",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hospital__doxygen_8c.html#aee02be60d1e13a3d7a999fd509e8ad0a",tooltip="make the table to show the hospital information."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="delete_row",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hospital__doxygen_8c.html#a724e00620cb0e96e8ab83314b0ae373a",tooltip="delete all rows of table."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="inputArea",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hospital__doxygen_8c.html#a33fa4c67909b63a9e8203baf0681dc28",tooltip=" "];
+}
