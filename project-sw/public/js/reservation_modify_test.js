@@ -1,86 +1,27 @@
-// QUnit.test( "dateSelected function test", function( assert ) {
-//     const result = dateSelected();
-//     assert.equal( result,1,  "Passed!" );
-// });
-//
-// QUnit.test( "sortSelect function test", function( assert ) {
-//     const result = sortSelect();
-//     assert.equal( result,1,  "Passed!" );
-// });
-//
-// QUnit.test( "submitBtn function test", function( assert ) {
-//     const result = submitBtn();
-//     assert.equal(result, 1,  "Passed!" );
-// });
+ QUnit.test( "dateSelected function test", function( assert ) {
+     const result = dateSelected();
+     assert.equal( result,1,  "Passed!" );
+ });
 
-var database = firebase.database();
-var detailRef = database.ref('ReservationDetail/');
-var key = location.href.substr(
-    location.href.lastIndexOf('=') + 1
-);
-var date;
-var area;
-var origin_time;
 
-$(document).ready(function () {
-    detailRef.on("value", function (snapshot) {
-        var number = 'No.' + snapshot.child(key).val().reservationNumber;
-        var hospital = snapshot.child(key).val().hospital;
-        var petName = snapshot.child(key).val().petName;
-        var petSpecies = snapshot.child(key).val().petSpecies;
-        var type = snapshot.child(key).val().purpose;
-        var message = snapshot.child(key).val().message;
-        date = snapshot.child(key).val().date;
-        origin_time = snapshot.child(key).val().time;
-        area = snapshot.child(key).val().area;
 
-        document.getElementById('Number').value = number;
-        document.getElementById('Name').value = hospital;
-        document.getElementById('Petname').value = petName;
-        document.getElementById('Petspecies').value = petSpecies;
-        document.getElementById('Message').value = message;
-        document.getElementById('date').value = date;
-        // var event = new Event('change');
-        // document.getElementById('date').dispatchEvent(event);
+ QUnit.test( "submitBtn function test", function( assert ) {
+     const result = submitBtn();
+     assert.equal(result, 1,  "Passed!" );
+ });
 
-        //여기서 강제로 발생시키는 거에요
-        $('#date').change();
 
-        if (type === '미용') {
-            $("#Purpose option:eq(0)").prop("selected", true);
-        } else if (type === '예방접종') {
-            $("#Purpose option:eq(1)").prop("selected", true);
-        } else if (type === '정기검진') {
-            $("#Purpose option:eq(2)").prop("selected", true);
-        } else if (type === '치료') {
-            $("#Purpose option:eq(3)").prop("selected", true);
-        }
-    });
-});
 
 //날짜 선택시 해당 병원, 해당 날짜에 비어있는 시간 time option에 추가.
 function dateSelected(e) {
     var target = document.getElementById("time");
     var hospital_v = document.getElementById('Name').value;
     var area_v = area;
-    var close = 0;
-    var open = 0;
+    var close = "18:30";
+    var open = "9:30";
 
-    //병원 영업시간 받아서 변수에 저장하는 부분
-    var ref = firebase.database().ref("Hospital_Info/");
-    ref.on("value", function (snapshot) {
-        snapshot.forEach(function (data) {
-            //병원 이름과 병원이 있는 지역이 모두 같은 경우
-            if (data.val().hospitalName === hospital_v) {
-                if (data.val().areaName === area_v) {
-                    open = data.val().openTime;
-                    close = data.val().closeTime;
-                }
-            }
-        });
-    });
 
-    setTimeout(function () {
+
         var openT = open.toString().split(":");
         var openH = Number(openT[0]);
         var openM = Number(openT[1]);
@@ -141,7 +82,6 @@ function dateSelected(e) {
         if (document.getElementById('date').value === date) {
             $("#time").val(origin_time).prop("selected", true);
         }
-    }, 1000);
     return 1;
 }
 

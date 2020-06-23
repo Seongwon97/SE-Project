@@ -32,8 +32,11 @@
   </head>
   <body>
     <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
+    <div id="qunit-fixture" style = "height: 3000px;"></div>
     <script src="Qunit/qunit.js"></script>
+    <script src="js/blanket.min.js"></script>
+    <script src="js/aut_signup_test.js" data-cover></script>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="medilife-load"></div>
@@ -87,7 +90,7 @@
 
 
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/bg1.jpg);">
-                <div class="container h-100">
+                <div class="container h-100" >
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                           <div class="sign-up-box">
@@ -190,7 +193,6 @@
 
     <script src="config.js"></script>    <!-- hosting info -->
 
-    <script src="account_test.js"></script>
   </body>
 
 </html>
