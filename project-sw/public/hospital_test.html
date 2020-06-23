@@ -1,5 +1,5 @@
 <html lang="en">
-<head>
+  <head>
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,254 +29,253 @@
     <script src="resource/alertify.min.js"></script>
     <meta name="viewport" content="width=device-width">
     <title>QUnit Example</title>
-    <link rel="stylesheet" href="Qunit/qunit.css">
-</head>
-<body>
+    <link rel="stylesheet" href="ex/qunit-1.14.0.css">
+  </head>
+  <body>
 
 
-<div id="qunit"></div>
-<div id="qunit-fixture"></div>
-<script src="Qunit/qunit.js"></script>
-<script src="js/blanket.min.js"></script>
-<script src="js/hospital_test.js" data-cover></script>
-<script src="js/hospital_test.js" data-cover></script>
-<script src="js/hospital_test.js" data-cover></script>
-
-
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="ex/qunit-1.14.0.js"></script>
+    <script src="js/blanket.min.js"></script>
+    <script src="js/hospital.js" data-cover></script>
+    <script src="js/hospital_test.js"></script>
 
 
 
 
-<!-- Preloader -->
-<div id="preloader">
-    <div class="medilife-load"></div>
-</div>
 
-<!-- ***** Header Area Start ***** -->
-<header class="header-area">
-    <!-- Main Header Area -->
-    <div class="main-header-area" id="stickyHeader">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 h-100">
-                    <div class="main-menu h-100">
-                        <nav class="navbar h-100 navbar-expand-lg">
-                            <!-- Logo Area  -->
-                            <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                            <div class="collapse navbar-collapse" id="medilifeMenu">
-                                <!-- Menu Area -->
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="hospital_info.html">Hospital Information</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="reservation.html">Reservation</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="reservation_info.html">Reservation Information</a>
-                                    </li>
-                                </ul>
-                                <!-- Appointment Button -->
-                                <div id="on_btn">
-                                    <a id = "log-memu" href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="medilife-load"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <!-- Main Header Area -->
+        <div class="main-header-area" id="stickyHeader">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 h-100">
+                        <div class="main-menu h-100">
+                            <nav class="navbar h-100 navbar-expand-lg">
+                                <!-- Logo Area  -->
+                                <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse" id="medilifeMenu">
+                                    <!-- Menu Area -->
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="hospital_info.html">Hospital Information</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="reservation.html">Reservation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="reservation_info.html">Reservation Information</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Appointment Button -->
+                                    <div id="on_btn">
+                                      <a id = "log-memu" href="log_in.html" type="button" class="btn medilife-appoint-btn ml-30">Log-In/Sign-UP</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </nav>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<!-- ***** Header Area End ***** -->
+    </header>
+    <!-- ***** Header Area End ***** -->
 
-<!-- ***** Hero Area Start ***** -->
-<div class="single-hero-slide bg-img bg-overlay-white" style=" height : 1150px;background-image: url(img/bg-img/bg1.jpg);">
-    <br><br><br><br><br><br><br><br>
     <!-- ***** Hero Area Start ***** -->
-    <div class="medilife-book-an-appoinment-area" style = " height: 800px; "><!--1070-->
-        <div class="container" style = "height: 100%;">
-            <div class="row" style = "height: 100%;">
-                <div class="col-12" style = "height: 100%;">
-                    <div class="appointment-form-content" style = "height: 100%;">
-                        <!--<div class="row no-gutters align-items-center" style = "border:4px solid gold;height: 100%;">-->
-                        <div style = " height:460px;">
-                            <div class="medilife-appointment-form"  style = " left:5px; height: 450px;width: 500px">
-                                <form action="#" method="post" style = "">
-                                    <h2 style = "color:white; margin-top:-35px;margin-left:15px;"><i class="far fa-check-circle" ></i>&nbsp;&nbsp;Select your Area</h2>
-                                    <div class="row align-items-end" style = " margin-top:20px; ">
-                                        <div class="contentsCenter" >
-                                            <div style = "margin-left:20px; ">
-                                                <select class="form-control" id = "choiceArea" style = "width:100%; height: 40px; font-size: 15px; padding: 0 15px;">
-                                                    <option id = "arealist" value="" >구선택</option>
-                                                    <option value="강남구">강남구</option>
-                                                    <option value="강동구">강동구</option>
-                                                    <option value="강북구">강북구</option>
-                                                    <option value="강서구">강서구</option>
-                                                    <option value="관악구">관악구</option>
-                                                    <option value="광진구">광진구</option>
-                                                    <option value="구로구">구로구</option>
-                                                    <option value="금천구">금천구</option>
-                                                    <option value="노원구">노원구</option>
-                                                    <option value="도봉구">도봉구</option>
-                                                    <option value="동대문구">동대문구</option>
-                                                    <option value="동작구">동작구</option>
-                                                    <option value="마포구">마포구</option>
-                                                    <option value="서대문구">서대문구</option>
-                                                    <option value="서초구">서초구</option>
-                                                    <option value="성동구">성동구</option>
-                                                    <option value="성북구">성북구</option>
-                                                    <option value="송파구">송파구</option>
-                                                    <option value="양천구">양천구</option>
-                                                    <option value="영등포구">영등포구</option>
-                                                    <option value="용산구">용산구</option>
-                                                    <option value="은평구">은평구</option>
-                                                    <option value="종로구">종로구</option>
-                                                    <option value="중구">중구</option>
-                                                    <option value="중랑구">중랑구</option>
+            <div class="single-hero-slide bg-img bg-overlay-white" style=" height : 1150px;background-image: url(img/bg-img/bg1.jpg);">
+                    <br><br><br><br><br><br><br><br>
+                        <!-- ***** Hero Area Start ***** -->
+                        <div class="medilife-book-an-appoinment-area" style = " height: 800px; "><!--1070-->
+                            <div class="container" style = "height: 100%;">
+                                <div class="row" style = "height: 100%;">
+                                    <div class="col-12" style = "height: 100%;">
+                                        <div class="appointment-form-content" style = "height: 100%;">
+                                            <!--<div class="row no-gutters align-items-center" style = "border:4px solid gold;height: 100%;">-->
+                                                <div style = " height:460px;">
+                                                    <div class="medilife-appointment-form"  style = " left:5px; height: 450px;width: 500px">
+                                                        <form action="#" method="post" style = "">
+                                                            <h2 style = "color:white; margin-top:-35px;margin-left:15px;"><i class="far fa-check-circle" ></i>&nbsp;&nbsp;Select your Area</h2>
+                                                            <div class="row align-items-end" style = " margin-top:20px; ">
+                                                              <div class="contentsCenter" >
+                                                                <div style = "margin-left:20px; ">
+                                                                  <select class="form-control" id = "choiceArea" style = "width:100%; height: 40px; font-size: 15px; padding: 0 15px;">
+                                                                      <option id = "arealist" value="" >구선택</option>
+                                                                            <option value="강남구">강남구</option>
+                                                                            <option value="강동구">강동구</option>
+                                                                            <option value="강북구">강북구</option>
+                                                                            <option value="강서구">강서구</option>
+                                                                            <option value="관악구">관악구</option>
+                                                                            <option value="광진구">광진구</option>
+                                                                            <option value="구로구">구로구</option>
+                                                                            <option value="금천구">금천구</option>
+                                                                            <option value="노원구">노원구</option>
+                                                                            <option value="도봉구">도봉구</option>
+                                                                            <option value="동대문구">동대문구</option>
+                                                                            <option value="동작구">동작구</option>
+                                                                            <option value="마포구">마포구</option>
+                                                                            <option value="서대문구">서대문구</option>
+                                                                            <option value="서초구">서초구</option>
+                                                                            <option value="성동구">성동구</option>
+                                                                            <option value="성북구">성북구</option>
+                                                                            <option value="송파구">송파구</option>
+                                                                            <option value="양천구">양천구</option>
+                                                                            <option value="영등포구">영등포구</option>
+                                                                            <option value="용산구">용산구</option>
+                                                                            <option value="은평구">은평구</option>
+                                                                            <option value="종로구">종로구</option>
+                                                                            <option value="중구">중구</option>
+                                                                            <option value="중랑구">중랑구</option>
 
-                                                </select>
-                                            </div>
-                                            <br><br>
-                                            <!-- 지도넣을자리 -->
-                                            <p class="imgMap" style = "margin-left:20px; margin-top :-60px; ">
-                                                <img id="mainMap" name="mainMap" src="img/map1/map0.png" width="362px" height="300px" alt="서울시 구별 지도"
-                                                     usemap="#seoulMap" />
-                                                <map id="seoulMap" name="seoulMap">
-                                                    <area shape="rect" onmouseover="chgMainMap(12)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(12)"
-                                                          onclick = "searchHospitalInfo1('강서구');" coords="38,90,90,160" />
-                                                    <area shape="poly" onmouseover="chgMainMap(22)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(22)"
-                                                          onclick = "searchHospitalInfo1('양천구');" coords="70,150,105,150,105,140,115,140,115,175,70,175 " />
-                                                    <area shape="poly" onmouseover="chgMainMap(6)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(6)"
-                                                          onclick = "searchHospitalInfo1('구로구');" coords=" 70,175,115,175,115,210, 70,210" />
-                                                    <area shape="rect" onmouseover="chgMainMap(7)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(7)"
-                                                          onclick = "searchHospitalInfo1('금천구');" coords="110,210,145,245" />
-                                                    <area shape="rect" onmouseover="chgMainMap(8)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(8)"
-                                                          onclick = "searchHospitalInfo1('관악구');" coords="135,190,180,245" />
-                                                    <area shape="rect" onmouseover="chgMainMap(16)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(16)"
-                                                          onclick = "searchHospitalInfo1('동작구');" coords="135,190,180,175" />
-                                                    <area shape="poly" onmouseover="chgMainMap(23)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(23)"
-                                                          onclick = "searchHospitalInfo1('영등포구');" coords="120,140,115,175, 125,200,135,175,165,155" />
-                                                    <area shape="poly" onmouseover="chgMainMap(19)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(19)"
-                                                          onclick = "searchHospitalInfo1('서초구');" coords="180,180,180,230, 240,260, 265,230, 225,210, 200,160" />
-                                                    <area shape="poly" onmouseover="chgMainMap(9)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(9)"
-                                                          onclick = "searchHospitalInfo1('강남구');" coords="265,230, 225,210, 200,160, 210,145, 225,160, 290,220" />
-                                                    <area shape="poly" onmouseover="chgMainMap(21)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(21)"
-                                                          onclick = "searchHospitalInfo1('송파구');" coords="225,170, 290,220, 310,200, 270,140" />
-                                                    <area shape="poly" onmouseover="chgMainMap(10)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(10)"
-                                                          onclick = "searchHospitalInfo1('강동구');" coords="295,175,320,140, 310, 120,270,125" />
-                                                    <area shape="poly" onmouseover="chgMainMap(17)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(17)"
-                                                          onclick = "searchHospitalInfo1('마포구');" coords="100,130,155,157,167,147,115,110" />
-                                                    <area shape="poly" onmouseover="chgMainMap(18)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(18)"
-                                                          onclick = "searchHospitalInfo1('서대문구');" coords="167,147,164,87,127,120" />
-                                                    <area shape="poly" onmouseover="chgMainMap(24)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(24)"
-                                                          onclick = "searchHospitalInfo1('은평구');" coords="115,110, 127,120, 173, 70, 150,37" />
-                                                    <area shape="poly" onmouseover="chgMainMap(1)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(1)"
-                                                          onclick = "searchHospitalInfo1('종로구');" coords="173, 70, 162,95, 160, 125, 214,122,180, 105" />
-                                                    <area shape="poly" onmouseover="chgMainMap(2)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(2)"
-                                                          onclick = "searchHospitalInfo1('중구');" coords="167,147, 160, 125, 205,122, 205, 148" />
-                                                    <area shape="poly" onmouseover="chgMainMap(3)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(3)"
-                                                          onclick = "searchHospitalInfo1('용산구');" coords="167,147, 212, 148, 205,174, 150,164" />
-                                                    <area shape="poly" onmouseover="chgMainMap(20)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(20)"
-                                                          onclick = "searchHospitalInfo1('성동구');" coords="205,122, 205, 148, 230, 163, 240, 140" />
-                                                    <area shape="poly" onmouseover="chgMainMap(4)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(4)"
-                                                          onclick = "searchHospitalInfo1('광진구');" onclick = "searchHospitalInfo('광진구');" coords="230, 163, 240, 140, 274, 127, 280,162" />
-                                                    <area shape="poly" onmouseover="chgMainMap(26)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(26)"
-                                                          onclick = "searchHospitalInfo1('동대문구');" coords="240, 140, 240, 87, 207,116" />
-                                                    <area shape="poly" onmouseover="chgMainMap(25)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(25)"
-                                                          onclick = "searchHospitalInfo1('중랑구');" coords="240, 83, 240, 140,274, 127, 275,75 " />
-                                                    <area shape="poly" onmouseover="chgMainMap(13)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(13)"
-                                                          onclick = "searchHospitalInfo1('노원구');" coords="240, 83,275,75, 260,15,225,10,225,70, 220, 82 " />
-                                                    <area shape="poly" onmouseover="chgMainMap(5)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(5)"
-                                                          onclick = "searchHospitalInfo1('성북구');" coords="225,70, 220, 82, 207,116,  175, 105,170, 60, 224, 93" />
-                                                    <area shape="poly" onmouseover="chgMainMap(11)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(11)"
-                                                          onclick = "searchHospitalInfo1('강북구');" coords="170, 60, 224, 93, 225,70, 192, 46, 192, 12, 185, 14" />
-                                                    <area shape="poly" onmouseover="chgMainMap(14)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(14)"
-                                                          onclick = "searchHospitalInfo1('도봉구');" coords="225,70, 192, 46, 192, 7, 225,10,225,70" />
-                                                </map>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div  style = " margin-left:660; margin-top: -250px;margin-bottom: 50px;height : 200px; ">
-                                <div class="form-group"  style = "margin-left:75;margin-top:25px; ">
-                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="hosName" placeholder="Hospital Name"  style = "width : 200px; text-align :center; margin-left:55px;">
-                                </div>
-                                <div style = " width:350px; margin-left:130px; margin-top:60px;">
-                                    <button type="submit" class="btn medilife-btn"
-                                            onclick ="searchHospitalInfo1(document.getElementById('choiceArea').value);"> &nbsp;&nbsp;&nbsp;&nbsp;Search : Click here! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-hand-pointer" style = "font-size : 30px; margin-top:2px;"></i></button>
-                                </div>
-                            </div>
-                            <div style = "margin-left : 500px;margin-top: -449px; height :200px;">
-                                <h2 style = "color:white;"> <i class="fas fa-search"></i>&nbsp;&nbsp; Input Search Options  </h2>
-                                <div style = " height :50px; margin-top:100px">
-                                    <div class="form-group"  style = " float:left; margin-right : 20px;">
-                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="ti" id="time" placeholder="Time" style = "width : 70px; text-align :center;">
-                                    </div>
-                                    <div class="form-group"  style = "float:left;margin-right : 20px;">
-                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="pa" id="parking" placeholder="Parking (O/X)" style = "width : 130px; text-align :center;">
-                                    </div>
+                                                                  </select>
+                                                                </div>
+                                                                  <br><br>
+                                                                    <!-- 지도넣을자리 -->
+                                                                    <p class="imgMap" style = "margin-left:20px; margin-top :-60px; ">
+                                                                      <img id="mainMap" name="mainMap" src="img/map1/map0.png" width="362px" height="300px" alt="서울시 구별 지도"
+                                                              usemap="#seoulMap" />
+                                                                      <map id="seoulMap" name="seoulMap">
+                                                                        <area shape="rect" onmouseover="chgMainMap(12)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(12)"
+                                                                        onclick = "searchHospitalInfo1('강서구');" coords="38,90,90,160" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(22)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(22)"
+                                                                        onclick = "searchHospitalInfo1('양천구');" coords="70,150,105,150,105,140,115,140,115,175,70,175 " />
+                                                                        <area shape="poly" onmouseover="chgMainMap(6)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(6)"
+                                                                        onclick = "searchHospitalInfo1('구로구');" coords=" 70,175,115,175,115,210, 70,210" />
+                                                                        <area shape="rect" onmouseover="chgMainMap(7)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(7)"
+                                                                        onclick = "searchHospitalInfo1('금천구');" coords="110,210,145,245" />
+                                                                        <area shape="rect" onmouseover="chgMainMap(8)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(8)"
+                                                                        onclick = "searchHospitalInfo1('관악구');" coords="135,190,180,245" />
+                                                                        <area shape="rect" onmouseover="chgMainMap(16)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(16)"
+                                                                        onclick = "searchHospitalInfo1('동작구');" coords="135,190,180,175" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(23)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(23)"
+                                                                        onclick = "searchHospitalInfo1('영등포구');" coords="120,140,115,175, 125,200,135,175,165,155" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(19)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(19)"
+                                                                        onclick = "searchHospitalInfo1('서초구');" coords="180,180,180,230, 240,260, 265,230, 225,210, 200,160" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(9)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(9)"
+                                                                        onclick = "searchHospitalInfo1('강남구');" coords="265,230, 225,210, 200,160, 210,145, 225,160, 290,220" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(21)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(21)"
+                                                                        onclick = "searchHospitalInfo1('송파구');" coords="225,170, 290,220, 310,200, 270,140" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(10)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(10)"
+                                                                        onclick = "searchHospitalInfo1('강동구');" coords="295,175,320,140, 310, 120,270,125" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(17)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(17)"
+                                                                        onclick = "searchHospitalInfo1('마포구');" coords="100,130,155,157,167,147,115,110" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(18)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(18)"
+                                                                        onclick = "searchHospitalInfo1('서대문구');" coords="167,147,164,87,127,120" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(24)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(24)"
+                                                                        onclick = "searchHospitalInfo1('은평구');" coords="115,110, 127,120, 173, 70, 150,37" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(1)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(1)"
+                                                                        onclick = "searchHospitalInfo1('종로구');" coords="173, 70, 162,95, 160, 125, 214,122,180, 105" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(2)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(2)"
+                                                                        onclick = "searchHospitalInfo1('중구');" coords="167,147, 160, 125, 205,122, 205, 148" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(3)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(3)"
+                                                                        onclick = "searchHospitalInfo1('용산구');" coords="167,147, 212, 148, 205,174, 150,164" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(20)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(20)"
+                                                                        onclick = "searchHospitalInfo1('성동구');" coords="205,122, 205, 148, 230, 163, 240, 140" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(4)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(4)"
+                                                                        onclick = "searchHospitalInfo1('광진구');" onclick = "searchHospitalInfo('광진구');" coords="230, 163, 240, 140, 274, 127, 280,162" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(26)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(26)"
+                                                                        onclick = "searchHospitalInfo1('동대문구');" coords="240, 140, 240, 87, 207,116" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(25)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(25)"
+                                                                        onclick = "searchHospitalInfo1('중랑구');" coords="240, 83, 240, 140,274, 127, 275,75 " />
+                                                                        <area shape="poly" onmouseover="chgMainMap(13)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(13)"
+                                                                        onclick = "searchHospitalInfo1('노원구');" coords="240, 83,275,75, 260,15,225,10,225,70, 220, 82 " />
+                                                                        <area shape="poly" onmouseover="chgMainMap(5)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(5)"
+                                                                        onclick = "searchHospitalInfo1('성북구');" coords="225,70, 220, 82, 207,116,  175, 105,170, 60, 224, 93" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(11)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(11)"
+                                                                        onclick = "searchHospitalInfo1('강북구');" coords="170, 60, 224, 93, 225,70, 192, 46, 192, 12, 185, 14" />
+                                                                        <area shape="poly" onmouseover="chgMainMap(14)" onmouseout="chgMainMap(0)" onfocus="chgMainMap(14)"
+                                                                        onclick = "searchHospitalInfo1('도봉구');" coords="225,70, 192, 46, 192, 7, 225,10,225,70" />
+                                                                      </map>
+                                                                    </p>
+                                                                </div>
+                                                              </div>
+                                                                </form>
+                                                          </div>
+                                                          <div  style = " margin-left:660; margin-top: -250px;margin-bottom: 50px;height : 200px; ">
+                                                              <div class="form-group"  style = "margin-left:75;margin-top:25px; ">
+                                                                  <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="hosName" placeholder="Hospital Name"  style = "width : 200px; text-align :center; margin-left:55px;">
+                                                              </div>
+                                                              <div style = " width:350px; margin-left:130px; margin-top:60px;">
+                                                              <button type="submit" class="btn medilife-btn"
+                                                                onclick ="searchHospitalInfo1(document.getElementById('choiceArea').value);"> &nbsp;&nbsp;&nbsp;&nbsp;Search : Click here! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-hand-pointer" style = "font-size : 30px; margin-top:2px;"></i></button>
+                                                              </div>
+                                                          </div>
+                                                          <div style = "margin-left : 500px;margin-top: -449px; height :200px;">
+                                                            <h2 style = "color:white;"> <i class="fas fa-search"></i>&nbsp;&nbsp; Input Search Options  </h2>
+                                                            <div style = " height :50px; margin-top:100px">
+                                                            <div class="form-group"  style = " float:left; margin-right : 20px;">
+                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="ti" id="time" placeholder="Time" style = "width : 70px; text-align :center;">
+                                                            </div>
+                                                            <div class="form-group"  style = "float:left;margin-right : 20px;">
+                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="pa" id="parking" placeholder="Parking (O/X)" style = "width : 130px; text-align :center;">
+                                                            </div>
 
-                                    <div class="form-group"  style = "float:left;margin-right : 20px;">
-                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="ho" id="hotel" placeholder="Hotel (O/X)" style = "width : 130px; text-align :center;">
-                                    </div>
-                                    <div class="form-group"  style = "float:left;">
-                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="be" id="beauty" placeholder="Beauty (O/X)" style = "width : 130px; text-align :center;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  <!--red div-->
-                        <div class="medilife-contact-info" ><!--style = "background-color : skyblue;"-->
-                            <div style = "height : 50px; width : 700px; float:left"  >
-                                <H2 style = "color : white;">&nbsp;&nbsp;<i class="fas fa-info-circle"></i> &nbsp; Hospital Information  </H2>
-                                <div style = "height : 50px; width : 200px; float:left; margin-left:750px;margin-top: -40px;">
-                                    <h2 id = "count" style = "color : white;">◆ Count : &nbsp;&nbsp;</h2>
-                                </div>
-                            </div>  <!-- Single Contact Info -->
-                            <div class="single-contact-info" style = "width:100%;height : 270px; overflow:auto; overflow-x:hidden; border:1px solid black;">
-                                <table id = "hosTable" border = '3' bgcolor = white style = "color :gray;">
-                                    <tr align = center style = "color :black;">
-                                        <th width = 20>Num</th><th width = 250>Name</th><th width = 100>Phone</th>
-                                        <th width = 70>Area</th><th width = 300>Address</th><th width = 50>Open</th>
-                                        <th width = 50>Close</th><th width = 70>Parking</th><th width = 60>Hotel</th>
-                                        <th width = 60>Beauty</th>
-                                    </tr>
-                                </table>
-                            </div>
+                                                            <div class="form-group"  style = "float:left;margin-right : 20px;">
+                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="ho" id="hotel" placeholder="Hotel (O/X)" style = "width : 130px; text-align :center;">
+                                                            </div>
+                                                            <div class="form-group"  style = "float:left;">
+                                                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="be" id="beauty" placeholder="Beauty (O/X)" style = "width : 130px; text-align :center;">
+                                                            </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>  <!--red div-->
+                                                          <div class="medilife-contact-info" ><!--style = "background-color : skyblue;"-->
+                                                              <div style = "height : 50px; width : 700px; float:left"  >
+                                                                <H2 style = "color : white;">&nbsp;&nbsp;<i class="fas fa-info-circle"></i> &nbsp; Hospital Information  </H2>
+                                                                <div style = "height : 50px; width : 200px; float:left; margin-left:750px;margin-top: -40px;">
+                                                                  <h2 id = "count" style = "color : white;">◆ Count : &nbsp;&nbsp;</h2>
+                                                                </div>
+                                                              </div>  <!-- Single Contact Info -->
+                                                            <div class="single-contact-info" style = "width:100%;height : 270px; overflow:auto; overflow-x:hidden; border:1px solid black;">
+                                                                <table id = "hosTable" border = '3' bgcolor = white style = "color :gray;">
+                                                                  <tr align = center style = "color :black;">
+                                                                    <th width = 20>Num</th><th width = 250>Name</th><th width = 100>Phone</th>
+                                                                    <th width = 70>Area</th><th width = 300>Address</th><th width = 50>Open</th>
+                                                                    <th width = 50>Close</th><th width = 70>Parking</th><th width = 60>Hotel</th>
+                                                                    <th width = 60>Beauty</th>
+                                                                  </tr>
+                                                                </table>
+                                                              </div>
+                                                          </div>
+                                                      </div> <!-- gold -->
+                                                  </div>
+                                          </div>
+                                      </div>
+                                  <!-- ***** Book An Appoinment Area End ***** -->
+
                         </div>
-                    </div> <!-- gold -->
-                </div>
+                        <!-- ***** Hero Area End ***** -->
+              					&nbsp;
             </div>
-        </div>
-        <!-- ***** Book An Appoinment Area End ***** -->
-
-    </div>
     <!-- ***** Hero Area End ***** -->
-    &nbsp;
-</div>
-<!-- ***** Hero Area End ***** -->
 
 <!-- map image change -->
 
 
-<!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
-<!-- Popper js -->
-<script src="js/popper.min.js"></script>
-<!-- Bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Plugins js -->
-<!--<script src="js/plugins.js"></script>  -->
-<!-- Active js -->
-<script src="js/active.js"></script>
-<script src="https://kit.fontawesome.com/ee9a561ebb.js" crossorigin="anonymous"></script>
-<script src="config.js"></script>    <!-- hosting info -->
-<script src="account.js"></script>
-</body>
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <!--<script src="js/plugins.js"></script>  -->
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <script src="https://kit.fontawesome.com/ee9a561ebb.js" crossorigin="anonymous"></script>
+    <script src="config.js"></script>    <!-- hosting info -->
+    <script src="account.js"></script>
+  </body>
 
 </html>

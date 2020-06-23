@@ -1,0 +1,10 @@
+digraph "log"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="log",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=": check user's sign-in state to block using other functions if he's not in sign-in state"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="auth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account__doxygen_8c.html#a05c1b946e33de480386e2399620376a6",tooltip=": check the user is whether sign-in or not"];
+}

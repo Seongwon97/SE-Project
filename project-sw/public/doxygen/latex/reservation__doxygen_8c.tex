@@ -1,0 +1,415 @@
+\doxysection{D\+:/\+Users/콩하나/workspace/\+Github/\+S\+E-\/\+Project/project-\/sw/public/js/doxygen js file/reservation\+\_\+doxygen.c File Reference}
+\label{reservation__doxygen_8c}\index{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/reservation\_doxygen.c@{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/reservation\_doxygen.c}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ set\+Timeout} (function()\{ \textbf{ firebase.\+auth}().on\+Auth\+State\+Changed(function(user)\{ if(user)\{ var \textbf{ ref}=\textbf{ firebase.\+database}().\textbf{ ref}(\char`\"{}User/Admin/\char`\"{});ref.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().email==\textbf{ firebase.\+auth}().current\+User.\+email)\{ document.\+get\+Element\+By\+Id(\char`\"{}name\char`\"{}).value=data.\+val().username;document.\+get\+Element\+By\+Id(\char`\"{}phone\char`\"{}).value=data.\+val().phone\+\_\+num;\} \});\});\textbf{ ref}=\textbf{ firebase.\+database}().\textbf{ ref}(\textquotesingle{}User/Member/\textquotesingle{});ref.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().email==\textbf{ firebase.\+auth}().current\+User.\+email)\{ document.\+get\+Element\+By\+Id(\char`\"{}name\char`\"{}).value=data.\+val().username;document.\+get\+Element\+By\+Id(\char`\"{}phone\char`\"{}).value=data.\+val().phone\+\_\+num;\} \});\});\} \});\}, 2000)
+\begin{DoxyCompactList}\small\item\em Part of call the user information. \end{DoxyCompactList}\item 
+function \textbf{ category\+Change1} (e)
+\begin{DoxyCompactList}\small\item\em Change the option of hospital selection when selecting a region. \end{DoxyCompactList}\item 
+function \textbf{ date\+Selected} (e)
+\begin{DoxyCompactList}\small\item\em When selecting a date, the free time on the selected date at the hospital is added to the time option. \end{DoxyCompactList}\item 
+function \textbf{ category\+Change2} (e)
+\begin{DoxyCompactList}\small\item\em Code for displaying hospital information when choosing a hospital. \end{DoxyCompactList}\item 
+function \textbf{ reserve} ()
+\begin{DoxyCompactList}\small\item\em A function that stores reservation information in db. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \textbf{ reservation\+Num} =0
+\item 
+var \textbf{ admin\+Id} =\char`\"{}\char`\"{}
+\item 
+var \textbf{ today} = new Date()
+\item 
+\textbf{ date} \textbf{ min} = new Date().to\+I\+S\+O\+String().substring(0, 10)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{reservation__doxygen_8c_a4ce2108ea78907260275bced385cfaa9}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!categoryChange1@{categoryChange1}}
+\index{categoryChange1@{categoryChange1}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{categoryChange1()}
+{\footnotesize\ttfamily function category\+Change1 (\begin{DoxyParamCaption}\item[{e}]{ }\end{DoxyParamCaption})}
+
+
+
+Change the option of hospital selection when selecting a region. 
+
+When a region is selected, access the hospital\+\_\+info in the DB and find the hospitals corresponding to the selected area and put them all in the hospital self option. 
+\begin{DoxyParams}{Parameters}
+{\em \textquotesingle{}\+Hospital\textquotesingle{}} & is the id of the select space where users select the hospital to reserve within the html file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file reservation\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62                             \{}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 var ref = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"});}
+\DoxyCodeLine{65 var target = document.getElementById(\textcolor{stringliteral}{"hospital"});}
+\DoxyCodeLine{66 target.options.length = 0;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 var opt = document.createElement(\textcolor{stringliteral}{"option"});}
+\DoxyCodeLine{69 opt.value = \textcolor{stringliteral}{"Please select a hospital"};}
+\DoxyCodeLine{70 opt.innerHTML = \textcolor{stringliteral}{"Please select a hospital"};}
+\DoxyCodeLine{71 target.appendChild(opt);}
+\DoxyCodeLine{72 ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{73     \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{74       var a = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76       a.on(\textcolor{stringliteral}{"value"}, function(snapshot)\{}
+\DoxyCodeLine{77         var t = Object.values(snapshot.val());}
+\DoxyCodeLine{78         if((t[1] == e.value))\{}
+\DoxyCodeLine{79           if(t[9].length <2)\{}
+\DoxyCodeLine{80             t[9] = \textcolor{stringliteral}{"Non-\/Value"};}
+\DoxyCodeLine{81           \}}
+\DoxyCodeLine{82           var opt = document.createElement(\textcolor{stringliteral}{"option"});}
+\DoxyCodeLine{83           opt.value = t[4];}
+\DoxyCodeLine{84           opt.innerHTML = t[4];}
+\DoxyCodeLine{85           target.appendChild(opt);}
+\DoxyCodeLine{86           \}}
+\DoxyCodeLine{87         \});}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89   \});}
+\DoxyCodeLine{90   document.getElementById(\textcolor{stringliteral}{'date'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{91   document.getElementById(\textcolor{stringliteral}{'time'}).value = \textcolor{stringliteral}{"Time"};}
+\DoxyCodeLine{92 \}}
+
+\end{DoxyCode}
+\mbox{\label{reservation__doxygen_8c_ab58f37ecb1a652de1b16b9b7ae1edee2}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!categoryChange2@{categoryChange2}}
+\index{categoryChange2@{categoryChange2}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{categoryChange2()}
+{\footnotesize\ttfamily function category\+Change2 (\begin{DoxyParamCaption}\item[{e}]{ }\end{DoxyParamCaption})}
+
+
+
+Code for displaying hospital information when choosing a hospital. 
+
+When selecting a hospital, the hospital information is received from the DB and the hospital information is displayed. 
+\begin{DoxyParams}{Parameters}
+{\em \textquotesingle{}\+Hospital\textquotesingle{}} & is the id of the select space where users select the hospital to reserve within the html file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 198 of file reservation\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{198                             \{}
+\DoxyCodeLine{199 var ref = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"});}
+\DoxyCodeLine{200 ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{201     \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{202       var a = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204       a.on(\textcolor{stringliteral}{"value"}, function(snapshot)\{}
+\DoxyCodeLine{205         var t = Object.values(snapshot.val());}
+\DoxyCodeLine{206         if((t[4] == e.value))\{}
+\DoxyCodeLine{207           if(t[9].length <2)\{}
+\DoxyCodeLine{208             t[9] = \textcolor{stringliteral}{"Non-\/Value"};}
+\DoxyCodeLine{209           \}}
+\DoxyCodeLine{210           document.getElementById(\textcolor{stringliteral}{'hName'}).innerHTML=e.value;}
+\DoxyCodeLine{211           document.getElementById(\textcolor{stringliteral}{'hPhone'}).innerHTML=t[9];}
+\DoxyCodeLine{212           document.getElementById(\textcolor{stringliteral}{'hAddress'}).innerHTML=t[0];}
+\DoxyCodeLine{213           document.getElementById(\textcolor{stringliteral}{'hTime'}).innerHTML=t[7]+\textcolor{stringliteral}{' \string~ '}+t[3];}
+\DoxyCodeLine{214           if(t[8]==\textcolor{stringliteral}{'True'})\{document.getElementById(\textcolor{stringliteral}{'hPark'}).innerHTML=\textcolor{stringliteral}{"Available"};\}}
+\DoxyCodeLine{215           else if(t[8]==\textcolor{stringliteral}{'False'})\{document.getElementById(\textcolor{stringliteral}{'hPark'}).innerHTML=\textcolor{stringliteral}{"Unavailable"};\}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217           \}}
+\DoxyCodeLine{218         \});}
+\DoxyCodeLine{219     \}}
+\DoxyCodeLine{220   \});}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223   var area=document.getElementById(\textcolor{stringliteral}{'area'});}
+\DoxyCodeLine{224   var area\_v=area.options[area.selectedIndex].value;}
+\DoxyCodeLine{225   var hospital =document.getElementById(\textcolor{stringliteral}{'hospital'});}
+\DoxyCodeLine{226   var hospital\_v=hospital.options[hospital.selectedIndex].value;}
+\DoxyCodeLine{227   var ref = firebase.database().ref(\textcolor{stringliteral}{"User/Admin/"});}
+\DoxyCodeLine{228   ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{229       \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{230         var a = firebase.database().ref(\textcolor{stringliteral}{"User/Admin/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{231         a.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{232           var t = Object.values(snapshot.val());}
+\DoxyCodeLine{233           \textcolor{keywordflow}{if}((t[4] == hospital\_v))\{}
+\DoxyCodeLine{234             if(t[1]==area\_v)\{}
+\DoxyCodeLine{235               adminId=t[3];}
+\DoxyCodeLine{236             \}}
+\DoxyCodeLine{237             \}}
+\DoxyCodeLine{238           \});}
+\DoxyCodeLine{239       \}}
+\DoxyCodeLine{240     \});}
+\DoxyCodeLine{241     document.getElementById(\textcolor{stringliteral}{'date'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{242     document.getElementById(\textcolor{stringliteral}{'time'}).value = \textcolor{stringliteral}{"Time"};}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \}}
+
+\end{DoxyCode}
+\mbox{\label{reservation__doxygen_8c_afc90b7e89337bf10110075a1e9d84ede}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!dateSelected@{dateSelected}}
+\index{dateSelected@{dateSelected}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{dateSelected()}
+{\footnotesize\ttfamily function date\+Selected (\begin{DoxyParamCaption}\item[{e}]{ }\end{DoxyParamCaption})}
+
+
+
+When selecting a date, the free time on the selected date at the hospital is added to the time option. 
+
+When selecting a date, the hospital receives the hospital\textquotesingle{}s business hours information first and the information scheduled for that date.~\newline
+When the work is finished, add the time option when the appointment time is empty during the hospital reservation time. 
+\begin{DoxyParams}{Parameters}
+{\em \textquotesingle{}\+Hospital\textquotesingle{}} & is the id of the select space where users select the hospital to reserve within the html file.~\newline
+ \textquotesingle{}area\textquotesingle{} is the id of the select space where users select the area to reserve within the html file.~\newline
+ \textquotesingle{}date\textquotesingle{} is the id of the select space where users select the date to reserve within the html file.~\newline
+ \textquotesingle{}time\textquotesingle{} is the id of the select space where users select the time to reserve within the html file.~\newline
+ open,close, openH, openM is the infirmation that hospital open time and close time \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file reservation\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106                         \{}
+\DoxyCodeLine{107   var target = document.getElementById(\textcolor{stringliteral}{"time"});}
+\DoxyCodeLine{108   var hospital =document.getElementById(\textcolor{stringliteral}{'hospital'});}
+\DoxyCodeLine{109   var hospital\_v=hospital.options[hospital.selectedIndex].value;}
+\DoxyCodeLine{110   var area=document.getElementById(\textcolor{stringliteral}{'area'});}
+\DoxyCodeLine{111   var area\_v=area.options[area.selectedIndex].value;}
+\DoxyCodeLine{112   var close=0;}
+\DoxyCodeLine{113   var open=0;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   var ref = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"});}
+\DoxyCodeLine{117   ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{118       \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{119         var a = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         a.on(\textcolor{stringliteral}{"value"}, function(snapshot)\{}
+\DoxyCodeLine{122           var t = Object.values(snapshot.val());}
+\DoxyCodeLine{123           if((t[4] == hospital\_v))\{}
+\DoxyCodeLine{124             if(t[9].length <2)\{}
+\DoxyCodeLine{125               t[9] = \textcolor{stringliteral}{"Non-\/Value"};}
+\DoxyCodeLine{126             \}}
+\DoxyCodeLine{127             open=t[7];}
+\DoxyCodeLine{128             close=t[3];}
+\DoxyCodeLine{129             \}}
+\DoxyCodeLine{130           \});}
+\DoxyCodeLine{131       \}}
+\DoxyCodeLine{132     \});}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     var openT=open.split(\textcolor{stringliteral}{":"});}
+\DoxyCodeLine{135     var openH=Number(openT[0]);}
+\DoxyCodeLine{136     var openM=Number(openT[1]);}
+\DoxyCodeLine{137     \textcolor{keywordflow}{if}(openM > 0)\{}
+\DoxyCodeLine{138       openH=openH+1;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     var closeT=close.split(\textcolor{stringliteral}{":"});}
+\DoxyCodeLine{142     var closeH=Number(closeT[0]);}
+\DoxyCodeLine{143     var closeM=Number(closeT[1]);}
+\DoxyCodeLine{144     \textcolor{keywordflow}{if}(closeM > 0)\{}
+\DoxyCodeLine{145       closeH=closeH+1;}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     target.options.length = 0;}
+\DoxyCodeLine{149     var opt = document.createElement(\textcolor{stringliteral}{"option"});}
+\DoxyCodeLine{150     opt.value = \textcolor{stringliteral}{"Time"};}
+\DoxyCodeLine{151     opt.innerHTML = \textcolor{stringliteral}{"Time"};}
+\DoxyCodeLine{152     target.appendChild(opt);}
+\DoxyCodeLine{153     var arr=[];}
+\DoxyCodeLine{154     var ref = firebase.database().ref(\textcolor{stringliteral}{"ReservationDetail/"});}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{157         reservationNum=Object.keys(snapshot.val()).length; \});}
+\DoxyCodeLine{158     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{159         \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{160           var a = firebase.database().ref(\textcolor{stringliteral}{"ReservationDetail/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{161           a.on(\textcolor{stringliteral}{"value"}, function(snapshot)\{}
+\DoxyCodeLine{162             var t = Object.values(snapshot.val());}
+\DoxyCodeLine{163             if((t[6] == hospital\_v))\{}
+\DoxyCodeLine{164               if(t[0]==area\_v)\{}
+\DoxyCodeLine{165                 if(t[5]==e.target.value)\{}
+\DoxyCodeLine{166                     arr.push(t[15]);}
+\DoxyCodeLine{167                 \}}
+\DoxyCodeLine{168               \}}
+\DoxyCodeLine{169               \}}
+\DoxyCodeLine{170             \});}
+\DoxyCodeLine{171         \}}
+\DoxyCodeLine{172       \});}
+\DoxyCodeLine{173       setTimeout(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{174       available=[]}
+\DoxyCodeLine{175       \textcolor{keywordflow}{for}(i=openH; i<closeH; i++)\{}
+\DoxyCodeLine{176         var temp=String(i);}
+\DoxyCodeLine{177         temp=temp.concat(\textcolor{stringliteral}{"시"});}
+\DoxyCodeLine{178         \textcolor{keywordflow}{if}(arr.indexOf(temp)== (-\/1))\{}
+\DoxyCodeLine{179           var opt = document.createElement(\textcolor{stringliteral}{"option"});}
+\DoxyCodeLine{180           opt.value = temp;}
+\DoxyCodeLine{181           opt.innerHTML = temp;}
+\DoxyCodeLine{182           target.appendChild(opt);}
+\DoxyCodeLine{183         \}}
+\DoxyCodeLine{184       \}}
+\DoxyCodeLine{185     \},500);}
+\DoxyCodeLine{186 \}}
+
+\end{DoxyCode}
+\mbox{\label{reservation__doxygen_8c_ad2d1d22f0d718fb7a1644b437ccf0903}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!reserve@{reserve}}
+\index{reserve@{reserve}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{reserve()}
+{\footnotesize\ttfamily function reserve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A function that stores reservation information in db. 
+
+Read the values in the table, send the reservation information to DB, and make a reservation. 
+\begin{DoxyParams}{Parameters}
+{\em Each} & variable means the id of the reservation table and the variable that stores it. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 254 of file reservation\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{254                   \{}
+\DoxyCodeLine{255   var userId=firebase.auth().currentUser.email;}
+\DoxyCodeLine{256   var area=document.getElementById(\textcolor{stringliteral}{'area'});}
+\DoxyCodeLine{257   var area\_v=area.options[area.selectedIndex].value;}
+\DoxyCodeLine{258   var hospital =document.getElementById(\textcolor{stringliteral}{'hospital'});}
+\DoxyCodeLine{259   var hospital\_v=hospital.options[hospital.selectedIndex].value;}
+\DoxyCodeLine{260   var purpose =document.getElementById(\textcolor{stringliteral}{'purpose'});}
+\DoxyCodeLine{261   var purpose\_v=purpose.options[purpose.selectedIndex].value;}
+\DoxyCodeLine{262   var petGender=document.getElementById(\textcolor{stringliteral}{'petGender'});}
+\DoxyCodeLine{263   var petGender\_v=petGender.options[petGender.selectedIndex].value;}
+\DoxyCodeLine{264   var name = document.getElementById(\textcolor{stringliteral}{'name'}).value;}
+\DoxyCodeLine{265   var phone = document.getElementById(\textcolor{stringliteral}{'phone'}).value;}
+\DoxyCodeLine{266   var date\_v=document.getElementById(\textcolor{stringliteral}{'date'}).value;}
+\DoxyCodeLine{267   var time=document.getElementById(\textcolor{stringliteral}{'time'});}
+\DoxyCodeLine{268   var time\_v=time.options[time.selectedIndex].value;}
+\DoxyCodeLine{269   var petName\_v=document.getElementById(\textcolor{stringliteral}{'petName'}).value;}
+\DoxyCodeLine{270   var petAge\_v=document.getElementById(\textcolor{stringliteral}{'petAge'}).value;}
+\DoxyCodeLine{271   var petSpecies\_v=document.getElementById(\textcolor{stringliteral}{'petSpecies'}).value;}
+\DoxyCodeLine{272   var message\_v=document.getElementById(\textcolor{stringliteral}{'message'}).value;}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \textcolor{keywordflow}{if} (hospital\_v==\textcolor{stringliteral}{"Please select a hospital"}||hospital\_v==\textcolor{stringliteral}{""})\{alertify.alert(\textcolor{stringliteral}{"Selet the Hospital"});\}}
+\DoxyCodeLine{275     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(date\_v==\textcolor{stringliteral}{""}||date\_v==\textcolor{stringliteral}{"연도-\/월-\/일"})\{alertify.alert(\textcolor{stringliteral}{"Select the date"});\}}
+\DoxyCodeLine{276     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(time\_v==\textcolor{stringliteral}{""}||time\_v==\textcolor{stringliteral}{"Time"})\{alertify.alert(\textcolor{stringliteral}{"Select the Time"});\}}
+\DoxyCodeLine{277     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(purpose\_v==\textcolor{stringliteral}{"purpose"}||purpose\_v==\textcolor{stringliteral}{""})\{alertify.alert(\textcolor{stringliteral}{"Select the Purpose"});\}}
+\DoxyCodeLine{278     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(name==\textcolor{stringliteral}{""})\{alertify.alert(\textcolor{stringliteral}{"Enter the name"});\}}
+\DoxyCodeLine{279     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(phone==\textcolor{stringliteral}{""})\{alertify.alert(\textcolor{stringliteral}{"Enter the Phone number"});\}}
+\DoxyCodeLine{280     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(petName\_v==\textcolor{stringliteral}{""})\{alertify.alert(\textcolor{stringliteral}{"Enter the Pet Name"});\}}
+\DoxyCodeLine{281     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(petAge\_v==\textcolor{stringliteral}{""})\{alertify.alert(\textcolor{stringliteral}{"Enter the pet age"});\}}
+\DoxyCodeLine{282     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(petSpecies\_v==\textcolor{stringliteral}{""})\{alertify.alert(\textcolor{stringliteral}{"Enter the pet species"});\}}
+\DoxyCodeLine{283     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(petGender\_v==\textcolor{stringliteral}{""}||petGender\_v==\textcolor{stringliteral}{"Pet Gender"})\{alertify.alert(\textcolor{stringliteral}{"Select the pet gender"});\}}
+\DoxyCodeLine{284     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{285       rootRef = firebase.database().ref(\textcolor{stringliteral}{'ReservationDetail/'});;}
+\DoxyCodeLine{286       rootRef.push(\{}
+\DoxyCodeLine{287         reservationNumber: reservationNum+1,}
+\DoxyCodeLine{288         clientId: userId,}
+\DoxyCodeLine{289         clientName: name,}
+\DoxyCodeLine{290         phoneNum: phone,}
+\DoxyCodeLine{291         area: area\_v,}
+\DoxyCodeLine{292         hospital: hospital\_v,}
+\DoxyCodeLine{293         completion: \textcolor{stringliteral}{"false"},}
+\DoxyCodeLine{294         purpose: purpose\_v,}
+\DoxyCodeLine{295         date: date\_v,}
+\DoxyCodeLine{296         time: time\_v,}
+\DoxyCodeLine{297         petName: petName\_v,}
+\DoxyCodeLine{298         petAge: petAge\_v,}
+\DoxyCodeLine{299         petSpecies: petSpecies\_v,}
+\DoxyCodeLine{300         petGender:petGender\_v,}
+\DoxyCodeLine{301         message: message\_v,}
+\DoxyCodeLine{302         cancel:\textcolor{stringliteral}{'false'}}
+\DoxyCodeLine{303       \});}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305       document.getElementById(\textcolor{stringliteral}{'area'}).value = \textcolor{stringliteral}{"Please select a region"};}
+\DoxyCodeLine{306       document.getElementById(\textcolor{stringliteral}{'hospital'}).value = \textcolor{stringliteral}{"Please select a hospital"};}
+\DoxyCodeLine{307       document.getElementById(\textcolor{stringliteral}{'purpose'}).value = \textcolor{stringliteral}{"purpose"};}
+\DoxyCodeLine{308       document.getElementById(\textcolor{stringliteral}{'name'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{309       document.getElementById(\textcolor{stringliteral}{'phone'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{310       document.getElementById(\textcolor{stringliteral}{'date'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{311       document.getElementById(\textcolor{stringliteral}{'time'}).value = \textcolor{stringliteral}{"Time"};}
+\DoxyCodeLine{312       document.getElementById(\textcolor{stringliteral}{'petName'}).value = \textcolor{stringliteral}{"Pet Name"};}
+\DoxyCodeLine{313       document.getElementById(\textcolor{stringliteral}{'petAge'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{314       document.getElementById(\textcolor{stringliteral}{'petSpecies'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{315       document.getElementById(\textcolor{stringliteral}{'petGender'}).value = \textcolor{stringliteral}{"Pet Gender"};}
+\DoxyCodeLine{316       document.getElementById(\textcolor{stringliteral}{'message'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{317       window.location.href = \textcolor{stringliteral}{'index.html'};}
+\DoxyCodeLine{318       alertify.alert(\textcolor{stringliteral}{'Reservation Complete.'});}
+\DoxyCodeLine{319     \}}
+\DoxyCodeLine{320 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\label{reservation__doxygen_8c_ab7b5e595f925645f61dde5998c2920f8}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!setTimeout@{setTimeout}}
+\index{setTimeout@{setTimeout}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{setTimeout()}
+{\footnotesize\ttfamily set\+Timeout (\begin{DoxyParamCaption}\item[{function()\{ \textbf{ firebase.\+auth}().on\+Auth\+State\+Changed(function(user)\{ if(user)\{ var \textbf{ ref}=\textbf{ firebase.\+database}().\textbf{ ref}(\char`\"{}User/Admin/\char`\"{});ref.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().email==\textbf{ firebase.\+auth}().current\+User.\+email)\{ document.\+get\+Element\+By\+Id(\char`\"{}name\char`\"{}).value=data.\+val().username;document.\+get\+Element\+By\+Id(\char`\"{}phone\char`\"{}).value=data.\+val().phone\+\_\+num;\} \});\});\textbf{ ref}=\textbf{ firebase.\+database}().\textbf{ ref}(\textquotesingle{}User/Member/\textquotesingle{});ref.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ snapshot.\+for\+Each(function(data) \{ if(data.\+val().email==\textbf{ firebase.\+auth}().current\+User.\+email)\{ document.\+get\+Element\+By\+Id(\char`\"{}name\char`\"{}).value=data.\+val().username;document.\+get\+Element\+By\+Id(\char`\"{}phone\char`\"{}).value=data.\+val().phone\+\_\+num;\} \});\});\} \});\}}]{,  }\item[{2000}]{ }\end{DoxyParamCaption})}
+
+
+
+Part of call the user information. 
+
+Access the user\textquotesingle{}s personal information database using the user\textquotesingle{}s email information,get his name and phone number, and put it in the reservation form. 
+\begin{DoxyParams}{Parameters}
+{\em \textquotesingle{}name\textquotesingle{}} & is the id of the column where the user\textquotesingle{}s name is entered in the html file.~\newline
+\textquotesingle{}phone\textquotesingle{} is the id of the column where the user\textquotesingle{}s phone is entered in the html file. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{reservation__doxygen_8c_a32fcd434061a2cd91e5d4f535be74838}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!adminId@{adminId}}
+\index{adminId@{adminId}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{adminId}
+{\footnotesize\ttfamily var admin\+Id =\char`\"{}\char`\"{}}
+
+
+
+Definition at line 51 of file reservation\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__doxygen_8c_a642bcaa2ebd40d6d504297fbfdceb001}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!min@{min}}
+\index{min@{min}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{min}
+{\footnotesize\ttfamily \textbf{ date} min = new Date().to\+I\+S\+O\+String().substring(0, 10)}
+
+
+
+Definition at line 53 of file reservation\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__doxygen_8c_a45da431160505d6d223b044dc04fca96}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!reservationNum@{reservationNum}}
+\index{reservationNum@{reservationNum}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{reservationNum}
+{\footnotesize\ttfamily var reservation\+Num =0}
+
+
+
+Definition at line 50 of file reservation\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__doxygen_8c_a75ec5e7060c59043863884647111925e}} 
+\index{reservation\_doxygen.c@{reservation\_doxygen.c}!today@{today}}
+\index{today@{today}!reservation\_doxygen.c@{reservation\_doxygen.c}}
+\doxysubsubsection{today}
+{\footnotesize\ttfamily var today = new Date()}
+
+
+
+Definition at line 52 of file reservation\+\_\+doxygen.\+c.
+

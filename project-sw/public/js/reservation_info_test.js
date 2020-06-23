@@ -222,13 +222,13 @@ $(document).ready(function () {
 });
 
 function cancel(param) {
-    alertify.confirm('예약을 취소하시겠습니까?', function (e) {
+    ify.confirm('예약을 취소하시겠습니까?', function (e) {
         if (e) {
             ref.child(param).update({
                 cancel: "true",
                 time: ""
             })
-            window.location.reload();
+            //window.location.reload();
             return true;
         } else {
             return false;

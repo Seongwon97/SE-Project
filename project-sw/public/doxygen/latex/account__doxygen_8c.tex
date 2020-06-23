@@ -1,0 +1,621 @@
+\doxysection{D\+:/\+Users/콩하나/workspace/\+Github/\+S\+E-\/\+Project/project-\/sw/public/js/doxygen js file/account\+\_\+doxygen.c File Reference}
+\label{account__doxygen_8c}\index{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/account\_doxygen.c@{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/account\_doxygen.c}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+firebase \textbf{ auth} ().on\+Auth\+State\+Changed(function(user)
+\begin{DoxyCompactList}\small\item\em \+: check the user is whether sign-\/in or not \end{DoxyCompactList}\item 
+function \textbf{ login} ()
+\begin{DoxyCompactList}\small\item\em \+: check whether the user is valid to sign-\/in \end{DoxyCompactList}\item 
+function \textbf{ logout} ()
+\begin{DoxyCompactList}\small\item\em \+: check user to sign-\/out \end{DoxyCompactList}\item 
+function \textbf{ aut\+\_\+sign\+Up} ()
+\begin{DoxyCompactList}\small\item\em \+: receive administrator user\textquotesingle{}s input and permit to sign up on site \end{DoxyCompactList}\item 
+function \textbf{ mem\+\_\+sign\+Up} ()
+\begin{DoxyCompactList}\small\item\em \+: receive member user\textquotesingle{}s input and permit to sign up on site \end{DoxyCompactList}\item 
+function \textbf{ log} (id)
+\begin{DoxyCompactList}\small\item\em \+: check user\textquotesingle{}s sign-\/in state to block using other functions if he\textquotesingle{}s not in sign-\/in state \end{DoxyCompactList}\item 
+function \textbf{ home} ()
+\begin{DoxyCompactList}\small\item\em \+: function to send main page \end{DoxyCompactList}\item 
+function \textbf{ aut\+\_\+modify} ()
+\begin{DoxyCompactList}\small\item\em \+: function for administrator users to modify their information \end{DoxyCompactList}\item 
+function \textbf{ mem\+\_\+modify} ()
+\begin{DoxyCompactList}\small\item\em \+: function for member users to modify their information \end{DoxyCompactList}\item 
+function \textbf{ mem\+\_\+withdraw} ()
+\item 
+function \textbf{ auth\+\_\+withdraw} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{account__doxygen_8c_a02b7de3672e5444c750ec6514cf46b64}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!aut\_modify@{aut\_modify}}
+\index{aut\_modify@{aut\_modify}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{aut\_modify()}
+{\footnotesize\ttfamily function aut\+\_\+modify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: function for administrator users to modify their information 
+
+\+: if sign-\/in user use this function, show every information they typed and permit them to modify their information if they want. Access to firebase and replace old data into new modified data 
+\begin{DoxyParams}{Parameters}
+{\em } & username, email, password, retype\+\_\+password, address, phone\+\_\+num, birthday, hospital\+\_\+name, area, current user email, user\textquotesingle{}s key value, current user\textquotesingle{}s password \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 261 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{261                      \{}
+\DoxyCodeLine{262   var username=document.getElementById(\textcolor{stringliteral}{"username"}).value;}
+\DoxyCodeLine{263   var email=document.getElementById(\textcolor{stringliteral}{"email"}).value;}
+\DoxyCodeLine{264   var password=document.getElementById(\textcolor{stringliteral}{"password"}).value;}
+\DoxyCodeLine{265   var address=document.getElementById(\textcolor{stringliteral}{"address"}).value;}
+\DoxyCodeLine{266   var phone\_num=document.getElementById(\textcolor{stringliteral}{"phone\_num"}).value;}
+\DoxyCodeLine{267   var birthday=document.getElementById(\textcolor{stringliteral}{"birthday"}).value;}
+\DoxyCodeLine{268   var hospital\_name=document.getElementById(\textcolor{stringliteral}{"hospital\_name"}).value;}
+\DoxyCodeLine{269   var area=document.getElementById(\textcolor{stringliteral}{"area"}).value;}
+\DoxyCodeLine{270   var ref = firebase.database().ref(\textcolor{stringliteral}{"User/Admin/"});}
+\DoxyCodeLine{271   ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{272       snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{273         \textcolor{keywordflow}{if}(data.val().email == firebase.auth().currentUser.email)\{}
+\DoxyCodeLine{274           var buf = data.val().email;}
+\DoxyCodeLine{275           var key = data.key;}
+\DoxyCodeLine{276           var rootRef = firebase.database().ref(\textcolor{stringliteral}{'User/Admin/'} + key + \textcolor{stringliteral}{'/'});}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278             var user = firebase.auth().currentUser;}
+\DoxyCodeLine{279             if(password != data.val().password || email != data.val().email)\{}
+\DoxyCodeLine{280               user.updatePassword(password).then(function() \{}
+\DoxyCodeLine{281                 user.updateEmail(email).then(function() \{}
+\DoxyCodeLine{282                 \}).catch(function(error)\{}
+\DoxyCodeLine{283                   user.updatePassword(data.val().password).then(function()\{}
+\DoxyCodeLine{284                     alertify.alert(\textcolor{stringliteral}{"Please enter different E-\/mail."});}
+\DoxyCodeLine{285                     return;}
+\DoxyCodeLine{286                   \}).catch(function(error)\{}
+\DoxyCodeLine{287                   \});}
+\DoxyCodeLine{288                 \});}
+\DoxyCodeLine{289               \}).catch(function(error) \{}
+\DoxyCodeLine{290                   alertify.alert(\textcolor{stringliteral}{"Please enter the more long password!"});}
+\DoxyCodeLine{291                   return;}
+\DoxyCodeLine{292                 \});}
+\DoxyCodeLine{293             \}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295             alertify.alert(\textcolor{stringliteral}{"Modify complete!"});}
+\DoxyCodeLine{296             rootRef.update(\{}
+\DoxyCodeLine{297               username:username,}
+\DoxyCodeLine{298               email:email,}
+\DoxyCodeLine{299               password:password,}
+\DoxyCodeLine{300               address:address,}
+\DoxyCodeLine{301               phone\_num:phone\_num,}
+\DoxyCodeLine{302               birthday:birthday,}
+\DoxyCodeLine{303               hospital\_name :hospital\_name,}
+\DoxyCodeLine{304               area:area}
+\DoxyCodeLine{305             \});}
+\DoxyCodeLine{306             setTimeout(\textcolor{keyword}{function}()\{\textcolor{keywordflow}{if}(email != buf)\{}
+\DoxyCodeLine{307                 alertify.alert(\textcolor{stringliteral}{"Changed your E-\/mail. Please reLogin!"});}
+\DoxyCodeLine{308                 firebase.auth().signOut();}
+\DoxyCodeLine{309             \}\},2000);}
+\DoxyCodeLine{310             setTimeout(\textcolor{keyword}{function}()\{window.location.href = \textcolor{stringliteral}{'index.html'};\},4000);}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312           \}}
+\DoxyCodeLine{313       \});}
+\DoxyCodeLine{314     \});}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316   \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\label{account__doxygen_8c_a81d4888a726f78bbfca447a92ef07c76}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!aut\_signUp@{aut\_signUp}}
+\index{aut\_signUp@{aut\_signUp}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{aut\_signUp()}
+{\footnotesize\ttfamily function aut\+\_\+sign\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: receive administrator user\textquotesingle{}s input and permit to sign up on site 
+
+\+: if received administrator user\textquotesingle{}s inputs have no error to sign up, send those information to firebase for sign up 
+\begin{DoxyParams}{Parameters}
+{\em } & username, email, password, retype\+\_\+password, address, phone\+\_\+num, birthday, hospital\+\_\+name, area \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                      \{}
+\DoxyCodeLine{83   var username=document.getElementById(\textcolor{stringliteral}{"username"}).value;}
+\DoxyCodeLine{84   var email=document.getElementById(\textcolor{stringliteral}{"email"}).value;}
+\DoxyCodeLine{85   var password=document.getElementById(\textcolor{stringliteral}{"password"}).value;}
+\DoxyCodeLine{86   var retype\_password=document.getElementById(\textcolor{stringliteral}{"retype\_password"}).value;}
+\DoxyCodeLine{87   var address=document.getElementById(\textcolor{stringliteral}{"address"}).value;}
+\DoxyCodeLine{88   var phone\_num=document.getElementById(\textcolor{stringliteral}{"phone\_num"}).value;}
+\DoxyCodeLine{89   var birthday=document.getElementById(\textcolor{stringliteral}{"birthday"}).value;}
+\DoxyCodeLine{90   var hospital\_name=document.getElementById(\textcolor{stringliteral}{"hospital\_name"}).value;}
+\DoxyCodeLine{91   var area=document.getElementById(\textcolor{stringliteral}{"area"}).value;}
+\DoxyCodeLine{92   \textcolor{keywordflow}{if}(username.length>=1 \&\& address.length>=1 \&\& phone\_num.length>=1 \&\& birthday.length>=1 \&\&}
+\DoxyCodeLine{93       hospital\_name.length>=1 \&\& area.length>=1 \&\& password==retype\_password)\{}
+\DoxyCodeLine{94     firebase.auth().createUserWithEmailAndPassword(email, password).then(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{95       var rootRef = firebase.database().ref(\textcolor{stringliteral}{'User/Admin/'});}
+\DoxyCodeLine{96       rootRef.push(\{}
+\DoxyCodeLine{97         username:username,}
+\DoxyCodeLine{98         email:email,}
+\DoxyCodeLine{99         password:password,}
+\DoxyCodeLine{100         address:address,}
+\DoxyCodeLine{101         phone\_num:phone\_num,}
+\DoxyCodeLine{102         birthday:birthday,}
+\DoxyCodeLine{103         hospital\_name:hospital\_name,}
+\DoxyCodeLine{104         area:area}
+\DoxyCodeLine{105       \});}
+\DoxyCodeLine{106       alertify.alert(\textcolor{stringliteral}{"Sign up success! Please Log-\/in."});}
+\DoxyCodeLine{107       setTimeout(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{108       firebase.auth().signOut();}
+\DoxyCodeLine{109       window.location.href = \textcolor{stringliteral}{'log\_in.html'};\},2000);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \}).\textcolor{keywordflow}{catch}(\textcolor{keyword}{function}(error)\{}
+\DoxyCodeLine{112       \textcolor{keywordflow}{if}(password.toString().length <=5)\{}
+\DoxyCodeLine{113         alertify.alert(\textcolor{stringliteral}{"Sign up fail! Please enter more long password! more than 6 digits."});}
+\DoxyCodeLine{114       \}}
+\DoxyCodeLine{115       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{116         alertify.alert(\textcolor{stringliteral}{"Sign ip fail! Please enter different E-\/mail."});}
+\DoxyCodeLine{117       \}}
+\DoxyCodeLine{118     \});}
+\DoxyCodeLine{119   \}}
+\DoxyCodeLine{120   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{121     \textcolor{keywordflow}{if}(password!=retype\_password)\{}
+\DoxyCodeLine{122       alertify.alert(\textcolor{stringliteral}{"Password inconsistency detected"});}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{125       alertify.alert(\textcolor{stringliteral}{"Sign up fail! Please enter all details"});}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127   \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\label{account__doxygen_8c_a05c1b946e33de480386e2399620376a6}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!auth@{auth}}
+\index{auth@{auth}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{auth()}
+{\footnotesize\ttfamily firebase auth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: check the user is whether sign-\/in or not 
+
+\+: access to firebase admin or member file to check if the user data is valid and if it\textquotesingle{}s valid, change sign-\/in state into \char`\"{}on\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em } & log id, user email, input email \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                                  \{}
+\DoxyCodeLine{9   \textcolor{keywordflow}{if}(user)\{}
+\DoxyCodeLine{10     var log = document.getElementById(\textcolor{stringliteral}{"log-\/memu"});}
+\DoxyCodeLine{11     log.innerHTML = \textcolor{stringliteral}{"My Page/Sign-\/out"};}
+\DoxyCodeLine{12     log.setAttribute(\textcolor{stringliteral}{"href"},\textcolor{stringliteral}{"index.html"});}
+\DoxyCodeLine{13     var ref = firebase.database().ref(\textcolor{stringliteral}{"User/Admin/"});}
+\DoxyCodeLine{14     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{15         snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{16           \textcolor{keywordflow}{if}(data.val().email == firebase.auth().currentUser.email)\{}
+\DoxyCodeLine{17               log.setAttribute(\textcolor{stringliteral}{"href"},\textcolor{stringliteral}{"MyPageAdmin.html"});}
+\DoxyCodeLine{18           \}}
+\DoxyCodeLine{19       \});}
+\DoxyCodeLine{20     \});}
+\DoxyCodeLine{21     ref = firebase.database().ref(\textcolor{stringliteral}{'User/Member/'});}
+\DoxyCodeLine{22     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{23         snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{24           \textcolor{keywordflow}{if}(data.val().email == firebase.auth().currentUser.email)\{}
+\DoxyCodeLine{25               log.setAttribute(\textcolor{stringliteral}{"href"},\textcolor{stringliteral}{"MyPageMember.html"});}
+\DoxyCodeLine{26           \}}
+\DoxyCodeLine{27       \});}
+\DoxyCodeLine{28     \});}
+\DoxyCodeLine{29   \}}
+\DoxyCodeLine{30 \});}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\label{account__doxygen_8c_a7989df456d6584838c65250001516747}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!auth\_withdraw@{auth\_withdraw}}
+\index{auth\_withdraw@{auth\_withdraw}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{auth\_withdraw()}
+{\footnotesize\ttfamily function auth\+\_\+withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 420 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{420                         \{}
+\DoxyCodeLine{421   alertify.confirm(\textcolor{stringliteral}{"Are you sure you want to delete your account?"}, \textcolor{keyword}{function}(e)\{}
+\DoxyCodeLine{422   \textcolor{keywordflow}{if}(e)\{}
+\DoxyCodeLine{423     alertify.alert(\textcolor{stringliteral}{"Delete Success!"});}
+\DoxyCodeLine{424   var ref = firebase.database().ref(\textcolor{stringliteral}{'User/Admin/'});}
+\DoxyCodeLine{425   ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{426       snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{427         \textcolor{keywordflow}{if}(data.val().email == firebase.auth().currentUser.email)\{}
+\DoxyCodeLine{428           var key = data.key;}
+\DoxyCodeLine{429           var rootRef = firebase.database().ref(\textcolor{stringliteral}{'User/Admin/'} + key + \textcolor{stringliteral}{'/'});}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431           var user = firebase.auth().currentUser;}
+\DoxyCodeLine{432           user.delete().then(function() \{}
+\DoxyCodeLine{433             rootRef.remove();}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436             window.location.href = \textcolor{stringliteral}{'index.html'};}
+\DoxyCodeLine{437           \}).catch(\textcolor{keyword}{function}(error) \{}
+\DoxyCodeLine{438             alertify.alert(\textcolor{stringliteral}{"Delete fail!"});}
+\DoxyCodeLine{439           \});}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441         \}}
+\DoxyCodeLine{442     \});}
+\DoxyCodeLine{443   \});}
+\DoxyCodeLine{444   \}}
+\DoxyCodeLine{445   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{446       alertify.alert(\textcolor{stringliteral}{"Cancel!"});}
+\DoxyCodeLine{447   \}}
+\DoxyCodeLine{448   \})}
+\DoxyCodeLine{449 \}}
+
+\end{DoxyCode}
+\mbox{\label{account__doxygen_8c_a339d3746582110c322f94831b08d1715}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!home@{home}}
+\index{home@{home}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{home()}
+{\footnotesize\ttfamily function home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: function to send main page 
+
+\+: a simple function to send user to main page 
+\begin{DoxyParams}{Parameters}
+{\em } & none \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 247 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247                \{}
+\DoxyCodeLine{248   window.location.href = \textcolor{stringliteral}{'index.html'};}
+\DoxyCodeLine{249 \}}
+
+\end{DoxyCode}
+\mbox{\label{account__doxygen_8c_ad9bf319908ad9cc741a7719cd978f609}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!log@{log}}
+\index{log@{log}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{log()}
+{\footnotesize\ttfamily function log (\begin{DoxyParamCaption}\item[{id}]{ }\end{DoxyParamCaption})}
+
+
+
+\+: check user\textquotesingle{}s sign-\/in state to block using other functions if he\textquotesingle{}s not in sign-\/in state 
+
+\+: by checking user\textquotesingle{}s sign-\/in state, block other functions if the user is not the registered user to prevent illegal user 
+\begin{DoxyParams}{Parameters}
+{\em } & each html id, user state \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 199 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{199                 \{}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201   html = document.getElementById(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{202   \textcolor{keywordflow}{if}(html.innerHTML == \textcolor{stringliteral}{"Hospital Information"})\{}
+\DoxyCodeLine{203     firebase.auth().onAuthStateChanged(\textcolor{keyword}{function}(user) \{}
+\DoxyCodeLine{204          \textcolor{keywordflow}{if} (user) \{}
+\DoxyCodeLine{205            html.setAttribute(\textcolor{stringliteral}{"href"},\textcolor{stringliteral}{"hospital\_info.html"});}
+\DoxyCodeLine{206          \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{207            alertify.alert(\textcolor{stringliteral}{"Please Log-\/in to use the service."});}
+\DoxyCodeLine{208            setTimeout(\textcolor{keyword}{function}()\{window.location.href = \textcolor{stringliteral}{'log\_in.html'};\},1500);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210          \}}
+\DoxyCodeLine{211     \});}
+\DoxyCodeLine{212   \}}
+\DoxyCodeLine{213   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(html.innerHTML == \textcolor{stringliteral}{"Reservation"})\{}
+\DoxyCodeLine{214     firebase.auth().onAuthStateChanged(\textcolor{keyword}{function}(user) \{}
+\DoxyCodeLine{215          \textcolor{keywordflow}{if} (user) \{}
+\DoxyCodeLine{216            html.setAttribute(\textcolor{stringliteral}{"href"},\textcolor{stringliteral}{"reservation.html"});}
+\DoxyCodeLine{217          \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{218            alertify.alert(\textcolor{stringliteral}{"Please Log-\/in to use the service."});}
+\DoxyCodeLine{219            setTimeout(\textcolor{keyword}{function}()\{window.location.href = \textcolor{stringliteral}{'log\_in.html'};\},1500);}
+\DoxyCodeLine{220          \}}
+\DoxyCodeLine{221     \});}
+\DoxyCodeLine{222   \}}
+\DoxyCodeLine{223   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(html.innerHTML == \textcolor{stringliteral}{"Reservation Information"})\{}
+\DoxyCodeLine{224     firebase.auth().onAuthStateChanged(\textcolor{keyword}{function}(user) \{}
+\DoxyCodeLine{225          \textcolor{keywordflow}{if} (user) \{}
+\DoxyCodeLine{226            html.setAttribute(\textcolor{stringliteral}{"href"},\textcolor{stringliteral}{"reservation\_info.html"});}
+\DoxyCodeLine{227          \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{228            alertify.alert(\textcolor{stringliteral}{"Please Log-\/in to use the service."});}
+\DoxyCodeLine{229            setTimeout(\textcolor{keyword}{function}()\{window.location.href = \textcolor{stringliteral}{'log\_in.html'};\},1500);}
+\DoxyCodeLine{230          \}}
+\DoxyCodeLine{231     \});}
+\DoxyCodeLine{232   \}}
+\DoxyCodeLine{233 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\label{account__doxygen_8c_ae57b549e595facf624ceca9ba37f2c14}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!login@{login}}
+\index{login@{login}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{login()}
+{\footnotesize\ttfamily function login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: check whether the user is valid to sign-\/in 
+
+\+: by checking input user email and user password, distribute the user is valid 
+\begin{DoxyParams}{Parameters}
+{\em } & user email, user password \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                 \{}
+\DoxyCodeLine{41   var userEmail=document.getElementById(\textcolor{stringliteral}{"userEmail"}).value;}
+\DoxyCodeLine{42   var userPass=document.getElementById(\textcolor{stringliteral}{"userPass"}).value;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{45       alertify.alert(\textcolor{stringliteral}{"Log in complete! Thank you."});}
+\DoxyCodeLine{46       setTimeout(\textcolor{keyword}{function}()\{window.location.href = \textcolor{stringliteral}{'index.html'};\},1000);}
+\DoxyCodeLine{47   \}).\textcolor{keywordflow}{catch}(\textcolor{keyword}{function}(error)\{}
+\DoxyCodeLine{48       alertify.alert(\textcolor{stringliteral}{"Log-\/in fail! "});}
+\DoxyCodeLine{49   \});}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\label{account__doxygen_8c_a5ac1c48041cdff0691b88eba8a23a86b}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!logout@{logout}}
+\index{logout@{logout}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{logout()}
+{\footnotesize\ttfamily function logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: check user to sign-\/out 
+
+\+: permit user to logout if there\textquotesingle{}s no error 
+\begin{DoxyParams}{Parameters}
+{\em } & none \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61                  \{}
+\DoxyCodeLine{62   firebase.auth().signOut().then(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{63      alertify.alert(\textcolor{stringliteral}{"log out success!"});}
+\DoxyCodeLine{64      setTimeout(\textcolor{keyword}{function}()\{     window.location.href = \textcolor{stringliteral}{'index.html'};\},1000);}
+\DoxyCodeLine{65   \}, \textcolor{keyword}{function}(error)\{}
+\DoxyCodeLine{66      alertify.alert(\textcolor{stringliteral}{"log out fail!"});}
+\DoxyCodeLine{67   \});}
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\label{account__doxygen_8c_a25627251a3e82742cd370fcc78f16dc2}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!mem\_modify@{mem\_modify}}
+\index{mem\_modify@{mem\_modify}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{mem\_modify()}
+{\footnotesize\ttfamily function mem\+\_\+modify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: function for member users to modify their information 
+
+\+: if sign-\/in user use this function, show every information they typed and permit them to modify their information if they want. Access to firebase and replace old data into new modified data 
+\begin{DoxyParams}{Parameters}
+{\em } & username, email, password, retype\+\_\+password, address, phone\+\_\+num, birthday, current user email, user\textquotesingle{}s key value, current user\textquotesingle{}s password \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 336 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{336                      \{}
+\DoxyCodeLine{337   var username=document.getElementById(\textcolor{stringliteral}{"username"}).value;}
+\DoxyCodeLine{338   var email=document.getElementById(\textcolor{stringliteral}{"email"}).value;}
+\DoxyCodeLine{339   var password=document.getElementById(\textcolor{stringliteral}{"password"}).value;}
+\DoxyCodeLine{340   var address=document.getElementById(\textcolor{stringliteral}{"address"}).value;}
+\DoxyCodeLine{341   var phone\_num=document.getElementById(\textcolor{stringliteral}{"phone\_num"}).value;}
+\DoxyCodeLine{342   var birthday=document.getElementById(\textcolor{stringliteral}{"birthday"}).value;}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344   ref = firebase.database().ref(\textcolor{stringliteral}{'User/Member/'});}
+\DoxyCodeLine{345   ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{346       snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{347         \textcolor{keywordflow}{if}(data.val().email == firebase.auth().currentUser.email)\{}
+\DoxyCodeLine{348           var buf = data.val().email;}
+\DoxyCodeLine{349           var key = data.key;}
+\DoxyCodeLine{350           var rootRef = firebase.database().ref(\textcolor{stringliteral}{'User/Member/'} + key + \textcolor{stringliteral}{'/'});}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352             var user = firebase.auth().currentUser;}
+\DoxyCodeLine{353             if(password != data.val().password || email != data.val().email)\{}
+\DoxyCodeLine{354               user.updatePassword(password).then(function() \{}
+\DoxyCodeLine{355                 user.updateEmail(email).then(function() \{}
+\DoxyCodeLine{356                 \}).catch(function(error)\{}
+\DoxyCodeLine{357                   user.updatePassword(data.val().password).then(function()\{}
+\DoxyCodeLine{358                     alertify.alert(\textcolor{stringliteral}{"Please enter different E-\/mail."});}
+\DoxyCodeLine{359                     return;}
+\DoxyCodeLine{360                   \}).catch(function(error)\{}
+\DoxyCodeLine{361                   \});}
+\DoxyCodeLine{362                 \});}
+\DoxyCodeLine{363               \}).catch(function(error) \{}
+\DoxyCodeLine{364                   alertify.alert(\textcolor{stringliteral}{"Please enter the more long password!"});}
+\DoxyCodeLine{365                   return;}
+\DoxyCodeLine{366                 \});}
+\DoxyCodeLine{367             \}}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369             alertify.alert(\textcolor{stringliteral}{"Modify complete!"});}
+\DoxyCodeLine{370             rootRef.update(\{}
+\DoxyCodeLine{371               username:username,}
+\DoxyCodeLine{372               email:email,}
+\DoxyCodeLine{373               password:password,}
+\DoxyCodeLine{374               address:address,}
+\DoxyCodeLine{375               phone\_num:phone\_num,}
+\DoxyCodeLine{376               birthday:birthday}
+\DoxyCodeLine{377             \});}
+\DoxyCodeLine{378             setTimeout(\textcolor{keyword}{function}()\{\textcolor{keywordflow}{if}(email != buf)\{}
+\DoxyCodeLine{379                 alertify.alert(\textcolor{stringliteral}{"Changed your E-\/mail. Please reLogin!"});}
+\DoxyCodeLine{380                 firebase.auth().signOut();}
+\DoxyCodeLine{381             \}\},2000);}
+\DoxyCodeLine{382             setTimeout(\textcolor{keyword}{function}()\{window.location.href = \textcolor{stringliteral}{'index.html'};\},4000);}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384         \}}
+\DoxyCodeLine{385     \});}
+\DoxyCodeLine{386   \});}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\label{account__doxygen_8c_adab94730bac3b69d7212c51d3fbf8f4a}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!mem\_signUp@{mem\_signUp}}
+\index{mem\_signUp@{mem\_signUp}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{mem\_signUp()}
+{\footnotesize\ttfamily function mem\+\_\+sign\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: receive member user\textquotesingle{}s input and permit to sign up on site 
+
+\+: if received member user\textquotesingle{}s inputs have no error to sign up, send those information to firebase for sign up 
+\begin{DoxyParams}{Parameters}
+{\em } & username, email, password, retype\+\_\+password, address, phone\+\_\+num, birthday \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145                      \{}
+\DoxyCodeLine{146   var username=document.getElementById(\textcolor{stringliteral}{"username"}).value;}
+\DoxyCodeLine{147   var email=document.getElementById(\textcolor{stringliteral}{"email"}).value;}
+\DoxyCodeLine{148   var password=document.getElementById(\textcolor{stringliteral}{"password"}).value;}
+\DoxyCodeLine{149   var retype\_password=document.getElementById(\textcolor{stringliteral}{"retype\_password"}).value;}
+\DoxyCodeLine{150   var address=document.getElementById(\textcolor{stringliteral}{"address"}).value;}
+\DoxyCodeLine{151   var phone\_num=document.getElementById(\textcolor{stringliteral}{"phone\_num"}).value;}
+\DoxyCodeLine{152   var birthday=document.getElementById(\textcolor{stringliteral}{"birthday"}).value;}
+\DoxyCodeLine{153   \textcolor{keywordflow}{if}(username.length>=1 \&\& address.length>=1 \&\& phone\_num.length>=1 \&\& birthday.length>=1 \&\&}
+\DoxyCodeLine{154       email.length>=1 \&\& password==retype\_password)\{}
+\DoxyCodeLine{155     firebase.auth().createUserWithEmailAndPassword(email, password).then(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{156       var rootRef = firebase.database().ref(\textcolor{stringliteral}{'User/Member/'});}
+\DoxyCodeLine{157         rootRef.push(\{}
+\DoxyCodeLine{158           username:username,}
+\DoxyCodeLine{159           email:email,}
+\DoxyCodeLine{160           password:password,}
+\DoxyCodeLine{161           address:address,}
+\DoxyCodeLine{162           phone\_num:phone\_num,}
+\DoxyCodeLine{163           birthday:birthday}
+\DoxyCodeLine{164         \});}
+\DoxyCodeLine{165       alertify.alert(\textcolor{stringliteral}{"Sign up success! Please Log-\/in."});}
+\DoxyCodeLine{166       setTimeout(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{167       firebase.auth().signOut();}
+\DoxyCodeLine{168       window.location.href = \textcolor{stringliteral}{'log\_in.html'};\},2000);}
+\DoxyCodeLine{169     \}).\textcolor{keywordflow}{catch}(\textcolor{keyword}{function}(error)\{}
+\DoxyCodeLine{170       \textcolor{keywordflow}{if}(password.toString().length <=5)\{}
+\DoxyCodeLine{171         alertify.alert(\textcolor{stringliteral}{"Sign up fail! Please enter more long password! more than 6 digits."});}
+\DoxyCodeLine{172       \}}
+\DoxyCodeLine{173       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{174         alertify.alert(\textcolor{stringliteral}{"Sign ip fail! Please enter different E-\/mail."});}
+\DoxyCodeLine{175       \}}
+\DoxyCodeLine{176     \});}
+\DoxyCodeLine{177   \}}
+\DoxyCodeLine{178   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{179     \textcolor{keywordflow}{if}(password!=retype\_password)\{}
+\DoxyCodeLine{180       alertify.alert(\textcolor{stringliteral}{"Password inconsistency detected"});}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{183       alertify.alert(\textcolor{stringliteral}{"Sign up fail! Please enter all details"});}
+\DoxyCodeLine{184     \}}
+\DoxyCodeLine{185   \}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\label{account__doxygen_8c_a31307f5e1bd7b920c45a87d394f62cf2}} 
+\index{account\_doxygen.c@{account\_doxygen.c}!mem\_withdraw@{mem\_withdraw}}
+\index{mem\_withdraw@{mem\_withdraw}!account\_doxygen.c@{account\_doxygen.c}}
+\doxysubsubsection{mem\_withdraw()}
+{\footnotesize\ttfamily function mem\+\_\+withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 391 of file account\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{391                        \{}
+\DoxyCodeLine{392   alertify.confirm(\textcolor{stringliteral}{"Are you sure you want to delete your account?"}, \textcolor{keyword}{function}(e)\{}
+\DoxyCodeLine{393   \textcolor{keywordflow}{if}(e)\{}
+\DoxyCodeLine{394     alertify.alert(\textcolor{stringliteral}{"Delete Success!"});}
+\DoxyCodeLine{395   var ref = firebase.database().ref(\textcolor{stringliteral}{'User/Member/'});}
+\DoxyCodeLine{396   ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{397       snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{398         \textcolor{keywordflow}{if}(data.val().email == firebase.auth().currentUser.email)\{}
+\DoxyCodeLine{399           var key = data.key;}
+\DoxyCodeLine{400           var rootRef = firebase.database().ref(\textcolor{stringliteral}{'User/Member/'} + key + \textcolor{stringliteral}{'/'});}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402           var user = firebase.auth().currentUser;}
+\DoxyCodeLine{403           user.delete().then(function() \{}
+\DoxyCodeLine{404             rootRef.remove();}
+\DoxyCodeLine{405             window.location.href = \textcolor{stringliteral}{'index.html'};}
+\DoxyCodeLine{406           \}).catch(\textcolor{keyword}{function}(error) \{}
+\DoxyCodeLine{407             alertify.alert(\textcolor{stringliteral}{"Delete fail!"});}
+\DoxyCodeLine{408           \});}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410         \}}
+\DoxyCodeLine{411     \});}
+\DoxyCodeLine{412   \});}
+\DoxyCodeLine{413   \}}
+\DoxyCodeLine{414   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{415       return ;}
+\DoxyCodeLine{416   \}}
+\DoxyCodeLine{417   \})}
+\DoxyCodeLine{418 \}}
+
+\end{DoxyCode}

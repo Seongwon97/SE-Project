@@ -1,0 +1,514 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="reservation__doxygen_8c" kind="file" language="C++">
+    <compoundname>reservation_doxygen.c</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="reservation__doxygen_8c_1a45da431160505d6d223b044dc04fca96" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var reservationNum</definition>
+        <argsstring></argsstring>
+        <name>reservationNum</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="50" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="50" bodyend="-1"/>
+        <referencedby refid="reservation__doxygen_8c_1ad2d1d22f0d718fb7a1644b437ccf0903" compoundref="reservation__doxygen_8c" startline="254" endline="320">reserve</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__doxygen_8c_1a32fcd434061a2cd91e5d4f535be74838" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var adminId</definition>
+        <argsstring></argsstring>
+        <name>adminId</name>
+        <initializer>=&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="51" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__doxygen_8c_1a75ec5e7060c59043863884647111925e" prot="public" static="no" mutable="no">
+        <type>var</type>
+        <definition>var today</definition>
+        <argsstring></argsstring>
+        <name>today</name>
+        <initializer>= new Date()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="52" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reservation__doxygen_8c_1a642bcaa2ebd40d6d504297fbfdceb001" prot="public" static="no" mutable="no">
+        <type><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref></type>
+        <definition>date min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <initializer>= new Date().toISOString().substring(0, 10)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="53" column="5" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="reservation__doxygen_8c_1ab7b5e595f925645f61dde5998c2920f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setTimeout</definition>
+        <argsstring>(function(){ firebase.auth().onAuthStateChanged(function(user){ if(user){ var ref=firebase.database().ref(&quot;User/Admin/&quot;);ref.on(&quot;value&quot;, function(snapshot) { snapshot.forEach(function(data) { if(data.val().email==firebase.auth().currentUser.email){ document.getElementById(&quot;name&quot;).value=data.val().username;document.getElementById(&quot;phone&quot;).value=data.val().phone_num;} });});ref=firebase.database().ref(&apos;User/Member/&apos;);ref.on(&quot;value&quot;, function(snapshot) { snapshot.forEach(function(data) { if(data.val().email==firebase.auth().currentUser.email){ document.getElementById(&quot;name&quot;).value=data.val().username;document.getElementById(&quot;phone&quot;).value=data.val().phone_num;} });});} });}, 2000)</argsstring>
+        <name>setTimeout</name>
+        <param>
+          <type>function(){ <ref refid="account__doxygen_8c_1a05c1b946e33de480386e2399620376a6" kindref="member">firebase.auth</ref>().onAuthStateChanged(function(user){ if(user){ var <ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>=<ref refid="reservation__modify__doxygen_8c_1af4a1450f9b9ce47601f3bfba80dc2580" kindref="member">firebase.database</ref>().<ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>(&quot;User/Admin/&quot;);ref.on(&quot;value&quot;, function(snapshot) { snapshot.forEach(function(data) { if(data.val().email==<ref refid="account__doxygen_8c_1a05c1b946e33de480386e2399620376a6" kindref="member">firebase.auth</ref>().currentUser.email){ document.getElementById(&quot;name&quot;).value=data.val().username;document.getElementById(&quot;phone&quot;).value=data.val().phone_num;} });});<ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>=<ref refid="reservation__modify__doxygen_8c_1af4a1450f9b9ce47601f3bfba80dc2580" kindref="member">firebase.database</ref>().<ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>(&apos;User/Member/&apos;);ref.on(&quot;value&quot;, function(snapshot) { snapshot.forEach(function(data) { if(data.val().email==<ref refid="account__doxygen_8c_1a05c1b946e33de480386e2399620376a6" kindref="member">firebase.auth</ref>().currentUser.email){ document.getElementById(&quot;name&quot;).value=data.val().username;document.getElementById(&quot;phone&quot;).value=data.val().phone_num;} });});} });}</type>
+        </param>
+        <param>
+          <type>2000</type>
+        </param>
+        <briefdescription>
+<para>Part of call the user information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Access the user&apos;s personal information database using the user&apos;s email information,get his name and phone number, and put it in the reservation form. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&apos;name&apos;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the column where the user&apos;s name is entered in the html file.<linebreak/>
+&apos;phone&apos; is the id of the column where the user&apos;s phone is entered in the html file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="10" column="3" declfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" declline="10" declcolumn="3"/>
+        <references refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" compoundref="reservation__info__doxygen_8c" startline="2">ref</references>
+        <referencedby refid="account__doxygen_8c_1a02b7de3672e5444c750ec6514cf46b64" compoundref="account__doxygen_8c" startline="261" endline="316">aut_modify</referencedby>
+        <referencedby refid="account__doxygen_8c_1a81d4888a726f78bbfca447a92ef07c76" compoundref="account__doxygen_8c" startline="82" endline="129">aut_signUp</referencedby>
+        <referencedby refid="account__doxygen_8c_1ad9bf319908ad9cc741a7719cd978f609" compoundref="account__doxygen_8c" startline="199" endline="233">log</referencedby>
+        <referencedby refid="account__doxygen_8c_1ae57b549e595facf624ceca9ba37f2c14" compoundref="account__doxygen_8c" startline="40" endline="50">login</referencedby>
+        <referencedby refid="account__doxygen_8c_1a5ac1c48041cdff0691b88eba8a23a86b" compoundref="account__doxygen_8c" startline="61" endline="68">logout</referencedby>
+        <referencedby refid="account__doxygen_8c_1a25627251a3e82742cd370fcc78f16dc2" compoundref="account__doxygen_8c" startline="336" endline="388">mem_modify</referencedby>
+        <referencedby refid="account__doxygen_8c_1adab94730bac3b69d7212c51d3fbf8f4a" compoundref="account__doxygen_8c" startline="145" endline="187">mem_signUp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reservation__doxygen_8c_1a4ce2108ea78907260275bced385cfaa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function categoryChange1</definition>
+        <argsstring>(e)</argsstring>
+        <name>categoryChange1</name>
+        <param>
+          <type>e</type>
+        </param>
+        <briefdescription>
+<para>Change the option of hospital selection when selecting a region. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When a region is selected, access the hospital_info in the DB and find the hospitals corresponding to the selected area and put them all in the hospital self option. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&apos;Hospital&apos;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the select space where users select the hospital to reserve within the html file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="62" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="62" bodyend="92"/>
+        <references refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" compoundref="reservation__info__doxygen_8c" startline="2">ref</references>
+      </memberdef>
+      <memberdef kind="function" id="reservation__doxygen_8c_1afc90b7e89337bf10110075a1e9d84ede" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function dateSelected</definition>
+        <argsstring>(e)</argsstring>
+        <name>dateSelected</name>
+        <param>
+          <type>e</type>
+        </param>
+        <briefdescription>
+<para>When selecting a date, the free time on the selected date at the hospital is added to the time option. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When selecting a date, the hospital receives the hospital&apos;s business hours information first and the information scheduled for that date.<linebreak/>
+When the work is finished, add the time option when the appointment time is empty during the hospital reservation time. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&apos;Hospital&apos;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the select space where users select the hospital to reserve within the html file.<linebreak/>
+ &apos;area&apos; is the id of the select space where users select the area to reserve within the html file.<linebreak/>
+ &apos;date&apos; is the id of the select space where users select the date to reserve within the html file.<linebreak/>
+ &apos;time&apos; is the id of the select space where users select the time to reserve within the html file.<linebreak/>
+ open,close, openH, openM is the infirmation that hospital open time and close time </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="106" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="106" bodyend="186"/>
+        <references refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" compoundref="reservation__modify__doxygen_8c" startline="7">area</references>
+        <references refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" compoundref="reservation__info__doxygen_8c" startline="2">ref</references>
+      </memberdef>
+      <memberdef kind="function" id="reservation__doxygen_8c_1ab58f37ecb1a652de1b16b9b7ae1edee2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function categoryChange2</definition>
+        <argsstring>(e)</argsstring>
+        <name>categoryChange2</name>
+        <param>
+          <type>e</type>
+        </param>
+        <briefdescription>
+<para>Code for displaying hospital information when choosing a hospital. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When selecting a hospital, the hospital information is received from the DB and the hospital information is displayed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&apos;Hospital&apos;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the select space where users select the hospital to reserve within the html file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="198" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="198" bodyend="244"/>
+        <references refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" compoundref="reservation__info__doxygen_8c" startline="2">ref</references>
+      </memberdef>
+      <memberdef kind="function" id="reservation__doxygen_8c_1ad2d1d22f0d718fb7a1644b437ccf0903" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function reserve</definition>
+        <argsstring>()</argsstring>
+        <name>reserve</name>
+        <briefdescription>
+<para>A function that stores reservation information in db. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Read the values in the table, send the reservation information to DB, and make a reservation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Each</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable means the id of the reservation table and the variable that stores it. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" line="254" column="10" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c" bodystart="254" bodyend="320"/>
+        <references refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" compoundref="reservation__modify__doxygen_8c" startline="7">area</references>
+        <references refid="reservation__info__doxygen_8c_1a1218ce87f7193c961920352be76d49d4" compoundref="reservation__info__doxygen_8c" startline="198" endline="211">cancel</references>
+        <references refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" compoundref="reservation__modify__doxygen_8c" startline="6">date</references>
+        <references refid="reservation__doxygen_8c_1a45da431160505d6d223b044dc04fca96" compoundref="reservation__doxygen_8c" startline="50">reservationNum</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="reservation__doxygen_8c_1ab7b5e595f925645f61dde5998c2920f8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="reservation__doxygen_8c_1ab7b5e595f925645f61dde5998c2920f8" kindref="member">setTimeout</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">(){</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>firebase.auth().onAuthStateChanged(</highlight><highlight class="keyword">function</highlight><highlight class="normal">(user){</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(user){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().<ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>(</highlight><highlight class="stringliteral">&quot;User/Admin/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(snapshot)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snapshot.forEach(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(data)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(data.val().email<sp/>==<sp/>firebase.auth().currentUser.email){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">).value<sp/>=<sp/>data.val().username;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;phone&quot;</highlight><highlight class="normal">).value<sp/>=<sp/>data.val().phone_num;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().<ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>(</highlight><highlight class="stringliteral">&apos;User/Member/&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(snapshot)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snapshot.forEach(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>(data)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(data.val().email<sp/>==<sp/>firebase.auth().currentUser.email){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">).value<sp/>=<sp/>data.val().username;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;phone&quot;</highlight><highlight class="normal">).value<sp/>=<sp/>data.val().phone_num;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>},2000);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="reservation__doxygen_8c_1a45da431160505d6d223b044dc04fca96" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__doxygen_8c_1a45da431160505d6d223b044dc04fca96" kindref="member">reservationNum</ref>=0;</highlight></codeline>
+<codeline lineno="51" refid="reservation__doxygen_8c_1a32fcd434061a2cd91e5d4f535be74838" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__doxygen_8c_1a32fcd434061a2cd91e5d4f535be74838" kindref="member">adminId</ref>=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52" refid="reservation__doxygen_8c_1a75ec5e7060c59043863884647111925e" refkind="member"><highlight class="normal">var<sp/><ref refid="reservation__doxygen_8c_1a75ec5e7060c59043863884647111925e" kindref="member">today</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Date();</highlight></codeline>
+<codeline lineno="53" refid="reservation__doxygen_8c_1a642bcaa2ebd40d6d504297fbfdceb001" refkind="member"><highlight class="normal"><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>.min<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Date().toISOString().substring(0,<sp/>10);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="reservation__doxygen_8c_1a4ce2108ea78907260275bced385cfaa9" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="reservation__doxygen_8c_1a4ce2108ea78907260275bced385cfaa9" kindref="member">categoryChange1</ref>(e)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">var<sp/>target<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;hospital&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">target.options.length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">var<sp/>opt<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">opt.value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>select<sp/>a<sp/>hospital&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">opt.innerHTML<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>select<sp/>a<sp/>hospital&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">target.appendChild(opt);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i&lt;<sp/>Object.keys(snapshot.val()).length;<sp/>i++){</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>a<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal"><sp/>+<sp/>Object.keys(snapshot.val())[i]);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>a.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/>function(snapshot){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>t<sp/>=<sp/>Object.values(snapshot.val());</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if((t[1]<sp/>==<sp/>e.value)){</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[9].length<sp/>&lt;2){</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t[9]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Non-Value&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>opt<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.value<sp/>=<sp/>t[4];</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.innerHTML<sp/>=<sp/>t[4];</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target.appendChild(opt);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Time&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="reservation__doxygen_8c_1afc90b7e89337bf10110075a1e9d84ede" refkind="member"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="reservation__doxygen_8c_1afc90b7e89337bf10110075a1e9d84ede" kindref="member">dateSelected</ref>(e){</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>var<sp/>target<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&quot;time&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>var<sp/>hospital<sp/>=document.getElementById(</highlight><highlight class="stringliteral">&apos;hospital&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>var<sp/>hospital_v=hospital.options[hospital.selectedIndex].value;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>var<sp/><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>=document.getElementById(</highlight><highlight class="stringliteral">&apos;area&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>var<sp/>area_v=<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>.options[<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>.selectedIndex].value;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>var<sp/>close=0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>var<sp/>open=0;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i&lt;<sp/>Object.keys(snapshot.val()).length;<sp/>i++){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>a<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal"><sp/>+<sp/>Object.keys(snapshot.val())[i]);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/>function(snapshot){</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>t<sp/>=<sp/>Object.values(snapshot.val());</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if((t[4]<sp/>==<sp/>hospital_v)){</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[9].length<sp/>&lt;2){</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t[9]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Non-Value&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>open=t[7];</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close=t[3];</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>openT=open.split(</highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>openH=Number(openT[0]);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>openM=Number(openT[1]);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(openM<sp/>&gt;<sp/>0){</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>openH=openH+1;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>closeT=close.split(</highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>closeH=Number(closeT[0]);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>closeM=Number(closeT[1]);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(closeM<sp/>&gt;<sp/>0){</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>closeH=closeH+1;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>target.options.length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>opt<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>opt.value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Time&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>opt.innerHTML<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Time&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>target.appendChild(opt);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>arr=[];</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;ReservationDetail/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__doxygen_8c_1a45da431160505d6d223b044dc04fca96" kindref="member">reservationNum</ref>=Object.keys(snapshot.val()).length;<sp/>});</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i&lt;<sp/>Object.keys(snapshot.val()).length;<sp/>i++){</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>a<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;ReservationDetail/&quot;</highlight><highlight class="normal"><sp/>+<sp/>Object.keys(snapshot.val())[i]);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/>function(snapshot){</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>t<sp/>=<sp/>Object.values(snapshot.val());</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if((t[6]<sp/>==<sp/>hospital_v)){</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[0]==area_v){</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[5]==e.target.value){</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr.push(t[15]);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__doxygen_8c_1ab7b5e595f925645f61dde5998c2920f8" kindref="member">setTimeout</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">(){</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>available=[]</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=openH;<sp/>i&lt;closeH;<sp/>i++){</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>temp=String(i);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp=temp.concat(</highlight><highlight class="stringliteral">&quot;시&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(arr.indexOf(temp)==<sp/>(-1)){</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>opt<sp/>=<sp/>document.createElement(</highlight><highlight class="stringliteral">&quot;option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.value<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opt.innerHTML<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target.appendChild(opt);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>},500);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="comment">//병원<sp/>선택시<sp/>병원<sp/>정보를<sp/>띄워주는<sp/>코드</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198" refid="reservation__doxygen_8c_1ab58f37ecb1a652de1b16b9b7ae1edee2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="reservation__doxygen_8c_1ab58f37ecb1a652de1b16b9b7ae1edee2" kindref="member">categoryChange2</ref>(e)<sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i&lt;<sp/>Object.keys(snapshot.val()).length;<sp/>i++){</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>a<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;Hospital_Info/&quot;</highlight><highlight class="normal"><sp/>+<sp/>Object.keys(snapshot.val())[i]);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>a.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/>function(snapshot){</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>t<sp/>=<sp/>Object.values(snapshot.val());</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if((t[4]<sp/>==<sp/>e.value)){</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[9].length<sp/>&lt;2){</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t[9]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Non-Value&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hName&apos;</highlight><highlight class="normal">).innerHTML=e.value;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hPhone&apos;</highlight><highlight class="normal">).innerHTML=t[9];</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hAddress&apos;</highlight><highlight class="normal">).innerHTML=t[0];</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hTime&apos;</highlight><highlight class="normal">).innerHTML=t[7]+</highlight><highlight class="stringliteral">&apos;<sp/>~<sp/>&apos;</highlight><highlight class="normal">+t[3];</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[8]==</highlight><highlight class="stringliteral">&apos;True&apos;</highlight><highlight class="normal">){document.getElementById(</highlight><highlight class="stringliteral">&apos;hPark&apos;</highlight><highlight class="normal">).innerHTML=</highlight><highlight class="stringliteral">&quot;Available&quot;</highlight><highlight class="normal">;}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else<sp/>if(t[8]==</highlight><highlight class="stringliteral">&apos;False&apos;</highlight><highlight class="normal">){document.getElementById(</highlight><highlight class="stringliteral">&apos;hPark&apos;</highlight><highlight class="normal">).innerHTML=</highlight><highlight class="stringliteral">&quot;Unavailable&quot;</highlight><highlight class="normal">;}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/>var<sp/><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>=document.getElementById(</highlight><highlight class="stringliteral">&apos;area&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>var<sp/>area_v=<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>.options[<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>.selectedIndex].value;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>var<sp/>hospital<sp/>=document.getElementById(</highlight><highlight class="stringliteral">&apos;hospital&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>var<sp/>hospital_v=hospital.options[hospital.selectedIndex].value;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/>var<sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref><sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;User/Admin/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><ref refid="reservation__info__doxygen_8c_1af6782f1c035d1db3deee7959decebb23" kindref="member">ref</ref>.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i&lt;<sp/>Object.keys(snapshot.val()).length;<sp/>i++){</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>a<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&quot;User/Admin/&quot;</highlight><highlight class="normal"><sp/>+<sp/>Object.keys(snapshot.val())[i]);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.on(</highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(snapshot){</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>t<sp/>=<sp/>Object.values(snapshot.val());</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((t[4]<sp/>==<sp/>hospital_v)){</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(t[1]==area_v){</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adminId=t[3];</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Time&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="comment">//예약<sp/>정보<sp/>저장하는<sp/>함수</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254" refid="reservation__doxygen_8c_1ad2d1d22f0d718fb7a1644b437ccf0903" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="reservation__doxygen_8c_1ad2d1d22f0d718fb7a1644b437ccf0903" kindref="member">reserve</ref>(){</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/>var<sp/>userId=firebase.auth().currentUser.email;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>var<sp/><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>=document.getElementById(</highlight><highlight class="stringliteral">&apos;area&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/>var<sp/>area_v=<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>.options[<ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>.selectedIndex].value;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/>var<sp/>hospital<sp/>=document.getElementById(</highlight><highlight class="stringliteral">&apos;hospital&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>var<sp/>hospital_v=hospital.options[hospital.selectedIndex].value;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/>var<sp/>purpose<sp/>=document.getElementById(</highlight><highlight class="stringliteral">&apos;purpose&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>var<sp/>purpose_v=purpose.options[purpose.selectedIndex].value;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/>var<sp/>petGender=document.getElementById(</highlight><highlight class="stringliteral">&apos;petGender&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/>var<sp/>petGender_v=petGender.options[petGender.selectedIndex].value;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>var<sp/>name<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;name&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/>var<sp/>phone<sp/>=<sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;phone&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/>var<sp/>date_v=document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/>var<sp/>time=document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/>var<sp/>time_v=time.options[time.selectedIndex].value;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>var<sp/>petName_v=document.getElementById(</highlight><highlight class="stringliteral">&apos;petName&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/>var<sp/>petAge_v=document.getElementById(</highlight><highlight class="stringliteral">&apos;petAge&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>var<sp/>petSpecies_v=document.getElementById(</highlight><highlight class="stringliteral">&apos;petSpecies&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/>var<sp/>message_v=document.getElementById(</highlight><highlight class="stringliteral">&apos;message&apos;</highlight><highlight class="normal">).value;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hospital_v==</highlight><highlight class="stringliteral">&quot;Please<sp/>select<sp/>a<sp/>hospital&quot;</highlight><highlight class="normal">||hospital_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Selet<sp/>the<sp/>Hospital&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(date_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">||date_v==</highlight><highlight class="stringliteral">&quot;연도-월-일&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Select<sp/>the<sp/>date&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(time_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">||time_v==</highlight><highlight class="stringliteral">&quot;Time&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Select<sp/>the<sp/>Time&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(purpose_v==</highlight><highlight class="stringliteral">&quot;purpose&quot;</highlight><highlight class="normal">||purpose_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Select<sp/>the<sp/>Purpose&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(name==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Enter<sp/>the<sp/>name&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(phone==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Enter<sp/>the<sp/>Phone<sp/>number&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(petName_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Enter<sp/>the<sp/>Pet<sp/>Name&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(petAge_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Enter<sp/>the<sp/>pet<sp/>age&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(petSpecies_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Enter<sp/>the<sp/>pet<sp/>species&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(petGender_v==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">||petGender_v==</highlight><highlight class="stringliteral">&quot;Pet<sp/>Gender&quot;</highlight><highlight class="normal">){alertify.alert(</highlight><highlight class="stringliteral">&quot;Select<sp/>the<sp/>pet<sp/>gender&quot;</highlight><highlight class="normal">);}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rootRef<sp/>=<sp/>firebase.database().ref(</highlight><highlight class="stringliteral">&apos;ReservationDetail/&apos;</highlight><highlight class="normal">);;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rootRef.push({</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reservationNumber:<sp/><ref refid="reservation__doxygen_8c_1a45da431160505d6d223b044dc04fca96" kindref="member">reservationNum</ref>+1,</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clientId:<sp/>userId,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clientName:<sp/>name,</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>phoneNum:<sp/>phone,</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1a22f166cbb5d3d3e7c9975aab0d268f99" kindref="member">area</ref>:<sp/>area_v,</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hospital:<sp/>hospital_v,</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>completion:<sp/></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>purpose:<sp/>purpose_v,</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__modify__doxygen_8c_1aee7331514568ba3b291c313bf269a913" kindref="member">date</ref>:<sp/>date_v,</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time:<sp/>time_v,</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petName:<sp/>petName_v,</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petAge:<sp/>petAge_v,</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petSpecies:<sp/>petSpecies_v,</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petGender:petGender_v,</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>message:<sp/>message_v,</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reservation__info__doxygen_8c_1a1218ce87f7193c961920352be76d49d4" kindref="member">cancel</ref>:</highlight><highlight class="stringliteral">&apos;false&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;area&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>select<sp/>a<sp/>region&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;hospital&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>select<sp/>a<sp/>hospital&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;purpose&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;purpose&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;name&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;phone&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Time&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;petName&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Pet<sp/>Name&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;petAge&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;petSpecies&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;petGender&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Pet<sp/>Gender&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>document.getElementById(</highlight><highlight class="stringliteral">&apos;message&apos;</highlight><highlight class="normal">).value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>window.location.href<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;index.html&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>alertify.alert(</highlight><highlight class="stringliteral">&apos;Reservation<sp/>Complete.&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/reservation_doxygen.c"/>
+  </compounddef>
+</doxygen>

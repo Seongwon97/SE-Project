@@ -1,0 +1,259 @@
+\doxysection{D\+:/\+Users/콩하나/workspace/\+Github/\+S\+E-\/\+Project/project-\/sw/public/js/a.c File Reference}
+\label{a_8c}\index{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/a.c@{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/a.c}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Unit \textbf{ test} (\char`\"{}test function test\char`\"{}, function(assert) \{ const result=test();assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\})
+\item 
+Q\+Unit \textbf{ test} (\char`\"{}delete row function test\char`\"{}, function(assert) \{ const result=test();assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\})
+\item 
+Q\+Unit \textbf{ test} (\char`\"{}chg\+Main\+Map function test\char`\"{}, function(assert) \{ const result=\textbf{ chg\+Main\+Map}(1);assert.\+equal(result,\char`\"{}img/map1/map1.\+png\char`\"{}, \char`\"{}Passed!\char`\"{});\})
+\item 
+Q\+Unit \textbf{ test} (\char`\"{}insert\+Area function test\char`\"{}, function(assert) \{ const result=\textbf{ input\+Area}(\char`\"{}강남구\char`\"{});assert.\+equal(result,\char`\"{}강남구\char`\"{}, \char`\"{}Passed!\char`\"{});\})
+\item 
+Q\+Unit \textbf{ test} (\char`\"{}add\+\_\+row function test\char`\"{}, function(assert) \{ const result=\textbf{ add\+\_\+row}(1, \char`\"{}서울동물병원\char`\"{}, \char`\"{}010-\/4043-\/2907\char`\"{}, \char`\"{}강남구\char`\"{}, \char`\"{}서울특별시\char`\"{}, \char`\"{}09\+:00\char`\"{}, \char`\"{}18\+:00\char`\"{}, \char`\"{}true\char`\"{}, \char`\"{}true\char`\"{}, \char`\"{}true\char`\"{});assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\})
+\item 
+Q\+Unit \textbf{ test} (\char`\"{}delete\+\_\+row function test\char`\"{}, function(assert) \{ const result=\textbf{ delete\+\_\+row}();assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\})
+\item 
+Q\+Unit \textbf{ test} (\char`\"{}search\+Hospital\+Info1 function test\char`\"{}, function(assert) \{ const result=\textbf{ search\+Hospital\+Info1}(\char`\"{}광진구\char`\"{});assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\})
+\item 
+function \textbf{ test} ()
+\item 
+function \textbf{ chg\+Main\+Map} (gu\+Num)
+\item 
+function \textbf{ input\+Area} (val)
+\item 
+function \textbf{ add\+\_\+row} (a, b, c, d, e, f, g, h, i, j)
+\item 
+function \textbf{ delete\+\_\+row} ()
+\item 
+function \textbf{ search\+Hospital\+Info1} (area)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{a_8c_aee02be60d1e13a3d7a999fd509e8ad0a}} 
+\index{a.c@{a.c}!add\_row@{add\_row}}
+\index{add\_row@{add\_row}!a.c@{a.c}}
+\doxysubsubsection{add\_row()}
+{\footnotesize\ttfamily function add\+\_\+row (\begin{DoxyParamCaption}\item[{a}]{,  }\item[{b}]{,  }\item[{c}]{,  }\item[{d}]{,  }\item[{e}]{,  }\item[{f}]{,  }\item[{g}]{,  }\item[{h}]{,  }\item[{i}]{,  }\item[{j}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136                                      \{}
+\DoxyCodeLine{137   var listview = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{138   addTbody = document.createElement(\textcolor{stringliteral}{"TBODY"});}
+\DoxyCodeLine{139   addTr = document.createElement(\textcolor{stringliteral}{"TR"});}
+\DoxyCodeLine{140   var arr = [a,b,c,d,e,f,g,h,i,j];}
+\DoxyCodeLine{141   addTr.setAttribute(\textcolor{stringliteral}{"align"},\textcolor{stringliteral}{"center"});}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143   \textcolor{keywordflow}{for}(i=0; i<10; i++)\{}
+\DoxyCodeLine{144     addTd = document.createElement(\textcolor{stringliteral}{"TD"});}
+\DoxyCodeLine{145     addTd.innerHTML = arr[i];}
+\DoxyCodeLine{146     addTr.appendChild(addTd);}
+\DoxyCodeLine{147     addTbody.appendChild(addTr}
+\DoxyCodeLine{148     );}
+\DoxyCodeLine{149     listview.appendChild(addTbody);}
+\DoxyCodeLine{150   \}}
+\DoxyCodeLine{151   \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{152 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\label{a_8c_ab584f86d7d329142383709d9c8a2472e}} 
+\index{a.c@{a.c}!chgMainMap@{chgMainMap}}
+\index{chgMainMap@{chgMainMap}!a.c@{a.c}}
+\doxysubsubsection{chgMainMap()}
+{\footnotesize\ttfamily function chg\+Main\+Map (\begin{DoxyParamCaption}\item[{gu\+Num}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127                           \{}
+\DoxyCodeLine{128   document.getElementById(\textcolor{stringliteral}{"mainMap"}).src = \textcolor{stringliteral}{"img/map1/map"}+guNum+\textcolor{stringliteral}{".png"};}
+\DoxyCodeLine{129   \textcolor{keywordflow}{return} \textcolor{stringliteral}{"img/map1/map"}+guNum+\textcolor{stringliteral}{".png"};}
+\DoxyCodeLine{130 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\label{a_8c_a724e00620cb0e96e8ab83314b0ae373a}} 
+\index{a.c@{a.c}!delete\_row@{delete\_row}}
+\index{delete\_row@{delete\_row}!a.c@{a.c}}
+\doxysubsubsection{delete\_row()}
+{\footnotesize\ttfamily function delete\+\_\+row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{153                      \{}
+\DoxyCodeLine{154   var table = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{155   \textcolor{keywordflow}{for}(i = table.rows.length -\/1; i>=1; i-\/-\/)\{}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     table.deleteRow(i);}
+\DoxyCodeLine{158   \}}
+\DoxyCodeLine{159   \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\label{a_8c_a33fa4c67909b63a9e8203baf0681dc28}} 
+\index{a.c@{a.c}!inputArea@{inputArea}}
+\index{inputArea@{inputArea}!a.c@{a.c}}
+\doxysubsubsection{inputArea()}
+{\footnotesize\ttfamily function input\+Area (\begin{DoxyParamCaption}\item[{val}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131                        \{}
+\DoxyCodeLine{132   var a  = document.getElementById(\textcolor{stringliteral}{'choiceArea'});}
+\DoxyCodeLine{133   a.value = val;}
+\DoxyCodeLine{134   \textcolor{keywordflow}{return} a.value;}
+\DoxyCodeLine{135 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\label{a_8c_a95233dae4a57ef8ec56ac54c5afb8da5}} 
+\index{a.c@{a.c}!searchHospitalInfo1@{searchHospitalInfo1}}
+\index{searchHospitalInfo1@{searchHospitalInfo1}!a.c@{a.c}}
+\doxysubsubsection{searchHospitalInfo1()}
+{\footnotesize\ttfamily function search\+Hospital\+Info1 (\begin{DoxyParamCaption}\item[{area}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{163                                   \{   \textcolor{comment}{//name, ti, pa, be, ho}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165   inputArea(area);}
+\DoxyCodeLine{166   alertify.alert(\textcolor{stringliteral}{"Success! Please wait a moment!"})}
+\DoxyCodeLine{167   name =  document.getElementById(\textcolor{stringliteral}{'hosName'}).value;}
+\DoxyCodeLine{168   ti = document.getElementById(\textcolor{stringliteral}{'time'}).value;}
+\DoxyCodeLine{169   pa = document.getElementById(\textcolor{stringliteral}{'parking'}).value;}
+\DoxyCodeLine{170   be = document.getElementById(\textcolor{stringliteral}{'beauty'}).value;}
+\DoxyCodeLine{171   ho = document.getElementById(\textcolor{stringliteral}{'hotel'}).value;}
+\DoxyCodeLine{172   name = \textcolor{stringliteral}{"서울동물병원"};}
+\DoxyCodeLine{173   ti = \textcolor{stringliteral}{"11:00"};}
+\DoxyCodeLine{174   pa = \textcolor{stringliteral}{"o"};}
+\DoxyCodeLine{175   be = \textcolor{stringliteral}{"x"};}
+\DoxyCodeLine{176   ho = \textcolor{stringliteral}{"o"};}
+\DoxyCodeLine{177   document.getElementById(\textcolor{stringliteral}{"count"}).innerHTML = \textcolor{stringliteral}{"◆ Count :\&nbsp;\&nbsp;"};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179   var count = 0;}
+\DoxyCodeLine{180   var ref = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"});}
+\DoxyCodeLine{181     delete\_row();}
+\DoxyCodeLine{182     var arr = [area, name, ti, pa, be, ho];}
+\DoxyCodeLine{183     \textcolor{keywordflow}{for}(i=0; i<3; i++)\{}
+\DoxyCodeLine{184       \textcolor{keywordflow}{if}(arr[i+3] == \textcolor{stringliteral}{"O"} || arr[i+3] == \textcolor{stringliteral}{"o"})\{}
+\DoxyCodeLine{185         arr[i+3] = \textcolor{stringliteral}{"True"};}
+\DoxyCodeLine{186       \}}
+\DoxyCodeLine{187       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(arr[i+3] == \textcolor{stringliteral}{"X"} || arr[i+3] == \textcolor{stringliteral}{"x"}) \{}
+\DoxyCodeLine{188         arr[i+3] = \textcolor{stringliteral}{"False"};}
+\DoxyCodeLine{189       \}}
+\DoxyCodeLine{190       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{191         arr[i+3]= \textcolor{stringliteral}{""};}
+\DoxyCodeLine{192       \}}
+\DoxyCodeLine{193     \}}
+\DoxyCodeLine{194     var time = parseInt(arr[2].substring(0,2));}
+\DoxyCodeLine{195     \textcolor{keywordflow}{if}(time < 9)\{}
+\DoxyCodeLine{196       time = time + 12;}
+\DoxyCodeLine{197     \}}
+\DoxyCodeLine{198     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function}(snapshot)\{}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200         \textcolor{keywordflow}{for}(i = 0; i< Object.keys(snapshot.val()).length; i++)\{}
+\DoxyCodeLine{201           var a = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"} + Object.keys(snapshot.val())[i]);}
+\DoxyCodeLine{202           a.on(\textcolor{stringliteral}{"value"}, function(snapshot)\{}
+\DoxyCodeLine{203             var t = Object.values(snapshot.val());}
+\DoxyCodeLine{204             if((t[1] == arr[0] || arr[0].length==0)\&\&}
+\DoxyCodeLine{205                (t[4] == arr[1] || arr[1].length ==0)\&\&}
+\DoxyCodeLine{206                (parseInt(t[7].substring(0,2)) <= time || arr[2].length ==0)\&\&}
+\DoxyCodeLine{207                (parseInt(t[3].substring(0,2)) > time || arr[2].length ==0)\&\&}
+\DoxyCodeLine{208                (t[8] == arr[3] || arr[3].length ==0)\&\&}
+\DoxyCodeLine{209                (t[2] == arr[4] || arr[4].length ==0)\&\&}
+\DoxyCodeLine{210                (t[6] == arr[5] || arr[5].length ==0))\{}
+\DoxyCodeLine{211               if(t[9].length <2)\{}
+\DoxyCodeLine{212                 t[9] = \textcolor{stringliteral}{"Non-\/Value"};}
+\DoxyCodeLine{213               \}}
+\DoxyCodeLine{214               add\_row(t[5], t[4], t[9], t[1], t[0], t[7], t[3], t[8], t[6], t[2]);}
+\DoxyCodeLine{215               count++;}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217             \}}
+\DoxyCodeLine{218         \});}
+\DoxyCodeLine{219       \}}
+\DoxyCodeLine{220       var table = document.getElementById(\textcolor{stringliteral}{"hosTable"});}
+\DoxyCodeLine{221       \textcolor{keywordflow}{if} (table.rows.length -\/1==0)\{}
+\DoxyCodeLine{222         add\_row(\textcolor{stringliteral}{"No"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No"}, \textcolor{stringliteral}{"No"},\textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"}, \textcolor{stringliteral}{"No Data"});}
+\DoxyCodeLine{223       \}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225       document.getElementById(\textcolor{stringliteral}{'count'}).innerHTML += count.toString();}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227     \});}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229     document.getElementById(\textcolor{stringliteral}{'hosName'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{230     document.getElementById(\textcolor{stringliteral}{'time'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{231     document.getElementById(\textcolor{stringliteral}{'parking'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{232     document.getElementById(\textcolor{stringliteral}{'beauty'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{233     document.getElementById(\textcolor{stringliteral}{'hotel'}).value = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{234     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{235   \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\label{a_8c_af04a4f630b49d9be3f3f443bc5d7d326}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily Q\+Unit test (\begin{DoxyParamCaption}\item[{\char`\"{}add\+\_\+row function test\char`\"{}}]{,  }\item[{function(assert) \{ const result=\textbf{ add\+\_\+row}(1, \char`\"{}서울동물병원\char`\"{}, \char`\"{}010-\/4043-\/2907\char`\"{}, \char`\"{}강남구\char`\"{}, \char`\"{}서울특별시\char`\"{}, \char`\"{}09\+:00\char`\"{}, \char`\"{}18\+:00\char`\"{}, \char`\"{}true\char`\"{}, \char`\"{}true\char`\"{}, \char`\"{}true\char`\"{});assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{a_8c_ae0f3340a1d98013e1ae3a7b022a2d571}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily Q\+Unit test (\begin{DoxyParamCaption}\item[{\char`\"{}chg\+Main\+Map function test\char`\"{}}]{,  }\item[{function(assert) \{ const result=\textbf{ chg\+Main\+Map}(1);assert.\+equal(result,\char`\"{}img/map1/map1.\+png\char`\"{}, \char`\"{}Passed!\char`\"{});\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{a_8c_a4c8c018a4f4726068ec1a78c8a412a89}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily Q\+Unit test (\begin{DoxyParamCaption}\item[{\char`\"{}delete row function test\char`\"{}}]{,  }\item[{function(assert) \{ const result=test();assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{a_8c_adc67c06534d3fe304998c3d108ba9478}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily Q\+Unit test (\begin{DoxyParamCaption}\item[{\char`\"{}delete\+\_\+row function test\char`\"{}}]{,  }\item[{function(assert) \{ const result=\textbf{ delete\+\_\+row}();assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{a_8c_a176ab898be8368d125a82abb4c0a38e7}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily Q\+Unit test (\begin{DoxyParamCaption}\item[{\char`\"{}insert\+Area function test\char`\"{}}]{,  }\item[{function(assert) \{ const result=\textbf{ input\+Area}(\char`\"{}강남구\char`\"{});assert.\+equal(result,\char`\"{}강남구\char`\"{}, \char`\"{}Passed!\char`\"{});\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{a_8c_ace4ddad055c67c518f4715b3f1eae651}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily Q\+Unit test (\begin{DoxyParamCaption}\item[{\char`\"{}search\+Hospital\+Info1 function test\char`\"{}}]{,  }\item[{function(assert) \{ const result=\textbf{ search\+Hospital\+Info1}(\char`\"{}광진구\char`\"{});assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{a_8c_a896fafcfeee0a90f73dd39664dbb7a47}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily Q\+Unit test (\begin{DoxyParamCaption}\item[{\char`\"{}test function test\char`\"{}}]{,  }\item[{function(assert) \{ const result=test();assert.\+equal(result, 1, \char`\"{}Passed!\char`\"{});\}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\label{a_8c_a05c5c2aa4f1753058d6f53d0b2b2f751}} 
+\index{a.c@{a.c}!test@{test}}
+\index{test@{test}!a.c@{a.c}}
+\doxysubsubsection{test()\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily function test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107                \{}
+\DoxyCodeLine{108   \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{109 \}}
+
+\end{DoxyCode}

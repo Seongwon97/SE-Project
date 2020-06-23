@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_3f89aa1ad08a8675d11d24646e4eda25" kind="dir">
+    <compoundname>D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file</compoundname>
+    <innerfile refid="account__doxygen_8c">account_doxygen.c</innerfile>
+    <innerfile refid="hospital__doxygen_8c">hospital_doxygen.c</innerfile>
+    <innerfile refid="reservation__doxygen_8c">reservation_doxygen.c</innerfile>
+    <innerfile refid="reservation__info__doxygen_8c">reservation_info_doxygen.c</innerfile>
+    <innerfile refid="reservation__modify__doxygen_8c">reservation_modify_doxygen.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/doxygen js file/"/>
+  </compounddef>
+</doxygen>

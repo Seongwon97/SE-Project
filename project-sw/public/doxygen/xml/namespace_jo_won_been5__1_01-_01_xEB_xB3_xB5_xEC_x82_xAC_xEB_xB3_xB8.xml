@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="namespace_jo_won_been5__1_01-_01_xEB_xB3_xB5_xEC_x82_xAC_xEB_xB3_xB8" kind="namespace" language="Python">
+    <compoundname>JoWonBeen5_1 - 복사본</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_jo_won_been5__1_01-_01_xEB_xB3_xB5_xEC_x82_xAC_xEB_xB3_xB8_1a3783bb43c2dde7a6993afae4780f279a" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list slist</definition>
+        <argsstring></argsstring>
+        <name>slist</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/JoWonBeen5_1 - 복사본.py" line="58" column="1" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/JoWonBeen5_1 - 복사본.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_jo_won_been5__1_01-_01_xEB_xB3_xB5_xEC_x82_xAC_xEB_xB3_xB8_1a4ed071da1d42b95e2465fb30952d9f80" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>item</definition>
+        <argsstring></argsstring>
+        <name>item</name>
+        <initializer>=  input(&apos;Please enter what you want : &apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/JoWonBeen5_1 - 복사본.py" line="60" column="1" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/JoWonBeen5_1 - 복사본.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_jo_won_been5__1_01-_01_xEB_xB3_xB5_xEC_x82_xAC_xEB_xB3_xB8_1a9cfbb269728dc4185236d28be58d9eab" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cnt</definition>
+        <argsstring></argsstring>
+        <name>cnt</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/JoWonBeen5_1 - 복사본.py" line="65" column="1" bodyfile="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/JoWonBeen5_1 - 복사본.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Users/콩하나/workspace/Github/SE-Project/project-sw/public/js/JoWonBeen5_1 - 복사본.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

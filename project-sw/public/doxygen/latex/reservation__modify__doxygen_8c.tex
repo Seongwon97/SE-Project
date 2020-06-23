@@ -1,0 +1,297 @@
+\doxysection{D\+:/\+Users/콩하나/workspace/\+Github/\+S\+E-\/\+Project/project-\/sw/public/js/doxygen js file/reservation\+\_\+modify\+\_\+doxygen.c File Reference}
+\label{reservation__modify__doxygen_8c}\index{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/reservation\_modify\_doxygen.c@{D:/Users/콩하나/workspace/Github/SE-\/Project/project-\/sw/public/js/doxygen js file/reservation\_modify\_doxygen.c}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+document \textbf{ ready} (function() \{ detail\+Ref.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ var number=\textquotesingle{}No.\textquotesingle{}+snapshot.\+child(\textbf{ key}).val().reservation\+Number;var hospital=snapshot.\+child(\textbf{ key}).val().hospital;var pet\+Name=snapshot.\+child(\textbf{ key}).val().pet\+Name;var pet\+Species=snapshot.\+child(\textbf{ key}).val().pet\+Species;var type=snapshot.\+child(\textbf{ key}).val().purpose;var message=snapshot.\+child(\textbf{ key}).val().message;\textbf{ date}=snapshot.\+child(\textbf{ key}).val().\textbf{ date};\textbf{ origin\+\_\+time}=snapshot.\+child(\textbf{ key}).val().time;\textbf{ area}=snapshot.\+child(\textbf{ key}).val().\textbf{ area};document.\+get\+Element\+By\+Id(\textquotesingle{}Number\textquotesingle{}).value=number;document.\+get\+Element\+By\+Id(\textquotesingle{}Name\textquotesingle{}).value=hospital;document.\+get\+Element\+By\+Id(\textquotesingle{}Petname\textquotesingle{}).value=pet\+Name;document.\+get\+Element\+By\+Id(\textquotesingle{}Petspecies\textquotesingle{}).value=pet\+Species;document.\+get\+Element\+By\+Id(\textquotesingle{}Message\textquotesingle{}).value=message;document.\+get\+Element\+By\+Id(\textquotesingle{}\textbf{ date}\textquotesingle{}).value=\textbf{ date};\$(\textquotesingle{}\#\textbf{ date}\textquotesingle{}).change();if(type===\textquotesingle{}미용\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(0)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} else if(type===\textquotesingle{}예방접종\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(1)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} else if(type===\textquotesingle{}정기검진\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(2)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} else if(type===\textquotesingle{}치료\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(3)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} \});\})
+\item 
+function \textbf{ date\+Selected} (e)
+\begin{DoxyCompactList}\small\item\em Method for creating time option. \end{DoxyCompactList}\item 
+function \textbf{ sort\+Select} (sel\+Elem)
+\begin{DoxyCompactList}\small\item\em Method to sort the options in select. \end{DoxyCompactList}\item 
+function \textbf{ submit\+Btn} ()
+\begin{DoxyCompactList}\small\item\em Update method to modify Reservation\+Detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \textbf{ database} = firebase.\+database()
+\item 
+var \textbf{ detail\+Ref} = \textbf{ database.\+ref}(\textquotesingle{}Reservation\+Detail/\textquotesingle{})
+\item 
+var \textbf{ key}
+\item 
+var \textbf{ date}
+\item 
+var \textbf{ area}
+\item 
+var \textbf{ origin\+\_\+time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{reservation__modify__doxygen_8c_afc90b7e89337bf10110075a1e9d84ede}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!dateSelected@{dateSelected}}
+\index{dateSelected@{dateSelected}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{dateSelected()}
+{\footnotesize\ttfamily function date\+Selected (\begin{DoxyParamCaption}\item[{e}]{ }\end{DoxyParamCaption})}
+
+
+
+Method for creating time option. 
+
+When selecting a date, add the hospital, free time on that date to the time option. 
+\begin{DoxyParams}{Parameters}
+{\em param} & Date Select event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                          \{}
+\DoxyCodeLine{51     var target = document.getElementById(\textcolor{stringliteral}{"time"});}
+\DoxyCodeLine{52     var hospital\_v = document.getElementById(\textcolor{stringliteral}{'Name'}).value;}
+\DoxyCodeLine{53     var area\_v = area;}
+\DoxyCodeLine{54     var close = 0;}
+\DoxyCodeLine{55     var open = 0;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{//병원 영업시간 받아서 변수에 저장하는 부분}}
+\DoxyCodeLine{58     var ref = firebase.database().ref(\textcolor{stringliteral}{"Hospital\_Info/"});}
+\DoxyCodeLine{59     ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{60         snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{61             \textcolor{comment}{//병원 이름과 병원이 있는 지역이 모두 같은 경우}}
+\DoxyCodeLine{62             \textcolor{keywordflow}{if} (data.val().hospitalName === hospital\_v) \{}
+\DoxyCodeLine{63                 if (data.val().areaName === area\_v) \{}
+\DoxyCodeLine{64                     open = data.val().openTime;}
+\DoxyCodeLine{65                     close = data.val().closeTime;}
+\DoxyCodeLine{66                 \}}
+\DoxyCodeLine{67             \}}
+\DoxyCodeLine{68         \});}
+\DoxyCodeLine{69     \});}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     setTimeout(\textcolor{keyword}{function} () \{}
+\DoxyCodeLine{72         var openT = open.toString().split(\textcolor{stringliteral}{":"});}
+\DoxyCodeLine{73         var openH = Number(openT[0]);}
+\DoxyCodeLine{74         var openM = Number(openT[1]);}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if} (openM > 0) \{}
+\DoxyCodeLine{76             openH = openH + 1;}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         var closeT = close.toString().split(\textcolor{stringliteral}{":"});}
+\DoxyCodeLine{80         var closeH = Number(closeT[0]);}
+\DoxyCodeLine{81         var closeM = Number(closeT[1]);}
+\DoxyCodeLine{82         \textcolor{keywordflow}{if} (closeM > 0) \{}
+\DoxyCodeLine{83             closeH = closeH + 1;}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{comment}{//예약정보들을 확인하며 예약이 있는 시간 찾고 select option에 넣는 부분}}
+\DoxyCodeLine{87         target.options.length = 0;}
+\DoxyCodeLine{88         var opt = document.createElement(\textcolor{stringliteral}{"option"});}
+\DoxyCodeLine{89         opt.value = origin\_time;}
+\DoxyCodeLine{90         opt.innerHTML = origin\_time;}
+\DoxyCodeLine{91         \textcolor{keywordflow}{if} (document.getElementById(\textcolor{stringliteral}{'date'}).value === date) \{}
+\DoxyCodeLine{92             target.appendChild(opt);}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         var arr = [];}
+\DoxyCodeLine{96         var ref = firebase.database().ref(\textcolor{stringliteral}{"ReservationDetail/"});}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{comment}{//예약된 날짜와 같은 날짜의 예약 시간 받아 오는 코드}}
+\DoxyCodeLine{99         ref.on(\textcolor{stringliteral}{"value"}, \textcolor{keyword}{function} (snapshot) \{}
+\DoxyCodeLine{100             snapshot.forEach(\textcolor{keyword}{function} (data) \{}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{if} (data.val().hospital === hospital\_v) \{}
+\DoxyCodeLine{102                     if (data.val().area === area\_v) \{}
+\DoxyCodeLine{103                         if (data.val().date === e.target.value) \{}
+\DoxyCodeLine{104                             arr.push(data.val().time);}
+\DoxyCodeLine{105                             console.log(arr);}
+\DoxyCodeLine{106                         \}}
+\DoxyCodeLine{107                     \}}
+\DoxyCodeLine{108                 \}}
+\DoxyCodeLine{109             \});}
+\DoxyCodeLine{110         \});}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \textcolor{comment}{//예약된 시간을 제외한 시간을 출력}}
+\DoxyCodeLine{113         available = []}
+\DoxyCodeLine{114         console.log(open);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116         \textcolor{keywordflow}{for} (i = openH; i < closeH; i++) \{}
+\DoxyCodeLine{117             var temp = String(i);}
+\DoxyCodeLine{118             temp = temp.concat(\textcolor{stringliteral}{"시"});}
+\DoxyCodeLine{119             \textcolor{keywordflow}{if} (arr.indexOf(temp) === (-\/1)) \{}
+\DoxyCodeLine{120                 var opt = document.createElement(\textcolor{stringliteral}{"option"});}
+\DoxyCodeLine{121                 opt.value = temp;}
+\DoxyCodeLine{122                 opt.innerHTML = temp;}
+\DoxyCodeLine{123                 target.appendChild(opt);}
+\DoxyCodeLine{124             \}}
+\DoxyCodeLine{125         \}}
+\DoxyCodeLine{126         sortSelect(target);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128         \textcolor{comment}{//예약 날짜와 선택한 날짜가 같은 경우 예약 시간 추가}}
+\DoxyCodeLine{129         \textcolor{keywordflow}{if} (document.getElementById(\textcolor{stringliteral}{'date'}).value === date) \{}
+\DoxyCodeLine{130             \$(\textcolor{stringliteral}{"\#time"}).val(origin\_time).prop(\textcolor{stringliteral}{"selected"}, \textcolor{keyword}{true});}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132     \}, 1000);}
+\DoxyCodeLine{133 \}}
+
+\end{DoxyCode}
+\mbox{\label{reservation__modify__doxygen_8c_a3fc7bfc68ced3a1525b7ae1c081fa922}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!ready@{ready}}
+\index{ready@{ready}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{ready()}
+{\footnotesize\ttfamily document ready (\begin{DoxyParamCaption}\item[{function() \{ detail\+Ref.\+on(\char`\"{}value\char`\"{}, function(snapshot) \{ var number=\textquotesingle{}No.\textquotesingle{}+snapshot.\+child(\textbf{ key}).val().reservation\+Number;var hospital=snapshot.\+child(\textbf{ key}).val().hospital;var pet\+Name=snapshot.\+child(\textbf{ key}).val().pet\+Name;var pet\+Species=snapshot.\+child(\textbf{ key}).val().pet\+Species;var type=snapshot.\+child(\textbf{ key}).val().purpose;var message=snapshot.\+child(\textbf{ key}).val().message;\textbf{ date}=snapshot.\+child(\textbf{ key}).val().\textbf{ date};\textbf{ origin\+\_\+time}=snapshot.\+child(\textbf{ key}).val().time;\textbf{ area}=snapshot.\+child(\textbf{ key}).val().\textbf{ area};document.\+get\+Element\+By\+Id(\textquotesingle{}Number\textquotesingle{}).value=number;document.\+get\+Element\+By\+Id(\textquotesingle{}Name\textquotesingle{}).value=hospital;document.\+get\+Element\+By\+Id(\textquotesingle{}Petname\textquotesingle{}).value=pet\+Name;document.\+get\+Element\+By\+Id(\textquotesingle{}Petspecies\textquotesingle{}).value=pet\+Species;document.\+get\+Element\+By\+Id(\textquotesingle{}Message\textquotesingle{}).value=message;document.\+get\+Element\+By\+Id(\textquotesingle{}\textbf{ date}\textquotesingle{}).value=\textbf{ date};\$(\textquotesingle{}\#\textbf{ date}\textquotesingle{}).change();if(type===\textquotesingle{}미용\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(0)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} else if(type===\textquotesingle{}예방접종\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(1)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} else if(type===\textquotesingle{}정기검진\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(2)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} else if(type===\textquotesingle{}치료\textquotesingle{}) \{ \$(\char`\"{}\#Purpose option\+:eq(3)\char`\"{}).prop(\char`\"{}selected\char`\"{}, true);\} \});\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{reservation__modify__doxygen_8c_a954c49c27048c71128a390c38ca99a88}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!sortSelect@{sortSelect}}
+\index{sortSelect@{sortSelect}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{sortSelect()}
+{\footnotesize\ttfamily function sort\+Select (\begin{DoxyParamCaption}\item[{sel\+Elem}]{ }\end{DoxyParamCaption})}
+
+
+
+Method to sort the options in select. 
+
+Arrange the available times in ascending order. 
+\begin{DoxyParams}{Parameters}
+{\em param} & Select element in H\+T\+ML \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140                              \{}
+\DoxyCodeLine{141     var tmpAry = [];}
+\DoxyCodeLine{142     \textcolor{keywordflow}{for} (var i = 0; i < selElem.options.length; i++) \{}
+\DoxyCodeLine{143         tmpAry[i] = [];}
+\DoxyCodeLine{144         tmpAry[i][0] = selElem.options[i].text;}
+\DoxyCodeLine{145         tmpAry[i][1] = selElem.options[i].value;}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147     tmpAry.sort();}
+\DoxyCodeLine{148     \textcolor{keywordflow}{while} (selElem.options.length > 0) \{}
+\DoxyCodeLine{149         selElem.options[0] = \textcolor{keyword}{null};}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151     \textcolor{keywordflow}{for} (var i = 0; i < tmpAry.length; i++) \{}
+\DoxyCodeLine{152         var op = \textcolor{keyword}{new} Option(tmpAry[i][0], tmpAry[i][1]);}
+\DoxyCodeLine{153         selElem.options[i] = op;}
+\DoxyCodeLine{154     \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+\mbox{\label{reservation__modify__doxygen_8c_a4e6a1d53cd92d84f49145f21d22b1310}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!submitBtn@{submitBtn}}
+\index{submitBtn@{submitBtn}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{submitBtn()}
+{\footnotesize\ttfamily function submit\+Btn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update method to modify Reservation\+Detail. 
+
+After the user modifies the reservation details, press the button to update the content in the Firebase database. 
+\begin{DoxyParams}{Parameters}
+{\em param} & none \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 163 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{163                      \{}
+\DoxyCodeLine{164     var purpose = document.getElementById(\textcolor{stringliteral}{'Purpose'});}
+\DoxyCodeLine{165     var purpose\_v = purpose.options[purpose.selectedIndex].innerHTML;}
+\DoxyCodeLine{166     var time = document.getElementById(\textcolor{stringliteral}{'time'});}
+\DoxyCodeLine{167     var time\_v = time.options[time.selectedIndex].value;}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     detailRef.child(key).update(\{}
+\DoxyCodeLine{170         date: document.getElementById(\textcolor{stringliteral}{'date'}).value,}
+\DoxyCodeLine{171         time: time\_v,}
+\DoxyCodeLine{172         reservationType: purpose\_v,}
+\DoxyCodeLine{173         petName: document.getElementById(\textcolor{stringliteral}{'Petname'}).value,}
+\DoxyCodeLine{174         petSpecies: document.getElementById(\textcolor{stringliteral}{'Petspecies'}).value,}
+\DoxyCodeLine{175         message: document.getElementById(\textcolor{stringliteral}{'Message'}).value}
+\DoxyCodeLine{176     \});}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     alertify.alert(\textcolor{stringliteral}{'예약이 수정되었습니다.'}, \textcolor{keyword}{function}()\{}
+\DoxyCodeLine{179         window.location.href = \textcolor{stringliteral}{'reservation\_info.html'};}
+\DoxyCodeLine{180     \});}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{reservation__modify__doxygen_8c_a22f166cbb5d3d3e7c9975aab0d268f99}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!area@{area}}
+\index{area@{area}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{area}
+{\footnotesize\ttfamily var area}
+
+
+
+Definition at line 7 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__modify__doxygen_8c_af4a1450f9b9ce47601f3bfba80dc2580}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!database@{database}}
+\index{database@{database}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{database}
+{\footnotesize\ttfamily var database = firebase.\+database()}
+
+
+
+Definition at line 1 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__modify__doxygen_8c_aee7331514568ba3b291c313bf269a913}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!date@{date}}
+\index{date@{date}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{date}
+{\footnotesize\ttfamily var date}
+
+
+
+Definition at line 6 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__modify__doxygen_8c_a98340c07ef96293118bf1fe43bfe89cc}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!detailRef@{detailRef}}
+\index{detailRef@{detailRef}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{detailRef}
+{\footnotesize\ttfamily var detail\+Ref = \textbf{ database.\+ref}(\textquotesingle{}Reservation\+Detail/\textquotesingle{})}
+
+
+
+Definition at line 2 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__modify__doxygen_8c_a9bbe78e9381a5fe38011c4fa0f948854}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!key@{key}}
+\index{key@{key}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{key}
+{\footnotesize\ttfamily var key}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= location.href.substr(}
+\DoxyCodeLine{    location.href.lastIndexOf(\textcolor{charliteral}{'='}) + 1}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+Definition at line 3 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
+\mbox{\label{reservation__modify__doxygen_8c_addcf526dd05075e2fc0c0cf2d6d32a10}} 
+\index{reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}!origin\_time@{origin\_time}}
+\index{origin\_time@{origin\_time}!reservation\_modify\_doxygen.c@{reservation\_modify\_doxygen.c}}
+\doxysubsubsection{origin\_time}
+{\footnotesize\ttfamily var origin\+\_\+time}
+
+
+
+Definition at line 8 of file reservation\+\_\+modify\+\_\+doxygen.\+c.
+
