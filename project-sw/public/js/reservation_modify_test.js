@@ -1,62 +1,17 @@
-QUnit.test( "dateSelected function test", function( assert ) {
-    const result = dateSelected('-MA1mqb3ETr69LZ-Zze_');
-    assert.equal( result,1,  "Passed!" );
-});
 
-QUnit.test( "sortSelect function test", function( assert ) {
-    const result = sortSelect('-MA1mqb3ETr69LZ-Zze_');
-    assert.equal( result,1,  "Passed!" );
-});
+ QUnit.test( "dateSelected function test", function( assert ) {
+     const result = dateSelected();
+     assert.equal( result,1,  "Passed!" );
+ });
 
-QUnit.test( "submitBtn function test", function( assert ) {
-    const result = submitBtn();
-    assert.equal(result, 1,  "Passed!" );
-});
 
-var database = firebase.database();
-var detailRef = database.ref('ReservationDetail/');
-var key = location.href.substr(
-    location.href.lastIndexOf('=') + 1
-);
-var date;
-var area;
-var origin_time;
 
-$(document).ready(function () {
-    detailRef.on("value", function (snapshot) {
-        var number = 'No.' + snapshot.child(key).val().reservationNumber;
-        var hospital = snapshot.child(key).val().hospital;
-        var petName = snapshot.child(key).val().petName;
-        var petSpecies = snapshot.child(key).val().petSpecies;
-        var type = snapshot.child(key).val().purpose;
-        var message = snapshot.child(key).val().message;
-        date = snapshot.child(key).val().date;
-        origin_time = snapshot.child(key).val().time;
-        area = snapshot.child(key).val().area;
+ QUnit.test( "submitBtn function test", function( assert ) {
+     const result = submitBtn();
+     assert.equal(result, 1,  "Passed!" );
+ });
 
-        document.getElementById('Number').value = number;
-        document.getElementById('Name').value = hospital;
-        document.getElementById('Petname').value = petName;
-        document.getElementById('Petspecies').value = petSpecies;
-        document.getElementById('Message').value = message;
-        document.getElementById('date').value = date;
-        // var event = new Event('change');
-        // document.getElementById('date').dispatchEvent(event);
 
-        //여기서 강제로 발생시키는 거에요
-        $('#date').change();
-
-        if (type === '미용') {
-            $("#Purpose option:eq(0)").prop("selected", true);
-        } else if (type === '예방접종') {
-            $("#Purpose option:eq(1)").prop("selected", true);
-        } else if (type === '정기검진') {
-            $("#Purpose option:eq(2)").prop("selected", true);
-        } else if (type === '치료') {
-            $("#Purpose option:eq(3)").prop("selected", true);
-        }
-    });
-});
 
 //날짜 선택시 해당 병원, 해당 날짜에 비어있는 시간 time option에 추가.
 function dateSelected(e) {
@@ -78,7 +33,6 @@ function dateSelected(e) {
         });
     });
 
-    setTimeout(function () {
         var openT = open.toString().split(":");
         var openH = Number(openT[0]);
         var openM = Number(openT[1]);
@@ -135,7 +89,6 @@ function dateSelected(e) {
         //예약 날짜와 선택한 날짜가 같은 경우 예약 시간 추가
         if (document.getElementById('date').value === date) {
         }
-    }, 1000);
     return 1;
 }
 

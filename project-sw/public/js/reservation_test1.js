@@ -20,8 +20,8 @@ QUnit.test( "reserve", function( assert ) {
 });
 
 
-  setTimeout(function(){
   firebase.auth().onAuthStateChanged(function(user){
+    user = true;
     if(user){
       var ref = firebase.database().ref("User/Admin/");
       ref.on("value", function (snapshot) {
@@ -49,7 +49,6 @@ QUnit.test( "reserve", function( assert ) {
 
     }
   });
-  },2000);
 
 
 
@@ -74,24 +73,7 @@ var opt = document.createElement("option");
 opt.value = "Please select a hospital";
 opt.innerHTML = "Please select a hospital";
 target.appendChild(opt);
-ref.on("value", function(snapshot){
-    for(i = 0; i< Object.keys(snapshot.val()).length; i++){
-      var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
 
-      a.on("value", function(snapshot){
-        var t = Object.values(snapshot.val());
-        if((t[1] == e.value)){
-          if(t[9].length <2){
-            t[9] = "Non-Value";
-          }
-          var opt = document.createElement("option");
-          opt.value = t[4];
-          opt.innerHTML = t[4];
-          target.appendChild(opt);
-          }
-        });
-    }
-  });
   document.getElementById('date').value = "";
   document.getElementById('time').value = "Time";
   return 1;
@@ -104,38 +86,21 @@ function dateSelected(e){
   var target = document.getElementById("time");
   var hospital_v="압구정웰동물병원";
   var area_v="강남구";
-  var close=0;
-  var open=0;
+  var close="19:00";
+  var open="10:00";
 
-  //병원 영업시간 받아서 변수에 저장하는 부분
-  var ref = firebase.database().ref("Hospital_Info/");
-  ref.on("value", function(snapshot){
-      for(i = 0; i< Object.keys(snapshot.val()).length; i++){
-        var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
 
-        a.on("value", function(snapshot){
-          var t = Object.values(snapshot.val());
-          if((t[4] == hospital_v)){
-            if(t[9].length <2){
-              t[9] = "Non-Value";
-            }
-            open=t[7];
-            close=t[3];
-            }
-          });
-      }
-    });
 
     //var openT=open.split(":");
     var openH=9;
-    var openM=0;
+    var openM=10;
     if(openM > 0){
       openH=openH+1;
     }
 
     //var closeT=close.split(":");
     var closeH=18;
-    var closeM=0;
+    var closeM=10;
     if(closeM > 0){
       closeH=closeH+1;
     }
@@ -148,24 +113,7 @@ function dateSelected(e){
     var arr=[];
     var ref = firebase.database().ref("ReservationDetail/");
 
-    ref.on("value", function(snapshot){
-        reservationNum=Object.keys(snapshot.val()).length; });
-    ref.on("value", function(snapshot){
-        for(i = 0; i< Object.keys(snapshot.val()).length; i++){
-          var a = firebase.database().ref("ReservationDetail/" + Object.keys(snapshot.val())[i]);
-          a.on("value", function(snapshot){
-            var t = Object.values(snapshot.val());
-            if((t[6] == hospital_v)){
-              if(t[0]==area_v){
-                if(t[5]==e.target.value){
-                    arr.push(t[15]);
-                }
-              }
-              }
-            });
-        }
-      });
-      setTimeout(function(){
+
       available=[]
       for(i=openH; i<closeH; i++){
         var temp=String(i);
@@ -177,7 +125,6 @@ function dateSelected(e){
           target.appendChild(opt);
         }
       }
-    },500);
 
     return 1;
 }
@@ -189,45 +136,13 @@ function dateSelected(e){
 //병원 선택시 병원 정보를 띄워주는 코드
 function categoryChange2(e) {
 var ref = firebase.database().ref("Hospital_Info/");
-ref.on("value", function(snapshot){
-    for(i = 0; i< Object.keys(snapshot.val()).length; i++){
-      var a = firebase.database().ref("Hospital_Info/" + Object.keys(snapshot.val())[i]);
 
-      a.on("value", function(snapshot){
-        var t = Object.values(snapshot.val());
-        if((t[4] == e.value)){
-          if(t[9].length <2){
-            t[9] = "Non-Value";
-          }
-          document.getElementById('hName').innerHTML=e.value;
-          document.getElementById('hPhone').innerHTML=t[9];
-          document.getElementById('hAddress').innerHTML=t[0];
-          document.getElementById('hTime').innerHTML=t[7]+' ~ '+t[3];
-          if(t[8]=='True'){document.getElementById('hPark').innerHTML="Available";}
-          else if(t[8]=='False'){document.getElementById('hPark').innerHTML="Unavailable";}
-
-          }
-        });
-    }
-  });
 
 
   var area_v="강남구";
   var hospital_v="압구정웰동물병원";
   var ref = firebase.database().ref("User/Admin/");
-  ref.on("value", function(snapshot){
-      for(i = 0; i< Object.keys(snapshot.val()).length; i++){
-        var a = firebase.database().ref("User/Admin/" + Object.keys(snapshot.val())[i]);
-        a.on("value", function(snapshot){
-          var t = Object.values(snapshot.val());
-          if((t[4] == hospital_v)){
-            if(t[1]==area_v){
-              adminId=t[3];
-            }
-            }
-          });
-      }
-    });
+
     document.getElementById('date').value = "";
     document.getElementById('time').value = "Time";
     return 1;

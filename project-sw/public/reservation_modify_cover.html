@@ -25,19 +25,22 @@
 
     <script crc="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="stylesheet" href="resource/alertify.core.css"/>
-    <link rel="stylesheet" href="resource/alertify.default.css" id = "toggleCSS"/>
+    <link rel="stylesheet" href="resource/alertify.default.css" id="toggleCSS"/>
     <script src="resource/alertify.min.js"></script>
+
     <meta name="viewport" content="width=device-width">
     <title>QUnit Example</title>
-    <link rel="stylesheet" href="Qunit/qunit.css">
+    <link rel="stylesheet" href="Qunit/qunit-1.14.0.css">
 </head>
 
 <body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
-  <script src="Qunit/qunit.js"></script>
-  <script src="js/blanket.min.js"></script>
-  <script src="js/reservation_info_test.js" data-cover></script>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script src="Qunit/qunit-1.14.0.js"></script>
+<script src="blanket.min.js"></script>
+<script src="js/reservation_modify.js" data-cover></script>
+<script src="js/reservation_modify_test.js"></script>
+
 <!-- Preloader -->
 <div id="preloader">
     <div class="medilife-load"></div>
@@ -95,32 +98,66 @@
 </header>
 <!-- ***** Header Area End ***** -->
 
-<!-- ***** Breadcumb Area Start ***** -->
-<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <div class="breadcumb-content">
-                    <h3 class="breadcumb-title">Reservation Info.</h3>
-                    <p>Please check your reservation list.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ***** Breadcumb Area End ***** -->
 
 <article>
-    <div class="reservation-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div id="card-area" class="col-12" style="padding-top: 10px; padding-bottom: 50px">
+    <div class="container col-7">
+        <div id="modify-area" class="align-items-center" style="padding-top: 180px; padding-bottom: 200px">
+            <div class="container">
+                <h1 style="padding-bottom: 30px">Reservation Details</h1>
+                <form>
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label for="Number">Reservation Number</label>
+                            <input type="text" id="Number" class="form-control" style="color: #2e3133">
+                        </div>
+                        <div class="form-group">
+                            <label for="Name">Hospital name</label>
+                            <input type="text" class="form-control" id="Name" style="color: #2e3133">
+                        </div>
+                    </fieldset>
 
-                </div>
-                <h3 class="breadcumb-content" id="cancel_text"></h3>
-                <div id="cancel-area" class="col-12" style="padding-top: 10px; padding-bottom: 200px">
+                    <label>Time</label>
 
-                </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="date" class="form-control" onchange="dateSelected(event);" name="date"
+                                       id="date" style="color: #2e3133">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <select class="form-control" id="time" style="color: #2e3133">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Purpose">Purpose</label>
+                        <select class="form-control text-dark" id="Purpose">
+                            <option>미용</option>
+                            <option>예방접종</option>
+                            <option>정기검진</option>
+                            <option>치료</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Petname">Pet Name</label>
+                        <input type="text" class="form-control" id="Petname" style="color: #2e3133">
+                    </div>
+                    <div class="form-group">
+                        <label for="Petspecies">Pet Species</label>
+                        <input type="text" class="form-control" id="Petspecies" style="color: #2e3133">
+                    </div>
+                    <div class="form-group" style="padding-bottom: 50px">
+                        <label for="Message">Message</label>
+                        <input type="text" class="form-control" id="Message" style="color: #2e3133">
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="button" class="btn btn-primary" onclick="submitBtn()">Modify</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -140,6 +177,7 @@
 
 <script src="config.js"></script>    <!-- hosting info -->
 
+<script src="account.js"></script>
 
 </body>
 

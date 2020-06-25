@@ -175,7 +175,7 @@ function submitBtn() {
         message: document.getElementById('Message').value
     });
 
-    alertify.alert('예약이 수정되었습니다.', function(){
+    alertify.alert('Reservation Info has been modified!', function(){
         window.location.href = 'reservation_info.html';
     });
 
