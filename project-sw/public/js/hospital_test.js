@@ -1,12 +1,4 @@
 
-QUnit.test( "test function test", function( assert ) {
-  const result = test();
-  assert.equal( result,1,  "Passed!" );
-});
-QUnit.test( "delete row function test", function( assert ) {
-  const result = test();
-  assert.equal( result,1,  "Passed!" );
-});
 QUnit.test( "chgMainMap function test", function( assert ) {
   const result = chgMainMap(1);
   assert.equal( result,"img/map1/map1.png",  "Passed!" );
@@ -55,10 +47,6 @@ QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
 });
 
 
-
-function test(){
-  return 1;
-}
 
 function chgMainMap(guNum){
   document.getElementById("mainMap").src = "img/map1/map"+guNum+".png";
