@@ -103,6 +103,7 @@ When the work is finished, add the time option when the appointment time is empt
 * 'time' is the id of the select space where users select the time to reserve within the html file.\n
 *  open,close, openH, openM is the infirmation that hospital open time and close time
 */
+//A function that shows the hospital selected and the time available for the date.
 function dateSelected(e){
   var target = document.getElementById("time");
   var hospital =document.getElementById('hospital');
@@ -194,7 +195,7 @@ function dateSelected(e){
 *@details When selecting a hospital, the hospital information is received from the DB and the hospital information is displayed.
 *@param 'Hospital' is the id of the select space where users select the hospital to reserve within the html file.
 */
-//병원 선택시 병원 정보를 띄워주는 코드
+//Code for displaying hospital information when choosing a hospital
 function categoryChange2(e) {
 var ref = firebase.database().ref("Hospital_Info/");
 ref.on("value", function(snapshot){
@@ -250,7 +251,7 @@ ref.on("value", function(snapshot){
 *@details Read the values in the table, send the reservation information to DB, and make a reservation.
 *@param Each variable means the id of the reservation table and the variable that stores it.
 */
-//예약 정보 저장하는 함수
+//function for storing reservation information
 function reserve(){
   var userId=firebase.auth().currentUser.email;
   var area=document.getElementById('area');
