@@ -55,10 +55,6 @@ QUnit.test( "searchHospitalInfo1 function test", function( assert ) {
 
 
 
-function test(){
-  return 1;
-}
-
 function chgMainMap(guNum){
   document.getElementById("mainMap").src = "img/map1/map"+guNum+".png";
   return "img/map1/map"+guNum+".png";
