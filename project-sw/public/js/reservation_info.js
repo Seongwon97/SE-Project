@@ -9,14 +9,14 @@ var currentTime = new Date();
 
 $(document).ready(function () {
 
-    //현재 유저의 이메일
+    //Email from current user
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             currentUser = user.email;
         }
     });
 
-    //currentUser가 Member인 경우
+    //If currentUser is a Member
     ref.once("value", function (snapshot) {
         snapshot.forEach(function (data) {
             if (data.val().clientId === currentUser) {
@@ -30,14 +30,14 @@ $(document).ready(function () {
                 var cancel = data.val().cancel;
                 var petName = data.val().petName;
 
-                //시간이 지난 예약인지 확인 (날짜, 시간)
+                //Check if the reservation is past time (date, time)
                 if (isExpired(strArray, data.val().time.replace("시", ""))) {
                     ref.child(key).update({
                         completion: 'true'
                     });
                 }
 
-                //취소도 안되고 완료도 안된 예약
+                //Bookings that are neither canceled nor completed
                 if (completion === 'false' && cancel !== 'true') {
                     $("#card-area").append("<div class=\"card m-3\">" +
                         "                       <div class=\"card-body\">\n" +
@@ -54,7 +54,7 @@ $(document).ready(function () {
                         "</div>");
                 }
 
-                //취소나 완료된 경우
+                //Cancellation or completion
                 if (completion === 'true' || cancel === 'true') {
                     if (exist === false) {
                         document.getElementById("cancel_text").textContent = "Last reservations & Cancelled reservations"
@@ -87,7 +87,7 @@ $(document).ready(function () {
         });
     });
     setTimeout(function(){
-        //currentUser가 Admin인 경우
+        //If currentUser is a Admin
         ref.once("value", function (snapshot) {
             snapshot.forEach(function (data) {
                 if (data.val().hospital ==hos_name && data.val().area == area_name) {
@@ -106,14 +106,14 @@ $(document).ready(function () {
                     var strArray = data.val().date.split('-');
                     var cancel = data.val().cancel;
 
-                    //시간이 지난 예약인지 확인 (날짜, 시간)
+                    //Check if the reservation is past time (date, time)
                     if (isExpired(strArray, data.val().time.replace("시", ""))) {
                         ref.child(key).update({
                             completion: 'true'
                         });
                     }
 
-                    //취소도 안되고 완료도 안된 예약
+                    //Bookings that are neither canceled nor completed
                     if (completion === 'false' && cancel !== 'true') {
                         $("#card-area").append("<div class=\"card border-dark m-3\">\n" +
                             "                            <div class=\"card-header mb-0\">" +
@@ -148,7 +148,7 @@ $(document).ready(function () {
                         ;
                     }
 
-                    //취소나 완료된 경우
+                    //Cancellation or completion
                     if (completion === 'true' || cancel === 'true') {
                         if (exist === false) {
                             document.getElementById("cancel_text").textContent = "Last reservations & Cancelled reservations"
@@ -232,7 +232,7 @@ function isExpired(compareStr, compareTime) {
     compareDate.setDate(compareStr[2] * 1);
     compareDate.setHours(compareTime * 1, 0, 0, 0);
 
-    //현재 시각보다 예약시간이 지난 경우 true 리턴
+    //return true if the booking time is past the current time
     return currentTime >= compareDate;
 
 }

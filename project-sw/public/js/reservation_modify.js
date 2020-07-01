@@ -54,11 +54,11 @@ function dateSelected(e) {
     var close = 0;
     var open = 0;
 
-    //병원 영업시간 받아서 변수에 저장하는 부분
+    //parts that are stored in variables during hospital business hours
     var ref = firebase.database().ref("Hospital_Info/");
     ref.on("value", function (snapshot) {
         snapshot.forEach(function (data) {
-            //병원 이름과 병원이 있는 지역이 모두 같은 경우
+            //the name of the hospital and the area where the hospital is located are all the same
             if (data.val().hospitalName === hospital_v) {
                 if (data.val().areaName === area_v) {
                     open = data.val().openTime;
@@ -83,7 +83,7 @@ function dateSelected(e) {
             closeH = closeH + 1;
         }
 
-        //예약정보들을 확인하며 예약이 있는 시간 찾고 select option에 넣는 부분
+        //Check the reservation information, find the time you have a reservation, and put it in the select option
         target.options.length = 0;
         var opt = document.createElement("option");
         opt.value = origin_time;
@@ -95,7 +95,7 @@ function dateSelected(e) {
         var arr = [];
         var ref = firebase.database().ref("ReservationDetail/");
 
-        //예약된 날짜와 같은 날짜의 예약 시간 받아 오는 코드
+        //Code to receive reservation times on the same day as scheduled
         ref.on("value", function (snapshot) {
             snapshot.forEach(function (data) {
                 if (data.val().hospital === hospital_v) {
@@ -109,7 +109,7 @@ function dateSelected(e) {
             });
         });
 
-        //예약된 시간을 제외한 시간을 출력
+        //output time excluding scheduled time
         available = []
         console.log(open);
 
@@ -125,7 +125,7 @@ function dateSelected(e) {
         }
         sortSelect(target);
 
-        //예약 날짜와 선택한 날짜가 같은 경우 예약 시간 추가
+        //Add reservation time if reservation date and selected date are the same
         if (document.getElementById('date').value === date) {
             $("#time").val(origin_time).prop("selected", true);
         }
